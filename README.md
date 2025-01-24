@@ -65,7 +65,7 @@ To run the analyses, the following tools and libraries are required:
 
 2. Install the required R libraries:
    ```R
-   install.packages(c("tidyverse", "benford.analysis", "ggplot2", "dplyr", "readr"))
+   install.packages(c("stats", "tidyverse", "readxl", "benford.analysis", "ggplot2", "dplyr", "readr", "countrycode", "patchwork"))
    ```
 
 3. Run the R scripts in the `scripts/` directory to perform the analyses and generate visualizations.
