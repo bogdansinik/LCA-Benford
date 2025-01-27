@@ -2,6 +2,17 @@
 
 This repository provides data and R scripts for analyzing Life-Cycle Assessment (LCA) databases using Benford's Law. It aims to evaluate data quality by testing the conformity of numeric data in the database against the expected distribution defined by Benford's Law. The repository also includes visualizations to aid in interpreting the results.
 
+## Data Used
+
+| ID 	|    Databse    	| Observarions (Rows) 	| Features (Columns) 	| Numerical Values Extracted 	| Format 	| Open-source 	|
+|:--:	|:-------------:	|:-------------------:	|:------------------:	|:--------------------------:	|:------:	|:-----------:	|
+|  1 	|   Ecoinvent   	|        23523        	|        2651        	|          47403170          	|   csv  	|      ❌      	|
+|  2 	|   Worldsteel  	|        79103        	|          9         	|            73044           	|   csv  	|      ✅      	|
+|  3 	|   OzLCI2019   	|        243247       	|          9         	|           178940           	|   csv  	|      ✅      	|
+|  4 	|   Greendelta  	|        277626       	|          9         	|           205344           	|   csv  	|      ✅      	|
+|  5 	|     Needs     	|        877971       	|          9         	|           808382           	|   csv  	|      ✅      	|
+|  6 	| Bioenergiedat 	|        23037        	|          8         	|             834            	|   csv  	|      ✅      	|
+
 ## Features
 
 The repository supports the following analyses:
