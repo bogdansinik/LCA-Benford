@@ -1,0 +1,821 @@
+Continent,Conformity,Colname,Label
+Asia,Nonconformity,"Arsenic ion|air|low population density, long-term",1
+Asia,Nonconformity,Arsenic ion|air|non-urban air or from high stacks,2
+Asia,Nonconformity,Arsenic ion|air|unspecified,3
+Asia,Nonconformity,Arsenic ion|air|urban air close to ground,4
+Asia,Nonconformity,Arsenic ion|soil|agricultural,5
+Asia,Marginally acceptable conformity,Arsenic ion|soil|industrial,6
+Asia,Nonconformity,Arsenic ion|soil|unspecified,7
+Asia,Marginally acceptable conformity,Arsenic ion|water|ground-,8
+Asia,Nonconformity,"Arsenic ion|water|ground-, long-term",9
+Asia,Marginally acceptable conformity,Arsenic ion|water|ocean,10
+Asia,Nonconformity,Arsenic ion|water|surface water,11
+Asia,Nonconformity,Arsenic ion|water|unspecified,12
+Asia,Nonconformity,Cadmium|natural resource|in ground,26
+Asia,Nonconformity,"Cadmium II|air|low population density, long-term",13
+Asia,Marginally acceptable conformity,Cadmium II|air|lower stratosphere + upper troposphere,14
+Asia,Nonconformity,Cadmium II|air|non-urban air or from high stacks,15
+Asia,Nonconformity,Cadmium II|air|unspecified,16
+Asia,Nonconformity,Cadmium II|air|urban air close to ground,17
+Asia,Nonconformity,Cadmium II|soil|agricultural,18
+Asia,Nonconformity,Cadmium II|soil|forestry,19
+Asia,Nonconformity,Cadmium II|soil|industrial,20
+Asia,Nonconformity,Cadmium II|soil|unspecified,21
+Asia,Nonconformity,Cadmium II|water|ground-,22
+Asia,Nonconformity,"Cadmium II|water|ground-, long-term",23
+Asia,Nonconformity,Cadmium II|water|ocean,24
+Asia,Nonconformity,Cadmium II|water|surface water,25
+Asia,Marginally acceptable conformity,Chromium|natural resource|in ground,51
+Asia,Acceptable conformity,"Chromium III|air|low population density, long-term",29
+Asia,Nonconformity,Chromium III|air|lower stratosphere + upper troposphere,30
+Asia,Acceptable conformity,Chromium III|air|non-urban air or from high stacks,31
+Asia,Nonconformity,Chromium III|air|unspecified,32
+Asia,Nonconformity,Chromium III|air|urban air close to ground,33
+Asia,Nonconformity,Chromium III|soil|agricultural,34
+Asia,Nonconformity,Chromium III|soil|forestry,35
+Asia,Nonconformity,Chromium III|soil|industrial,36
+Asia,Nonconformity,Chromium III|soil|unspecified,37
+Asia,Nonconformity,Chromium III|water|ground-,38
+Asia,Nonconformity,Chromium III|water|ocean,39
+Asia,Nonconformity,Chromium III|water|surface water,40
+Asia,Nonconformity,Chromium III|water|unspecified,41
+Asia,Nonconformity,"Chromium VI|air|low population density, long-term",42
+Asia,Nonconformity,Chromium VI|air|non-urban air or from high stacks,43
+Asia,Nonconformity,Chromium VI|air|unspecified,44
+Asia,Nonconformity,Chromium VI|air|urban air close to ground,45
+Asia,Nonconformity,Chromium VI|soil|unspecified,46
+Asia,Marginally acceptable conformity,Chromium VI|water|ground-,47
+Asia,Nonconformity,"Chromium VI|water|ground-, long-term",48
+Asia,Nonconformity,Chromium VI|water|surface water,49
+Asia,Nonconformity,Chromium VI|water|unspecified,50
+Asia,Nonconformity,Chromium-51|air|non-urban air or from high stacks,27
+Asia,Nonconformity,Chromium-51|water|surface water,28
+Asia,Marginally acceptable conformity,Copper|natural resource|in ground,70
+Asia,Nonconformity,"Copper ion|air|low population density, long-term",52
+Asia,Nonconformity,Copper ion|air|lower stratosphere + upper troposphere,53
+Asia,Acceptable conformity,Copper ion|air|non-urban air or from high stacks,54
+Asia,Acceptable conformity,Copper ion|air|unspecified,55
+Asia,Nonconformity,Copper ion|air|urban air close to ground,56
+Asia,Nonconformity,Copper ion|soil|agricultural,57
+Asia,Nonconformity,Copper ion|soil|industrial,58
+Asia,Nonconformity,Copper ion|soil|unspecified,59
+Asia,Nonconformity,Copper ion|water|ground-,60
+Asia,Nonconformity,"Copper ion|water|ground-, long-term",61
+Asia,Nonconformity,Copper ion|water|ocean,62
+Asia,Nonconformity,Copper ion|water|surface water,63
+Asia,Nonconformity,Copper ion|water|unspecified,64
+Asia,Nonconformity,Copper oxide|soil|agricultural,65
+Asia,Nonconformity,Copper oxychloride|air|non-urban air or from high stacks,66
+Asia,Nonconformity,Copper oxychloride|soil|agricultural,67
+Asia,Nonconformity,Copper oxychloride|soil|forestry,68
+Asia,Nonconformity,Copper oxychloride|water|unspecified,69
+Asia,Acceptable conformity,"Iron ion|air|low population density, long-term",72
+Asia,Marginally acceptable conformity,Iron ion|air|non-urban air or from high stacks,73
+Asia,Nonconformity,Iron ion|air|unspecified,74
+Asia,Marginally acceptable conformity,Iron ion|air|urban air close to ground,75
+Asia,Nonconformity,Iron ion|soil|agricultural,76
+Asia,Marginally acceptable conformity,Iron ion|soil|industrial,77
+Asia,Nonconformity,Iron ion|soil|unspecified,78
+Asia,Nonconformity,Iron ion|water|ground-,79
+Asia,Nonconformity,"Iron ion|water|ground-, long-term",80
+Asia,Acceptable conformity,Iron ion|water|ocean,81
+Asia,Nonconformity,Iron ion|water|surface water,82
+Asia,Nonconformity,Iron-59|water|surface water,71
+Europe,Acceptable conformity,"Arsenic ion|air|low population density, long-term",1
+Europe,Acceptable conformity,Arsenic ion|air|non-urban air or from high stacks,2
+Europe,Nonconformity,Arsenic ion|air|unspecified,3
+Europe,Acceptable conformity,Arsenic ion|air|urban air close to ground,4
+Europe,Acceptable conformity,Arsenic ion|soil|agricultural,5
+Europe,Marginally acceptable conformity,Arsenic ion|soil|industrial,6
+Europe,Marginally acceptable conformity,Arsenic ion|soil|unspecified,7
+Europe,Marginally acceptable conformity,Arsenic ion|water|ground-,8
+Europe,Acceptable conformity,"Arsenic ion|water|ground-, long-term",9
+Europe,Acceptable conformity,Arsenic ion|water|ocean,10
+Europe,Acceptable conformity,Arsenic ion|water|surface water,11
+Europe,Marginally acceptable conformity,Arsenic ion|water|unspecified,12
+Europe,Acceptable conformity,Cadmium|natural resource|in ground,26
+Europe,Close conformity,"Cadmium II|air|low population density, long-term",13
+Europe,Marginally acceptable conformity,Cadmium II|air|lower stratosphere + upper troposphere,14
+Europe,Acceptable conformity,Cadmium II|air|non-urban air or from high stacks,15
+Europe,Marginally acceptable conformity,Cadmium II|air|unspecified,16
+Europe,Acceptable conformity,Cadmium II|air|urban air close to ground,17
+Europe,Acceptable conformity,Cadmium II|soil|agricultural,18
+Europe,Marginally acceptable conformity,Cadmium II|soil|forestry,19
+Europe,Acceptable conformity,Cadmium II|soil|industrial,20
+Europe,Acceptable conformity,Cadmium II|soil|unspecified,21
+Europe,Acceptable conformity,Cadmium II|water|ground-,22
+Europe,Acceptable conformity,"Cadmium II|water|ground-, long-term",23
+Europe,Acceptable conformity,Cadmium II|water|ocean,24
+Europe,Acceptable conformity,Cadmium II|water|surface water,25
+Europe,Marginally acceptable conformity,Chromium|natural resource|in ground,51
+Europe,Close conformity,"Chromium III|air|low population density, long-term",29
+Europe,Marginally acceptable conformity,Chromium III|air|lower stratosphere + upper troposphere,30
+Europe,Nonconformity,Chromium III|air|non-urban air or from high stacks,31
+Europe,Marginally acceptable conformity,Chromium III|air|unspecified,32
+Europe,Nonconformity,Chromium III|air|urban air close to ground,33
+Europe,Nonconformity,Chromium III|soil|agricultural,34
+Europe,Marginally acceptable conformity,Chromium III|soil|forestry,35
+Europe,Marginally acceptable conformity,Chromium III|soil|industrial,36
+Europe,Marginally acceptable conformity,Chromium III|soil|unspecified,37
+Europe,Acceptable conformity,Chromium III|water|ground-,38
+Europe,Acceptable conformity,Chromium III|water|ocean,39
+Europe,Acceptable conformity,Chromium III|water|surface water,40
+Europe,Acceptable conformity,Chromium III|water|unspecified,41
+Europe,Acceptable conformity,"Chromium VI|air|low population density, long-term",42
+Europe,Marginally acceptable conformity,Chromium VI|air|non-urban air or from high stacks,43
+Europe,Acceptable conformity,Chromium VI|air|unspecified,44
+Europe,Marginally acceptable conformity,Chromium VI|air|urban air close to ground,45
+Europe,Acceptable conformity,Chromium VI|soil|unspecified,46
+Europe,Acceptable conformity,Chromium VI|water|ground-,47
+Europe,Acceptable conformity,"Chromium VI|water|ground-, long-term",48
+Europe,Acceptable conformity,Chromium VI|water|surface water,49
+Europe,Acceptable conformity,Chromium VI|water|unspecified,50
+Europe,Acceptable conformity,Chromium-51|air|non-urban air or from high stacks,27
+Europe,Marginally acceptable conformity,Chromium-51|water|surface water,28
+Europe,Acceptable conformity,Copper|natural resource|in ground,70
+Europe,Marginally acceptable conformity,"Copper ion|air|low population density, long-term",52
+Europe,Marginally acceptable conformity,Copper ion|air|lower stratosphere + upper troposphere,53
+Europe,Marginally acceptable conformity,Copper ion|air|non-urban air or from high stacks,54
+Europe,Marginally acceptable conformity,Copper ion|air|unspecified,55
+Europe,Acceptable conformity,Copper ion|air|urban air close to ground,56
+Europe,Acceptable conformity,Copper ion|soil|agricultural,57
+Europe,Acceptable conformity,Copper ion|soil|industrial,58
+Europe,Marginally acceptable conformity,Copper ion|soil|unspecified,59
+Europe,Marginally acceptable conformity,Copper ion|water|ground-,60
+Europe,Marginally acceptable conformity,"Copper ion|water|ground-, long-term",61
+Europe,Marginally acceptable conformity,Copper ion|water|ocean,62
+Europe,Acceptable conformity,Copper ion|water|surface water,63
+Europe,Acceptable conformity,Copper ion|water|unspecified,64
+Europe,Marginally acceptable conformity,Copper oxide|soil|agricultural,65
+Europe,Acceptable conformity,Copper oxychloride|air|non-urban air or from high stacks,66
+Europe,Acceptable conformity,Copper oxychloride|soil|agricultural,67
+Europe,Close conformity,Copper oxychloride|soil|forestry,68
+Europe,Acceptable conformity,Copper oxychloride|water|unspecified,69
+Europe,Marginally acceptable conformity,"Iron ion|air|low population density, long-term",72
+Europe,Acceptable conformity,Iron ion|air|non-urban air or from high stacks,73
+Europe,Marginally acceptable conformity,Iron ion|air|unspecified,74
+Europe,Nonconformity,Iron ion|air|urban air close to ground,75
+Europe,Acceptable conformity,Iron ion|soil|agricultural,76
+Europe,Acceptable conformity,Iron ion|soil|industrial,77
+Europe,Marginally acceptable conformity,Iron ion|soil|unspecified,78
+Europe,Acceptable conformity,Iron ion|water|ground-,79
+Europe,Acceptable conformity,"Iron ion|water|ground-, long-term",80
+Europe,Acceptable conformity,Iron ion|water|ocean,81
+Europe,Acceptable conformity,Iron ion|water|surface water,82
+Europe,Acceptable conformity,Iron-59|water|surface water,71
+North America,Marginally acceptable conformity,"Arsenic ion|air|low population density, long-term",1
+North America,Marginally acceptable conformity,Arsenic ion|air|non-urban air or from high stacks,2
+North America,Nonconformity,Arsenic ion|air|unspecified,3
+North America,Acceptable conformity,Arsenic ion|air|urban air close to ground,4
+North America,Acceptable conformity,Arsenic ion|soil|agricultural,5
+North America,Marginally acceptable conformity,Arsenic ion|soil|industrial,6
+North America,Marginally acceptable conformity,Arsenic ion|soil|unspecified,7
+North America,Nonconformity,Arsenic ion|water|ground-,8
+North America,Nonconformity,"Arsenic ion|water|ground-, long-term",9
+North America,Acceptable conformity,Arsenic ion|water|ocean,10
+North America,Acceptable conformity,Arsenic ion|water|surface water,11
+North America,Nonconformity,Arsenic ion|water|unspecified,12
+North America,Nonconformity,Cadmium|natural resource|in ground,26
+North America,Marginally acceptable conformity,"Cadmium II|air|low population density, long-term",13
+North America,Nonconformity,Cadmium II|air|lower stratosphere + upper troposphere,14
+North America,Marginally acceptable conformity,Cadmium II|air|non-urban air or from high stacks,15
+North America,Marginally acceptable conformity,Cadmium II|air|unspecified,16
+North America,Nonconformity,Cadmium II|air|urban air close to ground,17
+North America,Marginally acceptable conformity,Cadmium II|soil|agricultural,18
+North America,Nonconformity,Cadmium II|soil|forestry,19
+North America,Nonconformity,Cadmium II|soil|industrial,20
+North America,Marginally acceptable conformity,Cadmium II|soil|unspecified,21
+North America,Nonconformity,Cadmium II|water|ground-,22
+North America,Nonconformity,"Cadmium II|water|ground-, long-term",23
+North America,Acceptable conformity,Cadmium II|water|ocean,24
+North America,Acceptable conformity,Cadmium II|water|surface water,25
+North America,Marginally acceptable conformity,Chromium|natural resource|in ground,51
+North America,Acceptable conformity,"Chromium III|air|low population density, long-term",29
+North America,Nonconformity,Chromium III|air|lower stratosphere + upper troposphere,30
+North America,Marginally acceptable conformity,Chromium III|air|non-urban air or from high stacks,31
+North America,Acceptable conformity,Chromium III|air|unspecified,32
+North America,Nonconformity,Chromium III|air|urban air close to ground,33
+North America,Acceptable conformity,Chromium III|soil|agricultural,34
+North America,Nonconformity,Chromium III|soil|forestry,35
+North America,Nonconformity,Chromium III|soil|industrial,36
+North America,Nonconformity,Chromium III|soil|unspecified,37
+North America,Marginally acceptable conformity,Chromium III|water|ground-,38
+North America,Acceptable conformity,Chromium III|water|ocean,39
+North America,Nonconformity,Chromium III|water|surface water,40
+North America,Nonconformity,Chromium III|water|unspecified,41
+North America,Marginally acceptable conformity,"Chromium VI|air|low population density, long-term",42
+North America,Acceptable conformity,Chromium VI|air|non-urban air or from high stacks,43
+North America,Nonconformity,Chromium VI|air|unspecified,44
+North America,Nonconformity,Chromium VI|air|urban air close to ground,45
+North America,Nonconformity,Chromium VI|soil|unspecified,46
+North America,Nonconformity,Chromium VI|water|ground-,47
+North America,Nonconformity,"Chromium VI|water|ground-, long-term",48
+North America,Nonconformity,Chromium VI|water|surface water,49
+North America,Nonconformity,Chromium VI|water|unspecified,50
+North America,Marginally acceptable conformity,Chromium-51|air|non-urban air or from high stacks,27
+North America,Acceptable conformity,Chromium-51|water|surface water,28
+North America,Marginally acceptable conformity,Copper|natural resource|in ground,70
+North America,Marginally acceptable conformity,"Copper ion|air|low population density, long-term",52
+North America,Nonconformity,Copper ion|air|lower stratosphere + upper troposphere,53
+North America,Nonconformity,Copper ion|air|non-urban air or from high stacks,54
+North America,Acceptable conformity,Copper ion|air|unspecified,55
+North America,Acceptable conformity,Copper ion|air|urban air close to ground,56
+North America,Nonconformity,Copper ion|soil|agricultural,57
+North America,Nonconformity,Copper ion|soil|industrial,58
+North America,Nonconformity,Copper ion|soil|unspecified,59
+North America,Nonconformity,Copper ion|water|ground-,60
+North America,Nonconformity,"Copper ion|water|ground-, long-term",61
+North America,Nonconformity,Copper ion|water|ocean,62
+North America,Nonconformity,Copper ion|water|surface water,63
+North America,Nonconformity,Copper ion|water|unspecified,64
+North America,Nonconformity,Copper oxide|soil|agricultural,65
+North America,Nonconformity,Copper oxychloride|air|non-urban air or from high stacks,66
+North America,Nonconformity,Copper oxychloride|soil|agricultural,67
+North America,Nonconformity,Copper oxychloride|soil|forestry,68
+North America,Nonconformity,Copper oxychloride|water|unspecified,69
+North America,Nonconformity,"Iron ion|air|low population density, long-term",72
+North America,Nonconformity,Iron ion|air|non-urban air or from high stacks,73
+North America,Nonconformity,Iron ion|air|unspecified,74
+North America,Nonconformity,Iron ion|air|urban air close to ground,75
+North America,Marginally acceptable conformity,Iron ion|soil|agricultural,76
+North America,Nonconformity,Iron ion|soil|industrial,77
+North America,Marginally acceptable conformity,Iron ion|soil|unspecified,78
+North America,Nonconformity,Iron ion|water|ground-,79
+North America,Nonconformity,"Iron ion|water|ground-, long-term",80
+North America,Marginally acceptable conformity,Iron ion|water|ocean,81
+North America,Nonconformity,Iron ion|water|surface water,82
+North America,Nonconformity,Iron-59|water|surface water,71
+South America,Marginally acceptable conformity,"Arsenic ion|air|low population density, long-term",1
+South America,Marginally acceptable conformity,Arsenic ion|air|non-urban air or from high stacks,2
+South America,Nonconformity,Arsenic ion|air|unspecified,3
+South America,Marginally acceptable conformity,Arsenic ion|air|urban air close to ground,4
+South America,Acceptable conformity,Arsenic ion|soil|agricultural,5
+South America,Marginally acceptable conformity,Arsenic ion|soil|industrial,6
+South America,Nonconformity,Arsenic ion|soil|unspecified,7
+South America,Acceptable conformity,Arsenic ion|water|ground-,8
+South America,Marginally acceptable conformity,"Arsenic ion|water|ground-, long-term",9
+South America,Acceptable conformity,Arsenic ion|water|ocean,10
+South America,Acceptable conformity,Arsenic ion|water|surface water,11
+South America,Nonconformity,Arsenic ion|water|unspecified,12
+South America,Marginally acceptable conformity,Cadmium|natural resource|in ground,26
+South America,Marginally acceptable conformity,"Cadmium II|air|low population density, long-term",13
+South America,Nonconformity,Cadmium II|air|lower stratosphere + upper troposphere,14
+South America,Close conformity,Cadmium II|air|non-urban air or from high stacks,15
+South America,Marginally acceptable conformity,Cadmium II|air|unspecified,16
+South America,Nonconformity,Cadmium II|air|urban air close to ground,17
+South America,Acceptable conformity,Cadmium II|soil|agricultural,18
+South America,Nonconformity,Cadmium II|soil|forestry,19
+South America,Nonconformity,Cadmium II|soil|industrial,20
+South America,Nonconformity,Cadmium II|soil|unspecified,21
+South America,Acceptable conformity,Cadmium II|water|ground-,22
+South America,Marginally acceptable conformity,"Cadmium II|water|ground-, long-term",23
+South America,Acceptable conformity,Cadmium II|water|ocean,24
+South America,Acceptable conformity,Cadmium II|water|surface water,25
+South America,Acceptable conformity,Chromium|natural resource|in ground,51
+South America,Marginally acceptable conformity,"Chromium III|air|low population density, long-term",29
+South America,Nonconformity,Chromium III|air|lower stratosphere + upper troposphere,30
+South America,Acceptable conformity,Chromium III|air|non-urban air or from high stacks,31
+South America,Acceptable conformity,Chromium III|air|unspecified,32
+South America,Marginally acceptable conformity,Chromium III|air|urban air close to ground,33
+South America,Nonconformity,Chromium III|soil|agricultural,34
+South America,Acceptable conformity,Chromium III|soil|forestry,35
+South America,Acceptable conformity,Chromium III|soil|industrial,36
+South America,Nonconformity,Chromium III|soil|unspecified,37
+South America,Nonconformity,Chromium III|water|ground-,38
+South America,Acceptable conformity,Chromium III|water|ocean,39
+South America,Acceptable conformity,Chromium III|water|surface water,40
+South America,Nonconformity,Chromium III|water|unspecified,41
+South America,Acceptable conformity,"Chromium VI|air|low population density, long-term",42
+South America,Close conformity,Chromium VI|air|non-urban air or from high stacks,43
+South America,Acceptable conformity,Chromium VI|air|unspecified,44
+South America,Marginally acceptable conformity,Chromium VI|air|urban air close to ground,45
+South America,Acceptable conformity,Chromium VI|soil|unspecified,46
+South America,Acceptable conformity,Chromium VI|water|ground-,47
+South America,Nonconformity,"Chromium VI|water|ground-, long-term",48
+South America,Marginally acceptable conformity,Chromium VI|water|surface water,49
+South America,Nonconformity,Chromium VI|water|unspecified,50
+South America,Acceptable conformity,Chromium-51|air|non-urban air or from high stacks,27
+South America,Marginally acceptable conformity,Chromium-51|water|surface water,28
+South America,Acceptable conformity,Copper|natural resource|in ground,70
+South America,Marginally acceptable conformity,"Copper ion|air|low population density, long-term",52
+South America,Nonconformity,Copper ion|air|lower stratosphere + upper troposphere,53
+South America,Acceptable conformity,Copper ion|air|non-urban air or from high stacks,54
+South America,Nonconformity,Copper ion|air|unspecified,55
+South America,Acceptable conformity,Copper ion|air|urban air close to ground,56
+South America,Acceptable conformity,Copper ion|soil|agricultural,57
+South America,Acceptable conformity,Copper ion|soil|industrial,58
+South America,Acceptable conformity,Copper ion|soil|unspecified,59
+South America,Acceptable conformity,Copper ion|water|ground-,60
+South America,Marginally acceptable conformity,"Copper ion|water|ground-, long-term",61
+South America,Acceptable conformity,Copper ion|water|ocean,62
+South America,Acceptable conformity,Copper ion|water|surface water,63
+South America,Nonconformity,Copper ion|water|unspecified,64
+South America,Acceptable conformity,Copper oxide|soil|agricultural,65
+South America,Nonconformity,Copper oxychloride|air|non-urban air or from high stacks,66
+South America,Marginally acceptable conformity,Copper oxychloride|soil|agricultural,67
+South America,Nonconformity,Copper oxychloride|soil|forestry,68
+South America,Acceptable conformity,Copper oxychloride|water|unspecified,69
+South America,Marginally acceptable conformity,"Iron ion|air|low population density, long-term",72
+South America,Nonconformity,Iron ion|air|non-urban air or from high stacks,73
+South America,Nonconformity,Iron ion|air|unspecified,74
+South America,Marginally acceptable conformity,Iron ion|air|urban air close to ground,75
+South America,Marginally acceptable conformity,Iron ion|soil|agricultural,76
+South America,Marginally acceptable conformity,Iron ion|soil|industrial,77
+South America,Nonconformity,Iron ion|soil|unspecified,78
+South America,Acceptable conformity,Iron ion|water|ground-,79
+South America,Acceptable conformity,"Iron ion|water|ground-, long-term",80
+South America,Marginally acceptable conformity,Iron ion|water|ocean,81
+South America,Nonconformity,Iron ion|water|surface water,82
+South America,Acceptable conformity,Iron-59|water|surface water,71
+Africa,Nonconformity,"Arsenic ion|air|low population density, long-term",1
+Africa,Marginally acceptable conformity,Arsenic ion|air|non-urban air or from high stacks,2
+Africa,Nonconformity,Arsenic ion|air|unspecified,3
+Africa,Nonconformity,Arsenic ion|air|urban air close to ground,4
+Africa,Nonconformity,Arsenic ion|soil|agricultural,5
+Africa,Nonconformity,Arsenic ion|soil|industrial,6
+Africa,Nonconformity,Arsenic ion|soil|unspecified,7
+Africa,Nonconformity,Arsenic ion|water|ground-,8
+Africa,Nonconformity,"Arsenic ion|water|ground-, long-term",9
+Africa,Nonconformity,Arsenic ion|water|ocean,10
+Africa,Marginally acceptable conformity,Arsenic ion|water|surface water,11
+Africa,Nonconformity,Arsenic ion|water|unspecified,12
+Africa,Nonconformity,Cadmium|natural resource|in ground,26
+Africa,Nonconformity,"Cadmium II|air|low population density, long-term",13
+Africa,Nonconformity,Cadmium II|air|lower stratosphere + upper troposphere,14
+Africa,Nonconformity,Cadmium II|air|non-urban air or from high stacks,15
+Africa,Nonconformity,Cadmium II|air|unspecified,16
+Africa,Marginally acceptable conformity,Cadmium II|air|urban air close to ground,17
+Africa,Nonconformity,Cadmium II|soil|agricultural,18
+Africa,Nonconformity,Cadmium II|soil|forestry,19
+Africa,Nonconformity,Cadmium II|soil|industrial,20
+Africa,Nonconformity,Cadmium II|soil|unspecified,21
+Africa,Nonconformity,Cadmium II|water|ground-,22
+Africa,Nonconformity,"Cadmium II|water|ground-, long-term",23
+Africa,Nonconformity,Cadmium II|water|ocean,24
+Africa,Nonconformity,Cadmium II|water|surface water,25
+Africa,Marginally acceptable conformity,Chromium|natural resource|in ground,51
+Africa,Nonconformity,"Chromium III|air|low population density, long-term",29
+Africa,Nonconformity,Chromium III|air|lower stratosphere + upper troposphere,30
+Africa,Nonconformity,Chromium III|air|non-urban air or from high stacks,31
+Africa,Nonconformity,Chromium III|air|unspecified,32
+Africa,Nonconformity,Chromium III|air|urban air close to ground,33
+Africa,Nonconformity,Chromium III|soil|agricultural,34
+Africa,Nonconformity,Chromium III|soil|forestry,35
+Africa,Nonconformity,Chromium III|soil|industrial,36
+Africa,Nonconformity,Chromium III|soil|unspecified,37
+Africa,Nonconformity,Chromium III|water|ground-,38
+Africa,Nonconformity,Chromium III|water|ocean,39
+Africa,Nonconformity,Chromium III|water|surface water,40
+Africa,Nonconformity,Chromium III|water|unspecified,41
+Africa,Nonconformity,"Chromium VI|air|low population density, long-term",42
+Africa,Nonconformity,Chromium VI|air|non-urban air or from high stacks,43
+Africa,Nonconformity,Chromium VI|air|unspecified,44
+Africa,Nonconformity,Chromium VI|air|urban air close to ground,45
+Africa,Marginally acceptable conformity,Chromium VI|soil|unspecified,46
+Africa,Acceptable conformity,Chromium VI|water|ground-,47
+Africa,Nonconformity,"Chromium VI|water|ground-, long-term",48
+Africa,Nonconformity,Chromium VI|water|surface water,49
+Africa,Nonconformity,Chromium VI|water|unspecified,50
+Africa,Nonconformity,Chromium-51|air|non-urban air or from high stacks,27
+Africa,Nonconformity,Chromium-51|water|surface water,28
+Africa,Nonconformity,Copper|natural resource|in ground,70
+Africa,Nonconformity,"Copper ion|air|low population density, long-term",52
+Africa,Nonconformity,Copper ion|air|lower stratosphere + upper troposphere,53
+Africa,Nonconformity,Copper ion|air|non-urban air or from high stacks,54
+Africa,Nonconformity,Copper ion|air|unspecified,55
+Africa,Nonconformity,Copper ion|air|urban air close to ground,56
+Africa,Nonconformity,Copper ion|soil|agricultural,57
+Africa,Nonconformity,Copper ion|soil|industrial,58
+Africa,Nonconformity,Copper ion|soil|unspecified,59
+Africa,Acceptable conformity,Copper ion|water|ground-,60
+Africa,Nonconformity,"Copper ion|water|ground-, long-term",61
+Africa,Nonconformity,Copper ion|water|ocean,62
+Africa,Nonconformity,Copper ion|water|surface water,63
+Africa,Nonconformity,Copper ion|water|unspecified,64
+Africa,Nonconformity,Copper oxide|soil|agricultural,65
+Africa,Nonconformity,Copper oxychloride|air|non-urban air or from high stacks,66
+Africa,Nonconformity,Copper oxychloride|soil|agricultural,67
+Africa,Nonconformity,Copper oxychloride|soil|forestry,68
+Africa,Nonconformity,Copper oxychloride|water|unspecified,69
+Africa,Nonconformity,"Iron ion|air|low population density, long-term",72
+Africa,Nonconformity,Iron ion|air|non-urban air or from high stacks,73
+Africa,Nonconformity,Iron ion|air|unspecified,74
+Africa,Nonconformity,Iron ion|air|urban air close to ground,75
+Africa,Nonconformity,Iron ion|soil|agricultural,76
+Africa,Nonconformity,Iron ion|soil|industrial,77
+Africa,Nonconformity,Iron ion|soil|unspecified,78
+Africa,Nonconformity,Iron ion|water|ground-,79
+Africa,Nonconformity,"Iron ion|water|ground-, long-term",80
+Africa,Nonconformity,Iron ion|water|ocean,81
+Africa,Nonconformity,Iron ion|water|surface water,82
+Africa,Nonconformity,Iron-59|water|surface water,71
+Asia,Nonconformity,Iron|natural resource|in ground,84
+Asia,Nonconformity,Iron ion|water|unspecified,83
+Asia,Marginally acceptable conformity,Lead|natural resource|in ground,105
+Asia,Nonconformity,"Lead II|air|low population density, long-term",91
+Asia,Marginally acceptable conformity,Lead II|air|lower stratosphere + upper troposphere,92
+Asia,Nonconformity,Lead II|air|non-urban air or from high stacks,93
+Asia,Nonconformity,Lead II|air|unspecified,94
+Asia,Nonconformity,Lead II|air|urban air close to ground,95
+Asia,Nonconformity,Lead II|soil|agricultural,96
+Asia,Nonconformity,Lead II|soil|forestry,97
+Asia,Nonconformity,Lead II|soil|industrial,98
+Asia,Acceptable conformity,Lead II|soil|unspecified,99
+Asia,Acceptable conformity,Lead II|water|ground-,100
+Asia,Nonconformity,"Lead II|water|ground-, long-term",101
+Asia,Nonconformity,Lead II|water|ocean,102
+Asia,Nonconformity,Lead II|water|surface water,103
+Asia,Nonconformity,Lead II|water|unspecified,104
+Asia,Nonconformity,Lead-210|air|non-urban air or from high stacks,85
+Asia,Nonconformity,Lead-210|air|unspecified,86
+Asia,Nonconformity,Lead-210|air|urban air close to ground,87
+Asia,Nonconformity,Lead-210|water|ground-,88
+Asia,Acceptable conformity,Lead-210|water|ocean,89
+Asia,Marginally acceptable conformity,Lead-210|water|surface water,90
+Asia,Nonconformity,Manganese|natural resource|in ground,120
+Asia,Nonconformity,"Manganese II|air|low population density, long-term",108
+Asia,Nonconformity,Manganese II|air|non-urban air or from high stacks,109
+Asia,Nonconformity,Manganese II|air|unspecified,110
+Asia,Nonconformity,Manganese II|air|urban air close to ground,111
+Asia,Marginally acceptable conformity,Manganese II|soil|agricultural,112
+Asia,Acceptable conformity,Manganese II|soil|industrial,113
+Asia,Nonconformity,Manganese II|soil|unspecified,114
+Asia,Nonconformity,Manganese II|water|ground-,115
+Asia,Nonconformity,"Manganese II|water|ground-, long-term",116
+Asia,Marginally acceptable conformity,Manganese II|water|ocean,117
+Asia,Nonconformity,Manganese II|water|surface water,118
+Asia,Acceptable conformity,Manganese II|water|unspecified,119
+Asia,Nonconformity,Manganese-54|air|non-urban air or from high stacks,106
+Asia,Nonconformity,Manganese-54|water|surface water,107
+Asia,Marginally acceptable conformity,Mercury|natural resource|in ground,134
+Asia,Nonconformity,"Mercury II|air|low population density, long-term",121
+Asia,Nonconformity,Mercury II|air|lower stratosphere + upper troposphere,122
+Asia,Nonconformity,Mercury II|air|non-urban air or from high stacks,123
+Asia,Nonconformity,Mercury II|air|unspecified,124
+Asia,Nonconformity,Mercury II|air|urban air close to ground,125
+Asia,Nonconformity,Mercury II|soil|agricultural,126
+Asia,Nonconformity,Mercury II|soil|industrial,127
+Asia,Nonconformity,Mercury II|soil|unspecified,128
+Asia,Nonconformity,Mercury II|water|ground-,129
+Asia,Nonconformity,"Mercury II|water|ground-, long-term",130
+Asia,Nonconformity,Mercury II|water|ocean,131
+Asia,Nonconformity,Mercury II|water|surface water,132
+Asia,Nonconformity,Mercury II|water|unspecified,133
+Asia,Close conformity,"Nickel II|air|low population density, long-term",135
+Asia,Nonconformity,Nickel II|air|lower stratosphere + upper troposphere,136
+Asia,Nonconformity,Nickel II|air|non-urban air or from high stacks,137
+Asia,Nonconformity,Nickel II|air|unspecified,138
+Asia,Nonconformity,Nickel II|air|urban air close to ground,139
+Asia,Nonconformity,Nickel II|soil|agricultural,140
+Asia,Nonconformity,Nickel II|soil|forestry,141
+Asia,Nonconformity,Nickel II|soil|industrial,142
+Asia,Nonconformity,Nickel II|soil|unspecified,143
+Asia,Nonconformity,Nickel II|water|ground-,144
+Asia,Nonconformity,"Nickel II|water|ground-, long-term",145
+Asia,Nonconformity,Nickel II|water|ocean,146
+Asia,Nonconformity,Nickel II|water|surface water,147
+Asia,Nonconformity,Nickel II|water|unspecified,148
+Asia,Nonconformity,Zinc|natural resource|in ground,164
+Asia,Nonconformity,"Zinc II|air|low population density, long-term",151
+Asia,Marginally acceptable conformity,Zinc II|air|lower stratosphere + upper troposphere,152
+Asia,Nonconformity,Zinc II|air|non-urban air or from high stacks,153
+Asia,Nonconformity,Zinc II|air|unspecified,154
+Asia,Nonconformity,Zinc II|air|urban air close to ground,155
+Asia,Nonconformity,Zinc II|soil|agricultural,156
+Asia,Marginally acceptable conformity,Zinc II|soil|industrial,157
+Asia,Nonconformity,Zinc II|soil|unspecified,158
+Asia,Marginally acceptable conformity,Zinc II|water|ground-,159
+Asia,Nonconformity,"Zinc II|water|ground-, long-term",160
+Asia,Marginally acceptable conformity,Zinc II|water|ocean,161
+Asia,Nonconformity,Zinc II|water|surface water,162
+Asia,Nonconformity,Zinc II|water|unspecified,163
+Asia,Nonconformity,Zinc-65|air|non-urban air or from high stacks,149
+Asia,Nonconformity,Zinc-65|water|surface water,150
+Europe,Marginally acceptable conformity,Iron|natural resource|in ground,84
+Europe,Acceptable conformity,Iron ion|water|unspecified,83
+Europe,Acceptable conformity,Lead|natural resource|in ground,105
+Europe,Acceptable conformity,"Lead II|air|low population density, long-term",91
+Europe,Acceptable conformity,Lead II|air|lower stratosphere + upper troposphere,92
+Europe,Acceptable conformity,Lead II|air|non-urban air or from high stacks,93
+Europe,Marginally acceptable conformity,Lead II|air|unspecified,94
+Europe,Marginally acceptable conformity,Lead II|air|urban air close to ground,95
+Europe,Marginally acceptable conformity,Lead II|soil|agricultural,96
+Europe,Nonconformity,Lead II|soil|forestry,97
+Europe,Acceptable conformity,Lead II|soil|industrial,98
+Europe,Acceptable conformity,Lead II|soil|unspecified,99
+Europe,Marginally acceptable conformity,Lead II|water|ground-,100
+Europe,Acceptable conformity,"Lead II|water|ground-, long-term",101
+Europe,Close conformity,Lead II|water|ocean,102
+Europe,Acceptable conformity,Lead II|water|surface water,103
+Europe,Acceptable conformity,Lead II|water|unspecified,104
+Europe,Acceptable conformity,Lead-210|air|non-urban air or from high stacks,85
+Europe,Marginally acceptable conformity,Lead-210|air|unspecified,86
+Europe,Nonconformity,Lead-210|air|urban air close to ground,87
+Europe,Acceptable conformity,Lead-210|water|ground-,88
+Europe,Acceptable conformity,Lead-210|water|ocean,89
+Europe,Acceptable conformity,Lead-210|water|surface water,90
+Europe,Acceptable conformity,Manganese|natural resource|in ground,120
+Europe,Acceptable conformity,"Manganese II|air|low population density, long-term",108
+Europe,Acceptable conformity,Manganese II|air|non-urban air or from high stacks,109
+Europe,Nonconformity,Manganese II|air|unspecified,110
+Europe,Marginally acceptable conformity,Manganese II|air|urban air close to ground,111
+Europe,Marginally acceptable conformity,Manganese II|soil|agricultural,112
+Europe,Acceptable conformity,Manganese II|soil|industrial,113
+Europe,Nonconformity,Manganese II|soil|unspecified,114
+Europe,Acceptable conformity,Manganese II|water|ground-,115
+Europe,Acceptable conformity,"Manganese II|water|ground-, long-term",116
+Europe,Acceptable conformity,Manganese II|water|ocean,117
+Europe,Acceptable conformity,Manganese II|water|surface water,118
+Europe,Acceptable conformity,Manganese II|water|unspecified,119
+Europe,Acceptable conformity,Manganese-54|air|non-urban air or from high stacks,106
+Europe,Marginally acceptable conformity,Manganese-54|water|surface water,107
+Europe,Acceptable conformity,Mercury|natural resource|in ground,134
+Europe,Acceptable conformity,"Mercury II|air|low population density, long-term",121
+Europe,Nonconformity,Mercury II|air|lower stratosphere + upper troposphere,122
+Europe,Acceptable conformity,Mercury II|air|non-urban air or from high stacks,123
+Europe,Acceptable conformity,Mercury II|air|unspecified,124
+Europe,Marginally acceptable conformity,Mercury II|air|urban air close to ground,125
+Europe,Acceptable conformity,Mercury II|soil|agricultural,126
+Europe,Acceptable conformity,Mercury II|soil|industrial,127
+Europe,Marginally acceptable conformity,Mercury II|soil|unspecified,128
+Europe,Marginally acceptable conformity,Mercury II|water|ground-,129
+Europe,Acceptable conformity,"Mercury II|water|ground-, long-term",130
+Europe,Acceptable conformity,Mercury II|water|ocean,131
+Europe,Close conformity,Mercury II|water|surface water,132
+Europe,Marginally acceptable conformity,Mercury II|water|unspecified,133
+Europe,Acceptable conformity,"Nickel II|air|low population density, long-term",135
+Europe,Nonconformity,Nickel II|air|lower stratosphere + upper troposphere,136
+Europe,Marginally acceptable conformity,Nickel II|air|non-urban air or from high stacks,137
+Europe,Acceptable conformity,Nickel II|air|unspecified,138
+Europe,Acceptable conformity,Nickel II|air|urban air close to ground,139
+Europe,Acceptable conformity,Nickel II|soil|agricultural,140
+Europe,Nonconformity,Nickel II|soil|forestry,141
+Europe,Close conformity,Nickel II|soil|industrial,142
+Europe,Nonconformity,Nickel II|soil|unspecified,143
+Europe,Marginally acceptable conformity,Nickel II|water|ground-,144
+Europe,Acceptable conformity,"Nickel II|water|ground-, long-term",145
+Europe,Marginally acceptable conformity,Nickel II|water|ocean,146
+Europe,Acceptable conformity,Nickel II|water|surface water,147
+Europe,Acceptable conformity,Nickel II|water|unspecified,148
+Europe,Acceptable conformity,Zinc|natural resource|in ground,164
+Europe,Marginally acceptable conformity,"Zinc II|air|low population density, long-term",151
+Europe,Marginally acceptable conformity,Zinc II|air|lower stratosphere + upper troposphere,152
+Europe,Acceptable conformity,Zinc II|air|non-urban air or from high stacks,153
+Europe,Acceptable conformity,Zinc II|air|unspecified,154
+Europe,Acceptable conformity,Zinc II|air|urban air close to ground,155
+Europe,Acceptable conformity,Zinc II|soil|agricultural,156
+Europe,Acceptable conformity,Zinc II|soil|industrial,157
+Europe,Acceptable conformity,Zinc II|soil|unspecified,158
+Europe,Acceptable conformity,Zinc II|water|ground-,159
+Europe,Acceptable conformity,"Zinc II|water|ground-, long-term",160
+Europe,Acceptable conformity,Zinc II|water|ocean,161
+Europe,Close conformity,Zinc II|water|surface water,162
+Europe,Acceptable conformity,Zinc II|water|unspecified,163
+Europe,Acceptable conformity,Zinc-65|air|non-urban air or from high stacks,149
+Europe,Acceptable conformity,Zinc-65|water|surface water,150
+North America,Nonconformity,Iron|natural resource|in ground,84
+North America,Nonconformity,Iron ion|water|unspecified,83
+North America,Marginally acceptable conformity,Lead|natural resource|in ground,105
+North America,Nonconformity,"Lead II|air|low population density, long-term",91
+North America,Nonconformity,Lead II|air|lower stratosphere + upper troposphere,92
+North America,Nonconformity,Lead II|air|non-urban air or from high stacks,93
+North America,Acceptable conformity,Lead II|air|unspecified,94
+North America,Nonconformity,Lead II|air|urban air close to ground,95
+North America,Nonconformity,Lead II|soil|agricultural,96
+North America,Nonconformity,Lead II|soil|forestry,97
+North America,Marginally acceptable conformity,Lead II|soil|industrial,98
+North America,Acceptable conformity,Lead II|soil|unspecified,99
+North America,Nonconformity,Lead II|water|ground-,100
+North America,Nonconformity,"Lead II|water|ground-, long-term",101
+North America,Acceptable conformity,Lead II|water|ocean,102
+North America,Nonconformity,Lead II|water|surface water,103
+North America,Nonconformity,Lead II|water|unspecified,104
+North America,Marginally acceptable conformity,Lead-210|air|non-urban air or from high stacks,85
+North America,Marginally acceptable conformity,Lead-210|air|unspecified,86
+North America,Nonconformity,Lead-210|air|urban air close to ground,87
+North America,Acceptable conformity,Lead-210|water|ground-,88
+North America,Nonconformity,Lead-210|water|ocean,89
+North America,Nonconformity,Lead-210|water|surface water,90
+North America,Nonconformity,Manganese|natural resource|in ground,120
+North America,Nonconformity,"Manganese II|air|low population density, long-term",108
+North America,Nonconformity,Manganese II|air|non-urban air or from high stacks,109
+North America,Nonconformity,Manganese II|air|unspecified,110
+North America,Acceptable conformity,Manganese II|air|urban air close to ground,111
+North America,Nonconformity,Manganese II|soil|agricultural,112
+North America,Nonconformity,Manganese II|soil|industrial,113
+North America,Nonconformity,Manganese II|soil|unspecified,114
+North America,Marginally acceptable conformity,Manganese II|water|ground-,115
+North America,Acceptable conformity,"Manganese II|water|ground-, long-term",116
+North America,Marginally acceptable conformity,Manganese II|water|ocean,117
+North America,Acceptable conformity,Manganese II|water|surface water,118
+North America,Marginally acceptable conformity,Manganese II|water|unspecified,119
+North America,Nonconformity,Manganese-54|air|non-urban air or from high stacks,106
+North America,Marginally acceptable conformity,Manganese-54|water|surface water,107
+North America,Marginally acceptable conformity,Mercury|natural resource|in ground,134
+North America,Marginally acceptable conformity,"Mercury II|air|low population density, long-term",121
+North America,Nonconformity,Mercury II|air|lower stratosphere + upper troposphere,122
+North America,Nonconformity,Mercury II|air|non-urban air or from high stacks,123
+North America,Nonconformity,Mercury II|air|unspecified,124
+North America,Marginally acceptable conformity,Mercury II|air|urban air close to ground,125
+North America,Nonconformity,Mercury II|soil|agricultural,126
+North America,Acceptable conformity,Mercury II|soil|industrial,127
+North America,Nonconformity,Mercury II|soil|unspecified,128
+North America,Nonconformity,Mercury II|water|ground-,129
+North America,Marginally acceptable conformity,"Mercury II|water|ground-, long-term",130
+North America,Nonconformity,Mercury II|water|ocean,131
+North America,Nonconformity,Mercury II|water|surface water,132
+North America,Nonconformity,Mercury II|water|unspecified,133
+North America,Nonconformity,"Nickel II|air|low population density, long-term",135
+North America,Nonconformity,Nickel II|air|lower stratosphere + upper troposphere,136
+North America,Acceptable conformity,Nickel II|air|non-urban air or from high stacks,137
+North America,Marginally acceptable conformity,Nickel II|air|unspecified,138
+North America,Nonconformity,Nickel II|air|urban air close to ground,139
+North America,Nonconformity,Nickel II|soil|agricultural,140
+North America,Nonconformity,Nickel II|soil|forestry,141
+North America,Nonconformity,Nickel II|soil|industrial,142
+North America,Acceptable conformity,Nickel II|soil|unspecified,143
+North America,Acceptable conformity,Nickel II|water|ground-,144
+North America,Acceptable conformity,"Nickel II|water|ground-, long-term",145
+North America,Nonconformity,Nickel II|water|ocean,146
+North America,Acceptable conformity,Nickel II|water|surface water,147
+North America,Nonconformity,Nickel II|water|unspecified,148
+North America,Marginally acceptable conformity,Zinc|natural resource|in ground,164
+North America,Acceptable conformity,"Zinc II|air|low population density, long-term",151
+North America,Nonconformity,Zinc II|air|lower stratosphere + upper troposphere,152
+North America,Marginally acceptable conformity,Zinc II|air|non-urban air or from high stacks,153
+North America,Marginally acceptable conformity,Zinc II|air|unspecified,154
+North America,Close conformity,Zinc II|air|urban air close to ground,155
+North America,Acceptable conformity,Zinc II|soil|agricultural,156
+North America,Nonconformity,Zinc II|soil|industrial,157
+North America,Marginally acceptable conformity,Zinc II|soil|unspecified,158
+North America,Marginally acceptable conformity,Zinc II|water|ground-,159
+North America,Nonconformity,"Zinc II|water|ground-, long-term",160
+North America,Nonconformity,Zinc II|water|ocean,161
+North America,Nonconformity,Zinc II|water|surface water,162
+North America,Nonconformity,Zinc II|water|unspecified,163
+North America,Nonconformity,Zinc-65|air|non-urban air or from high stacks,149
+North America,Marginally acceptable conformity,Zinc-65|water|surface water,150
+South America,Nonconformity,Iron|natural resource|in ground,84
+South America,Nonconformity,Iron ion|water|unspecified,83
+South America,Marginally acceptable conformity,Lead|natural resource|in ground,105
+South America,Acceptable conformity,"Lead II|air|low population density, long-term",91
+South America,Nonconformity,Lead II|air|lower stratosphere + upper troposphere,92
+South America,Acceptable conformity,Lead II|air|non-urban air or from high stacks,93
+South America,Marginally acceptable conformity,Lead II|air|unspecified,94
+South America,Marginally acceptable conformity,Lead II|air|urban air close to ground,95
+South America,Marginally acceptable conformity,Lead II|soil|agricultural,96
+South America,Nonconformity,Lead II|soil|forestry,97
+South America,Acceptable conformity,Lead II|soil|industrial,98
+South America,Acceptable conformity,Lead II|soil|unspecified,99
+South America,Nonconformity,Lead II|water|ground-,100
+South America,Acceptable conformity,"Lead II|water|ground-, long-term",101
+South America,Nonconformity,Lead II|water|ocean,102
+South America,Nonconformity,Lead II|water|surface water,103
+South America,Marginally acceptable conformity,Lead II|water|unspecified,104
+South America,Nonconformity,Lead-210|air|non-urban air or from high stacks,85
+South America,Acceptable conformity,Lead-210|air|unspecified,86
+South America,Marginally acceptable conformity,Lead-210|air|urban air close to ground,87
+South America,Marginally acceptable conformity,Lead-210|water|ground-,88
+South America,Marginally acceptable conformity,Lead-210|water|ocean,89
+South America,Acceptable conformity,Lead-210|water|surface water,90
+South America,Nonconformity,Manganese|natural resource|in ground,120
+South America,Marginally acceptable conformity,"Manganese II|air|low population density, long-term",108
+South America,Close conformity,Manganese II|air|non-urban air or from high stacks,109
+South America,Marginally acceptable conformity,Manganese II|air|unspecified,110
+South America,Acceptable conformity,Manganese II|air|urban air close to ground,111
+South America,Acceptable conformity,Manganese II|soil|agricultural,112
+South America,Nonconformity,Manganese II|soil|industrial,113
+South America,Nonconformity,Manganese II|soil|unspecified,114
+South America,Marginally acceptable conformity,Manganese II|water|ground-,115
+South America,Acceptable conformity,"Manganese II|water|ground-, long-term",116
+South America,Acceptable conformity,Manganese II|water|ocean,117
+South America,Nonconformity,Manganese II|water|surface water,118
+South America,Nonconformity,Manganese II|water|unspecified,119
+South America,Nonconformity,Manganese-54|air|non-urban air or from high stacks,106
+South America,Nonconformity,Manganese-54|water|surface water,107
+South America,Acceptable conformity,Mercury|natural resource|in ground,134
+South America,Acceptable conformity,"Mercury II|air|low population density, long-term",121
+South America,Nonconformity,Mercury II|air|lower stratosphere + upper troposphere,122
+South America,Nonconformity,Mercury II|air|non-urban air or from high stacks,123
+South America,Acceptable conformity,Mercury II|air|unspecified,124
+South America,Marginally acceptable conformity,Mercury II|air|urban air close to ground,125
+South America,Acceptable conformity,Mercury II|soil|agricultural,126
+South America,Nonconformity,Mercury II|soil|industrial,127
+South America,Acceptable conformity,Mercury II|soil|unspecified,128
+South America,Acceptable conformity,Mercury II|water|ground-,129
+South America,Close conformity,"Mercury II|water|ground-, long-term",130
+South America,Marginally acceptable conformity,Mercury II|water|ocean,131
+South America,Acceptable conformity,Mercury II|water|surface water,132
+South America,Nonconformity,Mercury II|water|unspecified,133
+South America,Marginally acceptable conformity,"Nickel II|air|low population density, long-term",135
+South America,Nonconformity,Nickel II|air|lower stratosphere + upper troposphere,136
+South America,Nonconformity,Nickel II|air|non-urban air or from high stacks,137
+South America,Marginally acceptable conformity,Nickel II|air|unspecified,138
+South America,Nonconformity,Nickel II|air|urban air close to ground,139
+South America,Acceptable conformity,Nickel II|soil|agricultural,140
+South America,Marginally acceptable conformity,Nickel II|soil|forestry,141
+South America,Nonconformity,Nickel II|soil|industrial,142
+South America,Marginally acceptable conformity,Nickel II|soil|unspecified,143
+South America,Nonconformity,Nickel II|water|ground-,144
+South America,Marginally acceptable conformity,"Nickel II|water|ground-, long-term",145
+South America,Acceptable conformity,Nickel II|water|ocean,146
+South America,Nonconformity,Nickel II|water|surface water,147
+South America,Nonconformity,Nickel II|water|unspecified,148
+South America,Nonconformity,Zinc|natural resource|in ground,164
+South America,Nonconformity,"Zinc II|air|low population density, long-term",151
+South America,Nonconformity,Zinc II|air|lower stratosphere + upper troposphere,152
+South America,Acceptable conformity,Zinc II|air|non-urban air or from high stacks,153
+South America,Marginally acceptable conformity,Zinc II|air|unspecified,154
+South America,Close conformity,Zinc II|air|urban air close to ground,155
+South America,Acceptable conformity,Zinc II|soil|agricultural,156
+South America,Acceptable conformity,Zinc II|soil|industrial,157
+South America,Marginally acceptable conformity,Zinc II|soil|unspecified,158
+South America,Acceptable conformity,Zinc II|water|ground-,159
+South America,Acceptable conformity,"Zinc II|water|ground-, long-term",160
+South America,Nonconformity,Zinc II|water|ocean,161
+South America,Marginally acceptable conformity,Zinc II|water|surface water,162
+South America,Nonconformity,Zinc II|water|unspecified,163
+South America,Marginally acceptable conformity,Zinc-65|air|non-urban air or from high stacks,149
+South America,Acceptable conformity,Zinc-65|water|surface water,150
+Africa,Nonconformity,Iron|natural resource|in ground,84
+Africa,Nonconformity,Iron ion|water|unspecified,83
+Africa,Nonconformity,Lead|natural resource|in ground,105
+Africa,Acceptable conformity,"Lead II|air|low population density, long-term",91
+Africa,Nonconformity,Lead II|air|lower stratosphere + upper troposphere,92
+Africa,Nonconformity,Lead II|air|non-urban air or from high stacks,93
+Africa,Nonconformity,Lead II|air|unspecified,94
+Africa,Nonconformity,Lead II|air|urban air close to ground,95
+Africa,Nonconformity,Lead II|soil|agricultural,96
+Africa,Nonconformity,Lead II|soil|forestry,97
+Africa,Nonconformity,Lead II|soil|industrial,98
+Africa,Nonconformity,Lead II|soil|unspecified,99
+Africa,Nonconformity,Lead II|water|ground-,100
+Africa,Nonconformity,"Lead II|water|ground-, long-term",101
+Africa,Nonconformity,Lead II|water|ocean,102
+Africa,Nonconformity,Lead II|water|surface water,103
+Africa,Marginally acceptable conformity,Lead II|water|unspecified,104
+Africa,Nonconformity,Lead-210|air|non-urban air or from high stacks,85
+Africa,Nonconformity,Lead-210|air|unspecified,86
+Africa,Nonconformity,Lead-210|air|urban air close to ground,87
+Africa,Nonconformity,Lead-210|water|ground-,88
+Africa,Nonconformity,Lead-210|water|ocean,89
+Africa,Nonconformity,Lead-210|water|surface water,90
+Africa,Nonconformity,Manganese|natural resource|in ground,120
+Africa,Nonconformity,"Manganese II|air|low population density, long-term",108
+Africa,Nonconformity,Manganese II|air|non-urban air or from high stacks,109
+Africa,Nonconformity,Manganese II|air|unspecified,110
+Africa,Nonconformity,Manganese II|air|urban air close to ground,111
+Africa,Nonconformity,Manganese II|soil|agricultural,112
+Africa,Nonconformity,Manganese II|soil|industrial,113
+Africa,Nonconformity,Manganese II|soil|unspecified,114
+Africa,Nonconformity,Manganese II|water|ground-,115
+Africa,Nonconformity,"Manganese II|water|ground-, long-term",116
+Africa,Nonconformity,Manganese II|water|ocean,117
+Africa,Nonconformity,Manganese II|water|surface water,118
+Africa,Nonconformity,Manganese II|water|unspecified,119
+Africa,Nonconformity,Manganese-54|air|non-urban air or from high stacks,106
+Africa,Nonconformity,Manganese-54|water|surface water,107
+Africa,Nonconformity,Mercury|natural resource|in ground,134
+Africa,Marginally acceptable conformity,"Mercury II|air|low population density, long-term",121
+Africa,Nonconformity,Mercury II|air|lower stratosphere + upper troposphere,122
+Africa,Acceptable conformity,Mercury II|air|non-urban air or from high stacks,123
+Africa,Nonconformity,Mercury II|air|unspecified,124
+Africa,Nonconformity,Mercury II|air|urban air close to ground,125
+Africa,Nonconformity,Mercury II|soil|agricultural,126
+Africa,Nonconformity,Mercury II|soil|industrial,127
+Africa,Nonconformity,Mercury II|soil|unspecified,128
+Africa,Marginally acceptable conformity,Mercury II|water|ground-,129
+Africa,Nonconformity,"Mercury II|water|ground-, long-term",130
+Africa,Nonconformity,Mercury II|water|ocean,131
+Africa,Nonconformity,Mercury II|water|surface water,132
+Africa,Nonconformity,Mercury II|water|unspecified,133
+Africa,Acceptable conformity,"Nickel II|air|low population density, long-term",135
+Africa,Nonconformity,Nickel II|air|lower stratosphere + upper troposphere,136
+Africa,Nonconformity,Nickel II|air|non-urban air or from high stacks,137
+Africa,Nonconformity,Nickel II|air|unspecified,138
+Africa,Nonconformity,Nickel II|air|urban air close to ground,139
+Africa,Nonconformity,Nickel II|soil|agricultural,140
+Africa,Nonconformity,Nickel II|soil|forestry,141
+Africa,Nonconformity,Nickel II|soil|industrial,142
+Africa,Nonconformity,Nickel II|soil|unspecified,143
+Africa,Acceptable conformity,Nickel II|water|ground-,144
+Africa,Acceptable conformity,"Nickel II|water|ground-, long-term",145
+Africa,Nonconformity,Nickel II|water|ocean,146
+Africa,Nonconformity,Nickel II|water|surface water,147
+Africa,Marginally acceptable conformity,Nickel II|water|unspecified,148
+Africa,Nonconformity,Zinc|natural resource|in ground,164
+Africa,Marginally acceptable conformity,"Zinc II|air|low population density, long-term",151
+Africa,Nonconformity,Zinc II|air|lower stratosphere + upper troposphere,152
+Africa,Nonconformity,Zinc II|air|non-urban air or from high stacks,153
+Africa,Nonconformity,Zinc II|air|unspecified,154
+Africa,Nonconformity,Zinc II|air|urban air close to ground,155
+Africa,Acceptable conformity,Zinc II|soil|agricultural,156
+Africa,Nonconformity,Zinc II|soil|industrial,157
+Africa,Nonconformity,Zinc II|soil|unspecified,158
+Africa,Nonconformity,Zinc II|water|ground-,159
+Africa,Nonconformity,"Zinc II|water|ground-, long-term",160
+Africa,Nonconformity,Zinc II|water|ocean,161
+Africa,Marginally acceptable conformity,Zinc II|water|surface water,162
+Africa,Nonconformity,Zinc II|water|unspecified,163
+Africa,Nonconformity,Zinc-65|air|non-urban air or from high stacks,149
+Africa,Nonconformity,Zinc-65|water|surface water,150

@@ -1,0 +1,5511 @@
+{SimaPro 8.5.0.0}
+{processes}
+{Date: 26.02.2024}
+{Time: 12:06:22}
+{Project: worldsteel_2020}
+{CSV Format version: 8.0.5}
+{CSV separator: Semicolon}
+{Decimal separator: .}
+{Date separator: .}
+{Short date format: dd.MM.yyyy}
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000016648
+
+Type
+System
+
+Process name
+Steel cold rolled coil Asia 2020, production mix, at plant, blast furnace route, 1kg, typical thickness between 0.15 - 3 mm. typical width between 600 - 2100 mm
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+thinkstep AG
+
+Generator
+World Steel Association
+
+External documents
+GaBi databases;
+ILCD format;The format schema files, stylesheets, further documentation and supporting files as well as license conditions are available in the    developer support package, accessible currently at http://lca.jrc.ec.europa.eu
+worldsteel blast furnace.jpg;
+full lca.png;
+ILCD Data Network - Entry-level;The referenced file defines the compliance rules and entry-level requirements of the International Reference Life Cycle Data System (ILCD) Data Network, which can also be used for general ILCD-compliance under the ILCD Handbook. This document provides the overview and refers to specific documents that define the detailed requirements in the five areas quality, method, nomenclature, review, and documentation of LCA data sets. Note that application areas (via archetype goal situations) and data quality levels are differentiated that are to be referenced explicitly when identifying the compliance of a data set. While the document defines all variants, this reference relates to the definition of: 'ILCD Data Network - Entry-level'. Note that the entry-level is below ILCD-compliance and does not imply methodological compliance with the ILCD Handbook.
+2017 worldsteel Critical Review Report;
+
+Literature references
+
+
+Collection method
+SoFi web based data collection questionnaire for collecting on-site data from steel manufacturing sites.
+
+Data treatment
+Relevant upstream data (of the GaBi database or other associations) is used according to the worldsteel boundary conditions, e.g. for iron ore, coke, zinc etc.
+
+Verification
+The LCI method applied is in compliance with ISO 14040 and 14044. The documentation includes all relevant information in view of the data quality and scope of the application of the respective LCI result / data set. The dataset represents the state-of-the-art in view of the referenced functional unit.
+
+Comment
+# DescriptionHigh data quality. Data collected on site by steel industry experts in accordance with the worldsteel methodology and ISO 14040 standards, and consistency-checked by worldsteel LCA-experts. Global coke, sinter, pellet, dri, hot metal, slab production based on worldsteel site specific data. Metallurgical coal data based on global IEA statistics and information from the GaBi database. Other upstream data based on the GaBi database, including country specific electricity and regional energy upstreams. Impacts from scrap processing prior to delivery to site included.The LCI does not include any further processing beyond the steelworks gate such as bending, shaping, cutting, welding etc.# TimeBased on annual data from a 12 month period between 2015 and 2019 provided by each participating site from which an annual average is calculated.# GeographyData set is based on weighted average site-specific data (gate-to-gate) of Asian steel producers. Electricity grid mix is country-specific.# TechnologyThis dataset includes raw material extraction (e.g. coal, iron, ore, etc.) and processing, e.g. scrap, coke making, sinter, blast furnace, basic oxygen furnace, electric arc furnace, hot strip mill, cold rolling mill. Details on the steel product manufacturing route can be found in Appendix 1 of the 2017 worldsteel LCA Methodology Report. The steelmaking processes are shown in the flow diagram. Inputs included in the Life Cycle Inventory relate to all raw material inputs, including steel scrap, energy, water, and transport. Outputs include steel and other co-products, emissions to air, water and land. Further information is given in the 2017 worldsteel LCA Methodology Report. External scrap input includes approx. 2% scrap from manufacturing/fabrication processing.This LCI does not include a credit for recycling of steel at end of life and a burden for steel scrap input during production.  This is the preferred approach adopted by worldsteel, detailed in the 2017 methodology report (Appendix 2).# Intended applicationThe primary goals of the study are to develop a unified and rigorous LCI methodology for steel products worldwide in accordance with the worldsteel position paper on LCA and related ISO14040 set of standards to provide reliable data to meet requests from customers and external studies. Further goals are to promote the environmental credentials of steel and to develop steel industry expertise in the subject. To quantify resources use, energy and environmental emissions associated with the processing of steel industry products are currently considered from the extraction of raw materials in the ground through to the finished product at the steel factory gate. It is also possible to consider the burdens and credits associated with the recycling of steel scrap (this can be seen in the dataset including recycling). The data set represents a cradle to gate inventory. It can be used to characterise the supply chain situation of the steel product in a representative manner. Combination with individual unit processes using this steel product enables the generation of user-specific (product) LCAs. The data set does not necessarily fit for any possible specific supply situation - especially if significantly different technology routes exist - but is representative for a common supply chain situation.# Data set ownerWorld Steel Association# Access and use restrictionsworldsteel has provided Sphera the permission to include the LCI information (cradle-to-gate) on regional and global steel industry products as well as the value of steel scrap as a separate LCI. The data set can be used free of charge by anybody to perform LCA studies. Any use of the LCI data outside of the GaBi software and databases should not be considered before having received any written permission from worldsteel. Please note also, that any modifications/omissions of the data set results in invalidity of any existing 'Official approval of data set by producer/operator'. The impression must be avoided that this would still be a complete worldsteel data set.# Projectworldsteel Life Cycle Inventory Study for Steel Industry Products, 2017# CopyrightYes# Modeling constantsAll data used in the calculation of the LCI results refer to net calorific value.# Data completenessAll data submitted has been included. Cut-off criteria applied are as follows, to avoid the need to pursue trivial inputs and outputs in the system:•	All energetic inputs to the process stages are included, including fuels, electricity, steam and compressed air.•	Each excluded material flow does not exceed 1% of mass, energy or environmental relevance, for each unit process.•	The sum of the excluded material flows in the system does not exceed 5% of mass, energy or environmental relevance.# Data selectionData on steel making unit processes collected on site. Where data is missing for specific relevant flows it is necessary to provide an average value determined from those sites that have provided the data. LCI modelling is fully consistent.# ReviewerWorld Steel Association
+
+Allocation rules
+None
+
+System description
+;
+
+Products
+Steel cold rolled coil {Asia} | Steel cold rolled coil Asia 2020, production mix, at plant, blast furnace route, 1kg, typical thickness between 0.15 - 3 mm. typical width between 600 - 2100 mm, S;kg;1.0;100.0;not defined;Materials production\Metals and semimetals;
+Paper (unspecified) {Asia} | Steel cold rolled coil Asia 2020, production mix, at plant, blast furnace route, 1kg, typical thickness between 0.15 - 3 mm. typical width between 600 - 2100 mm, S;kg;1.63E-20;100.0;not defined;Wastes\Post consumer waste;
+Water (desalinated, deionised) {Asia} | Steel cold rolled coil Asia 2020, production mix, at plant, blast furnace route, 1kg, typical thickness between 0.15 - 3 mm. typical width between 600 - 2100 mm, S;kg;1.09E-24;100.0;not defined;Materials production\Other materials;
+Gypsum {Asia} | Steel cold rolled coil Asia 2020, production mix, at plant, blast furnace route, 1kg, typical thickness between 0.15 - 3 mm. typical width between 600 - 2100 mm, S;kg;2.44E-16;100.0;not defined;Materials production\Other mineralic materials;
+Iron sulphate dissolution {Asia} | Steel cold rolled coil Asia 2020, production mix, at plant, blast furnace route, 1kg, typical thickness between 0.15 - 3 mm. typical width between 600 - 2100 mm, S;kg;3.28E-16;100.0;not defined;Materials production\Inorganic chemicals;
+carbonyl sulphide {Asia} | Steel cold rolled coil Asia 2020, production mix, at plant, blast furnace route, 1kg, typical thickness between 0.15 - 3 mm. typical width between 600 - 2100 mm, S;kg;1.02E-19;100.0;not defined;Materials production\Organic chemicals;
+
+Waste treatment
+Jarosite {Asia} | Steel cold rolled coil Asia 2020, production mix, at plant, blast furnace route, 1kg, typical thickness between 0.15 - 3 mm. typical width between 600 - 2100 mm, S;kg;1.54E-5;All waste types;Wastes\Other waste;
+Carcass meal {Asia} | Steel cold rolled coil Asia 2020, production mix, at plant, blast furnace route, 1kg, typical thickness between 0.15 - 3 mm. typical width between 600 - 2100 mm, S;kg;7.68E-26;All waste types;End-of-life treatment;
+Water (waste water, treated), at waste water treatment plant, chemical reduction/ oxidation process, urban waste water {Asia} | Steel cold rolled coil Asia 2020, production mix, at plant, blast furnace route, 1kg, typical thickness between 0.15 - 3 mm. typical width between 600 - 2100 mm, S;kg;2.05E-5;All waste types;End-of-life treatment;
+Steel scrap (St) {Asia} | Steel cold rolled coil Asia 2020, production mix, at plant, blast furnace route, 1kg, typical thickness between 0.15 - 3 mm. typical width between 600 - 2100 mm, S;kg;0.0564;All waste types;End-of-life treatment;
+Iron scrap {Asia} | Steel cold rolled coil Asia 2020, production mix, at plant, blast furnace route, 1kg, typical thickness between 0.15 - 3 mm. typical width between 600 - 2100 mm, S;kg;0.001351314;All waste types;End-of-life treatment;
+Waste rock {Asia} | Steel cold rolled coil Asia 2020, production mix, at plant, blast furnace route, 1kg, typical thickness between 0.15 - 3 mm. typical width between 600 - 2100 mm, S;kg;9.17E-4;All waste types;Wastes\Other waste;
+
+Avoided products
+
+Resources
+ground water;in water;m3;1.022247072392E-5;Undefined;0;0;0;
+from arable, irrigated, intensive;land;m2;7.18248310750031E-7;Undefined;0;0;0;
+to shrub land;land;m2;-3.33839508483915E-8;Undefined;0;0;0;
+Water to turbine;in water;m3;2.28054602936733E-6;Undefined;0;0;0;
+from grassland;land;m2;3.02338128443375E-13;Undefined;0;0;0;
+gallium;in ground;kg;-2.07679982717245E-16;Undefined;0;0;0;
+from shrub land;land;m2;-7.66483538893649E-9;Undefined;0;0;0;
+aluminium;in ground;kg;-2.75999965334338E-7;Undefined;0;0;0;
+forest, used;land;m2a;6.00115932243407E-5;Undefined;0;0;0;
+to shrub land;land;m2;6.82165447419945E-9;Undefined;0;0;0;
+dump site;land;m2a;7.6409880734001E-9;Undefined;0;0;0;
+from shrub land;land;m2;-1.48508096165673E-8;Undefined;0;0;0;
+from mineral extraction site;land;m2;-7.8079660263388E-15;Undefined;0;0;0;
+from arable, non-irrigated, intensive;land;m2;1.06050933762978E-13;Undefined;0;0;0;
+from forest, natural;land;m2;7.05005977598652E-6;Undefined;0;0;0;
+to urban, discontinuously built;land;m2;-3.02531855080567E-18;Undefined;0;0;0;
+to arable, irrigated, intensive;land;m2;7.58029682409152E-5;Undefined;0;0;0;
+rhodium;in ground;kg;1.2290659778903E-13;Undefined;0;0;0;
+kaolin;in ground;kg;0.0012541402958468762;Undefined;0;0;0;
+to arable, irrigated, intensive;land;m2;1.2755514670147E-4;Undefined;0;0;0;
+from grassland;land;m2;1.02001189957326E-8;Undefined;0;0;0;
+from grassland;land;m2;1.66185970643856E-12;Undefined;0;0;0;
+lake water;in water;m3;3.53706507144648E-6;Undefined;0;0;0;
+industrial area;land;m2a;3.07020091321239E-6;Undefined;0;0;0;
+industrial area;land;m2a;3.15077682973562E-11;Undefined;0;0;0;
+Water to turbine;in water;m3;4.43898413028494E-4;Undefined;0;0;0;
+to grassland, not used;land;m2;-5.26188302420097E-15;Undefined;0;0;0;
+to forest, used;land;m2;6.00115932243407E-5;Undefined;0;0;0;
+from arable, non-irrigated, intensive;land;m2;1.62279583303639E-10;Undefined;0;0;0;
+from forest, used;land;m2;6.00115932260599E-5;Undefined;0;0;0;
+mineral extraction site;land;m2a;1.86288969271759E-9;Undefined;0;0;0;
+to shrub land;land;m2;-4.52774400702972E-7;Undefined;0;0;0;
+from grassland;land;m2;2.50480670699342E-11;Undefined;0;0;0;
+biomass;biotic;MJ;2.593946194999171E-4;Undefined;0;0;0;
+ground water;in water;m3;-1.35194469861281E-7;Undefined;0;0;0;
+from arable, non-irrigated, intensive;land;m2;1.73273884216941E-7;Undefined;0;0;0;
+bromine;in ground;kg;-4.2634261649784E-18;Undefined;0;0;0;
+to shrub land;land;m2;1.90001058343701E-7;Undefined;0;0;0;
+mineral extraction site;land;m2a;9.67241308001706E-6;Undefined;0;0;0;
+to shrub land;land;m2;9.53872112535856E-10;Undefined;0;0;0;
+to grassland;land;m2;8.6467092277014E-12;Undefined;0;0;0;
+permanent crops, non-irrigated, intensive;land;m2a;-6.76957200445811E-24;Undefined;0;0;0;
+from forest, used;land;m2;6.00115932260599E-5;Undefined;0;0;0;
+from arable, irrigated, intensive;land;m2;8.44331665104946E-4;Undefined;0;0;0;
+from grassland;land;m2;1.34950491763537E-11;Undefined;0;0;0;
+dump site;land;m2a;8.24000882440925E-8;Undefined;0;0;0;
+to permanent crops;land;m2;-1.01886388109425E-8;Undefined;0;0;0;
+industrial area;land;m2a;8.25154119979986E-11;Undefined;0;0;0;
+from grassland;land;m2;1.07420093614781E-11;Undefined;0;0;0;
+sodium carbonate;in ground;kg;-7.85E-8;Undefined;0;0;0;
+Water to turbine;in water;m3;-0.002215047171945886;Undefined;0;0;0;
+from forest, used;land;m2;3.99743954840691E-5;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;1.30345431125635E-11;Undefined;0;0;0;
+permanent crops, irrigated, intensive;land;m2a;-3.14516086018469E-15;Undefined;0;0;0;
+to seabed, marine infrastructure;land;m2;-3.00536374238974E-17;Undefined;0;0;0;
+Water to turbine;in water;m3;-3.08833147362348E-5;Undefined;0;0;0;
+to forest, used;land;m2;2.00371977416205E-5;Undefined;0;0;0;
+river water;in water;m3;-3.39654725867037E-8;Undefined;0;0;0;
+river water;in water;m3;-1.76777455851824E-5;Undefined;0;0;0;
+from forest, natural;land;m2;1.67372652248736E-6;Undefined;0;0;0;
+dump site;land;m2a;1.12925021273451E-9;Undefined;0;0;0;
+air;in air;kg;2.93349886697149;Undefined;0;0;0;
+river water;in water;m3;-6.57920463273039E-6;Undefined;0;0;0;
+to permanent crops, non-irrigated, intensive;land;m2;-6.76957200445811E-24;Undefined;0;0;0;
+from permanent crops, non-irrigated, intensive;land;m2;-6.76957200445811E-24;Undefined;0;0;0;
+Water to turbine;in water;m3;8.576582610207723E-15;Undefined;0;0;0;
+Oil sand (100% bitumen);in ground;MJ;0.00291604235696119;Undefined;0;0;0;
+forest, used;land;m2a;2.63998775387327E-16;Undefined;0;0;0;
+arable, irrigated, intensive;land;m2a;6.84240554728169E-5;Undefined;0;0;0;
+carbon;in ground;kg;3.639790686870134E-11;Undefined;0;0;0;
+sodium sulfate;in ground;kg;2.59018299232828E-12;Undefined;0;0;0;
+river water;in water;m3;-4.0918811305567E-7;Undefined;0;0;0;
+lutetium;in ground;kg;8.2638469108086E-18;Undefined;0;0;0;
+ground water;in water;m3;4.91000989577786E-6;Undefined;0;0;0;
+to grassland;land;m2;2.36980418570909E-6;Undefined;0;0;0;
+dump site;land;m2a;4.94077903640466E-7;Undefined;0;0;0;
+manganese;in ground;kg;0.012800071436856346;Undefined;0;0;0;
+Water to turbine;in water;m3;-0.00352486650314842;Undefined;0;0;0;
+arable, non-irrigated;land;m2a;-5.16205376745647E-17;Undefined;0;0;0;
+industrial area;land;m2a;1.18018678486529E-6;Undefined;0;0;0;
+Land Occupation;land;m2a;4.62E-8;Undefined;0;0;0;
+river water;in water;m3;-2.07999695979557E-5;Undefined;0;0;0;
+to lakes, artificial;land;m2;-7.49843871296734E-14;Undefined;0;0;0;
+ground water;in water;m3;-2.60964878609483E-7;Undefined;0;0;0;
+iron;in ground;kg;1.0367814449518848;Undefined;0;0;0;
+to unspecified, natural;land;m2;3.30000168839114E-6;Undefined;0;0;0;
+to shrub land;land;m2;5.35072247739326E-6;Undefined;0;0;0;
+from unspecified, natural;land;m2;8.99000935219488E-7;Undefined;0;0;0;
+dump site;land;m2a;7.19011700529421E-6;Undefined;0;0;0;
+industrial area;land;m2a;4.37000407269444E-7;Undefined;0;0;0;
+natural gas;in ground;MJ;2.199882722873262;Undefined;0;0;0;
+grassland, not used;land;m2a;-3.95391226795675E-13;Undefined;0;0;0;
+from shrub land;land;m2;6.82165447419945E-9;Undefined;0;0;0;
+to shrub land;land;m2;-1.00170458348404E-7;Undefined;0;0;0;
+river water;in water;m3;0.0011000432065898;Undefined;0;0;0;
+industrial area;land;m2a;-1.51501940762901E-9;Undefined;0;0;0;
+mineral extraction site;land;m2a;8.88001840852791E-8;Undefined;0;0;0;
+industrial area;land;m2a;1.34007123967769E-5;Undefined;0;0;0;
+forest, used;land;m2a;3.99743954840691E-5;Undefined;0;0;0;
+ground water;in water;m3;3.63616076701857E-6;Undefined;0;0;0;
+from shrub land;land;m2;0.00135000749124187;Undefined;0;0;0;
+sulfate;in ground;kg;4.661544976778501E-16;Undefined;0;0;0;
+basalt;in ground;kg;4.18587847870035E-8;Undefined;0;0;0;
+from forest, natural;land;m2;2.76065411555446E-5;Undefined;0;0;0;
+to arable, irrigated, intensive;land;m2;2.53263007372276E-7;Undefined;0;0;0;
+to unspecified, natural;land;m2;7.37024044447124E-9;Undefined;0;0;0;
+to unspecified, natural;land;m2;0.00134584449124187;Undefined;0;0;0;
+dump site;land;m2a;-2.03523443564263E-10;Undefined;0;0;0;
+mineral extraction site;land;m2a;2.73000702238789E-4;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;3.02340487714013E-13;Undefined;0;0;0;
+forest, used;land;m2a;3.99743954840691E-5;Undefined;0;0;0;
+from forest, used;land;m2;3.99743954840691E-5;Undefined;0;0;0;
+mineral extraction site;land;m2a;1.06050933762978E-13;Undefined;0;0;0;
+copper;in ground;kg;7.992162180011591E-5;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;3.02338128443375E-13;Undefined;0;0;0;
+from pasture/meadow;land;m2;3.4400000232628E-9;Undefined;0;0;0;
+ground water;in water;m3;1.18157205826082E-7;Undefined;0;0;0;
+Water to turbine;in water;m3;-4.36117690445467E-6;Undefined;0;0;0;
+lake water;in water;m3;1.53523187599161E-5;Undefined;0;0;0;
+industrial area;land;m2a;1.59005694290532E-8;Undefined;0;0;0;
+mineral extraction site;land;m2a;-5.16965306419871E-8;Undefined;0;0;0;
+dump site;land;m2a;-1.33746528218758E-9;Undefined;0;0;0;
+from pasture/meadow, extensive;land;m2;-2.74577467809925E-21;Undefined;0;0;0;
+from forest, used;land;m2;6.00115932243421E-5;Undefined;0;0;0;
+industrial area;land;m2a;3.49961802422306E-9;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;2.73304433243816E-12;Undefined;0;0;0;
+indium;in ground;kg;-1.06835573111566E-16;Undefined;0;0;0;
+silver;in ground;kg;1.659696633312376E-8;Undefined;0;0;0;
+Water to turbine;in water;m3;-1.133385323436813E-4;Undefined;0;0;0;
+industrial area;land;m2a;5.05340344463201E-7;Undefined;0;0;0;
+from forest, natural;land;m2;1.86044685660424E-5;Undefined;0;0;0;
+to grassland;land;m2;7.42074754691336E-10;Undefined;0;0;0;
+cobalt;in ground;kg;-8.51780162969539E-10;Undefined;0;0;0;
+soil;in ground;kg;-0.010715240887202;Undefined;0;0;0;
+arable, irrigated, intensive;land;m2a;2.53263007372276E-7;Undefined;0;0;0;
+to shrub land;land;m2;1.73273884216941E-7;Undefined;0;0;0;
+forest, used;land;m2a;2.00371977416205E-5;Undefined;0;0;0;
+from arable, irrigated, intensive;land;m2;7.39004725255729E-22;Undefined;0;0;0;
+ytterbium;in ground;kg;8.2638469108086E-18;Undefined;0;0;0;
+zinc;in ground;kg;-8.438774128975315E-5;Undefined;0;0;0;
+palladium;in ground;kg;7.2434765142762E-13;Undefined;0;0;0;
+from forest, used;land;m2;6.00115932243407E-5;Undefined;0;0;0;
+hard coal;in ground;MJ;24.603295494649345;Undefined;0;0;0;
+Groundwater Replenishment;land;(mm*m2)/a;2.79E-7;Undefined;0;0;0;
+baryte;in ground;kg;3.77894620622135E-8;Undefined;0;0;0;
+Water to turbine;in water;m3;6.52813476791603E-7;Undefined;0;0;0;
+river water;in water;m3;1.29001617929099E-4;Undefined;0;0;0;
+shale;in ground;kg;5.89445141112013E-7;Undefined;0;0;0;
+to arable, irrigated, intensive;land;m2;7.96847299899079E-8;Undefined;0;0;0;
+from forest, primary;land;m2;3.56012330659074E-4;Undefined;0;0;0;
+Water to turbine;in water;m3;-2.7165695583975E-5;Undefined;0;0;0;
+from grassland/pasture/meadow;land;m2;3.02218122439959E-9;Undefined;0;0;0;
+iridium;in ground;kg;4.09020548458353E-14;Undefined;0;0;0;
+to forest, used;land;m2;6.00115932243421E-5;Undefined;0;0;0;
+river water;in water;m3;-1.39741455213646E-8;Undefined;0;0;0;
+arable, irrigated;land;m2a;-8.61671399552554E-15;Undefined;0;0;0;
+dump site;land;m2a;8.13234796709068E-6;Undefined;0;0;0;
+from forest, natural;land;m2;6.51159812631327E-11;Undefined;0;0;0;
+potassium chloride;in ground;kg;-1.4271077040132691E-12;Undefined;0;0;0;
+industrial area;land;m2a;1.76251218776193E-8;Undefined;0;0;0;
+mineral extraction site;land;m2a;6.40022661650393E-8;Undefined;0;0;0;
+Water (rain water);in water;kg;1.29935610244831;Undefined;0;0;0;
+mercury;in ground;kg;-2.34999924640696E-12;Undefined;0;0;0;
+Water to turbine;in water;m3;-0.001281090316114271;Undefined;0;0;0;
+arable, irrigated, intensive;land;m2a;2.39276980812741E-4;Undefined;0;0;0;
+river water;in water;m3;-6.92177075423706E-6;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;9.670820110188E-12;Undefined;0;0;0;
+industrial area;land;m2a;1.83001210174019E-9;Undefined;0;0;0;
+unspecified, natural;land;m2a;1.01E-8;Undefined;0;0;0;
+Water to turbine;in water;m3;7.15662828048793E-5;Undefined;0;0;0;
+river water;in water;m3;1.33034149632467E-4;Undefined;0;0;0;
+brown coal;in ground;MJ;0.1636471334730702;Undefined;0;0;0;
+river water;in water;m3;5.7569979698633E-7;Undefined;0;0;0;
+to forest, used;land;m2;6.00115932243407E-5;Undefined;0;0;0;
+forest, used;land;m2a;1.80234779678186E-4;Undefined;0;0;0;
+Mechanical Filtration;land;cm*m3;2.61E-4;Undefined;0;0;0;
+to arable, irrigated, intensive;land;m2;8.44331665106796E-4;Undefined;0;0;0;
+mineral extraction site;land;m2a;3.97001172457138E-8;Undefined;0;0;0;
+rivers, artificial;land;m2a;-6.49999615466643E-13;Undefined;0;0;0;
+ground water;in water;m3;3.50563297799661E-6;Undefined;0;0;0;
+pasture/meadow, intensive;land;m2a;-3.08524528928457E-19;Undefined;0;0;0;
+industrial area;land;m2a;-1.22300193181322E-8;Undefined;0;0;0;
+dump site;land;m2a;-6.22917622576162E-8;Undefined;0;0;0;
+industrial area;land;m2a;1.66373644265305E-7;Undefined;0;0;0;
+dump site;land;m2a;4.78000450268396E-4;Undefined;0;0;0;
+Groundwater Replenishment;land;mm*m2;-8.47E-6;Undefined;0;0;0;
+samarium;in ground;kg;5.67230045280639E-15;Undefined;0;0;0;
+from grassland/pasture/meadow;land;m2;1.47254482226083E-8;Undefined;0;0;0;
+barium;in ground;kg;-1.23E-9;Undefined;0;0;0;
+seabed;land;m2a;-1.75728661007562E-14;Undefined;0;0;0;
+antimony;in ground;kg;-1.96475703081997E-9;Undefined;0;0;0;
+sodium nitrate;in ground;kg;1.41000000096828E-15;Undefined;0;0;0;
+from forest, used;land;m2;3.20195888302186E-4;Undefined;0;0;0;
+from forest, natural;land;m2;1.70005588772266E-5;Undefined;0;0;0;
+borax;in ground;kg;7.64390645190733E-11;Undefined;0;0;0;
+to grassland;land;m2;1.35206310688387E-10;Undefined;0;0;0;
+fluorspar;in ground;kg;5.79125662621499E-5;Undefined;0;0;0;
+to mineral extraction site;land;m2;-1.08832058739636E-13;Undefined;0;0;0;
+to forest, used;land;m2;6.00115932243407E-5;Undefined;0;0;0;
+to unspecified, natural;land;m2;1.67372652248736E-6;Undefined;0;0;0;
+to industrial area;land;m2;3.98200911981428E-7;Undefined;0;0;0;
+to arable, non-irrigated, extensive;land;m2;-2.28648236410693E-15;Undefined;0;0;0;
+to unspecified, natural;land;m2;1.58015759575631E-7;Undefined;0;0;0;
+Water to turbine;in water;m3;0.0296010797096632;Undefined;0;0;0;
+primary energy from geothermics;in ground;MJ;0.00354502045160401;Undefined;0;0;0;
+industrial area;land;m2a;2.88333746158946E-8;Undefined;0;0;0;
+industrial area;land;m2a;1.50028021814543E-11;Undefined;0;0;0;
+industrial area;land;m2a;7.67102948175829E-7;Undefined;0;0;0;
+carbon dioxide (biogenic);in air;kg;0.0123205850955052;Undefined;0;0;0;
+lake water;in water;m3;3.02030077607428E-5;Undefined;0;0;0;
+forest, used;land;m2a;2.00371977416205E-5;Undefined;0;0;0;
+gold;in ground;kg;1.24386649045728E-9;Undefined;0;0;0;
+ground water;in water;m3;1.06589848609282E-6;Undefined;0;0;0;
+Water to turbine;in water;m3;-2.506137185084472E-5;Undefined;0;0;0;
+lake water;in water;m3;4.77498694897837E-9;Undefined;0;0;0;
+from forest, used;land;m2;8.00487909691429E-5;Undefined;0;0;0;
+Water to turbine;in water;m3;-1.0680649024478E-6;Undefined;0;0;0;
+from arable, non-irrigated, intensive;land;m2;2.11242614531666E-4;Undefined;0;0;0;
+primary energy from wind power;in air;MJ;0.0626317414718316;Undefined;0;0;0;
+tin;in ground;kg;6.958272350487857E-11;Undefined;0;0;0;
+river water;in water;m3;2.18064786495946E-16;Undefined;0;0;0;
+dump site;land;m2a;1.4700000116759E-5;Undefined;0;0;0;
+from grassland;land;m2;5.67545689179326E-9;Undefined;0;0;0;
+from pasture/meadow, intensive;land;m2;-1.84716205616899E-15;Undefined;0;0;0;
+river water;in water;m3;5.38853931593556E-6;Undefined;0;0;0;
+to unspecified, natural;land;m2;-1.32120891425958E-7;Undefined;0;0;0;
+to unspecified, natural;land;m2;1.70005588772266E-5;Undefined;0;0;0;
+ground water;in water;m3;1.70120261869597E-8;Undefined;0;0;0;
+industrial area;land;m2a;1.50028021814543E-11;Undefined;0;0;0;
+sand;in ground;kg;1.4700000290756E-10;Undefined;0;0;0;
+mineral extraction site;land;m2a;-3.29033239650155E-9;Undefined;0;0;0;
+from forest, used;land;m2;2.59783570647198E-4;Undefined;0;0;0;
+from arable, non-irrigated;land;m2;4.67005654070218E-19;Undefined;0;0;0;
+river water;in water;m3;2.30141882706964E-6;Undefined;0;0;0;
+river water;in water;m3;-6.25102003191742E-6;Undefined;0;0;0;
+from unspecified, natural;land;m2;8.80000014898086E-13;Undefined;0;0;0;
+slate;in ground;kg;-6.87214721647573E-21;Undefined;0;0;0;
+river water;in water;m3;4.76239035560378E-6;Undefined;0;0;0;
+from arable, non-irrigated, intensive;land;m2;1.90001058343701E-7;Undefined;0;0;0;
+ground water;in water;m3;1.57043286997827E-4;Undefined;0;0;0;
+dump site;land;m2a;2.81643072801864E-9;Undefined;0;0;0;
+river water;in water;m3;9.16044964391629E-5;Undefined;0;0;0;
+mineral extraction site;land;m2a;7.46093602901948E-10;Undefined;0;0;0;
+to permanent crops;land;m2;4.97003076462013E-7;Undefined;0;0;0;
+ground water;in water;m3;-2.3143213490103E-6;Undefined;0;0;0;
+traffic area, road network;land;m2a;-2.58601460036764E-12;Undefined;0;0;0;
+dolomite;in ground;kg;0.0536004274602938;Undefined;0;0;0;
+forest, extensive;land;m2a;-1.31796165742201E-12;Undefined;0;0;0;
+Water to turbine;in water;m3;1.422249395511646E-4;Undefined;0;0;0;
+to unspecified, natural;land;m2;3.56012337217013E-4;Undefined;0;0;0;
+Water to turbine;in water;m3;0.05324103855437496;Undefined;0;0;0;
+river water;in water;m3;6.51016918785642E-5;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;4.08456473398556E-12;Undefined;0;0;0;
+river water;in water;m3;-4.7824144697591E-6;Undefined;0;0;0;
+mineral extraction site;land;m2a;-6.3650262039875E-9;Undefined;0;0;0;
+dump site;land;m2a;5.7644728184676E-13;Undefined;0;0;0;
+industrial area;land;m2a;3.23060246901267E-10;Undefined;0;0;0;
+to unspecified, natural;land;m2;1.88024276996942E-8;Undefined;0;0;0;
+ground water;in water;m3;5.55234672231006E-7;Undefined;0;0;0;
+natural aggregate;in ground;kg;-0.108197590295349;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;1.02001189957326E-8;Undefined;0;0;0;
+from shrub land;land;m2;-2.80989074524817E-9;Undefined;0;0;0;
+wood;biotic;MJ;1.7198984399079484E-6;Undefined;0;0;0;
+from grassland;land;m2;3.02338128443375E-13;Undefined;0;0;0;
+to forest, used;land;m2;1.80234779678055E-4;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;1.05818344955181E-12;Undefined;0;0;0;
+river water;in water;m3;8.39066184610561E-7;Undefined;0;0;0;
+river water;in water;m3;9.34071040007757E-11;Undefined;0;0;0;
+calcium carbonate;in ground;kg;-0.0638379730673093;Undefined;0;0;0;
+erbium;in ground;kg;1.23057632023854E-16;Undefined;0;0;0;
+from arable, irrigated, intensive;land;m2;1.04554242026902E-4;Undefined;0;0;0;
+river water;in water;m3;-4.32548902852141E-5;Undefined;0;0;0;
+from forest, used;land;m2;0.00182175869693553;Undefined;0;0;0;
+Water to turbine;in water;m3;-3.69545864776065E-8;Undefined;0;0;0;
+to forest, extensive;land;m2;-1.0184320788785E-14;Undefined;0;0;0;
+river water;in water;m3;1.55736862041955E-5;Undefined;0;0;0;
+ground water;in water;m3;4.58063479843699E-5;Undefined;0;0;0;
+Water to turbine;in water;m3;7.76202033249493E-6;Undefined;0;0;0;
+forest, used;land;m2a;6.00115932243421E-5;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;1.66185970643856E-12;Undefined;0;0;0;
+from forest, natural;land;m2;1.58005541087601E-7;Undefined;0;0;0;
+from forest, used;land;m2;1.99374137907522E-5;Undefined;0;0;0;
+mineral extraction site;land;m2a;9.60014661160538E-9;Undefined;0;0;0;
+to shrub land;land;m2;2.97000702426634E-4;Undefined;0;0;0;
+Water to turbine;in water;m3;3.50829612465339E-6;Undefined;0;0;0;
+from arable, non-irrigated;land;m2;-4.55999970395927E-16;Undefined;0;0;0;
+magnesite;in ground;kg;4.21877498601026E-6;Undefined;0;0;0;
+from grassland;land;m2;2.11236689910363E-12;Undefined;0;0;0;
+Water to turbine;in water;m3;-1.1792739417098E-4;Undefined;0;0;0;
+granite;in ground;kg;6.74074496105711E-20;Undefined;0;0;0;
+to shrub land;land;m2;2.73001792041894E-8;Undefined;0;0;0;
+from permanent crops;land;m2;-1.01886388109425E-8;Undefined;0;0;0;
+to forest, used;land;m2;3.20195163871542E-4;Undefined;0;0;0;
+Water to turbine;in water;m3;-5.11617649570682E-4;Undefined;0;0;0;
+from grassland;land;m2;3.02338128443375E-13;Undefined;0;0;0;
+Water to turbine;in water;m3;1.9055502280146731E-7;Undefined;0;0;0;
+Ground water, extreme scarcity;in water;kg;1.49006343188761E-5;Undefined;0;0;0;
+Water to turbine;in water;m3;-2.158597451565441E-4;Undefined;0;0;0;
+lake water;in water;m3;1.7978518005699E-6;Undefined;0;0;0;
+from forest, used;land;m2;3.99743954840486E-5;Undefined;0;0;0;
+to unspecified, natural;land;m2;1.92000280560926E-7;Undefined;0;0;0;
+ground water;in water;m3;2.88071041453686E-9;Undefined;0;0;0;
+to forest, used;land;m2;0.00182174864049243;Undefined;0;0;0;
+ground water;in water;m3;-1.60412294462354E-8;Undefined;0;0;0;
+to grassland;land;m2;7.49182672061964E-10;Undefined;0;0;0;
+forest, used;land;m2a;3.99743954840486E-5;Undefined;0;0;0;
+dump site;land;m2a;3.06997773341955E-9;Undefined;0;0;0;
+river water;in water;m3;3.24370613984922E-7;Undefined;0;0;0;
+dump site;land;m2a;2.49770962590259E-9;Undefined;0;0;0;
+industrial area;land;m2a;2.03037829449633E-10;Undefined;0;0;0;
+dump site;land;m2a;1.57001034331406E-9;Undefined;0;0;0;
+from shrub land;land;m2;-1.32120891425958E-7;Undefined;0;0;0;
+river water;in water;m3;-4.88306924856265E-5;Undefined;0;0;0;
+lake water;in water;m3;2.052190718554E-9;Undefined;0;0;0;
+mineral extraction site;land;m2a;-4.68997019307632E-11;Undefined;0;0;0;
+Water to turbine;in water;m3;0.002158533489061815;Undefined;0;0;0;
+from forest, natural;land;m2;1.92000280560926E-7;Undefined;0;0;0;
+from forest, extensive;land;m2;-9.09263009124545E-15;Undefined;0;0;0;
+industrial area;land;m2a;-1.02167007107986E-8;Undefined;0;0;0;
+forest, used;land;m2a;8.00487909691429E-5;Undefined;0;0;0;
+dump site;land;m2a;8.6003728176147E-9;Undefined;0;0;0;
+river water;in water;m3;9.84917096316843E-6;Undefined;0;0;0;
+from grassland;land;m2;1.05818344955181E-12;Undefined;0;0;0;
+Water to turbine;in water;m3;-7.22850812085161E-4;Undefined;0;0;0;
+talc;in ground;kg;1.98339714647319E-10;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;1.34950491763537E-11;Undefined;0;0;0;
+from shrub land;land;m2;1.82007112197726E-8;Undefined;0;0;0;
+mineral extraction site;land;m2a;0.00134000722655337;Undefined;0;0;0;
+Phonolite;in ground;kg;5.95807863520641E-10;Undefined;0;0;0;
+chromium;in ground;kg;4.93007504560324E-4;Undefined;0;0;0;
+river water;in water;m3;-1.69543567820817E-6;Undefined;0;0;0;
+to grassland;land;m2;3.17716077885519E-17;Undefined;0;0;0;
+river water;in water;m3;4.19286462688352E-4;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;4.23473379820725E-12;Undefined;0;0;0;
+arable, non-irrigated, extensive;land;m2a;-2.01688900922461E-15;Undefined;0;0;0;
+to shrub land;land;m2;1.86044686838856E-5;Undefined;0;0;0;
+from forest;land;m2;5.7644728184676E-13;Undefined;0;0;0;
+dump site;land;m2a;2.26777656825965E-9;Undefined;0;0;0;
+kieserite;in ground;kg;-5.03154184084148E-16;Undefined;0;0;0;
+from grassland;land;m2;9.670820110188E-12;Undefined;0;0;0;
+river water;in water;m3;-3.21951291108476E-8;Undefined;0;0;0;
+seabed, marine infrastructure;land;m2a;-1.71735666060447E-16;Undefined;0;0;0;
+dump site;land;m2a;1.35206310688387E-10;Undefined;0;0;0;
+to forest, used;land;m2;2.39646372904249E-4;Undefined;0;0;0;
+ground water;in water;m3;1.26019759418106E-6;Undefined;0;0;0;
+from forest, natural;land;m2;7.37024044447124E-9;Undefined;0;0;0;
+sulfur;in ground;kg;3.780472522854756E-6;Undefined;0;0;0;
+from grassland;land;m2;3.02340487714013E-13;Undefined;0;0;0;
+arable, irrigated, intensive;land;m2a;7.96847299899079E-8;Undefined;0;0;0;
+to traffic area, rail/road embankment;land;m2;-5.20198723329226E-15;Undefined;0;0;0;
+to shrub land;land;m2;2.1500928252275E-8;Undefined;0;0;0;
+Water to turbine;in water;m3;-2.57423387571594E-5;Undefined;0;0;0;
+tantalum;in ground;kg;1.38272465711145E-10;Undefined;0;0;0;
+ground water;in water;m3;8.17666063741381E-8;Undefined;0;0;0;
+cerium;in ground;kg;2.59094010676115E-13;Undefined;0;0;0;
+from forest, natural;land;m2;9.52253451467955E-5;Undefined;0;0;0;
+gravel;in ground;kg;-1.6471014917455E-10;Undefined;0;0;0;
+Water to turbine;in water;m3;-6.52720483354051E-5;Undefined;0;0;0;
+Water to turbine;in water;m3;-1.9516413951119125E-5;Undefined;0;0;0;
+river water;in water;m3;-3.19616120947407E-6;Undefined;0;0;0;
+dump site;land;m2a;1.16906540214422E-10;Undefined;0;0;0;
+industrial area;land;m2a;-1.35117165139763E-8;Undefined;0;0;0;
+construction site;land;m2a;-5.99078035300285E-14;Undefined;0;0;0;
+industrial area;land;m2a;1.08026005492578E-5;Undefined;0;0;0;
+to grassland;land;m2;5.7644728184676E-13;Undefined;0;0;0;
+mineral extraction site;land;m2a;4.83145439476777E-6;Undefined;0;0;0;
+industrial area;land;m2a;9.72000007108561E-6;Undefined;0;0;0;
+Water to turbine;in water;m3;3.0066476531345907E-6;Undefined;0;0;0;
+from forest, used;land;m2;6.00115932243407E-5;Undefined;0;0;0;
+ground water;in water;m3;9.95177746271898E-7;Undefined;0;0;0;
+from arable, non-irrigated;land;m2;-3.86404363377062E-14;Undefined;0;0;0;
+praseodymium;in ground;kg;2.36105417717127E-14;Undefined;0;0;0;
+to forest, used;land;m2;8.00487909691661E-5;Undefined;0;0;0;
+Water to turbine;in water;m3;-1.18276198547603E-4;Undefined;0;0;0;
+from permanent crops;land;m2;7.88019978875223E-4;Undefined;0;0;0;
+from arable, irrigated, intensive;land;m2;3.04993199383318E-4;Undefined;0;0;0;
+forest, used;land;m2a;3.99743954840691E-5;Undefined;0;0;0;
+traffic area, rail/road embankment;land;m2a;-1.05836878431051E-12;Undefined;0;0;0;
+to grassland;land;m2;3.06997773341955E-9;Undefined;0;0;0;
+to shrub land;land;m2;3.02218122439959E-9;Undefined;0;0;0;
+mineral extraction site;land;m2a;6.40157347457844E-12;Undefined;0;0;0;
+to arable, non-irrigated, intensive;land;m2;2.04194039382365E-4;Undefined;0;0;0;
+gadolinium;in ground;kg;2.01076481272075E-15;Undefined;0;0;0;
+from grassland;land;m2;6.0367625688675E-13;Undefined;0;0;0;
+ground water;in water;m3;-2.46455059951568E-10;Undefined;0;0;0;
+to forest, used;land;m2;6.00115932243407E-5;Undefined;0;0;0;
+dump site;land;m2a;1.56290634194876E-6;Undefined;0;0;0;
+from grassland;land;m2;3.02338128443375E-13;Undefined;0;0;0;
+from arable, non-irrigated, intensive;land;m2;4.91121857381362E-8;Undefined;0;0;0;
+to unspecified, natural;land;m2;1.58005541087601E-7;Undefined;0;0;0;
+dump site;land;m2a;-1.56997299714502E-8;Undefined;0;0;0;
+ground water;in water;m3;2.90159614840666E-4;Undefined;0;0;0;
+to traffic area, road network;land;m2;-8.15742083203969E-15;Undefined;0;0;0;
+lake water;in water;m3;2.05840667181973E-6;Undefined;0;0;0;
+arable, non-irrigated, intensive;land;m2a;-8.25727475208085E-14;Undefined;0;0;0;
+industrial area;land;m2a;4.80089669806537E-10;Undefined;0;0;0;
+river water;in water;m3;-1.65878246324007E-6;Undefined;0;0;0;
+from forest;land;m2;3.17716077885519E-17;Undefined;0;0;0;
+Water to turbine;in water;m3;-4.2706183787343435E-6;Undefined;0;0;0;
+dump site;land;m2a;4.65181418744764E-6;Undefined;0;0;0;
+lanthanum;in ground;kg;1.78E-10;Undefined;0;0;0;
+mineral extraction site;land;m2a;9.39156130517792E-5;Undefined;0;0;0;
+forest, used;land;m2a;8.00487909691661E-5;Undefined;0;0;0;
+dysprosium;in ground;kg;4.10192105919572E-16;Undefined;0;0;0;
+traffic area, rail network;land;m2a;-2.42626425548176E-13;Undefined;0;0;0;
+river water;in water;m3;-2.18743249618676E-8;Undefined;0;0;0;
+to unspecified, natural;land;m2;9.15428410277241E-8;Undefined;0;0;0;
+from grassland;land;m2;2.73304433243816E-12;Undefined;0;0;0;
+river water;in water;m3;-1.32862875332062E-5;Undefined;0;0;0;
+river water;in water;m3;2.01000664020192E-7;Undefined;0;0;0;
+Pit Methane;in ground;MJ;-3.74225891520883E-10;Undefined;0;0;0;
+arable, irrigated, intensive;land;m2a;3.04993199383331E-4;Undefined;0;0;0;
+mineral extraction site;land;m2a;-1.43059159819041E-8;Undefined;0;0;0;
+Biotic Production;land;kg/a;1.33E-8;Undefined;0;0;0;
+from permanent crops, non-irrigated, extensive;land;m2;1.86330144770598E-7;Undefined;0;0;0;
+from dump site;land;m2;-7.06912090870907E-15;Undefined;0;0;0;
+river water;in water;m3;-8.95237416147197E-6;Undefined;0;0;0;
+to arable, irrigated, intensive;land;m2;1.02405638715743E-4;Undefined;0;0;0;
+holmium;in ground;kg;8.2638469108086E-16;Undefined;0;0;0;
+to arable;land;m2;-8.16741467608444E-15;Undefined;0;0;0;
+dump site;land;m2a;2.70066394914785E-11;Undefined;0;0;0;
+dump site;land;m2a;7.49182672061964E-10;Undefined;0;0;0;
+potassium;in ground;kg;2.2949773994288234E-5;Undefined;0;0;0;
+to shrub land;land;m2;-1.48508096165673E-8;Undefined;0;0;0;
+primary energy from waves;in water;MJ;7.66000488322409E-10;Undefined;0;0;0;
+calcium;in ground;kg;-8.03999818392351E-6;Undefined;0;0;0;
+from grassland;land;m2;4.08456473398556E-12;Undefined;0;0;0;
+dump site;land;m2a;1.11027626654509E-5;Undefined;0;0;0;
+mineral extraction site;land;m2a;5.29087945209644E-10;Undefined;0;0;0;
+Water to turbine;in water;m3;2.9134792108609256E-4;Undefined;0;0;0;
+to pasture/meadow, intensive;land;m2;-7.22884333155099E-20;Undefined;0;0;0;
+Water to turbine;in water;m3;-2.963912309864025E-4;Undefined;0;0;0;
+river water;in water;m3;1.89999907724243E-4;Undefined;0;0;0;
+ground water;in water;m3;1.72089624098637E-10;Undefined;0;0;0;
+sodium chloride;in ground;kg;0.0048939786516535;Undefined;0;0;0;
+ground water;in water;m3;1.99740651069336E-6;Undefined;0;0;0;
+to shrub land;land;m2;1.35338858786428E-6;Undefined;0;0;0;
+industrial area;land;m2a;-4.32638301430266E-11;Undefined;0;0;0;
+Water to turbine;in water;m3;0.01582827630771893;Undefined;0;0;0;
+river water;in water;m3;-4.13454261992528E-5;Undefined;0;0;0;
+to forest, used;land;m2;3.99743954840691E-5;Undefined;0;0;0;
+Water to turbine;in water;m3;-0.005821603775521281;Undefined;0;0;0;
+industrial area;land;m2a;6.47120672022386E-10;Undefined;0;0;0;
+river water;in water;m3;-1.95163400918103E-5;Undefined;0;0;0;
+from forest;land;m2;7.42074754691336E-10;Undefined;0;0;0;
+to forest;land;m2;1.56000000002851E-6;Undefined;0;0;0;
+from arable, irrigated, intensive;land;m2;3.50399106925716E-5;Undefined;0;0;0;
+to arable, irrigated, intensive;land;m2;3.50399106925716E-5;Undefined;0;0;0;
+platinum;in ground;kg;1.22907700138829E-12;Undefined;0;0;0;
+Water to turbine;in water;m3;-2.45115464011012E-4;Undefined;0;0;0;
+river water;in water;m3;-7.34629790616777E-6;Undefined;0;0;0;
+from forest;land;m2;1.16906540214422E-10;Undefined;0;0;0;
+dump site;land;m2a;1.65235292673877E-8;Undefined;0;0;0;
+river water;in water;m3;5.31001711718361E-4;Undefined;0;0;0;
+to unspecified, natural;land;m2;6.18321591082522E-4;Undefined;0;0;0;
+to traffic area, rail network;land;m2;-5.60135906056411E-16;Undefined;0;0;0;
+mineral extraction site;land;m2a;3.36013220901271E-9;Undefined;0;0;0;
+ground water;in water;m3;1.37005315487692E-7;Undefined;0;0;0;
+to shrub land;land;m2;1.06050933762978E-13;Undefined;0;0;0;
+dump site;land;m2a;7.68726881021141E-7;Undefined;0;0;0;
+to shrub land;land;m2;3.93559855904136E-8;Undefined;0;0;0;
+molybdenum;in ground;kg;1.55000582260252E-4;Undefined;0;0;0;
+ground water;in water;m3;-2.43034120680028E-9;Undefined;0;0;0;
+Erosion Resistance;land;kg;1.62E-7;Undefined;0;0;0;
+to bare area;land;m2;1.6710127668925E-9;Undefined;0;0;0;
+tellurium;in ground;kg;-3.80412687684841E-22;Undefined;0;0;0;
+arsenic;in ground;kg;-2.2465330891968E-15;Undefined;0;0;0;
+industrial area;land;m2a;1.41667878372675E-8;Undefined;0;0;0;
+industrial area;land;m2a;7.09019253110747E-10;Undefined;0;0;0;
+cinnabar;in ground;kg;5.70032003453423E-16;Undefined;0;0;0;
+mineral extraction site;land;m2a;3.56012337502109E-4;Undefined;0;0;0;
+Water to turbine;in water;m3;0.005845650795482643;Undefined;0;0;0;
+lake water;in water;m3;1.94146450652001E-7;Undefined;0;0;0;
+osmium;in ground;kg;4.99685068685589E-14;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;5.58625538523813E-12;Undefined;0;0;0;
+river water;in water;m3;-6.04410728282935E-7;Undefined;0;0;0;
+freshwater;in water;m3;0.209467336754118;Undefined;0;0;0;
+nickel;in ground;kg;4.1900779996450474E-5;Undefined;0;0;0;
+from forest, used;land;m2;6.00115932243407E-5;Undefined;0;0;0;
+to bare area;land;m2;2.69025398814074E-9;Undefined;0;0;0;
+lithium;in ground;kg;-3.6219946592528856E-17;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;2.50480670699342E-11;Undefined;0;0;0;
+to shrub land;land;m2;5.15731156362966E-9;Undefined;0;0;0;
+mineral extraction site;land;m2a;-1.00948621887477E-8;Undefined;0;0;0;
+industrial area;land;m2a;2.65960193772707E-9;Undefined;0;0;0;
+river water;in water;m3;1.39015974309706E-4;Undefined;0;0;0;
+to seabed;land;m2;-1.75728651643115E-14;Undefined;0;0;0;
+to forest, used;land;m2;2.76065411555446E-5;Undefined;0;0;0;
+from permanent crops;land;m2;2.82949294312663E-4;Undefined;0;0;0;
+from forest, natural;land;m2;2.97000702426634E-4;Undefined;0;0;0;
+primary energy from hydro power;in water;MJ;0.248390185579059;Undefined;0;0;0;
+ground water;in water;m3;1.89268208802719E-7;Undefined;0;0;0;
+oxygen;in air;kg;0.0039433516305317;Undefined;0;0;0;
+to unspecified, natural;land;m2;8.99246348551687E-5;Undefined;0;0;0;
+to shrub land;land;m2;1.47254482226083E-8;Undefined;0;0;0;
+industrial area;land;m2a;1.50028021814543E-11;Undefined;0;0;0;
+sea water;in water;kg;2.37526000000001E12;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;3.02338128443375E-13;Undefined;0;0;0;
+to shrub land;land;m2;-7.66483538893649E-9;Undefined;0;0;0;
+from shrub land;land;m2;-3.00135845532133E-10;Undefined;0;0;0;
+arable, irrigated, intensive;land;m2a;3.50399106925716E-5;Undefined;0;0;0;
+asbestos (white);in ground;kg;4.87225453745978E-15;Undefined;0;0;0;
+Water to turbine;in water;m3;4.460601899439582E-4;Undefined;0;0;0;
+from arable, non-irrigated, intensive;land;m2;-5.94277440068324E-6;Undefined;0;0;0;
+mineral extraction site;land;m2a;-5.6417195826635E-8;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;1.87008956283464E-10;Undefined;0;0;0;
+dump site;land;m2a;2.28226497793463E-7;Undefined;0;0;0;
+river water;in water;m3;-3.12935159952413E-6;Undefined;0;0;0;
+from forest;land;m2;1.35206310688387E-10;Undefined;0;0;0;
+mineral extraction site;land;m2a;9.15428410277241E-8;Undefined;0;0;0;
+to dump site;land;m2;-1.51765828411867E-14;Undefined;0;0;0;
+Water to turbine;in water;m3;0.01843528880267387;Undefined;0;0;0;
+mineral extraction site;land;m2a;5.17733447223462E-9;Undefined;0;0;0;
+lead;in ground;kg;1.39694436052385E-6;Undefined;0;0;0;
+river water;in water;m3;2.59077387970611E-4;Undefined;0;0;0;
+to shrub land;land;m2;7.18248310750031E-7;Undefined;0;0;0;
+Water to turbine;in water;m3;0.01341747010085838;Undefined;0;0;0;
+ground water;in water;m3;5.83000081466256E-8;Undefined;0;0;0;
+industrial area;land;m2a;1.04013460236545E-8;Undefined;0;0;0;
+river water;in water;m3;-6.44933458185447E-7;Undefined;0;0;0;
+from arable;land;m2;-7.10905604208063E-14;Undefined;0;0;0;
+mineral extraction site;land;m2a;2.47001162911406E-6;Undefined;0;0;0;
+fluorine;in ground;kg;3.58000000008273E-7;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;1.07420093614781E-11;Undefined;0;0;0;
+to unspecified, natural;land;m2;8.99000935219488E-7;Undefined;0;0;0;
+river water;in water;m3;-7.05882340954509E-7;Undefined;0;0;0;
+ground water;in water;m3;2.09202468250813E-7;Undefined;0;0;0;
+to unspecified, natural;land;m2;1.00049350546049E-4;Undefined;0;0;0;
+to forest, used;land;m2;3.99743954840486E-5;Undefined;0;0;0;
+Physicochemical Filtration;land;(cmol*m2)/kg;-2.23E-11;Undefined;0;0;0;
+permanent crops;land;m2a;2.82949294312664E-4;Undefined;0;0;0;
+industrial area;land;m2a;2.7805184080553E-10;Undefined;0;0;0;
+agriculture;land;m2a;-9.98449467797287E-15;Undefined;0;0;0;
+gypsum;in ground;kg;-0.00941978314448366;Undefined;0;0;0;
+from industrial area;land;m2;4.30000948435029E-13;Undefined;0;0;0;
+from forest;land;m2;3.397105246641E-8;Undefined;0;0;0;
+Water to turbine;in water;m3;-0.010950768044408117;Undefined;0;0;0;
+to grassland;land;m2;1.16906540214422E-10;Undefined;0;0;0;
+feldspar;in ground;kg;-1.3778115270945E-19;Undefined;0;0;0;
+Water to turbine;in water;m3;0.0408954825546887;Undefined;0;0;0;
+dinitrogen;in air;kg;1.035000143852895E-7;Undefined;0;0;0;
+lakes, artificial;land;m2a;-1.09830962692028E-11;Undefined;0;0;0;
+to shrub land;land;m2;5.32030193242631E-5;Undefined;0;0;0;
+ground water;in water;m3;7.85014292386303E-5;Undefined;0;0;0;
+barium sulfate;in ground;kg;-4.61281832242111E-13;Undefined;0;0;0;
+Erosion Resistance;land;kg/a;3.49E-9;Undefined;0;0;0;
+mineral extraction site;land;m2a;6.96014460364339E-4;Undefined;0;0;0;
+river water;in water;m3;-7.35581828928697E-6;Undefined;0;0;0;
+from grassland, not used;land;m2;-1.837173499466E-18;Undefined;0;0;0;
+from grassland;land;m2;3.89470202073735E-17;Undefined;0;0;0;
+to permanent crops, irrigated, intensive;land;m2;-4.41318787758571E-17;Undefined;0;0;0;
+river water;in water;m3;5.67157347448714E-6;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;-4.57294641756382E-18;Undefined;0;0;0;
+Water to turbine;in water;m3;1.6167329832520873E-4;Undefined;0;0;0;
+from grassland;land;m2;1.96118348755779E-10;Undefined;0;0;0;
+industrial area;land;m2a;1.38419131555741E-4;Undefined;0;0;0;
+to agriculture;land;m2;3.46005293959314E-9;Undefined;0;0;0;
+from seabed;land;m2;-1.76728197381396E-14;Undefined;0;0;0;
+mineral extraction site;land;m2a;-4.55999970395927E-16;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;6.0367625688675E-12;Undefined;0;0;0;
+from unspecified, natural;land;m2;4.83145417704874E-6;Undefined;0;0;0;
+from forest, natural;land;m2;1.88024276996942E-8;Undefined;0;0;0;
+mineral extraction site;land;m2a;-4.28387430261612E-8;Undefined;0;0;0;
+to grassland;land;m2;3.397105246641E-8;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;3.02338128443375E-13;Undefined;0;0;0;
+Land Transformation;land;m2;4.62E-8;Undefined;0;0;0;
+to forest, used;land;m2;1.42000907007445E-25;Undefined;0;0;0;
+from shrub land;land;m2;1.58015759575631E-7;Undefined;0;0;0;
+from permanent crops, non-irrigated, extensive;land;m2;2.74001750279007E-25;Undefined;0;0;0;
+clay;in ground;kg;0.00346566685410022;Undefined;0;0;0;
+dump site;land;m2a;6.18070820778732E-8;Undefined;0;0;0;
+dump site;land;m2a;7.15024473859751E-8;Undefined;0;0;0;
+mineral extraction site;land;m2a;6.3009182173302E-6;Undefined;0;0;0;
+forest, used;land;m2a;0.00182174864047367;Undefined;0;0;0;
+Water to turbine;in water;m3;-1.3072229035258122E-4;Undefined;0;0;0;
+inert rock;in ground;kg;7.87092778383483;Undefined;0;0;0;
+natural pumice;in ground;kg;3.80570471648183E-7;Undefined;0;0;0;
+dump site;land;m2a;5.77641923301241E-9;Undefined;0;0;0;
+Water to turbine;in water;m3;0.11388735238499464;Undefined;0;0;0;
+ground water;in water;m3;-1.75519583710277E-6;Undefined;0;0;0;
+to pasture/meadow;land;m2;-2.615967555114E-16;Undefined;0;0;0;
+to unspecified, natural;land;m2;6.76013202568145E-4;Undefined;0;0;0;
+Water to turbine;in water;m3;-3.388880584771622E-4;Undefined;0;0;0;
+from agriculture;land;m2;8.75303949094244E-13;Undefined;0;0;0;
+ground water;in water;m3;1.62002362775984E-7;Undefined;0;0;0;
+to forest, intensive;land;m2;-4.87249427653733E-13;Undefined;0;0;0;
+from grassland;land;m2;3.02338128443375E-13;Undefined;0;0;0;
+to arable, irrigated, intensive;land;m2;-8.5967559495263E-17;Undefined;0;0;0;
+industrial area;land;m2a;1.06003539701012E-7;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;1.96118348755779E-10;Undefined;0;0;0;
+dump site;land;m2a;-4.71150135972809E-8;Undefined;0;0;0;
+to shrub land;land;m2;1.86330144770598E-7;Undefined;0;0;0;
+from unspecified;land;m2;3.9820091213899E-7;Undefined;0;0;0;
+yttrium;in ground;kg;1.11051627554093E-15;Undefined;0;0;0;
+from forest, used;land;m2;2.39646373830652E-4;Undefined;0;0;0;
+ground water;in water;m3;4.10339991496373E-5;Undefined;0;0;0;
+to arable, non-irrigated, intensive;land;m2;1.32005304240689E-4;Undefined;0;0;0;
+Water to turbine;in water;m3;0.011518307180735352;Undefined;0;0;0;
+to unspecified, natural;land;m2;4.83145417704874E-6;Undefined;0;0;0;
+river water;in water;m3;6.69685197648593E-4;Undefined;0;0;0;
+pyrite;in ground;kg;-1.9999979011117E-5;Undefined;0;0;0;
+forest, used;land;m2a;2.59783570647198E-4;Undefined;0;0;0;
+from grassland;land;m2;6.50726976153256E-12;Undefined;0;0;0;
+to arable, non-irrigated, intensive;land;m2;-1.27802997582742E-13;Undefined;0;0;0;
+to forest, used;land;m2;3.99743954840691E-5;Undefined;0;0;0;
+forest;land;m2a;-6.27901535489784E-16;Undefined;0;0;0;
+from traffic area, rail/road embankment;land;m2;-3.4447025386425E-15;Undefined;0;0;0;
+from grassland;land;m2;4.23473379820725E-12;Undefined;0;0;0;
+to grassland;land;m2;1.28693031450587E-17;Undefined;0;0;0;
+from forest, natural;land;m2;6.14945725964822E-9;Undefined;0;0;0;
+forest, intensive;land;m2a;-3.90397422040061E-11;Undefined;0;0;0;
+to permanent crops;land;m2;7.88019978874545E-4;Undefined;0;0;0;
+from forest, used;land;m2;1.98378946227252E-5;Undefined;0;0;0;
+from wetlands;land;m2;-1.81710264073429E-8;Undefined;0;0;0;
+mineral extraction site;land;m2a;-5.5690363874507E-8;Undefined;0;0;0;
+mineral extraction site;land;m2a;5.12645871873733E-10;Undefined;0;0;0;
+ground water;in water;m3;9.02951296590372E-5;Undefined;0;0;0;
+industrial area;land;m2a;1.23002002028545E-6;Undefined;0;0;0;
+crude oil;in ground;MJ;1.6766410866950645;Undefined;0;0;0;
+arable, irrigated, intensive;land;m2a;1.02405638715743E-4;Undefined;0;0;0;
+stone;in ground;kg;1.75298230781288E-4;Undefined;0;0;0;
+from forest, natural;land;m2;5.32030268826507E-5;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;5.67545689179326E-9;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;3.02338128443375E-13;Undefined;0;0;0;
+to arable, irrigated, intensive;land;m2;2.39276980812741E-4;Undefined;0;0;0;
+mineral extraction site;land;m2a;-5.40484204153534E-11;Undefined;0;0;0;
+boron;in ground;kg;-1.481513274389052E-17;Undefined;0;0;0;
+to permanent crops;land;m2;2.82543294312664E-4;Undefined;0;0;0;
+forest, used;land;m2a;3.99743954840691E-5;Undefined;0;0;0;
+ground water;in water;m3;4.20305275335056E-8;Undefined;0;0;0;
+Mechanical Filtration;land;cm*m2/d;-5.97E-11;Undefined;0;0;0;
+from arable, irrigated, intensive;land;m2;1.02405638715743E-4;Undefined;0;0;0;
+Water to turbine;in water;m3;0.03884012681395479;Undefined;0;0;0;
+magnesium;in ground;kg;8.38068419504886E-5;Undefined;0;0;0;
+from shrub land;land;m2;9.15428410277241E-8;Undefined;0;0;0;
+ground water;in water;m3;0.0010500040337848;Undefined;0;0;0;
+to forest, used;land;m2;2.59783570647198E-4;Undefined;0;0;0;
+arable, irrigated, intensive;land;m2a;-5.01227474522024E-17;Undefined;0;0;0;
+perlite;in ground;kg;-1.11827861938099E-18;Undefined;0;0;0;
+from arable, fallow;land;m2;-1.17818230238324E-16;Undefined;0;0;0;
+to forest, used;land;m2;6.00115932260599E-5;Undefined;0;0;0;
+industrial area;land;m2a;-7.63461745970959E-10;Undefined;0;0;0;
+lake water;in water;m3;3.77507257893012E-7;Undefined;0;0;0;
+industrial area;land;m2a;1.10179641999262E-9;Undefined;0;0;0;
+from shrub land;land;m2;1.63000208050225E-5;Undefined;0;0;0;
+mineral extraction site;land;m2a;7.52244298592539E-8;Undefined;0;0;0;
+arable, irrigated, intensive;land;m2a;8.44331665106818E-4;Undefined;0;0;0;
+ground water;in water;m3;1.10000363366611E-6;Undefined;0;0;0;
+ground water;in water;m3;1.26000122349582E-4;Undefined;0;0;0;
+titanium;in ground;kg;1.062892878050238E-4;Undefined;0;0;0;
+industrial area;land;m2a;1.0491961527018E-10;Undefined;0;0;0;
+Water to turbine;in water;m3;-3.15317610072368E-6;Undefined;0;0;0;
+sodium;in ground;kg;-8.84E-9;Undefined;0;0;0;
+phosphorus;in ground;kg;6.488172147607322E-6;Undefined;0;0;0;
+iodine;in ground;kg;-8.59675458277321E-19;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;3.02338128443375E-13;Undefined;0;0;0;
+river water;in water;m3;-1.13393545491643E-6;Undefined;0;0;0;
+to shrub land;land;m2;-3.00135845532133E-10;Undefined;0;0;0;
+industrial area;land;m2a;4.17120295322742E-6;Undefined;0;0;0;
+from arable, irrigated, intensive;land;m2;5.15731156362966E-9;Undefined;0;0;0;
+industrial area;land;m2a;7.01000750712362E-8;Undefined;0;0;0;
+thulium;in ground;kg;4.12192105919572E-18;Undefined;0;0;0;
+Water to turbine;in water;m3;-9.623895515456769E-5;Undefined;0;0;0;
+diatomite;in ground;kg;3.93524126505346E-20;Undefined;0;0;0;
+primary energy from solar energy;in air;MJ;0.214972185175976;Undefined;0;0;0;
+quartz sand;in ground;kg;0.0325872386962872;Undefined;0;0;0;
+from forest, used;land;m2;9.80006267688826E-25;Undefined;0;0;0;
+from forest, primary;land;m2;-5.44159643075816E-15;Undefined;0;0;0;
+from permanent crops;land;m2;4.9700307646179E-7;Undefined;0;0;0;
+ground water;in water;m3;1.29428151124837E-6;Undefined;0;0;0;
+peat;in ground;MJ;-1.25637164171783E-4;Undefined;0;0;0;
+industrial area;land;m2a;5.0500590817973E-7;Undefined;0;0;0;
+ground water;in water;m3;-5.87146589176808E-7;Undefined;0;0;0;
+river water;in water;m3;7.1315739275983E-10;Undefined;0;0;0;
+dump site;land;m2a;8.07273682635147E-8;Undefined;0;0;0;
+from forest;land;m2;7.49182672061964E-10;Undefined;0;0;0;
+mineral extraction site;land;m2a;5.87151397462065E-6;Undefined;0;0;0;
+Water to turbine;in water;m3;0.004171764358069307;Undefined;0;0;0;
+industrial area;land;m2a;8.91641915239209E-7;Undefined;0;0;0;
+Biotic Production;land;kg;1.33E-8;Undefined;0;0;0;
+Water to turbine;in water;m3;0.04646014373106572;Undefined;0;0;0;
+forest, used;land;m2a;6.00115932243407E-5;Undefined;0;0;0;
+from grassland/pasture/meadow;land;m2;3.30000168839114E-6;Undefined;0;0;0;
+urban/industrial fallow;land;m2a;-3.44470981306591E-16;Undefined;0;0;0;
+from forest;land;m2;8.6467092277014E-12;Undefined;0;0;0;
+from forest, natural;land;m2;3.65655794086758E-9;Undefined;0;0;0;
+to shrub land;land;m2;-2.80989074524817E-9;Undefined;0;0;0;
+krypton;in air;kg;-8.82639452225353E-26;Undefined;0;0;0;
+forest, used;land;m2a;3.20195163872332E-4;Undefined;0;0;0;
+from grassland/pasture/meadow;land;m2;6.18324591336566E-4;Undefined;0;0;0;
+argon;in air;kg;-2.62595498643523E-13;Undefined;0;0;0;
+pasture/meadow, extensive;land;m2a;-1.37788737073353E-19;Undefined;0;0;0;
+ground water;in water;m3;1.03012936773786E-7;Undefined;0;0;0;
+dump site;land;m2a;-5.64765685370136E-8;Undefined;0;0;0;
+from grassland/pasture/meadow;land;m2;3.93559855966656E-8;Undefined;0;0;0;
+ground water;in water;m3;-1.59774214317601E-9;Undefined;0;0;0;
+from forest, used;land;m2;2.73001792041894E-8;Undefined;0;0;0;
+from forest, used;land;m2;3.99744133561817E-5;Undefined;0;0;0;
+silicon;in ground;kg;9.76075509148223E-5;Undefined;0;0;0;
+strontium;in ground;kg;-3.10999929519952E-9;Undefined;0;0;0;
+from arable, irrigated, intensive;land;m2;6.84240554728169E-5;Undefined;0;0;0;
+dump site;land;m2a;1.25090483485172E-9;Undefined;0;0;0;
+magnesium chloride;in ground;kg;2.57583359086462E-5;Undefined;0;0;0;
+antimonite;in ground;kg;4.09544680487119E-21;Undefined;0;0;0;
+from arable, irrigated, intensive;land;m2;7.96847299899079E-8;Undefined;0;0;0;
+to unspecified, natural;land;m2;7.52244298592539E-8;Undefined;0;0;0;
+dump site;land;m2a;2.09028147475292E-6;Undefined;0;0;0;
+industrial area;land;m2a;5.44001002296629E-9;Undefined;0;0;0;
+river water;in water;m3;0.00107001777496757;Undefined;0;0;0;
+zirconium;in ground;kg;9.58377343332831E-14;Undefined;0;0;0;
+dump site;land;m2a;1.98010491374155E-5;Undefined;0;0;0;
+from grassland;land;m2;1.87008956283464E-10;Undefined;0;0;0;
+river water;in water;m3;5.94514656833629E-8;Undefined;0;0;0;
+shrub land;land;m2a;-3.53455806120718E-14;Undefined;0;0;0;
+from forest;land;m2;1.28693031450587E-17;Undefined;0;0;0;
+urban, discontinuously built;land;m2a;-1.46773404083243E-16;Undefined;0;0;0;
+to forest, used;land;m2;8.00487909691661E-5;Undefined;0;0;0;
+from grassland;land;m2;1.30345431125635E-11;Undefined;0;0;0;
+to urban, discontinuously built;land;m2;6.51159812631327E-11;Undefined;0;0;0;
+arable, irrigated, intensive;land;m2a;1.2755514670147E-4;Undefined;0;0;0;
+from grassland/pasture/meadow;land;m2;1.00107372837838E-4;Undefined;0;0;0;
+to arable, irrigated, intensive;land;m2;6.8424055470957E-5;Undefined;0;0;0;
+dump site;land;m2a;3.74000356669541E-7;Undefined;0;0;0;
+from arable, irrigated, intensive;land;m2;7.58029682409152E-5;Undefined;0;0;0;
+ground water;in water;m3;-2.11757075046567E-6;Undefined;0;0;0;
+to shrub land;land;m2;8.51863161261843E-6;Undefined;0;0;0;
+industrial area;land;m2a;2.15233420188698E-9;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;6.50726976153256E-12;Undefined;0;0;0;
+ground water;in water;m3;2.40599210314799E-5;Undefined;0;0;0;
+river water;in water;m3;1.94011537536314E-4;Undefined;0;0;0;
+river water;in water;m3;1.87410632516616E-6;Undefined;0;0;0;
+ground water;in water;m3;8.97046171533847E-5;Undefined;0;0;0;
+bauxite;in ground;kg;0.0104005560217121;Undefined;0;0;0;
+to pasture/meadow, extensive;land;m2;-2.74577467809925E-21;Undefined;0;0;0;
+permanent crops;land;m2a;4.97003076470338E-7;Undefined;0;0;0;
+river water;in water;m3;-1.9788848804115E-7;Undefined;0;0;0;
+river water;in water;m3;4.65814186540583E-4;Undefined;0;0;0;
+cadmium;in ground;kg;-5.47586587601044E-9;Undefined;0;0;0;
+dump site;land;m2a;2.77029827307232E-7;Undefined;0;0;0;
+from unspecified, natural;land;m2;6.60013173925175E-4;Undefined;0;0;0;
+xenon;in air;kg;-1.03842029575182E-26;Undefined;0;0;0;
+lake water;in water;m3;8.84526622995274E-7;Undefined;0;0;0;
+dump site;land;m2a;-7.01076382256316E-9;Undefined;0;0;0;
+vanadium;in ground;kg;2.70000529687182E-5;Undefined;0;0;0;
+ground water;in water;m3;-4.86493853818509E-8;Undefined;0;0;0;
+forest, used;land;m2a;6.00115932260599E-5;Undefined;0;0;0;
+Oil sand (10% bitumen);in ground;MJ;0.00341210651785324;Undefined;0;0;0;
+dump site;land;m2a;-3.59903838906372E-9;Undefined;0;0;0;
+from arable, irrigated, intensive;land;m2;2.53263007372276E-7;Undefined;0;0;0;
+forest, used;land;m2a;2.39646372902399E-4;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;2.11236689910363E-12;Undefined;0;0;0;
+from forest;land;m2;9.98575288534383E-12;Undefined;0;0;0;
+from grassland;land;m2;6.0367625688675E-12;Undefined;0;0;0;
+Physicochemical Filtration;land;(cmol*m2*a)/kg;1.15E-7;Undefined;0;0;0;
+from forest;land;m2;2.36980418661852E-6;Undefined;0;0;0;
+permanent crops;land;m2a;7.88429978874515E-4;Undefined;0;0;0;
+to arable, irrigated, intensive;land;m2;3.04993199385067E-4;Undefined;0;0;0;
+to urban/industrial fallow;land;m2;6.0367625688675E-13;Undefined;0;0;0;
+arable, non-irrigated, intensive;land;m2a;1.32005304240689E-4;Undefined;0;0;0;
+from arable, non-irrigated, intensive;land;m2;1.32005304548231E-4;Undefined;0;0;0;
+from seabed, marine infrastructure;land;m2;-6.14052822925782E-19;Undefined;0;0;0;
+industrial area;land;m2a;-2.88960481593632E-10;Undefined;0;0;0;
+calcium chloride;in ground;kg;1.12695950316106E-13;Undefined;0;0;0;
+europium;in ground;kg;1.0104041428745E-15;Undefined;0;0;0;
+lake water;in water;m3;7.36069088498347E-7;Undefined;0;0;0;
+uranium;in ground;MJ;0.09144957565583318;Undefined;0;0;0;
+from arable, non-irrigated, intensive;land;m2;3.99000000709219E-12;Undefined;0;0;0;
+mineral extraction site;land;m2a;8.55042185164692E-6;Undefined;0;0;0;
+forest, used;land;m2a;6.00115932260599E-5;Undefined;0;0;0;
+soft wood (dry matter);in ground;kg;-1.30797809292092E-11;Undefined;0;0;0;
+to shrub land;land;m2;-1.20303119349143E-7;Undefined;0;0;0;
+to rivers, artificial;land;m2;-7.58830359326243E-15;Undefined;0;0;0;
+arable, non-irrigated, intensive;land;m2a;2.04194039382378E-4;Undefined;0;0;0;
+neodymium;in ground;kg;1.19000032657981E-10;Undefined;0;0;0;
+mineral extraction site;land;m2a;-6.45148487283539E-8;Undefined;0;0;0;
+ground water;in water;m3;-1.40034760644353E-8;Undefined;0;0;0;
+dump site;land;m2a;3.28008898258219E-9;Undefined;0;0;0;
+Water to turbine;in water;m3;0.001074423908921041;Undefined;0;0;0;
+from arable, irrigated, intensive;land;m2;2.38830980811253E-4;Undefined;0;0;0;
+industrial area;land;m2a;1.18125446006728E-6;Undefined;0;0;0;
+from forest, used;land;m2;8.00487909691661E-5;Undefined;0;0;0;
+mineral extraction site;land;m2a;7.4362600313225E-7;Undefined;0;0;0;
+to forest, used;land;m2;2.00371977416205E-5;Undefined;0;0;0;
+to forest, used;land;m2;3.99743954840691E-5;Undefined;0;0;0;
+industrial area;land;m2a;1.50028021814543E-11;Undefined;0;0;0;
+forest, used;land;m2a;6.00115932243407E-5;Undefined;0;0;0;
+industrial area;land;m2a;3.00056043629086E-10;Undefined;0;0;0;
+mineral extraction site;land;m2a;7.02025114744188E-8;Undefined;0;0;0;
+Water to turbine;in water;m3;-3.897611207459067E-4;Undefined;0;0;0;
+river water;in water;m3;-1.78558483767579E-6;Undefined;0;0;0;
+from permanent crops, non-irrigated, extensive;land;m2;-1.00170458348404E-7;Undefined;0;0;0;
+from wetlands, inland;land;m2;-2.44623133261464E-20;Undefined;0;0;0;
+to shrub land;land;m2;1.78307541659721E-10;Undefined;0;0;0;
+industrial area;land;m2a;8.6166091479085E-9;Undefined;0;0;0;
+ruthenium;in ground;kg;2.41788164646008E-13;Undefined;0;0;0;
+mineral extraction site;land;m2a;9.24249729081954E-5;Undefined;0;0;0;
+from arable, non-irrigated, extensive;land;m2;-1.62749050611492E-15;Undefined;0;0;0;
+arable, irrigated, intensive;land;m2a;7.58029682409152E-5;Undefined;0;0;0;
+from forest, used;land;m2;1.81238168266049E-4;Undefined;0;0;0;
+ground water;in water;m3;1.42014112793856E-5;Undefined;0;0;0;
+bentonite;in ground;kg;-3.8666866312433735E-4;Undefined;0;0;0;
+from forest, used;land;m2;3.99743954840486E-5;Undefined;0;0;0;
+rhenium;in ground;kg;3.85055852997933E-19;Undefined;0;0;0;
+mineral extraction site;land;m2a;-1.18946489576133E-9;Undefined;0;0;0;
+olivine;in ground;kg;2.14000011339696E-11;Undefined;0;0;0;
+to grassland;land;m2;9.98575288534383E-12;Undefined;0;0;0;
+from grassland;land;m2;5.58625538523813E-12;Undefined;0;0;0;
+dump site;land;m2a;1.22000225696666E-8;Undefined;0;0;0;
+from forest;land;m2;3.06997773341955E-9;Undefined;0;0;0;
+to arable, non-irrigated;land;m2;-3.20506424112069E-16;Undefined;0;0;0;
+from arable, non-irrigated, intensive;land;m2;1.52001177927245E-8;Undefined;0;0;0;
+industrial area;land;m2a;-3.36429902653469E-9;Undefined;0;0;0;
+to forest, used;land;m2;3.99743954840486E-5;Undefined;0;0;0;
+to unspecified, natural;land;m2;6.14945725964822E-9;Undefined;0;0;0;
+permanent crops;land;m2a;-1.01886388109425E-8;Undefined;0;0;0;
+lake water;in water;m3;4.08636061936136E-8;Undefined;0;0;0;
+colemanite;in ground;kg;5.39898098062556E-7;Undefined;0;0;0;
+arable;land;m2a;8.43402884848493E-5;Undefined;0;0;0;
+
+Materials/fuels
+Water (process water);kg;9.62E-4;Undefined;0;0;0;
+Hydrogen;kg;2.54E-16;Undefined;0;0;0;
+Chalk (Calciumcarbonate);kg;1.29E-46;Undefined;0;0;0;
+Water (cooling water);kg;0.00698;Undefined;0;0;0;
+Gypsum suspension;kg;4.36E-11;Undefined;0;0;0;
+
+Electricity/heat
+
+Emissions to air
+trimethylamine;;kg;-1.84715096765996E-22;Undefined;0;0;0;
+xylene (all isomers);;kg;6.74774589915418E-6;Undefined;0;0;0;
+ethyl benzene;;kg;1.57090939841869E-6;Undefined;0;0;0;
+fluorine;;kg;-3.59752807222306E-10;Undefined;0;0;0;
+boron;;kg;3.1869901347623367E-7;Undefined;0;0;0;
+methanol;;kg;1.15346564459277E-7;Undefined;0;0;0;
+1,2,3-trimethylbenzene;;kg;-1.45E-21;Undefined;0;0;0;
+HFC-134a;;kg;4.02273037777434E-12;Undefined;0;0;0;
+propane;;kg;2.20330480472596E-5;Undefined;0;0;0;
+ethylenediamine;;kg;-1.79647654566152E-20;Undefined;0;0;0;
+strontium;;kg;2.28905918574364E-16;Undefined;0;0;0;
+chromium (iii);;kg;-6.44989265458615E-9;Undefined;0;0;0;
+antimony-124;;kBq;5.20218078470835E-9;Undefined;0;0;0;
+thorium-232;;kBq;-5.5913807020642E-15;Undefined;0;0;0;
+n-butane;;kg;5.10629780764654E-6;Undefined;0;0;0;
+xenon-137;;kBq;4.68991422354448E-4;Undefined;0;0;0;
+pendimethalin;;kg;-1.04838470155289E-20;Undefined;0;0;0;
+2,4-dinitrotoluene;;kg;-4.29E-22;Undefined;0;0;0;
+ethyl amine;;kg;-4.32334025097529E-21;Undefined;0;0;0;
+uranium-234;;kBq;1.57722928357888E-6;Undefined;0;0;0;
+chloromethane;;kg;7.38632724431059E-14;Undefined;0;0;0;
+cyfluthrin;;kg;-2.94546214861102E-23;Undefined;0;0;0;
+CFC-10;;kg;1.01E-16;Undefined;0;0;0;
+cesium-137;;kBq;1.23408125283333E-8;Undefined;0;0;0;
+HFC-152a;;kg;-1.88709096399675E-18;Undefined;0;0;0;
+pentachlorophenol;;kg;9.95105525129483E-17;Undefined;0;0;0;
+dibenz[a,h]anthracene;;kg;1.13281166337535E-12;Undefined;0;0;0;
+total reduced sulphur compounds;;kg;6.14051827884892E-22;Undefined;0;0;0;
+platinum;;kg;4.3100000073241E-17;Undefined;0;0;0;
+isopropanol;;kg;8.30111064827244E-10;Undefined;0;0;0;
+rhodium;;kg;2.68185956230457E-17;Undefined;0;0;0;
+chlorpyrifos;;kg;-5.63132913396335E-21;Undefined;0;0;0;
+ruthenium-103;;kBq;-1.17818650109259E-20;Undefined;0;0;0;
+o-cresol;;kg;-1.04E-17;Undefined;0;0;0;
+arsenic;;kg;-4.40974655278542E-12;Undefined;0;0;0;
+hydrogen-3;;kBq;4.54536844992264E-4;Undefined;0;0;0;
+phenanthrene;;kg;1.33510739197524E-10;Undefined;0;0;0;
+sethoxydim;;kg;-1.24808217815262E-22;Undefined;0;0;0;
+Fatty acid methyl ester;;kg;6.14487693391461E-16;Undefined;0;0;0;
+bis(n-octyl) phthalate;;kg;-1.12E-19;Undefined;0;0;0;
+dimethylamine;;kg;1.00811827926323E-14;Undefined;0;0;0;
+mercury;;kg;1.06552593491089E-8;Undefined;0;0;0;
+propene;;kg;1.541835251615E-7;Undefined;0;0;0;
+quizalofop-ethyl;;kg;-5.78108991220793E-23;Undefined;0;0;0;
+HFC-143;;kg;5.84195889645055E-12;Undefined;0;0;0;
+iodine-131;;kBq;4.30145068189968E-6;Undefined;0;0;0;
+permethrin;;kg;-1.55759968638329E-22;Undefined;0;0;0;
+dodecane;;kg;1.77024436460751E-13;Undefined;0;0;0;
+polychlorinated biphenyls;;kg;-8.14391385138857E-10;Undefined;0;0;0;
+1,2-dichlorobenzene;;kg;-2.19661546286463E-21;Undefined;0;0;0;
+isoproturon;;kg;9.05852742875729E-15;Undefined;0;0;0;
+2-methyl-1-butene;;kg;5.36074098844312E-10;Undefined;0;0;0;
+pentachlorobenzene;;kg;9.99027344082345E-20;Undefined;0;0;0;
+trichloroethene;;kg;1.75400041406341E-11;Undefined;0;0;0;
+chlorimuron-ethyl;;kg;-2.82565352595948E-22;Undefined;0;0;0;
+potassium-40;;kBq;-2.44623186591873E-14;Undefined;0;0;0;
+benzo[a]anthracene;;kg;1.94026443827202E-10;Undefined;0;0;0;
+pentan-1-ol;;kg;-1.97694717594246E-22;Undefined;0;0;0;
+hydrogen iodide;;kg;1.78676225257724E-16;Undefined;0;0;0;
+1-butene;;kg;2.09028907803266E-10;Undefined;0;0;0;
+2,2-dimethylbutane;;kg;1.43019719035695E-10;Undefined;0;0;0;
+phosphine;;kg;4.15666831899209E-12;Undefined;0;0;0;
+ammonium nitrate;;kg;2.24687893656115E-18;Undefined;0;0;0;
+pursuit;;kg;-4.90244795537084E-22;Undefined;0;0;0;
+krypton-87;;kBq;-1.83716735204397E-13;Undefined;0;0;0;
+thorium-228;;kBq;-5.02226020426447E-15;Undefined;0;0;0;
+isopropylamine;;kg;-1.49769422033376E-21;Undefined;0;0;0;
+antimony-125;;kBq;-1.38785676257697E-18;Undefined;0;0;0;
+krypton-88;;kBq;-2.41626908376357E-13;Undefined;0;0;0;
+cyprodinil;;kg;9.58902904010794E-15;Undefined;0;0;0;
+dimethyl malonate;;kg;-5.93086104412135E-22;Undefined;0;0;0;
+azoxystrobin;;kg;-5.59138801927571E-22;Undefined;0;0;0;
+plutonium-238;;kBq;-4.16358257358157E-22;Undefined;0;0;0;
+fluoranthene;;kg;1.32492223155362E-11;Undefined;0;0;0;
+vinyl acetate;;kg;-1.16E-20;Undefined;0;0;0;
+sulfur dioxide;;kg;0.0037402149312565;Undefined;0;0;0;
+iodine-133;;kBq;-1.07833303755615E-16;Undefined;0;0;0;
+acetonitrile;;kg;2.12042714934075E-18;Undefined;0;0;0;
+imazamox;;kg;-7.4385541623554E-23;Undefined;0;0;0;
+calcium;;kg;-2.92550160646705E-15;Undefined;0;0;0;
+Nitrogen oxides;;kg;0.00307701538809929;Undefined;0;0;0;
+formaldehyde;;kg;1.08028606907443E-6;Undefined;0;0;0;
+indeno(1,2,3-cd)pyrene;;kg;1.35532945770065E-12;Undefined;0;0;0;
+total organic carbon;;kg;2.85E-13;Undefined;0;0;0;
+nitrobenzene;;kg;6.36601678286047E-22;Undefined;0;0;0;
+benzo[b]fluoranthene;;kg;-2.20659859980781E-23;Undefined;0;0;0;
+2-methyl-1-propene;;kg;5.75E-13;Undefined;0;0;0;
+particles (PM2.5);;kg;7.86321811047426E-5;Undefined;0;0;0;
+(2,4-dichlorophenoxy)acetic acid;;kg;-1.1582165103131E-20;Undefined;0;0;0;
+heptane;;kg;1.25066946918066E-7;Undefined;0;0;0;
+carbaryl;;kg;-1.40782602689632E-22;Undefined;0;0;0;
+ethane;;kg;1.7502097890726E-5;Undefined;0;0;0;
+oxygen;;kg;0.00169588297232416;Undefined;0;0;0;
+methyl methacrylate;;kg;3.11193694577926E-12;Undefined;0;0;0;
+thiram;;kg;1.54868957813167E-12;Undefined;0;0;0;
+2-methyl-4-chlorophenoxyacetic acid;;kg;1.49140451787674E-14;Undefined;0;0;0;
+manganese;;kg;5.77074257231055E-7;Undefined;0;0;0;
+carbon dioxide (biogenic);;kg;0.012831375268279;Undefined;0;0;0;
+phenol;;kg;3.69110805232093E-8;Undefined;0;0;0;
+molybdenum;;kg;8.54328041447826E-9;Undefined;0;0;0;
+Carbon dioxide (land use change);;kg;4.2937191612795985E-4;Undefined;0;0;0;
+hydrocyanic acid;;kg;3.26003783307338E-8;Undefined;0;0;0;
+phosphate;;kg;-5.35E-18;Undefined;0;0;0;
+furan;;kg;-2.838609302457E-18;Undefined;0;0;0;
+cyanide;;kg;2.9117768623175E-8;Undefined;0;0;0;
+Xenon-133m;;kBq;8.74510390471637E-5;Undefined;0;0;0;
+HCFC-124;;kg;-1.46771939367168E-18;Undefined;0;0;0;
+carbofuran;;kg;1.35687785965946E-12;Undefined;0;0;0;
+?-butyrolactone;;kg;-1.10829289792935E-21;Undefined;0;0;0;
+Clean gas;;kg;0.00209580137446893;Undefined;0;0;0;
+pentane;;kg;3.1008534340988E-6;Undefined;0;0;0;
+methyl borate;;kg;7.58E-23;Undefined;0;0;0;
+flumiclorac-pentyl;;kg;-4.96234858632618E-23;Undefined;0;0;0;
+sulfate;;kg;-1.2689338890075E-12;Undefined;0;0;0;
+butadiene;;kg;3.68000000058267E-11;Undefined;0;0;0;
+hydrogen peroxide;;kg;-4.35329050517785E-19;Undefined;0;0;0;
+imidacloprid;;kg;2.13200645394807E-16;Undefined;0;0;0;
+particles (> PM10);;kg;8.374072013570498E-4;Undefined;0;0;0;
+ammonia;;kg;1.31320221939059E-5;Undefined;0;0;0;
+fluoride;;kg;5.42156924910801E-7;Undefined;0;0;0;
+hydrocarbons (unspecified);;kg;2.964597031462623E-6;Undefined;0;0;0;
+nitrogen dioxide;;kg;-1.44127310088958E-6;Undefined;0;0;0;
+tetrachloroethene;;kg;-3.80940557878048E-18;Undefined;0;0;0;
+tetradecane;;kg;5.43075190926688E-14;Undefined;0;0;0;
+hydrogen;;kg;5.42118928952525E-6;Undefined;0;0;0;
+ammonium;;kg;1.22001106955355E-7;Undefined;0;0;0;
+Water (evapotranspiration);;m3;0.00116485021526852;Undefined;0;0;0;
+hydrogen sulfide;;kg;2.90133881039161E-6;Undefined;0;0;0;
+silver-110;;kBq;-1.8571331909871E-19;Undefined;0;0;0;
+vinyl chloride;;kg;6.71426412238204E-10;Undefined;0;0;0;
+para-cresol;;kg;6.82433100947073E-14;Undefined;0;0;0;
+lactofen;;kg;-2.38632518686538E-22;Undefined;0;0;0;
+2-methylpentane;;kg;9.70134114601432E-10;Undefined;0;0;0;
+3-methylpentane;;kg;4.86067223654905E-10;Undefined;0;0;0;
+ethyl acetate;;kg;-2.31642921628206E-16;Undefined;0;0;0;
+chromium (vi);;kg;-5.4899031010306E-13;Undefined;0;0;0;
+methane (biogenic);;kg;1.67096458703503E-5;Undefined;0;0;0;
+isobutanol;;kg;-1.57123912716289E-22;Undefined;0;0;0;
+Radioactive isotopes (unspecific), Beware: limited use only;;kBq;-3.79E-9;Undefined;0;0;0;
+particles (PM10);;kg;0.0019804023831488603;Undefined;0;0;0;
+silicium tetrafluoride;;kg;3.72978349958923E-13;Undefined;0;0;0;
+thiodicarb;;kg;-6.05068507554309E-23;Undefined;0;0;0;
+hydrogen fluoride;;kg;1.65162840012954E-6;Undefined;0;0;0;
+argon;;kg;2.97785503527033E-8;Undefined;0;0;0;
+HFC-23;;kg;4.49766857238482E-11;Undefined;0;0;0;
+krypton-85;;kBq;-0.0669540987343939;Undefined;0;0;0;
+Aldehydes, unspecified;;kg;2.49859863731035E-10;Undefined;0;0;0;
+cobalt-60;;kBq;6.27477068675812E-9;Undefined;0;0;0;
+anthracene;;kg;4.03554519463404E-12;Undefined;0;0;0;
+potassium;;kg;-3.44469186062711E-16;Undefined;0;0;0;
+iodine-129;;kBq;4.60030377070067E-8;Undefined;0;0;0;
+mecoprop-p;;kg;1.01095306564854E-14;Undefined;0;0;0;
+hydrogen bromide;;kg;4.01862563922461E-12;Undefined;0;0;0;
+isobutane;;kg;1.12015436243203E-8;Undefined;0;0;0;
+carfentrazone-ethyl;;kg;-1.55761109541768E-23;Undefined;0;0;0;
+nickel;;kg;2.57072239288421E-7;Undefined;0;0;0;
+manganese-54;;kBq;-4.50304668815617E-19;Undefined;0;0;0;
+imazaquin;;kg;-2.37635094920236E-22;Undefined;0;0;0;
+glyphosate;;kg;2.88514820850545E-11;Undefined;0;0;0;
+bentazone;;kg;2.42925067306256E-12;Undefined;0;0;0;
+fipronil;;kg;3.70646078971162E-22;Undefined;0;0;0;
+hexamethylene diamine;;kg;3.82993734772049E-18;Undefined;0;0;0;
+Thorium;;kg;-7.42856313197512E-19;Undefined;0;0;0;
+copper;;kg;6.86036406160249E-7;Undefined;0;0;0;
+Hydrocarbons, aromatic;;kg;1.18090407791147E-9;Undefined;0;0;0;
+dimethenamid;;kg;1.07946428376715E-20;Undefined;0;0;0;
+acrylic acid;;kg;-4.59293983535038E-21;Undefined;0;0;0;
+Hydrocarbons, chlorinated;;kg;6.09231949859366E-14;Undefined;0;0;0;
+butanol;;kg;-1.7971229232849E-21;Undefined;0;0;0;
+beryllium;;kg;-9.25677816564221E-11;Undefined;0;0;0;
+trichlorofon;;kg;7.79049068634325E-13;Undefined;0;0;0;
+chromium-51;;kBq;-8.80642224918661E-19;Undefined;0;0;0;
+bromine;;kg;1.33149592241795E-7;Undefined;0;0;0;
+aniline;;kg;-1.55759925788741E-21;Undefined;0;0;0;
+caprolactam;;kg;4.12388776347988E-13;Undefined;0;0;0;
+styrene;;kg;2.10091235587502E-8;Undefined;0;0;0;
+formic acid;;kg;1.39032084066916E-17;Undefined;0;0;0;
+thorium-234;;kBq;1.3789150442048E-10;Undefined;0;0;0;
+benzo[g,h,i]perylene;;kg;1.82058742532664E-12;Undefined;0;0;0;
+n-butyl-acetate;;kg;1.05017094195348E-16;Undefined;0;0;0;
+lead-210;;kBq;3.15777834937415E-7;Undefined;0;0;0;
+sodium formate;;kg;-5.02224861402348E-20;Undefined;0;0;0;
+ethylene;;kg;1.24140284190442E-9;Undefined;0;0;0;
+1,2-dibromoethane;;kg;-1.84E-21;Undefined;0;0;0;
+methyl cyclopentane;;kg;1.93026694394827E-10;Undefined;0;0;0;
+phosphoric acid;;kg;-7.19891012165642E-26;Undefined;0;0;0;
+undecane;;kg;7.92109506222186E-14;Undefined;0;0;0;
+2,2,4-trimethylpentane;;kg;1.34018601689577E-10;Undefined;0;0;0;
+cyclohexane;;kg;2.83011594478413E-9;Undefined;0;0;0;
+iron;;kg;2.8668871260604347E-6;Undefined;0;0;0;
+cis-2-pentene;;kg;5.53076452775678E-10;Undefined;0;0;0;
+HCFC-140;;kg;3.55E-17;Undefined;0;0;0;
+chloroethane;;kg;-6.43E-20;Undefined;0;0;0;
+naphthalene;;kg;1.01007476004224E-7;Undefined;0;0;0;
+Phosphorus;;kg;7.65000000160264E-10;Undefined;0;0;0;
+acetophenone;;kg;-2.3E-20;Undefined;0;0;0;
+antimony;;kg;2.12134259494233E-8;Undefined;0;0;0;
+tert-butyl methyl ether;;kg;5.44075188602422E-10;Undefined;0;0;0;
+used air;;kg;1.635365478524597;Undefined;0;0;0;
+krypton-89;;kBq;-1.02842285304814E-13;Undefined;0;0;0;
+octane;;kg;6.83869197480078E-8;Undefined;0;0;0;
+ethanethiol;;kg;3.99509868195634E-9;Undefined;0;0;0;
+cypermethrin;;kg;4.25401290739349E-16;Undefined;0;0;0;
+radium-228;;kBq;-3.08525786343065E-14;Undefined;0;0;0;
+dichloromethane;;kg;6.46576632461324E-14;Undefined;0;0;0;
+Benzal chloride;;kg;4.85E-27;Undefined;0;0;0;
+polonium-210;;kBq;4.74666752414672E-7;Undefined;0;0;0;
+Noble gases, radioactive, unspecified;;kBq;8.8E-29;Undefined;0;0;0;
+lasso;;kg;-1.19815836103253E-21;Undefined;0;0;0;
+benomyl;;kg;9.89479369055205E-12;Undefined;0;0;0;
+ioxynil;;kg;6.92652097293416E-15;Undefined;0;0;0;
+hydrogen arsenide;;kg;1.30164037108031E-12;Undefined;0;0;0;
+carbon dioxide (fossil);;kg;2.34468866001537;Undefined;0;0;0;
+Chlorides, unspecified;;kg;5.59830343879871E-7;Undefined;0;0;0;
+ethephon;;kg;1.0710032267836E-16;Undefined;0;0;0;
+terbufos;;kg;4.09975532314143E-21;Undefined;0;0;0;
+dipropylamine;;kg;-3.74424833864577E-22;Undefined;0;0;0;
+silver;;kg;7.45150986080293E-10;Undefined;0;0;0;
+cyclopentane;;kg;9.45130771203459E-11;Undefined;0;0;0;
+isoprene;;kg;-1.70999999741585E-13;Undefined;0;0;0;
+pyrene;;kg;-1.23808762478731E-22;Undefined;0;0;0;
+benzylchloride;;kg;-1.07E-18;Undefined;0;0;0;
+cerium-141;;kBq;-1.3778811191536E-17;Undefined;0;0;0;
+FC-14;;kg;1.46001428503061E-7;Undefined;0;0;0;
+esfenvalerate;;kg;-1.75728612196276E-22;Undefined;0;0;0;
+palladium;;kg;2.69192634240857E-17;Undefined;0;0;0;
+waste heat;;MJ;1.7891105469544324;Undefined;0;0;0;
+acetone;;kg;5.5241149574032E-9;Undefined;0;0;0;
+metribuzin;;kg;-1.54761661593171E-21;Undefined;0;0;0;
+HFC-32;;kg;9.80403178304397E-13;Undefined;0;0;0;
+titanium;;kg;2.04341481098356E-10;Undefined;0;0;0;
+hydrogen chloride;;kg;1.08541544119274E-5;Undefined;0;0;0;
+HCFC-21;;kg;-1.56704449126493E-23;Undefined;0;0;0;
+fenvalerate;;kg;1.49175573819776E-15;Undefined;0;0;0;
+propylene glycol monomethyl ether;;kg;7.00862929333117E-12;Undefined;0;0;0;
+tin oxide;;kg;4.60000560466409E-19;Undefined;0;0;0;
+chlormequat chloride;;kg;3.50331064875001E-14;Undefined;0;0;0;
+pyridine;;kg;1.63000656301922E-10;Undefined;0;0;0;
+clethodim;;kg;-8.34714091429682E-22;Undefined;0;0;0;
+chloramide;;kg;-3.90398363951089E-20;Undefined;0;0;0;
+iodine;;kg;-1.57756182627794E-16;Undefined;0;0;0;
+lead dioxide;;kg;1.25007053778627E-13;Undefined;0;0;0;
+acryolonitrile;;kg;5.01678647753828E-15;Undefined;0;0;0;
+dinitrogen;;kg;1.869653101525615E-4;Undefined;0;0;0;
+methacrylic acid;;kg;-3.06E-20;Undefined;0;0;0;
+ozone;;kg;-1.32795094325247E-14;Undefined;0;0;0;
+hexane;;kg;2.81058807827274E-7;Undefined;0;0;0;
+1,1,1,3,3-pentafluoropropane;;kg;1.16232604068956E-10;Undefined;0;0;0;
+1,1'-dimethyl-4,4'-bipyridinium;;kg;-9.95466772994506E-22;Undefined;0;0;0;
+butylene glycol;;kg;-8.53678555193575E-20;Undefined;0;0;0;
+scandium;;kg;1.76978673260737E-18;Undefined;0;0;0;
+xenon-131;;kBq;1.17234026511982E-4;Undefined;0;0;0;
+sulfur;;kg;4.58741832492153E-11;Undefined;0;0;0;
+2,3,7,8-tetrachlorodibenzo-p-dioxin;;kg;5.497927846178405E-11;Undefined;0;0;0;
+sulphur hexafluoride;;kg;1.02178929221408E-13;Undefined;0;0;0;
+acid (as H+);;kg;6.75E-12;Undefined;0;0;0;
+chrysene;;kg;5.01665256260683E-12;Undefined;0;0;0;
+chlorosulphuric acid;;kg;-6.05066673415347E-22;Undefined;0;0;0;
+formamide;;kg;-3.62441667658304E-22;Undefined;0;0;0;
+vanadium;;kg;5.66170518062935E-7;Undefined;0;0;0;
+fluazifop-p-butyl;;kg;-3.30490273790358E-22;Undefined;0;0;0;
+flumioxazin;;kg;-5.02226025833299E-22;Undefined;0;0;0;
+acetaldehyde;;kg;7.14833657584228E-9;Undefined;0;0;0;
+zinc sulfate;;kg;2.82552773832018E-11;Undefined;0;0;0;
+acenaphthylene;;kg;3.02406316519769E-11;Undefined;0;0;0;
+2-chlorophenol;;kg;9.58E-23;Undefined;0;0;0;
+Plutonium-alpha;;kBq;5.34146733474004E-13;Undefined;0;0;0;
+2-methyl-2-butene;;kg;-1.16820471882984E-22;Undefined;0;0;0;
+hexachlorobenzene;;kg;4.67867792758405E-21;Undefined;0;0;0;
+uranium-238;;kBq;1.8259200554815094E-5;Undefined;0;0;0;
+selenium;;kg;5.10457602385421E-8;Undefined;0;0;0;
+Phosphorus trichloride;;kg;1.03E-7;Undefined;0;0;0;
+butene;;kg;8.27680116885919E-12;Undefined;0;0;0;
+lanthanum-141;;kBq;-4.8425298880506E-18;Undefined;0;0;0;
+acephate;;kg;-1.22810426015615E-21;Undefined;0;0;0;
+chlorobenzene;;kg;-3.36E-20;Undefined;0;0;0;
+fluorene;;kg;4.19739552297952E-11;Undefined;0;0;0;
+ethylene oxide;;kg;9.11001433724922E-12;Undefined;0;0;0;
+zinc;;kg;4.24102710222244E-7;Undefined;0;0;0;
+benzaldehyde;;kg;-4.47271035192704E-17;Undefined;0;0;0;
+niobium-95;;kBq;-9.43546467533662E-13;Undefined;0;0;0;
+uranium-235;;kBq;2.27095457295299E-8;Undefined;0;0;0;
+protactinium-234;;kBq;1.30808344741209E-10;Undefined;0;0;0;
+Lactic acid;;kg;-2.92549439150712E-22;Undefined;0;0;0;
+polycyclic aromatic hydrocarbons;;kg;5.59080525638508E-7;Undefined;0;0;0;
+methyl lactate;;kg;-3.2050537301196E-22;Undefined;0;0;0;
+decane;;kg;3.28045352294244E-12;Undefined;0;0;0;
+Sodium dichromate;;kg;-2.31643712233475E-17;Undefined;0;0;0;
+diethylamine;;kg;-7.42001506822392E-13;Undefined;0;0;0;
+chloroacetic acid;;kg;-2.53609071130255E-20;Undefined;0;0;0;
+2-nitrotoluene;;kg;-3.29493714957453E-22;Undefined;0;0;0;
+o-chlorotoluene;;kg;-1.19814836796961E-21;Undefined;0;0;0;
+carbon monoxide (fossil);;kg;0.0275149091939909;Undefined;0;0;0;
+nitrate;;kg;1.98009265297625E-15;Undefined;0;0;0;
+cobalt;;kg;8.83462635728464E-9;Undefined;0;0;0;
+lead;;kg;3.43112897025964E-7;Undefined;0;0;0;
+methylamine;;kg;-5.5672871975222E-22;Undefined;0;0;0;
+Aktinide (general);;kBq;-1.29800760413807E-14;Undefined;0;0;0;
+diethylene glycol;;kg;-1.43778429833773E-25;Undefined;0;0;0;
+toluene;;kg;7.6469934154962E-7;Undefined;0;0;0;
+tungsten;;kg;-8.15742293185433E-19;Undefined;0;0;0;
+zinc dichloride;;kg;-9.99999740895299E-19;Undefined;0;0;0;
+propiconazole;;kg;-1.8271812324601E-22;Undefined;0;0;0;
+trifluralin;;kg;2.62509988825291E-10;Undefined;0;0;0;
+particles (PM2.5 - PM10);;kg;3.73326069168194E-4;Undefined;0;0;0;
+sulfur trioxide;;kg;7.54820967375282E-9;Undefined;0;0;0;
+2,4-dichlorophenol;;kg;-1.40782192486917E-21;Undefined;0;0;0;
+propionic acid;;kg;4.96170435485139E-12;Undefined;0;0;0;
+HFC-116;;kg;9.61016950560045E-9;Undefined;0;0;0;
+Methyl borate;;kg;7.58E-23;Undefined;0;0;0;
+methyl formate;;kg;-1.03824537533138E-21;Undefined;0;0;0;
+barium;;kg;3.04061168410501E-7;Undefined;0;0;0;
+1-pentene;;kg;7.41102484026679E-10;Undefined;0;0;0;
+acetylene;;kg;1.95000326235454E-13;Undefined;0;0;0;
+2-chloro-1-phenylethanone;;kg;-1.07E-20;Undefined;0;0;0;
+dimethyl sulphate;;kg;-6.97E-20;Undefined;0;0;0;
+benzo[a]pyrene;;kg;3.27038414318683E-9;Undefined;0;0;0;
+aluminium;;kg;7.03152853755562E-10;Undefined;0;0;0;
+tin;;kg;2.05019520417945E-7;Undefined;0;0;0;
+2-butene-trans;;kg;4.18057815601085E-10;Undefined;0;0;0;
+diethyl ether;;kg;-1.69738499383307E-25;Undefined;0;0;0;
+dicamba;;kg;3.5496580021497E-21;Undefined;0;0;0;
+acrolein;;kg;1.08291884830947E-10;Undefined;0;0;0;
+sulfur oxides;;kg;1.12000000000002E-6;Undefined;0;0;0;
+cadmium;;kg;6.33955340233848E-9;Undefined;0;0;0;
+barium-140;;kBq;-5.68125847500589E-17;Undefined;0;0;0;
+tellurium;;kg;-1.22995073646769E-9;Undefined;0;0;0;
+carbon dioxide (fossil);;kg;5.76380600861292E-7;Undefined;0;0;0;
+isopentane;;kg;1.08014980519464E-8;Undefined;0;0;0;
+acenaphthene;;kg;1.53727146347354E-11;Undefined;0;0;0;
+arsenic trioxide;;kg;1.566072736214E-14;Undefined;0;0;0;
+Krypton-85m;;kBq;7.39047426951589E-4;Undefined;0;0;0;
+cumene;;kg;4.50213591498654E-12;Undefined;0;0;0;
+nonane;;kg;8.65119699696129E-13;Undefined;0;0;0;
+Terpenes;;kg;1.99E-18;Undefined;0;0;0;
+radium-226;;kBq;1.71234264526825E-6;Undefined;0;0;0;
+acetic acid;;kg;8.13691174331712E-8;Undefined;0;0;0;
+1,2-dichloroethane;;kg;4.400057043215E-15;Undefined;0;0;0;
+acetochlor;;kg;5.4436191059232E-20;Undefined;0;0;0;
+hydrazine;;kg;-2.6E-19;Undefined;0;0;0;
+magnesium;;kg;-2.68703543049793E-15;Undefined;0;0;0;
+nitrogen, total (excluding N2);;kg;3.61033983210787E-12;Undefined;0;0;0;
+methane (fossil);;kg;0.00557693518584025;Undefined;0;0;0;
+methyl parathion;;kg;1.37661295834532E-13;Undefined;0;0;0;
+monoethanolamine;;kg;-6.49996540636427E-14;Undefined;0;0;0;
+methacrylate;;kg;2.03420738500354E-14;Undefined;0;0;0;
+cobalt-58;;kBq;2.75931754402297E-9;Undefined;0;0;0;
+methyl acetate;;kg;-8.80642421424222E-23;Undefined;0;0;0;
+m-cresol;;kg;6.89493826268065E-14;Undefined;0;0;0;
+m-xylene;;kg;1.41019485005475E-10;Undefined;0;0;0;
+zirconium;;kg;-9.91473060383716E-22;Undefined;0;0;0;
+chlorine;;kg;5.02096998798074E-7;Undefined;0;0;0;
+trans-2-pentene;;kg;1.04014324813791E-9;Undefined;0;0;0;
+lithium;;kg;-6.73962554109268E-23;Undefined;0;0;0;
+atrazine;;kg;2.39940129746734E-11;Undefined;0;0;0;
+adsorbable organic halogen compounds;;kg;2.47047933099139E-17;Undefined;0;0;0;
+isophorone;;kg;-8.88E-19;Undefined;0;0;0;
+tridecane;;kg;1.69023356983397E-13;Undefined;0;0;0;
+propylene glycol monomethyl ether acetate;;kg;1.28020489031854E-10;Undefined;0;0;0;
+cesium-134;;kBq;6.80127658876032E-9;Undefined;0;0;0;
+nitrous oxide;;kg;1.37560553497365E-5;Undefined;0;0;0;
+benzo[k]fluoranthene;;kg;3.64110104056852E-12;Undefined;0;0;0;
+Carbonyl sulfide;;kg;2.68E-16;Undefined;0;0;0;
+tar;;kg;-5.83E-21;Undefined;0;0;0;
+flumetsulam;;kg;-2.89552839461215E-23;Undefined;0;0;0;
+methyl ethyl ketone;;kg;-2.32642991200611E-16;Undefined;0;0;0;
+n-propanol;;kg;-4.30045467153739E-21;Undefined;0;0;0;
+metolachlor;;kg;-3.89399369549437E-21;Undefined;0;0;0;
+dimethyl formamide;;kg;2.01E-13;Undefined;0;0;0;
+flufenacet;;kg;-1.23808880273576E-22;Undefined;0;0;0;
+arsenic (v);;kg;3.07290087590181E-8;Undefined;0;0;0;
+chlorosilane, trimethyl-;;kg;3.35E-24;Undefined;0;0;0;
+thorium-230;;kBq;4.74667329616783E-7;Undefined;0;0;0;
+radon-222;;kBq;0.124377659342787;Undefined;0;0;0;
+zirconium-95;;kBq;-3.47463131918809E-18;Undefined;0;0;0;
+acifluorfen;;kg;-1.68739763610174E-22;Undefined;0;0;0;
+methomyl;;kg;4.48447658246852E-13;Undefined;0;0;0;
+C12-14 fatty alcohol;;kg;6.06428644783241E-16;Undefined;0;0;0;
+chloroform;;kg;2.42236401854368E-18;Undefined;0;0;0;
+ethanol;;kg;6.19726580871262E-9;Undefined;0;0;0;
+benzene;;kg;1.929314416935E-6;Undefined;0;0;0;
+sulphuric acid;;kg;1.69000161306225E-6;Undefined;0;0;0;
+propylamine;;kg;-1.19814946028696E-22;Undefined;0;0;0;
+radon-220;;kBq;-5.05221874456903E-13;Undefined;0;0;0;
+zinc-65;;kBq;-2.2465280422724E-18;Undefined;0;0;0;
+xenon-138;;kBq;5.14901597370308E-4;Undefined;0;0;0;
+lanthanum-140;;kBq;1.62E-17;Undefined;0;0;0;
+Chlorosilane, trimethyl-;;kg;3.35E-24;Undefined;0;0;0;
+chromium;;kg;6.36336856164772E-8;Undefined;0;0;0;
+1,3,5-trimethylbenzene;;kg;3.61049995929718E-12;Undefined;0;0;0;
+xenon-133;;kBq;0.00215247151672472;Undefined;0;0;0;
+Lanthanum;;kg;6.53758586756465E-18;Undefined;0;0;0;
+diflubenzuron;;kg;-1.55761109541768E-23;Undefined;0;0;0;
+xenon-135;;kBq;0.003039601307127212;Undefined;0;0;0;
+non-methane volatile organic compounds;;kg;1.1804577662985477E-4;Undefined;0;0;0;
+dimethoate;;kg;-3.67790997193931E-17;Undefined;0;0;0;
+o-xylene;;kg;1.370189336569E-11;Undefined;0;0;0;
+zinc oxide;;kg;9.19001111586601E-19;Undefined;0;0;0;
+diflufenican;;kg;2.24210677639095E-15;Undefined;0;0;0;
+helium;;kg;4.23040822657362E-11;Undefined;0;0;0;
+propylene oxide;;kg;2.1806883864518E-17;Undefined;0;0;0;
+deltamethrin;;kg;1.62301549631784E-12;Undefined;0;0;0;
+thallium;;kg;-3.58997423133942E-9;Undefined;0;0;0;
+HFC-125;;kg;6.52935452235781E-12;Undefined;0;0;0;
+sulfentrazone;;kg;-1.1881660897281E-21;Undefined;0;0;0;
+2,4-dimethylpentane;;kg;5.60077432440412E-11;Undefined;0;0;0;
+biphenyl;;kg;7.44102945310924E-14;Undefined;0;0;0;
+argon-41;;kBq;1.97578212737613E-4;Undefined;0;0;0;
+mancozeb;;kg;1.89561329611754E-10;Undefined;0;0;0;
+bromoform;;kg;-5.97E-20;Undefined;0;0;0;
+sodium;;kg;-1.74730685055357E-15;Undefined;0;0;0;
+nitrogen monoxide;;kg;-5.79726577353761E-6;Undefined;0;0;0;
+water vapour;;kg;2.20372241372746;Undefined;0;0;0;
+propanal;;kg;1.43106245087885E-18;Undefined;0;0;0;
+carbon disulphide;;kg;7.70004657034684E-9;Undefined;0;0;0;
+tert-butylamine;;kg;-1.81719977110527E-21;Undefined;0;0;0;
+dodecafluoropentane;;kg;-1.89707838883954E-19;Undefined;0;0;0;
+nitrogen trifluoride;;kg;2.03635769743761E-12;Undefined;0;0;0;
+carbon-14;;kBq;1.61671562958183E-4;Undefined;0;0;0;
+
+Emissions to water
+Water from cooling;;m3;-3.17722674636991E-6;Undefined;0;0;0;
+radium-224;;kBq;-1.22809936271784E-14;Undefined;0;0;0;
+Water;;m3;0.006199030976839061;Undefined;0;0;0;
+barium sulphate;;kg;1.71863331311461E-22;Undefined;0;0;0;
+thorium-228;;kBq;-4.95237975433105E-14;Undefined;0;0;0;
+Hydrocarbons, aromatic;;kg;2.66425633561724E-10;Undefined;0;0;0;
+xylene (all isomers);;kg;7.28020616062107E-8;Undefined;0;0;0;
+Water from turbine;;m3;-3.08833108039401E-5;Undefined;0;0;0;
+titanium;;kg;5.16023354310914E-17;Undefined;0;0;0;
+atrazine;;kg;1.505875810917E-12;Undefined;0;0;0;
+hydrocyanic acid;;kg;8.73093157347916E-17;Undefined;0;0;0;
+cadmium;;kg;1.29162942087481E-8;Undefined;0;0;0;
+thiram;;kg;9.70680986338694E-14;Undefined;0;0;0;
+naphthalene;;kg;3.00793162460739E-9;Undefined;0;0;0;
+Water from cooling;;m3;-7.28314795609172E-7;Undefined;0;0;0;
+sulfur;;kg;-3.21410159011398E-11;Undefined;0;0;0;
+tetradecane;;kg;-8.79E-18;Undefined;0;0;0;
+cesium-136;;kBq;-1.66742628329231E-17;Undefined;0;0;0;
+chromium;;kg;4.89250735644108E-8;Undefined;0;0;0;
+Water;;m3;-1.9422729655574E-9;Undefined;0;0;0;
+benzo[a]pyrene;;kg;2.03E-21;Undefined;0;0;0;
+Water;;m3;-1.08355575888848E-7;Undefined;0;0;0;
+tributyltin oxide;;kg;-1.22809760854127E-17;Undefined;0;0;0;
+chloramide;;kg;-3.47463123728885E-19;Undefined;0;0;0;
+Water from turbine;;m3;0.0387936460862224;Undefined;0;0;0;
+ruthenium-106;;kBq;5.10136565719143E-6;Undefined;0;0;0;
+iodine-131;;kBq;2.5168119336854E-8;Undefined;0;0;0;
+Neutral salts;;kg;4.12E-15;Undefined;0;0;0;
+potassium;;kg;3.89311736235304E-6;Undefined;0;0;0;
+Water from cooling;;m3;5.8829935935426E-8;Undefined;0;0;0;
+sodium;;kg;5.338737161125105E-7;Undefined;0;0;0;
+Water from turbine;;m3;-1.94964748112037E-5;Undefined;0;0;0;
+manganese;;kg;1.20028188655293E-6;Undefined;0;0;0;
+Water;;m3;-1.29129835569395E-8;Undefined;0;0;0;
+cobalt;;kg;2.54957067416388E-14;Undefined;0;0;0;
+copper;;kg;9.91180729159506E-9;Undefined;0;0;0;
+fluoranthene;;kg;5.41019657061421E-12;Undefined;0;0;0;
+zinc;;kg;-3.27539603758175E-9;Undefined;0;0;0;
+beryllium;;kg;2.77001457891532E-15;Undefined;0;0;0;
+Water from cooling;;m3;3.20015395220783E-7;Undefined;0;0;0;
+dimethylamine;;kg;-6.73705450766057E-21;Undefined;0;0;0;
+uranium-235;;kBq;1.13887535284644E-7;Undefined;0;0;0;
+particles (> PM10);;kg;0.0012093617983599996;Undefined;0;0;0;
+sulfate;;kg;6.78275674645431E-6;Undefined;0;0;0;
+Thiocyanate, ion;;kg;1.81E-9;Undefined;0;0;0;
+nickel;;kg;1.63835801049529E-7;Undefined;0;0;0;
+Water from cooling;;m3;4.46999626195037E-5;Undefined;0;0;0;
+Tantalum;;kg;3.69914682902936E-16;Undefined;0;0;0;
+dodecane;;kg;-2.01E-17;Undefined;0;0;0;
+Water;;m3;-1.28419371454463E-9;Undefined;0;0;0;
+Water;;m3;7.49013650136104E-5;Undefined;0;0;0;
+Water from turbine;;m3;-3.30138101376827E-8;Undefined;0;0;0;
+anthracene;;kg;2.82628132719364E-10;Undefined;0;0;0;
+propene;;kg;-4.78264126703361E-16;Undefined;0;0;0;
+chemical oxygen demand;;kg;1.94829163475387E-4;Undefined;0;0;0;
+tributyltin;;kg;2.51E-14;Undefined;0;0;0;
+Dissolved solids;;kg;-6.11001411537763E-4;Undefined;0;0;0;
+barium;;kg;2.5536812167016E-7;Undefined;0;0;0;
+Water from cooling;;m3;-1.31888006767175E-5;Undefined;0;0;0;
+Water;;m3;5.46154137164798E-5;Undefined;0;0;0;
+tar;;kg;-8.4E-23;Undefined;0;0;0;
+silver-110;;kBq;1.75347011110212E-7;Undefined;0;0;0;
+chromium (vi);;kg;5.53331009957602E-9;Undefined;0;0;0;
+Water;;m3;2.38337006677616E-7;Undefined;0;0;0;
+chlorosulphuric acid;;kg;-1.44778086338941E-21;Undefined;0;0;0;
+acetochlor;;kg;3.39601204131754E-21;Undefined;0;0;0;
+cyanide;;kg;5.77002151377878E-8;Undefined;0;0;0;
+Aktinide (general);;kBq;-4.9623589117375E-15;Undefined;0;0;0;
+nitrate;;kg;2.74005172512884E-5;Undefined;0;0;0;
+manganese;;kg;1.71001711320761E-9;Undefined;0;0;0;
+cesium;;kg;-2.46619872548782E-19;Undefined;0;0;0;
+thorium-228;;kBq;-8.13745250073775E-13;Undefined;0;0;0;
+Water;;m3;4.50543439315208E-8;Undefined;0;0;0;
+hydrogen chloride;;kg;8.7239202293669E-12;Undefined;0;0;0;
+imidacloprid;;kg;1.33125403346684E-17;Undefined;0;0;0;
+Nitrogen, organic bound;;kg;4.98009267043279E-6;Undefined;0;0;0;
+cadmium;;kg;4.67273395222491E-8;Undefined;0;0;0;
+benzo[k]fluoranthene;;kg;5.83404153628423E-13;Undefined;0;0;0;
+antimony;;kg;-8.821414465681E-11;Undefined;0;0;0;
+hydrocarbons (unspecified);;kg;3.87056563327053E-14;Undefined;0;0;0;
+barium-140;;kBq;-1.47772607913378E-16;Undefined;0;0;0;
+volatile organic compound;;kg;8.164660604499876E-6;Undefined;0;0;0;
+sulfide;;kg;3.33870841212936E-6;Undefined;0;0;0;
+volatile organic compound;;kg;-1.213729772953444E-16;Undefined;0;0;0;
+acetic acid;;kg;5.91995524948072E-15;Undefined;0;0;0;
+Uranium (kg), Beware: limited use only;;kg;4.31E-14;Undefined;0;0;0;
+1,2-dichlorobenzene;;kg;-2.4562142509425E-16;Undefined;0;0;0;
+boron;;kg;2.69011983391724E-14;Undefined;0;0;0;
+chemical oxygen demand;;kg;7.25587963632119E-6;Undefined;0;0;0;
+biphenyl;;kg;-8.81999999385264E-19;Undefined;0;0;0;
+hexane;;kg;5.3402254319076E-17;Undefined;0;0;0;
+pentan-1-ol;;kg;-4.75267314277824E-22;Undefined;0;0;0;
+radium-226;;kBq;-3.02533364717803E-14;Undefined;0;0;0;
+formamide;;kg;-8.70659982176821E-22;Undefined;0;0;0;
+Water from turbine;;m3;-1.1303938256915E-4;Undefined;0;0;0;
+Water from turbine;;m3;-0.0109974148007357;Undefined;0;0;0;
+sodium chloride;;kg;4.33518293207477E-8;Undefined;0;0;0;
+Water from turbine;;m3;-2.65573089293139E-5;Undefined;0;0;0;
+ammonia;;kg;5.9141137005225E-8;Undefined;0;0;0;
+silver;;kg;7.35464141780467E-10;Undefined;0;0;0;
+Water from cooling;;m3;-3.37996308043559E-7;Undefined;0;0;0;
+fluorine;;kg;-2.48E-11;Undefined;0;0;0;
+polonium-210;;kBq;-1.42779732837029E-14;Undefined;0;0;0;
+lead;;kg;8.83269134523754E-9;Undefined;0;0;0;
+Water from cooling;;m3;-6.20573322735194E-6;Undefined;0;0;0;
+calcium;;kg;-2.72808782894175E-5;Undefined;0;0;0;
+Water from cooling;;m3;-6.34856168464118E-7;Undefined;0;0;0;
+radium-228;;kBq;-4.60291190917479E-13;Undefined;0;0;0;
+cobalt-60;;kBq;-4.34405987916983E-7;Undefined;0;0;0;
+Water from cooling;;m3;-2.01911624333142E-6;Undefined;0;0;0;
+Water from cooling;;m3;-3.25895223429871E-6;Undefined;0;0;0;
+acenaphthylene;;kg;1.78661731239026E-11;Undefined;0;0;0;
+toluene;;kg;5.82404163236282E-8;Undefined;0;0;0;
+Water;;m3;1.88115312435647E-10;Undefined;0;0;0;
+ethyl acetate;;kg;-3.02533800422918E-20;Undefined;0;0;0;
+triethylene glycol;;kg;-1.09830861132156E-17;Undefined;0;0;0;
+acid (as H+);;kg;1.490018504838851E-6;Undefined;0;0;0;
+carbon-14;;kBq;-3.55545617640903E-5;Undefined;0;0;0;
+arsenic (v);;kg;1.01009470240101E-7;Undefined;0;0;0;
+mecoprop-p;;kg;6.32595665775493E-16;Undefined;0;0;0;
+diquat dibromide;;kg;-4.62E-28;Undefined;0;0;0;
+cobalt-57;;kBq;-5.30183005220195E-16;Undefined;0;0;0;
+o-xylene;;kg;-6.25035461767055E-19;Undefined;0;0;0;
+Water;;m3;-1.4069151980525E-6;Undefined;0;0;0;
+Water from cooling;;m3;-1.21225872972818E-8;Undefined;0;0;0;
+cobalt-60;;kBq;5.19105826789061E-6;Undefined;0;0;0;
+methyl parathion;;kg;8.62383098923196E-15;Undefined;0;0;0;
+tetrachloroethene;;kg;2.71599599835575E-19;Undefined;0;0;0;
+chlorine;;kg;1.5180993130035028E-7;Undefined;0;0;0;
+Water from turbine;;m3;4.38732033928567E-4;Undefined;0;0;0;
+Water from cooling;;m3;-1.92232984034748E-5;Undefined;0;0;0;
+nitrogen, total (excluding N2);;kg;7.785477770221844E-5;Undefined;0;0;0;
+Water from turbine;;m3;-0.00581760110101272;Undefined;0;0;0;
+Water from cooling;;m3;5.31020085223515E-5;Undefined;0;0;0;
+Water from turbine;;m3;-7.22850709776894E-4;Undefined;0;0;0;
+bentazone;;kg;1.51828167067296E-13;Undefined;0;0;0;
+bromine;;kg;-4.84772543326314E-14;Undefined;0;0;0;
+benzo[k]fluoranthene;;kg;1.92964507774204E-12;Undefined;0;0;0;
+Water;;m3;3.75163719672003E-8;Undefined;0;0;0;
+Water;;m3;1.14014306299865E-7;Undefined;0;0;0;
+chloroform;;kg;6.59308490895416E-16;Undefined;0;0;0;
+diethylamine;;kg;-1.95698466336929E-21;Undefined;0;0;0;
+Water from turbine;;m3;-6.46476090424388E-5;Undefined;0;0;0;
+hydrogen-3;;kBq;-0.0536923779695308;Undefined;0;0;0;
+ethylene glycol;;kg;1.20292042739924E-15;Undefined;0;0;0;
+ethylene;;kg;7.05078959349085E-15;Undefined;0;0;0;
+radium-224;;kBq;-2.0368631274684E-13;Undefined;0;0;0;
+particles (PM10);;kg;6.902749376929205E-10;Undefined;0;0;0;
+Water;;m3;1.49105410161452E-8;Undefined;0;0;0;
+Lactic acid;;kg;-7.01918653848616E-22;Undefined;0;0;0;
+molybdenum-99;;kBq;-5.43162926011096E-17;Undefined;0;0;0;
+Water from turbine;;m3;8.59258167590441E-15;Undefined;0;0;0;
+2-methyl-2-butene;;kg;-2.79569126087209E-22;Undefined;0;0;0;
+lead-210;;kBq;-1.57756054951784E-14;Undefined;0;0;0;
+1,2-dichloroethane;;kg;2.2900192583574E-16;Undefined;0;0;0;
+Water from turbine;;m3;0.00584119034915741;Undefined;0;0;0;
+total organic carbon;;kg;7.44426320082079E-8;Undefined;0;0;0;
+disodium sulfate;;kg;1.38581894889237E-6;Undefined;0;0;0;
+adsorbable organic halogen compounds;;kg;2.77496802041636E-7;Undefined;0;0;0;
+HCFC-140;;kg;-3.67E-29;Undefined;0;0;0;
+Water from turbine;;m3;1.90414247549377E-7;Undefined;0;0;0;
+Water from turbine;;m3;-9.62163344419436E-5;Undefined;0;0;0;
+aniline;;kg;-3.74423347366676E-21;Undefined;0;0;0;
+Water from cooling;;m3;1.01664229502047E-4;Undefined;0;0;0;
+antimony-124;;kBq;1.42914538445567E-7;Undefined;0;0;0;
+iodide;;kg;-4.69102019197787E-16;Undefined;0;0;0;
+Water from cooling;;m3;-6.44249446576763E-6;Undefined;0;0;0;
+Yttrium;;kg;-2.42E-18;Undefined;0;0;0;
+Water from cooling;;m3;7.51025180094902E-4;Undefined;0;0;0;
+nitrobenzene;;kg;2.55443369211647E-21;Undefined;0;0;0;
+isobutanol;;kg;-1.36789742891867E-21;Undefined;0;0;0;
+Water;;m3;2.96568609899357E-5;Undefined;0;0;0;
+Water from cooling;;m3;-3.19915343364523E-8;Undefined;0;0;0;
+Hydrocarbons, aromatic;;kg;1.28665896379968E-9;Undefined;0;0;0;
+n-butyl-acetate;;kg;-3.01535476719194E-17;Undefined;0;0;0;
+bromate;;kg;-3.1232471034103E-15;Undefined;0;0;0;
+anthracene;;kg;7.79225808633782E-11;Undefined;0;0;0;
+ammonium;;kg;1.86784212117348E-5;Undefined;0;0;0;
+Water from cooling;;m3;9.72905887696611E-6;Undefined;0;0;0;
+strontium;;kg;4.7307202115914E-6;Undefined;0;0;0;
+Water from turbine;;m3;-2.15788820159658E-4;Undefined;0;0;0;
+Water from cooling;;m3;4.88001575259793E-4;Undefined;0;0;0;
+waste heat;;MJ;0.26913511520780214;Undefined;0;0;0;
+ethyl amine;;kg;-1.03840163689073E-20;Undefined;0;0;0;
+lithium;;kg;1.05000004701802E-9;Undefined;0;0;0;
+1-butene;;kg;-2.2465391898411E-18;Undefined;0;0;0;
+Water from cooling;;m3;-1.57109911330552E-6;Undefined;0;0;0;
+total organic carbon;;kg;2.301822628854762E-5;Undefined;0;0;0;
+uranium-238;;kBq;-5.58788410394681E-8;Undefined;0;0;0;
+Water;;m3;1.38086200514028E-7;Undefined;0;0;0;
+pentachlorophenol;;kg;4.94741650808378E-14;Undefined;0;0;0;
+cesium-134;;kBq;1.12324534753229E-6;Undefined;0;0;0;
+arsenic (v);;kg;2.9271894432995E-8;Undefined;0;0;0;
+Water from cooling;;m3;9.28058329993776E-11;Undefined;0;0;0;
+Water;;m3;3.11029855804871E-6;Undefined;0;0;0;
+Water from turbine;;m3;-0.00352032518055523;Undefined;0;0;0;
+urea;;kg;-9.97462622701164E-22;Undefined;0;0;0;
+Water from turbine;;m3;0.0158256863277095;Undefined;0;0;0;
+Water from cooling;;m3;8.96044413157516E-5;Undefined;0;0;0;
+carbonate;;kg;-3.06580178427503E-5;Undefined;0;0;0;
+tetrachloroethene;;kg;6.58305889603222E-16;Undefined;0;0;0;
+thallium;;kg;-1.2E-12;Undefined;0;0;0;
+Water from turbine;;m3;-1.17927381786786E-4;Undefined;0;0;0;
+Water from turbine;;m3;0.00412358120146734;Undefined;0;0;0;
+sodium formate;;kg;-1.20813777677665E-19;Undefined;0;0;0;
+nitrite;;kg;7.82185857730874E-9;Undefined;0;0;0;
+Water from turbine;;m3;2.21719150282408E-6;Undefined;0;0;0;
+Water;;m3;7.08121350096438E-7;Undefined;0;0;0;
+cesium-137;;kBq;1.01696864092663E-5;Undefined;0;0;0;
+nickel;;kg;1.63530185923962E-8;Undefined;0;0;0;
+ethylene oxide;;kg;-2.37634328000124E-16;Undefined;0;0;0;
+Water from turbine;;m3;2.9122945646967E-4;Undefined;0;0;0;
+ruthenium-103;;kBq;-1.77726420524034E-17;Undefined;0;0;0;
+trifluralin;;kg;1.641937430144E-11;Undefined;0;0;0;
+chromium;;kg;1.97563011724163E-7;Undefined;0;0;0;
+Lead-210/kg, Beware: limited use only;;kg;-3.73E-26;Undefined;0;0;0;
+acryolonitrile;;kg;1.36003411418682E-14;Undefined;0;0;0;
+tert-butylamine;;kg;-4.36327934911199E-21;Undefined;0;0;0;
+Water from cooling;;m3;4.65003747102585E-5;Undefined;0;0;0;
+radium-228;;kBq;-2.46619872548782E-14;Undefined;0;0;0;
+potassium-40;;kBq;-9.52533976607131E-15;Undefined;0;0;0;
+Water;;m3;4.25032076679962E-8;Undefined;0;0;0;
+Water from turbine;;m3;0.0134476150611716;Undefined;0;0;0;
+hypochlorite;;kg;-5.89093433845752E-17;Undefined;0;0;0;
+mercury;;kg;1.19438584741826E-9;Undefined;0;0;0;
+Nitrogenous Matter (unspecified, as N);;kg;2.38000198605084E-5;Undefined;0;0;0;
+acenaphthene;;kg;1.50406005914105E-10;Undefined;0;0;0;
+Oils, unspecified;;kg;2.32268329144426E-5;Undefined;0;0;0;
+Water from turbine;;m3;3.49438800218816E-6;Undefined;0;0;0;
+Water from turbine;;m3;1.61446485884818E-4;Undefined;0;0;0;
+Water from cooling;;m3;-9.97262103851395E-7;Undefined;0;0;0;
+radium-226;;kBq;0.00212769644393981;Undefined;0;0;0;
+lead-210;;kBq;-9.37556653889277E-15;Undefined;0;0;0;
+benzo[a]anthracene;;kg;1.67611679358888E-11;Undefined;0;0;0;
+beryllium;;kg;4.45093760458851E-12;Undefined;0;0;0;
+Water from cooling;;m3;-1.68962514694449E-5;Undefined;0;0;0;
+chrysene;;kg;6.10901883398694E-11;Undefined;0;0;0;
+Water from cooling;;m3;5.22828092150982E-7;Undefined;0;0;0;
+monoethanolamine;;kg;-1.06835494357109E-19;Undefined;0;0;0;
+biological oxygen demand;;kg;9.03894074612346E-6;Undefined;0;0;0;
+Water from cooling;;m3;5.26815123650506E-6;Undefined;0;0;0;
+Water from cooling;;m3;-7.23045160863177E-6;Undefined;0;0;0;
+nitrate;;kg;2.74074936139839E-6;Undefined;0;0;0;
+zirconium-95;;kBq;5.92776851826134E-16;Undefined;0;0;0;
+benzoic acid;;kg;1.07E-11;Undefined;0;0;0;
+bromine;;kg;-1.72733910783249E-16;Undefined;0;0;0;
+chlormequat chloride;;kg;2.20206915562391E-15;Undefined;0;0;0;
+benzene;;kg;3.35230666732773E-7;Undefined;0;0;0;
+fluoride;;kg;1.36055297144204E-7;Undefined;0;0;0;
+cobalt-58;;kBq;8.4351110530335E-7;Undefined;0;0;0;
+dimethenamid;;kg;6.74790223336223E-22;Undefined;0;0;0;
+hydrogen fluoride;;kg;1.30358931439916E-8;Undefined;0;0;0;
+Phosphorus;;kg;4.45000099593432E-7;Undefined;0;0;0;
+waste heat;;MJ;0.122864137661975;Undefined;0;0;0;
+Water (rain water);;m3;2.15204971951142E-4;Undefined;0;0;0;
+magnesium;;kg;4.66725255275042E-9;Undefined;0;0;0;
+cyprodinil;;kg;5.98564315310059E-16;Undefined;0;0;0;
+tert-butyl methyl ether;;kg;2.58000072059364E-15;Undefined;0;0;0;
+?-butyrolactone;;kg;-2.66590288031068E-21;Undefined;0;0;0;
+Curium alpha;;kBq;2.80625111370315E-8;Undefined;0;0;0;
+chromium (iii);;kg;1.77254046672796E-8;Undefined;0;0;0;
+2-hexanone;;kg;-2.37E-18;Undefined;0;0;0;
+polycyclic aromatic hydrocarbons;;kg;1.49000588646777E-11;Undefined;0;0;0;
+ethephon;;kg;6.65627016744235E-18;Undefined;0;0;0;
+ethyl benzene;;kg;1.82758835297653E-8;Undefined;0;0;0;
+methyl isobutyl ketone;;kg;-1.18816737734356E-19;Undefined;0;0;0;
+phenanthrene;;kg;-8.67E-20;Undefined;0;0;0;
+Water from cooling;;m3;2.28132699058921E-6;Undefined;0;0;0;
+ruthenium-106;;kBq;-1.32122219758259E-5;Undefined;0;0;0;
+protactinium-234;;kBq;6.09123096326749E-7;Undefined;0;0;0;
+Water from turbine;;m3;-2.50503021212801E-5;Undefined;0;0;0;
+ethanol;;kg;-5.6612706202165E-17;Undefined;0;0;0;
+methyl formate;;kg;-4.54299479403279E-22;Undefined;0;0;0;
+Water;;m3;0.00104000397915072;Undefined;0;0;0;
+acetic acid;;kg;5.24995762313024E-10;Undefined;0;0;0;
+nitrite;;kg;2.71002074979087E-6;Undefined;0;0;0;
+Water from turbine;;m3;0.0114929540700832;Undefined;0;0;0;
+tungsten;;kg;1.68505900015644E-11;Undefined;0;0;0;
+technetium-99;;kBq;-1.30798537929031E-15;Undefined;0;0;0;
+methyl ethyl ketone;;kg;-2.89E-20;Undefined;0;0;0;
+Water;;m3;-2.08871102887725E-7;Undefined;0;0;0;
+iodine-133;;kBq;-1.01843033954335E-16;Undefined;0;0;0;
+Water from cooling;;m3;9.0701557567109E-4;Undefined;0;0;0;
+vanadium;;kg;5.20087705640581E-14;Undefined;0;0;0;
+titanium;;kg;7.0432276432482E-9;Undefined;0;0;0;
+Water from cooling;;m3;-1.24542451426515E-8;Undefined;0;0;0;
+xylene (all isomers);;kg;2.07930925863831E-8;Undefined;0;0;0;
+tert-butyl methyl ether;;kg;-8.1574372107793E-19;Undefined;0;0;0;
+Dichromate;;kg;-9.33555193760053E-18;Undefined;0;0;0;
+Water from cooling;;m3;7.92064237101531E-7;Undefined;0;0;0;
+Water from cooling;;m3;-6.71204624261354E-6;Undefined;0;0;0;
+2,4-dimethylphenol;;kg;-1.02E-17;Undefined;0;0;0;
+nitrogen dioxide;;kg;1.7640800027601906E-4;Undefined;0;0;0;
+propylamine;;kg;-2.8855586825912E-22;Undefined;0;0;0;
+lead;;kg;4.95690844349155E-8;Undefined;0;0;0;
+Water from cooling;;m3;2.1506355580202E-16;Undefined;0;0;0;
+cesium;;kg;-4.07372776769521E-18;Undefined;0;0;0;
+strontium-90;;kBq;1.02696476549772E-6;Undefined;0;0;0;
+Water from cooling;;m3;1.27002317734838E-4;Undefined;0;0;0;
+Oils, unspecified;;kg;5.92530581271517E-7;Undefined;0;0;0;
+adsorbable organic halogen compounds;;kg;2.42008544206141E-14;Undefined;0;0;0;
+Heavy metals to water (unspecified);;kg;9.90267782913119E-14;Undefined;0;0;0;
+arsenic;;kg;2.98001305743811E-11;Undefined;0;0;0;
+Water;;m3;3.12014290349445E-4;Undefined;0;0;0;
+Water from cooling;;m3;-7.88655919573813E-6;Undefined;0;0;0;
+copper;;kg;6.34068484262686E-8;Undefined;0;0;0;
+carbon disulphide;;kg;-5.89981822232503E-9;Undefined;0;0;0;
+uranium-234;;kBq;-5.58788410468731E-8;Undefined;0;0;0;
+isopropylamine;;kg;-3.59446601912147E-21;Undefined;0;0;0;
+strontium-90;;kBq;-1.08404165943103E-6;Undefined;0;0;0;
+Water from cooling;;m3;-3.55289960948963E-6;Undefined;0;0;0;
+hydroxide;;kg;1.86762666972859E-10;Undefined;0;0;0;
+propanal;;kg;-6.76958481981699E-22;Undefined;0;0;0;
+glutaraldehyde;;kg;-1.35791277696821E-18;Undefined;0;0;0;
+Acrylate, ion;;kg;-1.08832903428342E-20;Undefined;0;0;0;
+Water from cooling;;m3;-4.67868641645425E-5;Undefined;0;0;0;
+methylamine;;kg;-1.33694897426789E-21;Undefined;0;0;0;
+cerium-144;;kBq;-2.865585297249E-17;Undefined;0;0;0;
+chloromethane;;kg;-7.25293120687209E-14;Undefined;0;0;0;
+Water;;m3;-3.88995083055901E-8;Undefined;0;0;0;
+Water from turbine;;m3;-5.10912169104836E-4;Undefined;0;0;0;
+2,3,7,8-tetrachlorodibenzo-p-dioxin;;kg;7.02000650557799E-19;Undefined;0;0;0;
+cresol;;kg;3.73015866582996E-16;Undefined;0;0;0;
+benzo[a]anthracene;;kg;4.77432628176014E-12;Undefined;0;0;0;
+Water from turbine;;m3;0.0405954869409365;Undefined;0;0;0;
+Water;;m3;1.6701111698501E-4;Undefined;0;0;0;
+rubidium;;kg;-2.46619872548782E-18;Undefined;0;0;0;
+deltamethrin;;kg;1.01338468521846E-13;Undefined;0;0;0;
+iron-59;;kBq;-7.68814562660912E-13;Undefined;0;0;0;
+iron;;kg;8.34991453768841E-9;Undefined;0;0;0;
+strontium-89;;kBq;-9.94467141990942E-16;Undefined;0;0;0;
+Water from turbine;;m3;-3.35999704672017E-4;Undefined;0;0;0;
+thorium-232;;kBq;-1.76726840129465E-15;Undefined;0;0;0;
+Plutonium-alpha;;kBq;8.42875341118083E-8;Undefined;0;0;0;
+Water;;m3;2.05097196018361E-8;Undefined;0;0;0;
+1,2-dichloropropane;;kg;3.07995029712789E-21;Undefined;0;0;0;
+dicamba;;kg;2.27969696372195E-22;Undefined;0;0;0;
+vanadium;;kg;2.36149820437132E-9;Undefined;0;0;0;
+Water;;m3;0.00911716018559404;Undefined;0;0;0;
+zirconium;;kg;-2.35850872073919E-15;Undefined;0;0;0;
+Water from turbine;;m3;7.58425781679532E-6;Undefined;0;0;0;
+o-chlorotoluene;;kg;-2.07680428084754E-21;Undefined;0;0;0;
+propionic acid;;kg;-4.44317579225856E-21;Undefined;0;0;0;
+polycyclic aromatic hydrocarbons;;kg;1.0314478188059906E-9;Undefined;0;0;0;
+acetone;;kg;-3.90955950407415E-18;Undefined;0;0;0;
+carbon-14;;kBq;1.12067669775765E-6;Undefined;0;0;0;
+rubidium;;kg;-4.07372776769521E-17;Undefined;0;0;0;
+Water;;m3;4.32000000123626E-6;Undefined;0;0;0;
+Water;;m3;-4.6991727133958E-7;Undefined;0;0;0;
+lanthanum-140;;kBq;-1.67740894930835E-16;Undefined;0;0;0;
+molybdenum;;kg;1.47903081719916E-8;Undefined;0;0;0;
+fluoranthene;;kg;2.24828297267488E-11;Undefined;0;0;0;
+phenol;;kg;3.59418075748011E-7;Undefined;0;0;0;
+Water from cooling;;m3;-3.36673281951344E-8;Undefined;0;0;0;
+aluminium;;kg;1.0721417634208E-6;Undefined;0;0;0;
+ammonia;;kg;4.95023553762014E-14;Undefined;0;0;0;
+tellurium-132;;kBq;-5.01228800894071E-18;Undefined;0;0;0;
+benzene;;kg;9.57885497380465E-8;Undefined;0;0;0;
+dichloromethane;;kg;-5.95083001919141E-17;Undefined;0;0;0;
+Water from turbine;;m3;6.34063982475983E-7;Undefined;0;0;0;
+trichlorofon;;kg;4.86905667896453E-14;Undefined;0;0;0;
+Water;;m3;-1.69005660037557E-6;Undefined;0;0;0;
+bromide;;kg;1.44000000000571E-9;Undefined;0;0;0;
+Water from turbine;;m3;4.46213136086007E-4;Undefined;0;0;0;
+Water from cooling;;m3;-4.06552043507258E-5;Undefined;0;0;0;
+Water from cooling;;m3;-3.98927061894761E-7;Undefined;0;0;0;
+terbufos;;kg;2.56484668689309E-22;Undefined;0;0;0;
+ethyl benzene;;kg;5.20837434711991E-9;Undefined;0;0;0;
+m-xylene;;kg;-1.17986747037771E-17;Undefined;0;0;0;
+chlorobenzene;;kg;-5.87095360384708E-16;Undefined;0;0;0;
+Water from turbine;;m3;0.02891289670322;Undefined;0;0;0;
+Water from cooling;;m3;5.63119556748474E-6;Undefined;0;0;0;
+diflufenican;;kg;1.40131673537371E-16;Undefined;0;0;0;
+Water from cooling;;m3;4.99463200469671E-5;Undefined;0;0;0;
+triethylene glycol;;kg;7.31532295774534E-18;Undefined;0;0;0;
+Water from cooling;;m3;4.52133812380333E-4;Undefined;0;0;0;
+Water from turbine;;m3;-2.96277213056054E-4;Undefined;0;0;0;
+carbonate;;kg;1.60489686718879E-5;Undefined;0;0;0;
+phenol;;kg;9.95986824823916E-8;Undefined;0;0;0;
+Water from turbine;;m3;3.00526058651954E-6;Undefined;0;0;0;
+sulfite;;kg;5.51762368896035E-8;Undefined;0;0;0;
+Water from cooling;;m3;1.05006330029754E-4;Undefined;0;0;0;
+tellurium-123;;kBq;-1.04839062711415E-16;Undefined;0;0;0;
+Water;;m3;4.630010393819E-5;Undefined;0;0;0;
+Nitrogen, organic bound;;kg;-3.59445829366218E-16;Undefined;0;0;0;
+acenaphthene;;kg;4.16865907019349E-11;Undefined;0;0;0;
+Water from cooling;;m3;3.89193127294774E-4;Undefined;0;0;0;
+calcium;;kg;1.86118271148719E-12;Undefined;0;0;0;
+Water from turbine;;m3;-4.26649369324866E-6;Undefined;0;0;0;
+acetamide;;kg;-3.02533333697114E-22;Undefined;0;0;0;
+isoproturon;;kg;5.65532964366153E-16;Undefined;0;0;0;
+Water from cooling;;m3;-3.14916066749291E-7;Undefined;0;0;0;
+hexadecane;;kg;-2.19E-17;Undefined;0;0;0;
+lasso;;kg;3.29721857237405E-10;Undefined;0;0;0;
+Phosphorus;;kg;1.39063553436166E-6;Undefined;0;0;0;
+Water from turbine;;m3;-3.15317713384971E-6;Undefined;0;0;0;
+sodium hypochlorite;;kg;9.15092173112752E-6;Undefined;0;0;0;
+sodium;;kg;3.19970805456372E-4;Undefined;0;0;0;
+Water from cooling;;m3;4.71203347658412E-6;Undefined;0;0;0;
+sulfide;;kg;2.92712201345031E-6;Undefined;0;0;0;
+formaldehyde;;kg;6.73015351552111E-14;Undefined;0;0;0;
+Water from turbine;;m3;-0.00221207589873213;Undefined;0;0;0;
+cresol;;kg;4.86020644529735E-16;Undefined;0;0;0;
+iodide;;kg;-2.46619872548782E-17;Undefined;0;0;0;
+Water from cooling;;m3;-2.05999698876964E-5;Undefined;0;0;0;
+butanol;;kg;-2.31642647222914E-17;Undefined;0;0;0;
+chromium-51;;kBq;-1.09830574831068E-14;Undefined;0;0;0;
+Water from turbine;;m3;0.052826189960522;Undefined;0;0;0;
+biological oxygen demand;;kg;6.63428384282524E-8;Undefined;0;0;0;
+naphthalene;;kg;1.05015891092212E-8;Undefined;0;0;0;
+methanol;;kg;9.57607750618813E-7;Undefined;0;0;0;
+americium-241;;kBq;2.12471674916802E-8;Undefined;0;0;0;
+Water from turbine;;m3;0.113840232019506;Undefined;0;0;0;
+hydrazine;;kg;-1.22150346495029E-16;Undefined;0;0;0;
+mancozeb;;kg;1.18850831000254E-11;Undefined;0;0;0;
+fipronil;;kg;2.32028776276159E-23;Undefined;0;0;0;
+aluminium;;kg;-8.14375579183028E-13;Undefined;0;0;0;
+nitrogen, total (excluding N2);;kg;2.850004299315112E-8;Undefined;0;0;0;
+zinc-65;;kBq;-6.59982995944577E-14;Undefined;0;0;0;
+acetyl chloride;;kg;-3.74424425720074E-22;Undefined;0;0;0;
+sulphuric acid;;kg;-9.87972400360835E-8;Undefined;0;0;0;
+Water;;m3;2.34008218267156E-6;Undefined;0;0;0;
+Water;;m3;5.29001068001759E-6;Undefined;0;0;0;
+Water from cooling;;m3;2.0005636342808E-4;Undefined;0;0;0;
+chloride;;kg;0.00126842939548356;Undefined;0;0;0;
+hypochlorite;;kg;-6.16050718796262E-17;Undefined;0;0;0;
+cyanide;;kg;3.31381625264842E-8;Undefined;0;0;0;
+Water;;m3;1.88049493245134E-4;Undefined;0;0;0;
+mercury;;kg;1.17710098163348E-10;Undefined;0;0;0;
+Water;;m3;9.17249688267492E-5;Undefined;0;0;0;
+polonium-210;;kBq;-7.64821616937913E-15;Undefined;0;0;0;
+Water from turbine;;m3;-0.00127799154093771;Undefined;0;0;0;
+sulfate;;kg;2.90672981138599E-4;Undefined;0;0;0;
+sulfur;;kg;3.1241116698909E-13;Undefined;0;0;0;
+uranium-234;;kBq;2.02000532205067E-5;Undefined;0;0;0;
+methacrylate;;kg;-1.00843990602493E-19;Undefined;0;0;0;
+Water from turbine;;m3;6.98090620948242E-5;Undefined;0;0;0;
+Water from cooling;;m3;-4.23880235254994E-5;Undefined;0;0;0;
+hydrogen-3;;kBq;0.0466841077438123;Undefined;0;0;0;
+Water from turbine;;m3;0.00107782225542374;Undefined;0;0;0;
+cobalt;;kg;7.50225057282615E-10;Undefined;0;0;0;
+Water;;m3;-1.01561125123062E-8;Undefined;0;0;0;
+antimony-125;;kBq;1.61119371431727E-7;Undefined;0;0;0;
+magnesium;;kg;-8.68719536962788E-5;Undefined;0;0;0;
+particles (> PM10);;kg;1.11526644801865E-5;Undefined;0;0;0;
+niobium-95;;kBq;-2.61596603204604E-16;Undefined;0;0;0;
+barium;;kg;9.04614800827569E-7;Undefined;0;0;0;
+fenvalerate;;kg;9.32097336430843E-17;Undefined;0;0;0;
+isopropanol;;kg;-8.28723358660902E-21;Undefined;0;0;0;
+Water;;m3;1.58002311093932E-7;Undefined;0;0;0;
+Water;;m3;9.70126163916023E-6;Undefined;0;0;0;
+Water from turbine;;m3;0.0464103077980618;Undefined;0;0;0;
+chrysene;;kg;1.74623272356571E-11;Undefined;0;0;0;
+sulfur trioxide;;kg;7.23421197659159E-10;Undefined;0;0;0;
+Water from turbine;;m3;1.41113144866205E-4;Undefined;0;0;0;
+ethylenediamine;;kg;-4.37146861306428E-20;Undefined;0;0;0;
+manganese-54;;kBq;7.72608372092948E-7;Undefined;0;0;0;
+silver;;kg;4.24018253762278E-16;Undefined;0;0;0;
+ioxynil;;kg;4.33407561007464E-16;Undefined;0;0;0;
+Water from turbine;;m3;0.00212006330920676;Undefined;0;0;0;
+antimony-122;;kBq;-5.38172014258705E-17;Undefined;0;0;0;
+Silicon dioxide;;kg;8.76708235130273E-13;Undefined;0;0;0;
+methomyl;;kg;2.80154786408987E-14;Undefined;0;0;0;
+cerium-141;;kBq;-6.29030711624964E-17;Undefined;0;0;0;
+tin;;kg;5.08021590525047E-16;Undefined;0;0;0;
+Water from turbine;;m3;-3.87546992540242E-4;Undefined;0;0;0;
+cesium-137;;kBq;-4.61525208805636E-6;Undefined;0;0;0;
+boron;;kg;1.9191457166275E-7;Undefined;0;0;0;
+polychlorinated biphenyls;;kg;-7.41857332726552E-25;Undefined;0;0;0;
+1-pentene;;kg;-3.59446321782548E-22;Undefined;0;0;0;
+Water from turbine;;m3;-2.38522918100314E-4;Undefined;0;0;0;
+phosphate;;kg;6.53998685312085E-9;Undefined;0;0;0;
+phosphate;;kg;8.708583054831991E-7;Undefined;0;0;0;
+ammonium;;kg;1.8761873911121727E-5;Undefined;0;0;0;
+molybdenum;;kg;1.42006671122224E-16;Undefined;0;0;0;
+chloroacetic acid;;kg;-3.36480715073353E-19;Undefined;0;0;0;
+fluoride;;kg;-4.70217383204453E-7;Undefined;0;0;0;
+acetonitrile;;kg;-3.96389746961648E-22;Undefined;0;0;0;
+cesium-134;;kBq;-4.10924728151913E-7;Undefined;0;0;0;
+iodine-131;;kBq;-6.22179138417423E-6;Undefined;0;0;0;
+acetaldehyde;;kg;2.93000015428152E-12;Undefined;0;0;0;
+hydrocarbons (unspecified);;kg;5.92275638408062E-9;Undefined;0;0;0;
+Water from turbine;;m3;-1.30566006145618E-4;Undefined;0;0;0;
+Water;;m3;-1.85745707920674E-6;Undefined;0;0;0;
+cumene;;kg;-1.22810475982375E-15;Undefined;0;0;0;
+Water from cooling;;m3;8.4746803607985E-6;Undefined;0;0;0;
+chloride;;kg;0.00991986521133323;Undefined;0;0;0;
+sodium-24;;kBq;-6.32027191099917E-16;Undefined;0;0;0;
+Water;;m3;2.3403709009916E-10;Undefined;0;0;0;
+Water from cooling;;m3;-8.61979039292431E-6;Undefined;0;0;0;
+carbofuran;;kg;8.49298662253958E-14;Undefined;0;0;0;
+glyphosate;;kg;1.79946763028604E-12;Undefined;0;0;0;
+chemical oxygen demand;;kg;1.91E-12;Undefined;0;0;0;
+Docosane;;kg;-3.85E-19;Undefined;0;0;0;
+Water from turbine;;m3;-1.16155627270425E-4;Undefined;0;0;0;
+thallium;;kg;2.44149931364632E-13;Undefined;0;0;0;
+2-methyl-4-chlorophenoxyacetic acid;;kg;9.3187782342491E-16;Undefined;0;0;0;
+1,2-dibromoethane;;kg;2.65998079163655E-18;Undefined;0;0;0;
+dimethoate;;kg;-2.29744373246207E-18;Undefined;0;0;0;
+uranium-238;;kBq;3.27790351926951E-5;Undefined;0;0;0;
+hexane;;kg;4.07017322823936E-17;Undefined;0;0;0;
+Water;;m3;-1.96764047958973E-10;Undefined;0;0;0;
+Water from cooling;;m3;6.738744308117E-10;Undefined;0;0;0;
+trimethylamine;;kg;-4.44316232237093E-22;Undefined;0;0;0;
+icosane;;kg;-5.47E-18;Undefined;0;0;0;
+iodine-129;;kBq;3.06682936123244E-6;Undefined;0;0;0;
+Water from turbine;;m3;-1.06839390976279E-6;Undefined;0;0;0;
+Water;;m3;1.62021702055572E-6;Undefined;0;0;0;
+toluene;;kg;2.03964884294442E-7;Undefined;0;0;0;
+fluorine;;kg;9.90972907367934E-11;Undefined;0;0;0;
+Water;;m3;1.14099676048666E-6;Undefined;0;0;0;
+hydrogen sulfide;;kg;-5.16602483821786E-16;Undefined;0;0;0;
+nitric acid;;kg;-3.33999999569203E-18;Undefined;0;0;0;
+tin;;kg;7.82005063143989E-10;Undefined;0;0;0;
+Water from cooling;;m3;-1.82280411047729E-7;Undefined;0;0;0;
+vinyl chloride;;kg;2.44677068199055E-13;Undefined;0;0;0;
+hydrogen peroxide;;kg;8.37693198276525E-8;Undefined;0;0;0;
+potassium;;kg;-5.76861125191158E-12;Undefined;0;0;0;
+allyl chloride;;kg;-1.31795811297259E-17;Undefined;0;0;0;
+thorium-230;;kBq;4.85582932116267E-5;Undefined;0;0;0;
+iron;;kg;1.05297579252954E-4;Undefined;0;0;0;
+propylene oxide;;kg;5.28161452884136E-17;Undefined;0;0;0;
+formic acid;;kg;-2.52611008975637E-22;Undefined;0;0;0;
+acenaphthylene;;kg;6.37042781402045E-11;Undefined;0;0;0;
+potassium-40;;kBq;-1.12825543385789E-15;Undefined;0;0;0;
+methanol;;kg;-1.20814028394131E-17;Undefined;0;0;0;
+magnesium chloride;;kg;1.8024913580647E-9;Undefined;0;0;0;
+butylene glycol;;kg;3.2638563366657427E-13;Undefined;0;0;0;
+chromium (iii);;kg;-9.12594196629798E-18;Undefined;0;0;0;
+Water;;m3;7.20337825854762E-8;Undefined;0;0;0;
+benomyl;;kg;6.17924605668292E-13;Undefined;0;0;0;
+zinc;;kg;2.80160165906597E-7;Undefined;0;0;0;
+strontium;;kg;5.54165527839368E-10;Undefined;0;0;0;
+dipropylamine;;kg;-8.95619575942343E-22;Undefined;0;0;0;
+methyl acetate;;kg;-2.11674180073972E-22;Undefined;0;0;0;
+Water;;m3;1.10004252390042E-7;Undefined;0;0;0;
+Water;;m3;1.84129792776426E-8;Undefined;0;0;0;
+thorium-234;;kBq;6.09215096997233E-7;Undefined;0;0;0;
+Processed water to river, extreme scarcity;;kg;9.82041698546613E-7;Undefined;0;0;0;
+n-propanol;;kg;-1.23809065393097E-21;Undefined;0;0;0;
+cypermethrin;;kg;2.65250806730942E-17;Undefined;0;0;0;
+selenium;;kg;-5.80107316623245E-19;Undefined;0;0;0;
+scandium;;kg;-5.90090216777865E-16;Undefined;0;0;0;
+Water;;m3;4.4177969187705E-4;Undefined;0;0;0;
+chlorate;;kg;1.20008345934385E-12;Undefined;0;0;0;
+Water from turbine;;m3;0.018382208141389;Undefined;0;0;0;
+selenium;;kg;1.71519149539968E-9;Undefined;0;0;0;
+arsenic;;kg;5.89003308632678E-11;Undefined;0;0;0;
+Water;;m3;4.56071355826167E-6;Undefined;0;0;0;
+Water from turbine;;m3;-2.50043187445373E-5;Undefined;0;0;0;
+Water from turbine;;m3;-4.36117591523643E-6;Undefined;0;0;0;
+
+Emissions to soil
+lithium;;kg;-6.2603383767983E-20;Undefined;0;0;0;
+cyprodinil;;kg;-1.59753168492434E-22;Undefined;0;0;0;
+bifenthrin;;kg;-2.68585469449181E-23;Undefined;0;0;0;
+fenoxaprop-p-ethyl;;kg;-8.53718565291315E-28;Undefined;0;0;0;
+methyl parathion;;kg;-8.18738749660358E-24;Undefined;0;0;0;
+rimsulfuron;;kg;-1.49769700995617E-23;Undefined;0;0;0;
+azoxystrobin;;kg;-5.86097091759103E-22;Undefined;0;0;0;
+aldicarb;;kg;-4.1436229541849E-20;Undefined;0;0;0;
+fosetyl-aluminum;;kg;-5.69133122644054E-27;Undefined;0;0;0;
+tribenuron-methyl;;kg;-4.11364566527458E-25;Undefined;0;0;0;
+diflubenzuron;;kg;-1.65744991574416E-18;Undefined;0;0;0;
+parathion;;kg;-2.87557593662165E-21;Undefined;0;0;0;
+thidiazuron;;kg;-1.12826177977258E-22;Undefined;0;0;0;
+fenpiclonil;;kg;-4.47309800079166E-20;Undefined;0;0;0;
+metalaxil;;kg;-1.03839203524393E-21;Undefined;0;0;0;
+lead;;kg;1.55133905046225E-8;Undefined;0;0;0;
+demeton-s-methyl sulfoxide;;kg;-9.79491229808104E-23;Undefined;0;0;0;
+fenbuconazole;;kg;-2.41627990808178E-23;Undefined;0;0;0;
+thiodicarb;;kg;-2.59600683805555E-24;Undefined;0;0;0;
+ethalfluralin;;kg;-6.04068274878134E-21;Undefined;0;0;0;
+terbufos;;kg;-5.1620506921807E-22;Undefined;0;0;0;
+MCPB;;kg;-3.424724575715E-23;Undefined;0;0;0;
+pirimicarb;;kg;-4.83255960696406E-23;Undefined;0;0;0;
+cadmium;;kg;1.25919728753269E-12;Undefined;0;0;0;
+chlorimuron-ethyl;;kg;-5.81104940279752E-21;Undefined;0;0;0;
+lead;;kg;8.4638163874715E-13;Undefined;0;0;0;
+arsenic (v);;kg;1.31040498157265E-11;Undefined;0;0;0;
+amidosulfuron;;kg;-9.24576632302253E-24;Undefined;0;0;0;
+glyphosate;;kg;-1.4777260685683E-17;Undefined;0;0;0;
+chlormequat chloride;;kg;-1.14822818415103E-20;Undefined;0;0;0;
+glyphosate-trimesium;;kg;-1.2280996981251E-19;Undefined;0;0;0;
+2-chloro-N-(2,6-dimethylphenyl)-N-(2-methoxyethyl)acetamide;;kg;-1.817205310279E-20;Undefined;0;0;0;
+metsulfuron-methyl;;kg;-2.22657637450305E-21;Undefined;0;0;0;
+pentachlorophenol;;kg;-4.84253492861254E-21;Undefined;0;0;0;
+arsenic;;kg;-7.10904169054486E-19;Undefined;0;0;0;
+2-methyl-4-chlorophenoxyacetic acid;;kg;-1.67741078398387E-22;Undefined;0;0;0;
+chromium (iii);;kg;6.07444924111846E-9;Undefined;0;0;0;
+asulam;;kg;-2.84561881010638E-24;Undefined;0;0;0;
+difenoconazole;;kg;-6.47003010265572E-22;Undefined;0;0;0;
+flumetsulam;;kg;-4.31336003263833E-23;Undefined;0;0;0;
+magnesium;;kg;-2.71581729485372E-16;Undefined;0;0;0;
+tin;;kg;5.38052437072956E-8;Undefined;0;0;0;
+5-[2-chloro-4-(trifluoromethyl)phenoxy]-N-(methylsulphonyl)-2-nitrobenzamide;;kg;-2.09677656662639E-20;Undefined;0;0;0;
+potassium;;kg;9.76283632067416E-8;Undefined;0;0;0;
+thiram;;kg;-5.96080280004249E-21;Undefined;0;0;0;
+aldrin;;kg;-9.10596411419408E-18;Undefined;0;0;0;
+cobalt;;kg;1.74109455288983E-10;Undefined;0;0;0;
+acetamide;;kg;-1.85713764257662E-21;Undefined;0;0;0;
+sethoxydim;;kg;-1.8870962346474E-21;Undefined;0;0;0;
+iron;;kg;1.57093556220273E-7;Undefined;0;0;0;
+triallate;;kg;-1.22816043126854E-27;Undefined;0;0;0;
+molybdenum;;kg;2.0101962104354E-10;Undefined;0;0;0;
+fludioxonil;;kg;-1.62751700902497E-27;Undefined;0;0;0;
+lasso;;kg;-2.94547113329839E-21;Undefined;0;0;0;
+nitric acid;;kg;-2.65995734569569E-12;Undefined;0;0;0;
+permethrin;;kg;-2.01689878969081E-23;Undefined;0;0;0;
+sodium;;kg;7.5481964195927E-8;Undefined;0;0;0;
+fluroxypyr;;kg;-2.77572743336865E-23;Undefined;0;0;0;
+fipronil;;kg;-1.35791458208621E-20;Undefined;0;0;0;
+iron;;kg;3.26232962527365E-6;Undefined;0;0;0;
+orbencarb;;kg;-2.81566943677194E-19;Undefined;0;0;0;
+total organic carbon;;kg;-1.26805359565137E-14;Undefined;0;0;0;
+Oils, unspecified;;kg;3.1961243169043E-11;Undefined;0;0;0;
+chloride;;kg;2.43399642295894E-6;Undefined;0;0;0;
+nitrate;;kg;-1.2532801679707E-9;Undefined;0;0;0;
+Phosphorus;;kg;-7.12902568948976E-17;Undefined;0;0;0;
+mepiquat chloride;;kg;-3.05530676456635E-22;Undefined;0;0;0;
+kresoxim methyl;;kg;-1.43778939589352E-22;Undefined;0;0;0;
+bromuconazole;;kg;-2.69E-28;Undefined;0;0;0;
+chlorothalonil;;kg;-1.13824634597575E-18;Undefined;0;0;0;
+O-(4-bromo-2-chlorophenyl) O-ethyl S-propyl phosphorothioate;;kg;-1.78723736244517E-21;Undefined;0;0;0;
+sulfur;;kg;3.69891783265963E-11;Undefined;0;0;0;
+mancozeb;;kg;-1.47772244585989E-18;Undefined;0;0;0;
+fluoride;;kg;4.05290871389663E-9;Undefined;0;0;0;
+phenmedipham;;kg;-1.61750429501641E-22;Undefined;0;0;0;
+lactofen;;kg;-1.0184251852242E-23;Undefined;0;0;0;
+chloridazon;;kg;-2.34638053662733E-26;Undefined;0;0;0;
+clopyralid;;kg;-1.73733374459781E-22;Undefined;0;0;0;
+napropamide;;kg;-2.02687448274464E-19;Undefined;0;0;0;
+fenpropidin;;kg;-3.84407914839978E-22;Undefined;0;0;0;
+dimethoate;;kg;-9.61519682815369E-22;Undefined;0;0;0;
+linuron;;kg;-2.08678317537626E-18;Undefined;0;0;0;
+malathion;;kg;-8.70657999948496E-21;Undefined;0;0;0;
+arsenic (v);;kg;1.85117843341438E-10;Undefined;0;0;0;
+(2,4-dichlorophenoxy)acetic acid;;kg;-3.04531649625902E-18;Undefined;0;0;0;
+bentazone;;kg;-2.85560437523501E-22;Undefined;0;0;0;
+Oils, unspecified;;kg;-2.82564410602083E-13;Undefined;0;0;0;
+prochloraz;;kg;-2.26650625258189E-22;Undefined;0;0;0;
+beryllium;;kg;6.82371908283908E-18;Undefined;0;0;0;
+trinexapac-ethyl;;kg;-4.26345005419581E-22;Undefined;0;0;0;
+tebutam;;kg;-7.71810758216867E-19;Undefined;0;0;0;
+[(3,5,6-trichloropyridin-2-yl)oxy]acetic acid;;kg;-1.84715921958878E-19;Undefined;0;0;0;
+nickel;;kg;4.38707934778953E-9;Undefined;0;0;0;
+dithianon;;kg;-9.24576632298799E-23;Undefined;0;0;0;
+fenoxaprop-ethyl;;kg;-2.18666849278842E-27;Undefined;0;0;0;
+carbendazim;;kg;-1.42779877362903E-20;Undefined;0;0;0;
+selenium;;kg;1.29001519255843E-12;Undefined;0;0;0;
+flufenacet;;kg;-5.32178838712246E-24;Undefined;0;0;0;
+zinc;;kg;4.44949173418343E-8;Undefined;0;0;0;
+strontium;;kg;1.66990991262224E-11;Undefined;0;0;0;
+iprodione;;kg;-8.10750011482774E-21;Undefined;0;0;0;
+sulfide;;kg;7.34307992962324E-8;Undefined;0;0;0;
+sulfur;;kg;4.51043944248237E-8;Undefined;0;0;0;
+carbofuran;;kg;-2.8955289464502E-19;Undefined;0;0;0;
+sulfentrazone;;kg;-2.99538834374322E-20;Undefined;0;0;0;
+nicosulfuron;;kg;-3.29493353675348E-23;Undefined;0;0;0;
+chlorpyrifos;;kg;-5.112111615817E-20;Undefined;0;0;0;
+choline chloride;;kg;-4.99229215772479E-26;Undefined;0;0;0;
+sulfosulfuron;;kg;-5.46201973448701E-28;Undefined;0;0;0;
+prosulfuron;;kg;-1.42780414127911E-23;Undefined;0;0;0;
+hydrocarbons (unspecified);;kg;9.31271173083032E-14;Undefined;0;0;0;
+pyrithiobac-sodium;;kg;-6.44007775522679E-23;Undefined;0;0;0;
+acetochlor;;kg;-7.37862342431498E-21;Undefined;0;0;0;
+chlorsulfuron;;kg;-3.65E-28;Undefined;0;0;0;
+aluminium;;kg;8.82036938701264E-8;Undefined;0;0;0;
+imazaquin;;kg;-1.01843622624801E-23;Undefined;0;0;0;
+titanium;;kg;-1.00845463752266E-17;Undefined;0;0;0;
+1,2-dichloroethane;;kg;-3.15E-21;Undefined;0;0;0;
+arsenic;;kg;-2.74998244569859E-16;Undefined;0;0;0;
+copper;;kg;5.58033494580156E-10;Undefined;0;0;0;
+carbetamide;;kg;-2.76573244930238E-19;Undefined;0;0;0;
+chlortoluron;;kg;-2.965425281406E-22;Undefined;0;0;0;
+triasulfuron;;kg;-3.65E-28;Undefined;0;0;0;
+benomyl;;kg;-5.29185057589274E-22;Undefined;0;0;0;
+ethofumesate;;kg;-2.32641654476655E-22;Undefined;0;0;0;
+molybdenum;;kg;1.95020795505395E-18;Undefined;0;0;0;
+propiconazole;;kg;-1.09831522518567E-22;Undefined;0;0;0;
+metazachlor;;kg;-4.28340573191403E-20;Undefined;0;0;0;
+metamitron;;kg;-8.83637483584887E-22;Undefined;0;0;0;
+lambda-cyhalothrin;;kg;-1.67742075579862E-21;Undefined;0;0;0;
+diclofop-methyl;;kg;-2.74578005043465E-26;Undefined;0;0;0;
+diuron;;kg;-3.47465096488221E-21;Undefined;0;0;0;
+dimethenamid;;kg;-1.27802941647381E-21;Undefined;0;0;0;
+Phosphorus;;kg;1.06337817521435E-7;Undefined;0;0;0;
+Bark, Beware: limited use only;;kg;1.76E-7;Undefined;0;0;0;
+tributylphosphorotrithioate;;kg;-1.05837435763303E-21;Undefined;0;0;0;
+anthraquinone;;kg;-1.73733084295671E-26;Undefined;0;0;0;
+4-amino-3,5,6-trichloropyridine-2-carboxylic acid;;kg;-4.89E-29;Undefined;0;0;0;
+boron;;kg;-8.0076706944296E-17;Undefined;0;0;0;
+atrazine;;kg;-2.52610419330139E-18;Undefined;0;0;0;
+chromium;;kg;2.95314744089506E-11;Undefined;0;0;0;
+chlorine;;kg;1.4800114559719E-9;Undefined;0;0;0;
+isoxaflutole;;kg;-7.16894591586361E-23;Undefined;0;0;0;
+diquat dibromide;;kg;-8.15743777526851E-23;Undefined;0;0;0;
+teflubenzuron;;kg;-3.47465372398847E-21;Undefined;0;0;0;
+barium;;kg;-5.77112289325481E-20;Undefined;0;0;0;
+endosulfan;;kg;-3.44470737144654E-19;Undefined;0;0;0;
+metam-sodium;;kg;-2.75575396809186E-21;Undefined;0;0;0;
+chromium (iii);;kg;1.56001242489547E-10;Undefined;0;0;0;
+titanium;;kg;-1.82719352487368E-17;Undefined;0;0;0;
+cadmium;;kg;1.22703091900764E-9;Undefined;0;0;0;
+bromine;;kg;8.66325753729148E-13;Undefined;0;0;0;
+polycyclic aromatic hydrocarbons;;kg;2.0407937452029484E-10;Undefined;0;0;0;
+vinclozolin;;kg;-9.65511911616059E-22;Undefined;0;0;0;
+magnesium;;kg;4.39072120003675E-8;Undefined;0;0;0;
+carbaryl;;kg;-8.61674086310848E-23;Undefined;0;0;0;
+mecoprop-p;;kg;-2.0668079965808E-26;Undefined;0;0;0;
+Fenoxaprop;;kg;-4.98232989618642E-21;Undefined;0;0;0;
+clomazone;;kg;-7.43855651063581E-21;Undefined;0;0;0;
+clodinafop-propargyl;;kg;-5.38181160234134E-27;Undefined;0;0;0;
+nickel;;kg;5.23012279975478E-9;Undefined;0;0;0;
+diflufenican;;kg;-4.07372376062327E-22;Undefined;0;0;0;
+esfenvalerate;;kg;-9.30567438146521E-24;Undefined;0;0;0;
+calcium;;kg;4.39991373067562E-7;Undefined;0;0;0;
+3-(3,5-dichlorophenyl)-1,5-dimethyl-3-azabicyclo[3.1.0]hexane-2,4-dione;;kg;-2.89553568690848E-21;Undefined;0;0;0;
+?-([1,1'-biphenyl]-4-yloxy)-?-tert-butyl-1H-1,2,4-triazol-1-ethanol;;kg;-1.32800657361355E-27;Undefined;0;0;0;
+aluminium;;kg;3.0509405073785E-7;Undefined;0;0;0;
+ammonia;;kg;5.13493047537168E-7;Undefined;0;0;0;
+ioxynil;;kg;-5.32178866919567E-22;Undefined;0;0;0;
+manganese;;kg;1.06100258352525E-9;Undefined;0;0;0;
+strontium;;kg;-1.69738371882757E-19;Undefined;0;0;0;
+carfentrazone-ethyl;;kg;-6.65176132737596E-25;Undefined;0;0;0;
+prometryn;;kg;-9.62517238276375E-22;Undefined;0;0;0;
+isoproturon;;kg;-4.89245884603365E-21;Undefined;0;0;0;
+chloride;;kg;-2.32641655169779E-17;Undefined;0;0;0;
+fluazifop-p-butyl;;kg;-6.13056385028962E-21;Undefined;0;0;0;
+antimony;;kg;5.64004627061753E-13;Undefined;0;0;0;
+bifenox;;kg;-6.83957610339407E-27;Undefined;0;0;0;
+mercury;;kg;-5.72857228504762E-14;Undefined;0;0;0;
+cyfluthrin;;kg;-1.09831176186251E-22;Undefined;0;0;0;
+(R)-2-(4-chloro-2-methylphenoxy)propionic acid;;kg;-2.75575514278015E-22;Undefined;0;0;0;
+cyproconazole;;kg;-1.3579101405894E-22;Undefined;0;0;0;
+imazamox;;kg;-2.49615624922061E-21;Undefined;0;0;0;
+bromoxynil;;kg;-8.07756067792607E-23;Undefined;0;0;0;
+bas 480f;;kg;-1.20813982676107E-22;Undefined;0;0;0;
+pursuit;;kg;-6.23040353957459E-21;Undefined;0;0;0;
+metolachlor;;kg;-8.67665111199634E-19;Undefined;0;0;0;
+methanol;;kg;2.91016316780862E-10;Undefined;0;0;0;
+tebuconazole;;kg;-1.42780637323461E-20;Undefined;0;0;0;
+dicamba;;kg;-3.26495863024314E-22;Undefined;0;0;0;
+acephate;;kg;-1.22809655582572E-20;Undefined;0;0;0;
+pendimethalin;;kg;-1.48771127440726E-19;Undefined;0;0;0;
+boron;;kg;-1.39784709843735E-20;Undefined;0;0;0;
+mercury;;kg;2.46885558461435E-10;Undefined;0;0;0;
+glyphosate;;kg;-5.59137081525369E-18;Undefined;0;0;0;
+silver;;kg;7.93599354342135E-10;Undefined;0;0;0;
+sodium methylarsonate;;kg;-1.14822469211722E-21;Undefined;0;0;0;
+triadimenol;;kg;-5.07218213142998E-23;Undefined;0;0;0;
+trifluralin;;kg;-3.14515595593546E-19;Undefined;0;0;0;
+ammonia;;kg;5.47001974458793E-12;Undefined;0;0;0;
+ethephon;;kg;-9.10596122947403E-21;Undefined;0;0;0;
+calcium;;kg;-2.4062918228818E-15;Undefined;0;0;0;
+quizalofop-ethyl;;kg;-3.74424758128037E-22;Undefined;0;0;0;
+potassium;;kg;1.38104057276234E-6;Undefined;0;0;0;
+cypermethrin;;kg;-5.71121293881422E-20;Undefined;0;0;0;
+zinc;;kg;-5.30521620228518E-10;Undefined;0;0;0;
+flumiclorac-pentyl;;kg;-2.12672155885253E-24;Undefined;0;0;0;
+silver;;kg;-4.81257434467295E-21;Undefined;0;0;0;
+chromium;;kg;1.83112827892381E-9;Undefined;0;0;0;
+deltamethrin;;kg;-3.20506836739181E-22;Undefined;0;0;0;
+barium;;kg;-1.17817033443801E-15;Undefined;0;0;0;
+paraquat;;kg;-1.58754430504623E-21;Undefined;0;0;0;
+manganese;;kg;1.09066112710223E-8;Undefined;0;0;0;
+tebupirimfos;;kg;-1.25806543476891E-22;Undefined;0;0;0;
+acifluorfen;;kg;-7.22884490877108E-24;Undefined;0;0;0;
+imazapyr;;kg;-5.9807882452817E-25;Undefined;0;0;0;
+vanadium;;kg;1.83000742565533E-17;Undefined;0;0;0;
+cloquintocet-mexyl;;kg;-1.29805161004621E-27;Undefined;0;0;0;
+vanadium;;kg;2.01019621043892E-10;Undefined;0;0;0;
+metribuzin;;kg;-7.19890827495178E-20;Undefined;0;0;0;
+total organic carbon;;kg;-1.36789884699946E-15;Undefined;0;0;0;
+antimony;;kg;-5.92086988199767E-22;Undefined;0;0;0;
+flusilazole;;kg;-8.43700822666953E-23;Undefined;0;0;0;
+chlorine;;kg;8.72084934276389E-8;Undefined;0;0;0;
+thifensulfuron-methyl;;kg;-2.8456182803554E-24;Undefined;0;0;0;
+acetic acid;;kg;4.06022843515834E-9;Undefined;0;0;0;
+tefluthrin;;kg;-9.85480060079772E-23;Undefined;0;0;0;
+endothall;;kg;-1.85713309792672E-22;Undefined;0;0;0;
+flumioxazin;;kg;-2.89553490721452E-21;Undefined;0;0;0;
+clethodim;;kg;-8.28721915137141E-21;Undefined;0;0;0;
+imidacloprid;;kg;-1.31796432011757E-20;Undefined;0;0;0;
+copper;;kg;1.2774770370411E-8;Undefined;0;0;0;
+monocrotophos;;kg;-2.02688456639474E-19;Undefined;0;0;0;
+fenpropimorph;;kg;-8.86633176877247E-22;Undefined;0;0;0;
+cobalt;;kg;6.1900520961656E-10;Undefined;0;0;0;
+sulfate;;kg;1.22051332989058E-8;Undefined;0;0;0;
+2,4,6,8-tetramethyl-1,3,5,7-tetraoxacyclooctane;;kg;-1.54762551449825E-19;Undefined;0;0;0;
+Bidrin;;kg;-2.25652033817108E-21;Undefined;0;0;0;
+simazine;;kg;-3.02534808644326E-22;Undefined;0;0;0;
+sulphuric acid;;kg;-5.92087379709694E-24;Undefined;0;0;0;
+chromium (vi);;kg;-3.11510382744141E-16;Undefined;0;0;0;
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+Medium radioactive wastes;kg;5.87348019628652E-9;Undefined;0;0;0;
+Spoil (deposited);kg;-0.021799971624873;Undefined;0;0;0;
+Demolition waste (deposited);kg;1.61E-9;Undefined;0;0;0;
+High radioactive waste;kg;6.67456272176208E-10;Undefined;0;0;0;
+Oil sludge;kg;4.79E-21;Undefined;0;0;0;
+Scoria;kg;3.24E-18;Undefined;0;0;0;
+Tailings (deposited);kg;0.247025762322901;Undefined;0;0;0;
+Overburden (deposited);kg;0.00287817350215448;Undefined;0;0;0;
+Slag (deposited);kg;6.77567854630623E-12;Undefined;0;0;0;
+Waste (deposited);kg;0.257305066451945;Undefined;0;0;0;
+Hazardous waste (deposited);kg;1.29470337039127E-8;Undefined;0;0;0;
+Radioactive tailings;kg;6.26882164548949E-7;Undefined;0;0;0;
+Low radioactive wastes;kg;1.22558428950037E-8;Undefined;0;0;0;
+Hazardous waste (underground deposit);kg;1.74E-16;Undefined;0;0;0;
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+material
+
+Process identifier
+Standard000000000002624
+
+Type
+Unit process
+
+Process name
+Dummy: Gypsum suspension
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Multiple output allocation
+Unspecified
+
+Substitution allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Products
+Gypsum suspension;kg;1.0;100.0;not defined;Materials production\Other materials;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000002595
+
+Type
+Unit process
+
+Process name
+Dummy: Oil sludge
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Waste treatment
+Oil sludge;kg;1.0;All waste types;End-of-life treatment;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000004259
+
+Type
+Unit process
+
+Process name
+Dummy: Hazardous waste (deposited)
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Waste treatment
+Hazardous waste (deposited);kg;1.0;All waste types;Wastes\Other waste;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000002149
+
+Type
+Unit process
+
+Process name
+Dummy: Spoil (deposited)
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Waste treatment
+Spoil (deposited);kg;1.0;All waste types;Wastes\Other waste;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000003143
+
+Type
+Unit process
+
+Process name
+Dummy: Slag (deposited)
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Waste treatment
+Slag (deposited);kg;1.0;All waste types;Wastes\Other waste;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000002344
+
+Type
+Unit process
+
+Process name
+Dummy: Hazardous waste (underground deposit)
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Waste treatment
+Hazardous waste (underground deposit);kg;1.0;All waste types;Wastes\Other waste;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+material
+
+Process identifier
+Standard000000000004265
+
+Type
+Unit process
+
+Process name
+Dummy: Water (process water)
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Multiple output allocation
+Unspecified
+
+Substitution allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Products
+Water (process water);kg;1.0;100.0;not defined;Materials production\Other materials;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000003114
+
+Type
+Unit process
+
+Process name
+Dummy: Demolition waste (deposited)
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Waste treatment
+Demolition waste (deposited);kg;1.0;All waste types;Wastes\Other waste;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000002443
+
+Type
+Unit process
+
+Process name
+Dummy: Medium radioactive wastes
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Waste treatment
+Medium radioactive wastes;kg;1.0;All waste types;Wastes\Radioactive waste;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000002669
+
+Type
+Unit process
+
+Process name
+Dummy: Overburden (deposited)
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Waste treatment
+Overburden (deposited);kg;1.0;All waste types;Wastes\Other waste;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000003248
+
+Type
+Unit process
+
+Process name
+Dummy: Scoria
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Waste treatment
+Scoria;kg;1.0;All waste types;End-of-life treatment;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000003250
+
+Type
+Unit process
+
+Process name
+Dummy: High radioactive waste
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Waste treatment
+High radioactive waste;kg;1.0;All waste types;Wastes\Radioactive waste;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000002194
+
+Type
+Unit process
+
+Process name
+Dummy: Low radioactive wastes
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Waste treatment
+Low radioactive wastes;kg;1.0;All waste types;Wastes\Radioactive waste;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+material
+
+Process identifier
+Standard000000000002260
+
+Type
+Unit process
+
+Process name
+Dummy: Water (cooling water)
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Multiple output allocation
+Unspecified
+
+Substitution allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Products
+Water (cooling water);kg;1.0;100.0;not defined;Materials production\Other materials;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+material
+
+Process identifier
+Standard000000000002519
+
+Type
+Unit process
+
+Process name
+Dummy: Hydrogen
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Multiple output allocation
+Unspecified
+
+Substitution allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Products
+Hydrogen;kg;1.0;100.0;not defined;Materials production\Inorganic chemicals;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+material
+
+Process identifier
+Standard000000000003417
+
+Type
+Unit process
+
+Process name
+Dummy: Chalk (Calciumcarbonate)
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Multiple output allocation
+Unspecified
+
+Substitution allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Products
+Chalk (Calciumcarbonate);kg;1.0;100.0;not defined;Materials production\Other mineralic materials;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000003257
+
+Type
+Unit process
+
+Process name
+Dummy: Waste (deposited)
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Waste treatment
+Waste (deposited);kg;1.0;All waste types;Wastes\Other waste;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000002526
+
+Type
+Unit process
+
+Process name
+Dummy: Radioactive tailings
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Waste treatment
+Radioactive tailings;kg;1.0;All waste types;Wastes\Radioactive waste;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Process
+
+Category type
+waste treatment
+
+Process identifier
+Standard000000000002303
+
+Type
+Unit process
+
+Process name
+Dummy: Tailings (deposited)
+
+Status
+
+
+Time period
+Unspecified
+
+Geography
+Unspecified
+
+Technology
+Unspecified
+
+Representativeness
+Unspecified
+
+Waste treatment allocation
+Unspecified
+
+Cut off rules
+Unspecified
+
+Capital goods
+Unspecified
+
+Boundary with nature
+Unspecified
+
+Infrastructure
+No
+
+Date
+26.02.2024
+
+Record
+
+
+Generator
+
+
+External documents
+
+
+Literature references
+
+
+Collection method
+
+
+Data treatment
+
+
+Verification
+
+
+Comment
+No
+
+Allocation rules
+
+
+System description
+;
+
+Waste treatment
+Tailings (deposited);kg;1.0;All waste types;Wastes\Other waste;
+
+Avoided products
+
+Resources
+
+Materials/fuels
+
+Electricity/heat
+
+Emissions to air
+
+Emissions to water
+
+Emissions to soil
+
+Final waste flows
+
+Non material emissions
+
+Social issues
+
+Economic issues
+
+Waste to treatment
+
+Input parameters
+
+Calculated parameters
+
+End
+
+Quantities
+Mass;Yes
+Area;Yes
+Energy;Yes
+Volume;Yes
+Land use;Yes
+Radioactivity;Yes
+
+End
+
+
+Units
+m2;Area;1.0;m2
+m3;Volume;1.0;m3
+kg;Mass;1.0;kg
+kBq;Radioactivity;1000.0;Bq
+MJ;Energy;1.0;MJ
+m2a;Land use;1.0;m2a
+
+End
+
+
+Raw materials
+gold;kg;7440-57-5;
+molybdenum;kg;7439-98-7;
+clay;kg;70694-09-6;
+cadmium;kg;7440-43-9;
+cerium;kg;7440-45-1;
+calcium carbonate;kg;471-34-1;
+calcium;kg;7440-70-2;
+arsenic;kg;7440-38-2;
+antimony;kg;7440-36-0;
+manganese;kg;7439-96-5;
+to unspecified, natural;m2;;
+arable, non-irrigated, extensive;m2a;;
+to arable, irrigated, intensive;m2;;
+grassland, not used;m2a;;
+from permanent crops;m2;;
+urban, discontinuously built;m2a;;
+perlite;kg;93763-70-3;
+from dump site;m2;;
+to forest, intensive;m2;;
+primary energy from wind power;MJ;;
+primary energy from waves;MJ;;
+primary energy from solar energy;MJ;;
+primary energy from hydro power;MJ;;
+primary energy from geothermics;MJ;;
+praseodymium;kg;7440-10-0;
+potassium chloride;kg;7447-40-7;
+potassium;kg;7440-09-7;
+industrial area;m2a;;
+platinum;kg;7440-06-4;
+phosphorus;kg;7723-14-0;
+forest, intensive;m2a;;
+seabed;m2a;;
+Biotic Production;kg/a;;
+peat;MJ;;
+palladium;kg;7440-05-3;
+oxygen;kg;7782-44-7;
+osmium;kg;7440-04-2;
+olivine;kg;19086-72-7;
+from pasture/meadow;m2;;
+traffic area, rail network;m2a;;
+agriculture;m2a;;
+from permanent crops, non-irrigated, extensive;m2;;
+to urban, discontinuously built;m2;;
+carbon dioxide (biogenic);kg;124-38-9;
+arable, irrigated;m2a;;
+from unspecified, natural;m2;;
+from forest, used;m2;;
+from forest, extensive;m2;;
+unspecified, natural;m2a;;
+Oil sand (10% bitumen);MJ;;
+permanent crops;m2a;;
+from wetlands, inland;m2;;
+lake water;m3;7732-18-5;
+forest, used;m2a;;
+from agriculture;m2;;
+arable;m2a;;
+pasture/meadow, intensive;m2a;;
+to rivers, artificial;m2;;
+from mineral extraction site;m2;;
+mineral extraction site;m2a;;
+to urban/industrial fallow;m2;;
+Physicochemical Filtration;(cmol*m2)/kg;;
+from forest, natural;m2;;
+to arable, non-irrigated;m2;;
+from arable, irrigated, intensive;m2;;
+to forest, extensive;m2;;
+Phonolite;kg;;
+to dump site;m2;;
+rivers, artificial;m2a;;
+from pasture/meadow, intensive;m2;;
+Ground water, extreme scarcity;kg;007732-18-5;
+from forest, primary;m2;;
+arable, non-irrigated;m2a;;
+from arable;m2;;
+Water to turbine;m3;7732-18-5;
+Groundwater Replenishment;mm*m2;;
+permanent crops, irrigated, intensive;m2a;;
+to arable;m2;;
+traffic area, road network;m2a;;
+to grassland;m2;;
+forest, extensive;m2a;;
+shrub land;m2a;;
+to permanent crops, non-irrigated, intensive;m2;;
+to lakes, artificial;m2;;
+to forest, used;m2;;
+to bare area;m2;;
+from arable, non-irrigated;m2;;
+to pasture/meadow;m2;;
+to pasture/meadow, extensive;m2;;
+lakes, artificial;m2a;;
+from grassland;m2;;
+river water;m3;7732-18-5;
+to permanent crops, irrigated, intensive;m2;;
+arable, non-irrigated, intensive;m2a;;
+to pasture/meadow, intensive;m2;;
+to permanent crops;m2;;
+to grassland, not used;m2;;
+to mineral extraction site;m2;;
+to traffic area, rail network;m2;;
+from arable, fallow;m2;;
+Land Occupation;m2a;;
+Oil sand (100% bitumen);MJ;;
+from wetlands;m2;;
+from shrub land;m2;;
+zirconium;kg;7440-67-7;
+zinc;kg;7440-66-6;
+yttrium;kg;7440-65-5;
+ytterbium;kg;7440-64-4;
+forest;m2a;;
+dump site;m2a;;
+freshwater;m3;7732-18-5;
+from arable, non-irrigated, extensive;m2;;
+from permanent crops, non-irrigated, intensive;m2;;
+from pasture/meadow, extensive;m2;;
+Erosion Resistance;kg;;
+from unspecified;m2;;
+pasture/meadow, extensive;m2a;;
+from grassland, not used;m2;;
+ground water;m3;7732-18-5;
+from seabed, marine infrastructure;m2;;
+basalt;kg;;
+barium;kg;7440-39-3;
+feldspar;kg;12168-80-8;
+europium;kg;7440-53-1;
+bromine;kg;7726-95-6;
+Mechanical Filtration;cm*m2/d;;
+to traffic area, road network;m2;;
+xenon;kg;7440-63-3;
+wood;MJ;;
+vanadium;kg;7440-62-2;
+uranium;MJ;7440-61-1;
+to arable, non-irrigated, intensive;m2;;
+arable, irrigated, intensive;m2a;;
+to forest;m2;;
+from arable, non-irrigated, intensive;m2;;
+from grassland/pasture/meadow;m2;;
+Pit Methane;MJ;;
+to industrial area;m2;;
+construction site;m2a;;
+from industrial area;m2;;
+to seabed, marine infrastructure;m2;;
+Water (rain water);kg;7732-18-5;
+titanium;kg;7440-32-6;
+tin;kg;7440-31-5;
+thulium;kg;7440-30-4;
+to agriculture;m2;;
+from forest;m2;;
+seabed, marine infrastructure;m2a;;
+from seabed;m2;;
+tellurium;kg;13494-80-9;
+tantalum;kg;7440-25-7;
+talc;kg;14807-96-6;
+sulfur;kg;7704-34-9;
+sulfate;kg;14808-79-8;
+strontium;kg;7440-24-6;
+stone;kg;;
+traffic area, rail/road embankment;m2a;;
+urban/industrial fallow;m2a;;
+to shrub land;m2;;
+soil;kg;;
+soft wood (dry matter);kg;;
+sodium sulfate;kg;7757-82-6;
+sodium nitrate;kg;7631-99-4;
+sodium chloride;kg;7647-14-5;
+sodium carbonate;kg;497-19-8;
+sodium;kg;7440-23-5;
+slate;kg;;
+silver;kg;7440-22-4;
+silicon;kg;7440-21-3;
+shale;kg;;
+sea water;kg;7732-18-5;
+sand;kg;;
+samarium;kg;7440-19-9;
+ruthenium;kg;7440-18-8;
+rhodium;kg;7440-16-6;
+rhenium;kg;7440-15-5;
+to seabed;m2;;
+from traffic area, rail/road embankment;m2;;
+Land Transformation;m2;;
+permanent crops, non-irrigated, intensive;m2a;;
+quartz sand;kg;14808-60-7;
+pyrite;kg;1309-36-0;
+to traffic area, rail/road embankment;m2;;
+to arable, non-irrigated, extensive;m2;;
+boron;kg;7440-42-8;
+chromium;kg;7440-47-3;
+lead;kg;7439-92-1;
+copper;kg;7440-50-8;
+magnesium chloride;kg;7786-30-3;
+aluminium;kg;7429-90-5;
+magnesium;kg;7439-95-4;
+magnesite;kg;546-93-0;
+kieserite;kg;14567-64-7;
+kaolin;kg;1332-58-7;
+air;kg;;
+baryte;kg;7727-43-7;
+gypsum;kg;7778-18-9;
+fluorspar;kg;14542-23-5;
+diatomite;kg;68855-54-9;
+colemanite;kg;1318-33-8;
+cinnabar;kg;19122-79-3;
+gravel;kg;;
+lithium;kg;7439-93-2;
+calcium chloride;kg;10043-52-4;
+borax;kg;12447-40-4;
+bauxite;kg;1318-16-7;
+barium sulfate;kg;7727-43-7;
+antimonite;kg;;
+lanthanum;kg;7439-91-0;
+mercury;kg;7439-97-6;
+dinitrogen;kg;7727-37-9;
+nickel;kg;7440-02-0;
+lutetium;kg;7439-94-3;
+neodymium;kg;7440-00-8;
+natural pumice;kg;;
+dolomite;kg;69227-00-5;
+iridium;kg;7439-88-5;
+bentonite;kg;1302-78-9;
+iodine;kg;7553-56-2;
+asbestos (white);kg;12001-29-5;
+krypton;kg;7439-90-9;
+iron;kg;7439-89-6;
+inert rock;kg;;
+biomass;MJ;;
+hard coal;MJ;;
+natural gas;MJ;;
+brown coal;MJ;;
+crude oil;MJ;;
+dysprosium;kg;7429-91-6;
+indium;kg;7440-74-6;
+holmium;kg;7440-60-0;
+carbon;kg;7782-42-5;
+granite;kg;;
+gallium;kg;7440-55-3;
+gadolinium;kg;7440-54-2;
+cobalt;kg;7440-48-4;
+fluorine;kg;7782-41-4;
+natural aggregate;kg;;
+argon;kg;7440-37-1;
+erbium;kg;7440-52-0;
+
+End
+
+
+Airborne emissions
+decane;kg;124-18-5;
+chlorobenzene;kg;108-90-7;
+particles (PM2.5);kg;;
+cobalt;kg;7440-48-4;
+benzo[a]anthracene;kg;56-55-3;
+pentachlorobenzene;kg;608-93-5;
+chlorpyrifos;kg;2921-88-2;
+cerium-141;kBq;13967-74-3;
+1,3,5-trimethylbenzene;kg;108-67-8;
+carbon-14;kBq;14762-75-5;
+carbon monoxide (fossil);kg;630-08-0;
+acrylic acid;kg;79-10-7;
+carbon disulphide;kg;75-15-0;
+terbufos;kg;13071-79-9;
+carbon dioxide (fossil);kg;124-38-9;
+sulfur oxides;kg;;
+pursuit;kg;81335-77-5;
+permethrin;kg;52645-53-1;
+benzylchloride;kg;100-44-7;
+1-pentene;kg;109-67-1;
+benzo[a]pyrene;kg;50-32-8;
+phenanthrene;kg;85-01-8;
+caprolactam;kg;105-60-2;
+benzene;kg;71-43-2;
+benzaldehyde;kg;100-52-7;
+lead dioxide;kg;1309-60-0;
+mancozeb;kg;8018-01-7;
+hydrazine;kg;302-01-2;
+propanal;kg;123-38-6;
+arsenic;kg;7440-38-2;
+fluoranthene;kg;206-44-0;
+cis-2-pentene;kg;627-20-3;
+particles (PM10);kg;;
+manganese-54;kBq;13966-31-9;
+acryolonitrile;kg;107-13-1;
+acrolein;kg;107-02-8;
+HFC-23;kg;75-46-7;
+arsenic (v);kg;17428-41-0;
+dipropylamine;kg;142-84-7;
+Nitrogen oxides;kg;11104-93-1;
+xenon-138;kBq;15751-81-2;
+xenon-137;kBq;14835-21-3;
+waste heat;MJ;;
+pentachlorophenol;kg;87-86-5;
+dimethyl malonate;kg;108-59-8;
+chlorosulphuric acid;kg;7790-94-5;
+methyl lactate;kg;547-64-8;
+Hydrocarbons, aromatic;kg;;
+HCFC-140;kg;71-55-6;
+cyanide;kg;57-12-5;
+total organic carbon;kg;;
+hydrocarbons (unspecified);kg;;
+butanol;kg;71-36-3;
+adsorbable organic halogen compounds;kg;;
+mecoprop-p;kg;7085-19-0;
+chlorosilane, trimethyl-;kg;75-77-4;
+isopropylamine;kg;75-31-0;
+sulphuric acid;kg;7664-93-9;
+Carbonyl sulfide;kg;463-58-1;
+Phosphorus;kg;7723-14-0;
+Aldehydes, unspecified;kg;;
+nitrogen, total (excluding N2);kg;;
+Noble gases, radioactive, unspecified;kBq;;
+Carbon dioxide (land use change);kg;124-38-9;
+Krypton-85m;kBq;378253-15-7;
+Terpenes;kg;68956-56-9;
+Chlorides, unspecified;kg;;
+Phosphorus trichloride;kg;7719-12-2;
+total reduced sulphur compounds;kg;;
+zinc sulfate;kg;7733-02-0;
+zinc dichloride;kg;7646-85-7;
+Fatty acid methyl ester;kg;68990-52-3;
+Hydrocarbons, chlorinated;kg;;
+Lanthanum;kg;7439-91-0;
+ammonium nitrate;kg;6484-52-2;
+Methyl borate;kg;121-43-7;
+Thorium;kg;7440-29-1;
+Benzal chloride;kg;98-87-3;
+Lactic acid;kg;50-21-5;
+sodium formate;kg;141-53-7;
+diethyl ether;kg;60-29-7;
+?-butyrolactone;kg;96-48-0;
+2-nitrotoluene;kg;88-72-2;
+chloramide;kg;10599-90-3;
+chloroacetic acid;kg;79-11-8;
+tert-butylamine;kg;75-64-9;
+beryllium;kg;7440-41-7;
+HFC-32;kg;75-10-5;
+thiodicarb;kg;59669-26-0;
+chromium-51;kBq;14392-02-0;
+acetophenone;kg;98-86-2;
+biphenyl;kg;92-52-4;
+1,2-dichlorobenzene;kg;95-50-1;
+toluene;kg;108-88-3;
+sulfentrazone;kg;122836-35-5;
+dimethoate;kg;60-51-5;
+chlorine;kg;7782-50-5;
+cesium-137;kBq;10045-97-3;
+cesium-134;kBq;13967-70-9;
+1-butene;kg;106-98-9;
+butene;kg;25167-67-3;
+quizalofop-ethyl;kg;76578-14-8;
+pyrene;kg;129-00-0;
+propiconazole;kg;60207-90-1;
+plutonium-238;kBq;13981-16-3;
+platinum;kg;7440-06-4;
+butadiene;kg;106-99-0;
+lasso;kg;15972-60-8;
+ethylenediamine;kg;107-15-3;
+n-butyl-acetate;kg;123-86-4;
+acephate;kg;30560-19-1;
+ethyl acetate;kg;141-78-6;
+trans-2-pentene;kg;646-04-8;
+benomyl;kg;17804-35-2;
+trifluralin;kg;1582-09-8;
+antimony-124;kBq;14683-10-4;
+sulfur trioxide;kg;7446-11-9;
+methacrylic acid;kg;79-41-4;
+barium-140;kBq;14798-08-4;
+pendimethalin;kg;40487-42-1;
+lactofen;kg;77501-63-4;
+2,2-dimethylbutane;kg;75-83-2;
+n-butane;kg;106-97-8;
+benzo[k]fluoranthene;kg;207-08-9;
+benzo[g,h,i]perylene;kg;191-24-2;
+sulfate;kg;14808-79-8;
+zinc oxide;kg;1314-13-2;
+deltamethrin;kg;52918-63-5;
+isobutane;kg;75-28-5;
+trichlorofon;kg;52-68-6;
+imazamox;kg;114311-32-9;
+acifluorfen;kg;50594-66-6;
+acetochlor;kg;34256-82-1;
+hydrogen peroxide;kg;7722-84-1;
+ethane;kg;74-84-0;
+lead-210;kBq;14255-04-0;
+lead;kg;7439-92-1;
+diethylene glycol;kg;111-46-6;
+acetylene;kg;74-86-2;
+flumiclorac-pentyl;kg;87546-18-7;
+flufenacet;kg;142459-58-3;
+fenvalerate;kg;51630-58-1;
+para-cresol;kg;106-44-5;
+2-methylpentane;kg;107-83-5;
+dodecafluoropentane;kg;678-26-2;
+chlorimuron-ethyl;kg;90982-32-4;
+diflufenican;kg;83164-33-4;
+m-cresol;kg;108-39-4;
+dimethenamid;kg;87674-68-8;
+tridecane;kg;629-50-5;
+aniline;kg;62-53-3;
+bromine;kg;7726-95-6;
+vinyl acetate;kg;108-05-4;
+vanadium;kg;7440-62-2;
+uranium-234;kBq;13966-29-5;
+undecane;kg;1120-21-4;
+cyprodinil;kg;121552-61-2;
+clethodim;kg;99129-21-2;
+carfentrazone-ethyl;kg;128639-02-1;
+Clean gas;kg;;
+Water (evapotranspiration);m3;7732-18-5;
+1,1,1,3,3-pentafluoropropane;kg;460-73-1;
+propylamine;kg;107-10-8;
+flumioxazin;kg;103361-09-7;
+C12-14 fatty alcohol;kg;;
+fluazifop-p-butyl;kg;79241-46-6;
+antimony-125;kBq;14234-35-6;
+lanthanum-140;kBq;13981-28-7;
+imidacloprid;kg;138261-41-3;
+1,1'-dimethyl-4,4'-bipyridinium;kg;4685-14-7;
+acid (as H+);kg;12408-02-5;
+sulfur;kg;7704-34-9;
+calcium;kg;7440-70-2;
+tungsten;kg;7440-33-7;
+sodium;kg;7440-23-5;
+potassium;kg;7440-09-7;
+magnesium;kg;7439-95-4;
+nitrogen trifluoride;kg;7783-54-2;
+Xenon-133m;kBq;378784-91-9;
+Plutonium-alpha;kBq;7440-07-5;
+formamide;kg;75-12-7;
+pentan-1-ol;kg;71-41-0;
+Sodium dichromate;kg;10588-01-9;
+Radioactive isotopes (unspecific), Beware: limited use only;kBq;;
+phosphoric acid;kg;7664-38-2;
+carbofuran;kg;1563-66-2;
+Aktinide (general);kBq;;
+non-methane volatile organic compounds;kg;;
+hexachlorobenzene;kg;118-74-1;
+ammonia;kg;7664-41-7;
+dimethyl sulphate;kg;77-78-1;
+cumene;kg;98-82-8;
+bromoform;kg;75-25-2;
+benzo[b]fluoranthene;kg;205-99-2;
+metolachlor;kg;51218-45-2;
+boron;kg;7440-42-8;
+flumetsulam;kg;98967-40-9;
+metribuzin;kg;21087-64-9;
+methyl formate;kg;107-31-3;
+fipronil;kg;120068-37-3;
+methyl ethyl ketone;kg;78-93-3;
+methyl cyclopentane;kg;96-37-7;
+palladium;kg;7440-05-3;
+2-methyl-4-chlorophenoxyacetic acid;kg;94-74-6;
+cyfluthrin;kg;68359-37-5;
+pentane;kg;109-66-0;
+chloroform;kg;67-66-3;
+tetradecane;kg;629-59-4;
+3-methylpentane;kg;96-14-0;
+used air;kg;;
+chromium (iii);kg;16065-83-1;
+xylene (all isomers);kg;1330-20-7;
+krypton-89;kBq;16316-03-3;
+krypton-88;kBq;14995-61-0;
+acetonitrile;kg;75-05-8;
+2-chloro-1-phenylethanone;kg;532-27-4;
+cypermethrin;kg;52315-07-8;
+diflubenzuron;kg;35367-38-5;
+cyclopentane;kg;287-92-3;
+azoxystrobin;kg;131860-33-8;
+acenaphthylene;kg;208-96-8;
+uranium-238;kBq;7440-61-1;
+dimethyl formamide;kg;68-12-2;
+uranium-235;kBq;15117-96-1;
+carbon dioxide (biogenic);kg;124-38-9;
+o-chlorotoluene;kg;95-49-8;
+thorium-228;kBq;14274-82-9;
+thiram;kg;137-26-8;
+manganese;kg;7439-96-5;
+trimethylamine;kg;75-50-3;
+tellurium;kg;13494-80-9;
+sulphur hexafluoride;kg;2551-62-4;
+sulfur dioxide;kg;7446-09-5;
+chromium;kg;7440-47-3;
+acenaphthene;kg;83-32-9;
+strontium;kg;7440-24-6;
+tin;kg;7440-31-5;
+water vapour;kg;7732-18-5;
+thorium-234;kBq;15065-10-8;
+2,4-dinitrotoluene;kg;121-14-2;
+silver-110;kBq;14391-76-5;
+silver;kg;7440-22-4;
+titanium;kg;7440-32-6;
+selenium;kg;7782-49-2;
+ruthenium-103;kBq;13968-53-1;
+thorium-232;kBq;7440-29-1;
+rhodium;kg;7440-16-6;
+thorium-230;kBq;14269-63-7;
+radon-222;kBq;14859-67-7;
+radon-220;kBq;22481-48-7;
+radium-226;kBq;13982-63-3;
+HCFC-124;kg;2837-89-0;
+indeno(1,2,3-cd)pyrene;kg;193-39-5;
+thallium;kg;7440-28-0;
+2,2,4-trimethylpentane;kg;540-84-1;
+2,3,7,8-tetrachlorodibenzo-p-dioxin;kg;1746-01-6;
+propylene glycol monomethyl ether acetate;kg;108-65-6;
+propionic acid;kg;79-09-4;
+2-methyl-1-propene;kg;115-11-7;
+tert-butyl methyl ether;kg;1634-04-4;
+propene;kg;115-07-1;
+n-propanol;kg;71-23-8;
+styrene;kg;100-42-5;
+propane;kg;74-98-6;
+polycyclic aromatic hydrocarbons;kg;;
+dinitrogen;kg;7727-37-9;
+scandium;kg;7440-20-2;
+radium-228;kBq;15262-20-1;
+lanthanum-141;kBq;15816-88-3;
+hydrogen chloride;kg;7647-01-0;
+pyridine;kg;110-86-1;
+hydrogen bromide;kg;10035-10-6;
+protactinium-234;kBq;15100-28-4;
+propylene oxide;kg;75-56-9;
+propylene glycol monomethyl ether;kg;107-98-2;
+hydrogen fluoride;kg;7664-39-3;
+polonium-210;kBq;13981-52-7;
+phenol;kg;108-95-2;
+nonane;kg;111-84-2;
+polychlorinated biphenyls;kg;1336-36-3;
+nitrobenzene;kg;98-95-3;
+bentazone;kg;25057-89-0;
+arsenic trioxide;kg;1327-53-3;
+monoethanolamine;kg;141-43-5;
+methyl parathion;kg;298-00-0;
+potassium-40;kBq;13966-00-2;
+methyl methacrylate;kg;80-62-6;
+dicamba;kg;1918-00-9;
+phosphine;kg;7803-51-2;
+hydrogen iodide;kg;10034-85-2;
+phosphate;kg;14265-44-2;
+2-chlorophenol;kg;95-57-8;
+methylamine;kg;74-89-5;
+2,4-dichlorophenol;kg;120-83-2;
+methomyl;kg;16752-77-5;
+ozone;kg;10028-15-6;
+o-xylene;kg;95-47-6;
+methanol;kg;67-56-1;
+oxygen;kg;7782-44-7;
+CFC-10;kg;56-23-5;
+methane (biogenic);kg;74-82-8;
+octane;kg;111-65-9;
+o-cresol;kg;95-48-7;
+nitrogen monoxide;kg;10102-43-9;
+methacrylate;kg;96-33-3;
+nitrogen dioxide;kg;10102-44-0;
+nitrate;kg;14797-55-8;
+mercury;kg;7439-97-6;
+niobium-95;kBq;13967-76-5;
+butylene glycol;kg;110-63-4;
+nickel;kg;7440-02-0;
+lithium;kg;7439-93-2;
+isopropanol;kg;67-63-0;
+m-xylene;kg;108-38-3;
+(2,4-dichlorophenoxy)acetic acid;kg;94-75-7;
+cobalt-60;kBq;10198-40-0;
+dodecane;kg;112-40-3;
+methyl acetate;kg;79-20-9;
+carbaryl;kg;63-25-2;
+antimony;kg;7440-36-0;
+barium;kg;7440-39-3;
+FC-14;kg;75-73-0;
+chloromethane;kg;74-87-3;
+cadmium;kg;7440-43-9;
+iodine-131;kBq;10043-66-0;
+HCFC-21;kg;75-43-4;
+cyclohexane;kg;110-82-7;
+iodine-129;kBq;15046-84-1;
+dichloromethane;kg;75-09-2;
+methane (fossil);kg;74-82-8;
+iodine;kg;7553-56-2;
+chrysene;kg;218-01-9;
+krypton-87;kBq;14809-68-8;
+krypton-85;kBq;13983-27-2;
+acetaldehyde;kg;75-07-0;
+copper;kg;7440-50-8;
+isoprene;kg;78-79-5;
+isopentane;kg;78-78-4;
+isobutanol;kg;78-83-1;
+molybdenum;kg;7439-98-7;
+iron;kg;7439-89-6;
+1,2-dichloroethane;kg;107-06-2;
+iodine-133;kBq;14834-67-4;
+aluminium;kg;7429-90-5;
+ioxynil;kg;1689-83-4;
+2,4-dimethylpentane;kg;108-08-7;
+tin oxide;kg;1332-29-2;
+particles (> PM10);kg;;
+tar;kg;8007-45-2;
+silicium tetrafluoride;kg;7783-61-1;
+ammonium;kg;14798-03-9;
+bis(n-octyl) phthalate;kg;117-84-0;
+acetone;kg;67-64-1;
+chromium (vi);kg;18540-29-9;
+particles (PM2.5 - PM10);kg;;
+zirconium-95;kBq;13967-71-0;
+HFC-134a;kg;811-97-2;
+zirconium;kg;7440-67-7;
+zinc-65;kBq;13982-39-3;
+hydrocyanic acid;kg;74-90-8;
+zinc;kg;7440-66-6;
+xenon-135;kBq;14995-62-1;
+naphthalene;kg;91-20-3;
+xenon-133;kBq;14932-42-4;
+xenon-131;kBq;14683-11-5;
+heptane;kg;142-82-5;
+nitrous oxide;kg;10024-97-2;
+1,2,3-trimethylbenzene;kg;526-73-8;
+glyphosate;kg;1071-83-6;
+furan;kg;110-00-9;
+hydrogen-3;kBq;10028-17-8;
+chlormequat chloride;kg;999-81-5;
+hydrogen sulfide;kg;7783-06-4;
+imazaquin;kg;81335-37-7;
+hydrogen arsenide;kg;7784-42-1;
+fluorene;kg;86-73-7;
+hydrogen;kg;1333-74-0;
+hexane;kg;110-54-3;
+hexamethylene diamine;kg;124-09-4;
+dimethylamine;kg;124-40-3;
+helium;kg;7440-59-7;
+2-butene-trans;kg;624-64-6;
+isophorone;kg;78-59-1;
+cobalt-58;kBq;13981-38-9;
+formic acid;kg;64-18-6;
+formaldehyde;kg;50-00-0;
+sethoxydim;kg;74051-80-2;
+vinyl chloride;kg;75-01-4;
+ethylene oxide;kg;75-21-8;
+fluorine;kg;7782-41-4;
+ethylene;kg;74-85-1;
+fluoride;kg;16984-48-8;
+trichloroethene;kg;79-01-6;
+diethylamine;kg;109-89-7;
+tetrachloroethene;kg;127-18-4;
+HFC-125;kg;354-33-6;
+isoproturon;kg;34123-59-6;
+atrazine;kg;1912-24-9;
+ethyl amine;kg;75-04-7;
+chloroethane;kg;75-00-3;
+ethephon;kg;16672-87-0;
+ethanol;kg;64-17-5;
+argon-41;kBq;14163-25-8;
+ethanethiol;kg;75-08-1;
+HFC-116;kg;76-16-4;
+argon;kg;7440-37-1;
+esfenvalerate;kg;66230-04-4;
+1,2-dibromoethane;kg;106-93-4;
+HFC-152a;kg;75-37-6;
+2-methyl-2-butene;kg;513-35-9;
+HFC-143;kg;430-66-0;
+2-methyl-1-butene;kg;26760-64-5;
+anthracene;kg;120-12-7;
+acetic acid;kg;64-19-7;
+dibenz[a,h]anthracene;kg;53-70-3;
+ethyl benzene;kg;100-41-4;
+
+End
+
+
+Waterborne emissions
+cumene;kg;98-82-8;
+benzo[a]anthracene;kg;56-55-3;
+calcium;kg;7440-70-2;
+cadmium;kg;7440-43-9;
+carbonate;kg;3812-32-6;
+carbon-14;kBq;14762-75-5;
+carbon disulphide;kg;75-15-0;
+terbufos;kg;13071-79-9;
+benzo[a]pyrene;kg;50-32-8;
+phenanthrene;kg;85-01-8;
+benzene;kg;71-43-2;
+zinc-65;kBq;13982-39-3;
+2,4-dimethylphenol;kg;105-67-9;
+bentazone;kg;25057-89-0;
+arsenic;kg;7440-38-2;
+strontium-90;kBq;10098-97-2;
+m-xylene;kg;108-38-3;
+formaldehyde;kg;50-00-0;
+sulfur;kg;7704-34-9;
+manganese-54;kBq;13966-31-9;
+acryolonitrile;kg;107-13-1;
+acid (as H+);kg;12408-02-5;
+acenaphthylene;kg;208-96-8;
+acenaphthene;kg;83-32-9;
+volatile organic compound;kg;;
+waste heat;MJ;;
+Thiocyanate, ion;kg;71048-69-6;
+butanol;kg;71-36-3;
+dodecane;kg;112-40-3;
+diethylamine;kg;109-89-7;
+1-pentene;kg;109-67-1;
+benzoic acid;kg;65-85-0;
+methyl formate;kg;107-31-3;
+icosane;kg;112-95-8;
+1-butene;kg;106-98-9;
+Neutral salts;kg;;
+Dichromate;kg;;
+Oils, unspecified;kg;;
+nitrogen, total (excluding N2);kg;;
+methacrylate;kg;96-33-3;
+methyl acetate;kg;79-20-9;
+propionic acid;kg;79-09-4;
+trimethylamine;kg;75-50-3;
+ethyl amine;kg;75-04-7;
+Water from cooling;m3;7732-18-5;
+disodium sulfate;kg;7757-82-6;
+methylamine;kg;74-89-5;
+n-propanol;kg;71-23-8;
+formic acid;kg;64-18-6;
+particles (PM10);kg;;
+Curium alpha;kBq;7440-51-9;
+imidacloprid;kg;138261-41-3;
+chloroacetic acid;kg;79-11-8;
+tert-butylamine;kg;75-64-9;
+mecoprop-p;kg;7085-19-0;
+Lactic acid;kg;50-21-5;
+Water (rain water);m3;7732-18-5;
+chloramide;kg;10599-90-3;
+sulphuric acid;kg;7664-93-9;
+dipropylamine;kg;142-84-7;
+Plutonium-alpha;kBq;7440-07-5;
+arsenic (v);kg;17428-41-0;
+?-butyrolactone;kg;96-48-0;
+propylamine;kg;107-10-8;
+sodium formate;kg;141-53-7;
+urea;kg;57-13-6;
+sodium hypochlorite;kg;7681-52-9;
+nitric acid;kg;7697-37-2;
+sodium chloride;kg;7647-14-5;
+Processed water to river, extreme scarcity;kg;007732-18-5;
+Acrylate, ion;kg;79-10-7;
+Hydrocarbons, aromatic;kg;;
+Yttrium;kg;;
+Nitrogenous Matter (unspecified, as N);kg;;
+Water from turbine;m3;7732-18-5;
+Heavy metals to water (unspecified);kg;;
+Phosphorus;kg;7723-14-0;
+Water;m3;7732-18-5;
+chromium-51;kBq;14392-02-0;
+biphenyl;kg;92-52-4;
+1,2-dichlorobenzene;kg;95-50-1;
+dimethoate;kg;60-51-5;
+chlorine;kg;7782-50-5;
+chlorate;kg;14866-68-3;
+cesium-137;kBq;10045-97-3;
+cesium-136;kBq;14234-29-8;
+cesium-134;kBq;13967-70-9;
+cesium;kg;7440-46-2;
+cerium-144;kBq;14762-78-8;
+cerium-141;kBq;13967-74-3;
+aniline;kg;62-53-3;
+allyl chloride;kg;107-05-1;
+lead-210;kBq;14255-04-0;
+ethylenediamine;kg;107-15-3;
+n-butyl-acetate;kg;123-86-4;
+ethyl acetate;kg;141-78-6;
+barium-140;kBq;14798-08-4;
+antimony-124;kBq;14683-10-4;
+antimony-122;kBq;14374-79-9;
+sulfite;kg;14265-45-3;
+copper;kg;7440-50-8;
+barium;kg;7440-39-3;
+tungsten;kg;7440-33-7;
+benzo[k]fluoranthene;kg;207-08-9;
+deltamethrin;kg;52918-63-5;
+trichlorofon;kg;52-68-6;
+strontium-89;kBq;14158-27-1;
+strontium;kg;7440-24-6;
+HCFC-140;kg;71-55-6;
+acetochlor;kg;34256-82-1;
+lead;kg;7439-92-1;
+lasso;kg;15972-60-8;
+sulfide;kg;18496-25-8;
+diflufenican;kg;83164-33-4;
+chromium (vi);kg;18540-29-9;
+chromium (iii);kg;16065-83-1;
+cresol;kg;1319-77-3;
+dimethenamid;kg;87674-68-8;
+total organic carbon;kg;;
+bromine;kg;7726-95-6;
+vanadium;kg;7440-62-2;
+uranium-238;kBq;7440-61-1;
+nitrate;kg;14797-55-8;
+isopropylamine;kg;75-31-0;
+Silicon dioxide;kg;7631-86-9;
+magnesium chloride;kg;7786-30-3;
+Nitrogen, organic bound;kg;7727-37-9;
+bromide;kg;24959-67-9;
+Uranium (kg), Beware: limited use only;kg;007440-61-1;
+Aktinide (general);kBq;;
+Tantalum;kg;7440-25-7;
+acetyl chloride;kg;75-36-5;
+antimony-125;kBq;14234-35-6;
+niobium-95;kBq;13967-76-5;
+Dissolved solids;kg;;
+tar;kg;8007-45-2;
+zirconium;kg;7440-67-7;
+rubidium;kg;7440-17-7;
+barium sulphate;kg;7727-43-7;
+Lead-210/kg, Beware: limited use only;kg;014255-04-0;
+formamide;kg;75-12-7;
+tetradecane;kg;629-59-4;
+2-hexanone;kg;591-78-6;
+hexadecane;kg;544-76-3;
+2-methyl-2-butene;kg;513-35-9;
+Docosane;kg;000629-97-0;
+chlorosulphuric acid;kg;7790-94-5;
+pentan-1-ol;kg;71-41-0;
+ethyl benzene;kg;100-41-4;
+methyl ethyl ketone;kg;78-93-3;
+hydrazine;kg;302-01-2;
+bromate;kg;15541-45-4;
+boron;kg;7440-42-8;
+fipronil;kg;120068-37-3;
+fenvalerate;kg;51630-58-1;
+2-methyl-4-chlorophenoxyacetic acid;kg;94-74-6;
+manganese;kg;7439-96-5;
+chromium;kg;7440-47-3;
+uranium-234;kBq;13966-29-5;
+dimethylamine;kg;124-40-3;
+xylene (all isomers);kg;1330-20-7;
+acetonitrile;kg;75-05-8;
+cypermethrin;kg;52315-07-8;
+uranium-235;kBq;15117-96-1;
+americium-241;kBq;86954-36-1;
+o-chlorotoluene;kg;95-49-8;
+carbofuran;kg;1563-66-2;
+thiram;kg;137-26-8;
+chlormequat chloride;kg;999-81-5;
+tellurium-132;kBq;14234-28-7;
+tellurium-123;kBq;14304-80-4;
+sulfate;kg;14808-79-8;
+trifluralin;kg;1582-09-8;
+triethylene glycol;kg;112-27-6;
+sulfur trioxide;kg;7446-11-9;
+molybdenum-99;kBq;14119-15-4;
+molybdenum;kg;7439-98-7;
+thorium-234;kBq;15065-10-8;
+sodium-24;kBq;13982-04-2;
+toluene;kg;108-88-3;
+silver;kg;7440-22-4;
+titanium;kg;7440-32-6;
+ruthenium-106;kBq;13967-48-1;
+tin;kg;7440-31-5;
+ruthenium-103;kBq;13968-53-1;
+thorium-232;kBq;7440-29-1;
+thorium-230;kBq;14269-63-7;
+thorium-228;kBq;14274-82-9;
+radium-228;kBq;15262-20-1;
+radium-224;kBq;13233-32-4;
+thallium;kg;7440-28-0;
+protactinium-234;kBq;15100-28-4;
+technetium-99;kBq;14133-76-7;
+tert-butyl methyl ether;kg;1634-04-4;
+propene;kg;115-07-1;
+1,2-dichloropropane;kg;78-87-5;
+silver-110;kBq;14391-76-5;
+propanal;kg;123-38-6;
+selenium;kg;7782-49-2;
+magnesium;kg;7439-95-4;
+scandium;kg;7440-20-2;
+radium-226;kBq;13982-63-3;
+hydrogen fluoride;kg;7664-39-3;
+hydrocarbons (unspecified);kg;;
+propylene oxide;kg;75-56-9;
+ammonium;kg;14798-03-9;
+polycyclic aromatic hydrocarbons;kg;;
+adsorbable organic halogen compounds;kg;;
+hydrogen chloride;kg;7647-01-0;
+pentachlorophenol;kg;87-86-5;
+chemical oxygen demand;kg;;
+chloride;kg;16887-00-6;
+sodium;kg;7440-23-5;
+polychlorinated biphenyls;kg;1336-36-3;
+nitrobenzene;kg;98-95-3;
+biological oxygen demand;kg;;
+benomyl;kg;17804-35-2;
+naphthalene;kg;91-20-3;
+monoethanolamine;kg;141-43-5;
+methyl parathion;kg;298-00-0;
+potassium-40;kBq;13966-00-2;
+potassium;kg;7440-09-7;
+methyl isobutyl ketone;kg;108-10-1;
+dicamba;kg;1918-00-9;
+polonium-210;kBq;13981-52-7;
+phosphate;kg;14265-44-2;
+methomyl;kg;16752-77-5;
+phenol;kg;108-95-2;
+methanol;kg;67-56-1;
+o-xylene;kg;95-47-6;
+lanthanum-140;kBq;13981-28-7;
+nitrogen dioxide;kg;10102-44-0;
+mercury;kg;7439-97-6;
+nitrite;kg;14797-65-0;
+butylene glycol;kg;110-63-4;
+nickel;kg;7440-02-0;
+lithium;kg;7439-93-2;
+isopropanol;kg;67-63-0;
+ammonia;kg;7664-41-7;
+cobalt-58;kBq;13981-38-9;
+antimony;kg;7440-36-0;
+anthracene;kg;120-12-7;
+chloromethane;kg;74-87-3;
+iodine-131;kBq;10043-66-0;
+iodine-129;kBq;15046-84-1;
+chloroform;kg;67-66-3;
+cyanide;kg;57-12-5;
+atrazine;kg;1912-24-9;
+dichloromethane;kg;75-09-2;
+iodide;kg;20461-54-5;
+mancozeb;kg;8018-01-7;
+chrysene;kg;218-01-9;
+acetaldehyde;kg;75-07-0;
+isoproturon;kg;34123-59-6;
+cobalt-60;kBq;10198-40-0;
+beryllium;kg;7440-41-7;
+iron-59;kBq;14596-12-4;
+iron;kg;7439-89-6;
+1,2-dichloroethane;kg;107-06-2;
+iodine-133;kBq;14834-67-4;
+aluminium;kg;7429-90-5;
+ioxynil;kg;1689-83-4;
+particles (> PM10);kg;;
+acetone;kg;67-64-1;
+acetic acid;kg;64-19-7;
+zirconium-95;kBq;13967-71-0;
+tributyltin oxide;kg;56-35-9;
+hydrocyanic acid;kg;74-90-8;
+zinc;kg;7440-66-6;
+hexane;kg;110-54-3;
+hypochlorite;kg;14380-61-1;
+glyphosate;kg;1071-83-6;
+hydroxide;kg;14280-30-9;
+hydrogen-3;kBq;10028-17-8;
+glutaraldehyde;kg;111-30-8;
+hydrogen sulfide;kg;7783-06-4;
+hydrogen peroxide;kg;7722-84-1;
+fluoranthene;kg;206-44-0;
+diquat dibromide;kg;85-00-7;
+cobalt-57;kBq;13981-50-5;
+cobalt;kg;7440-48-4;
+cyprodinil;kg;121552-61-2;
+vinyl chloride;kg;75-01-4;
+fluorine;kg;7782-41-4;
+ethylene glycol;kg;107-21-1;
+fluoride;kg;16984-48-8;
+ethephon;kg;16672-87-0;
+isobutanol;kg;78-83-1;
+acetamide;kg;60-35-5;
+tetrachloroethene;kg;127-18-4;
+ethanol;kg;64-17-5;
+ethylene oxide;kg;75-21-8;
+ethylene;kg;74-85-1;
+tributyltin;kg;688-73-3;
+1,2-dibromoethane;kg;106-93-4;
+2,3,7,8-tetrachlorodibenzo-p-dioxin;kg;1746-01-6;
+chlorobenzene;kg;108-90-7;
+
+End
+
+
+Emissions to soil
+clopyralid;kg;1702-17-6;
+clomazone;kg;81777-89-1;
+chlorpyrifos;kg;2921-88-2;
+cadmium;kg;7440-43-9;
+diquat dibromide;kg;85-00-7;
+carbofuran;kg;1563-66-2;
+pursuit;kg;81335-77-5;
+prometryn;kg;7287-19-6;
+tributylphosphorotrithioate;kg;78-48-8;
+bifenthrin;kg;82657-04-3;
+permethrin;kg;52645-53-1;
+triasulfuron;kg;82097-50-5;
+silver;kg;7440-22-4;
+asulam;kg;3337-71-1;
+arsenic;kg;7440-38-2;
+antimony;kg;7440-36-0;
+sulfur;kg;7704-34-9;
+2-methyl-4-chlorophenoxyacetic acid;kg;94-74-6;
+aldicarb;kg;116-06-3;
+acephate;kg;30560-19-1;
+(2,4-dichlorophenoxy)acetic acid;kg;94-75-7;
+Oils, unspecified;kg;;
+mepiquat chloride;kg;24307-26-4;
+tefluthrin;kg;79538-32-2;
+nitric acid;kg;7697-37-2;
+vinclozolin;kg;50471-44-8;
+Bark, Beware: limited use only;kg;;
+imidacloprid;kg;138261-41-3;
+arsenic (v);kg;17428-41-0;
+2,4,6,8-tetramethyl-1,3,5,7-tetraoxacyclooctane;kg;108-62-3;
+total organic carbon;kg;;
+hydrocarbons (unspecified);kg;;
+4-amino-3,5,6-trichloropyridine-2-carboxylic acid;kg;1918-02-1;
+monocrotophos;kg;6923-22-4;
+Fenoxaprop;kg;095617-09-7;
+clethodim;kg;99129-21-2;
+metam-sodium;kg;137-42-8;
+[(3,5,6-trichloropyridin-2-yl)oxy]acetic acid;kg;55335-06-3;
+anthraquinone;kg;84-65-1;
+Phosphorus;kg;7723-14-0;
+dithianon;kg;3347-22-6;
+O-(4-bromo-2-chlorophenyl) O-ethyl S-propyl phosphorothioate;kg;41198-08-7;
+flumioxazin;kg;103361-09-7;
+3-(3,5-dichlorophenyl)-1,5-dimethyl-3-azabicyclo[3.1.0]hexane-2,4-dione;kg;32809-16-8;
+clodinafop-propargyl;kg;105512-06-9;
+bas 480f;kg;106325-08-0;
+tebupirimfos;kg;96182-53-5;
+carfentrazone-ethyl;kg;128639-02-1;
+(R)-2-(4-chloro-2-methylphenoxy)propionic acid;kg;16484-77-8;
+5-[2-chloro-4-(trifluoromethyl)phenoxy]-N-(methylsulphonyl)-2-nitrobenzamide;kg;72178-02-0;
+2-chloro-N-(2,6-dimethylphenyl)-N-(2-methoxyethyl)acetamide;kg;50563-36-5;
+cloquintocet-mexyl;kg;99607-70-2;
+sulphuric acid;kg;7664-93-9;
+?-([1,1'-biphenyl]-4-yloxy)-?-tert-butyl-1H-1,2,4-triazol-1-ethanol;kg;55179-31-2;
+isoxaflutole;kg;141112-29-0;
+thiodicarb;kg;59669-26-0;
+chromium (vi);kg;18540-29-9;
+sulfosulfuron;kg;141776-32-1;
+sulfentrazone;kg;122836-35-5;
+dimethoate;kg;60-51-5;
+chlorine;kg;7782-50-5;
+quizalofop-ethyl;kg;76578-14-8;
+pyrithiobac-sodium;kg;123343-16-8;
+prosulfuron;kg;94125-34-5;
+aldrin;kg;309-00-2;
+lasso;kg;15972-60-8;
+carbetamide;kg;16118-49-3;
+sulfate;kg;14808-79-8;
+benomyl;kg;17804-35-2;
+copper;kg;7440-50-8;
+zinc;kg;7440-66-6;
+paraquat;kg;1910-42-5;
+lactofen;kg;77501-63-4;
+MCPB;kg;94-81-5;
+tribenuron-methyl;kg;101200-48-0;
+imazamox;kg;114311-32-9;
+amidosulfuron;kg;120923-37-7;
+acifluorfen;kg;50594-66-6;
+strontium;kg;7440-24-6;
+acetochlor;kg;34256-82-1;
+chlorothalonil;kg;1897-45-6;
+lead;kg;7439-92-1;
+difenoconazole;kg;119446-68-3;
+flumiclorac-pentyl;kg;87546-18-7;
+flufenacet;kg;142459-58-3;
+fenoxaprop-ethyl;kg;66441-23-4;
+chloridazon;kg;1698-60-8;
+parathion;kg;56-38-2;
+chlorimuron-ethyl;kg;90982-32-4;
+diflufenican;kg;83164-33-4;
+chromium (iii);kg;16065-83-1;
+ethalfluralin;kg;55283-68-6;
+dimethenamid;kg;87674-68-8;
+diclofop-methyl;kg;51338-27-3;
+endothall;kg;145-73-3;
+vanadium;kg;7440-62-2;
+choline chloride;kg;67-48-1;
+chloride;kg;16887-00-6;
+nitrate;kg;14797-55-8;
+sodium methylarsonate;kg;2163-80-6;
+bromine;kg;7726-95-6;
+calcium;kg;7440-70-2;
+boron;kg;7440-42-8;
+potassium;kg;7440-09-7;
+magnesium;kg;7439-95-4;
+mecoprop-p;kg;7085-19-0;
+nicosulfuron;kg;111991-09-4;
+ammonia;kg;7664-41-7;
+bromuconazole;kg;116255-48-2;
+cobalt;kg;7440-48-4;
+bifenox;kg;42576-02-3;
+flusilazole;kg;85509-19-9;
+Bidrin;kg;141-66-2;
+bromoxynil;kg;1689-84-5;
+metolachlor;kg;51218-45-2;
+metsulfuron-methyl;kg;74223-64-6;
+flumetsulam;kg;98967-40-9;
+fludioxonil;kg;131341-86-1;
+metribuzin;kg;21087-64-9;
+fipronil;kg;120068-37-3;
+fenbuconazole;kg;114369-43-6;
+cyfluthrin;kg;68359-37-5;
+thidiazuron;kg;51707-55-2;
+metazachlor;kg;67129-08-2;
+chromium;kg;7440-47-3;
+pendimethalin;kg;40487-42-1;
+lambda-cyhalothrin;kg;91465-08-6;
+chlorsulfuron;kg;64902-72-3;
+cypermethrin;kg;52315-07-8;
+diflubenzuron;kg;35367-38-5;
+manganese;kg;7439-96-5;
+thiram;kg;137-26-8;
+trinexapac-ethyl;kg;95266-40-3;
+trifluralin;kg;1582-09-8;
+chlortoluron;kg;15545-48-9;
+azoxystrobin;kg;131860-33-8;
+molybdenum;kg;7439-98-7;
+tin;kg;7440-31-5;
+titanium;kg;7440-32-6;
+rimsulfuron;kg;122931-48-0;
+thifensulfuron-methyl;kg;79277-27-3;
+teflubenzuron;kg;83121-18-0;
+tebutam;kg;35256-85-0;
+tebuconazole;kg;107534-96-3;
+propiconazole;kg;60207-90-1;
+simazine;kg;122-34-9;
+selenium;kg;7782-49-2;
+polycyclic aromatic hydrocarbons;kg;;
+pirimicarb;kg;23103-98-2;
+carbaryl;kg;63-25-2;
+pentachlorophenol;kg;87-86-5;
+phenmedipham;kg;13684-63-4;
+bentazone;kg;25057-89-0;
+napropamide;kg;15299-99-7;
+prochloraz;kg;67747-09-5;
+methyl parathion;kg;298-00-0;
+dicamba;kg;1918-00-9;
+methanol;kg;67-56-1;
+orbencarb;kg;34622-58-7;
+metalaxil;kg;57837-19-1;
+mercury;kg;7439-97-6;
+malathion;kg;121-75-5;
+nickel;kg;7440-02-0;
+lithium;kg;7439-93-2;
+triadimenol;kg;55219-65-3;
+carbendazim;kg;10605-21-7;
+barium;kg;7440-39-3;
+iron;kg;7439-89-6;
+metamitron;kg;41394-05-2;
+mancozeb;kg;8018-01-7;
+kresoxim methyl;kg;143390-89-0;
+beryllium;kg;7440-41-7;
+ioxynil;kg;1689-83-4;
+aluminium;kg;7429-90-5;
+iprodione;kg;36734-19-7;
+sulfide;kg;18496-25-8;
+acetic acid;kg;64-19-7;
+linuron;kg;330-55-2;
+endosulfan;kg;115-29-7;
+glyphosate-trimesium;kg;81591-81-3;
+glyphosate;kg;1071-83-6;
+chlormequat chloride;kg;999-81-5;
+imazaquin;kg;81335-37-7;
+fluazifop-p-butyl;kg;79241-46-6;
+imazapyr;kg;81334-34-1;
+fosetyl-aluminum;kg;39148-24-8;
+sodium;kg;7440-23-5;
+cyprodinil;kg;121552-61-2;
+sethoxydim;kg;74051-80-2;
+cyproconazole;kg;94361-06-5;
+fluroxypyr;kg;69377-81-7;
+fluoride;kg;16984-48-8;
+terbufos;kg;13071-79-9;
+ethephon;kg;16672-87-0;
+acetamide;kg;60-35-5;
+fenpropimorph;kg;67306-03-0;
+fenpropidin;kg;67306-00-7;
+fenpiclonil;kg;74738-17-3;
+triallate;kg;2303-17-5;
+fenoxaprop-p-ethyl;kg;71283-80-2;
+isoproturon;kg;34123-59-6;
+atrazine;kg;1912-24-9;
+ethofumesate;kg;26225-79-6;
+1,2-dichloroethane;kg;107-06-2;
+esfenvalerate;kg;66230-04-4;
+diuron;kg;330-54-1;
+demeton-s-methyl sulfoxide;kg;301-12-2;
+deltamethrin;kg;52918-63-5;
+
+End
+
+
+Database Input parameters
+
+End
+
+Database Calculated parameters
+
+End
+
+Project Input parameters
+
+End
+
+Project Calculated parameters
+
+End
+

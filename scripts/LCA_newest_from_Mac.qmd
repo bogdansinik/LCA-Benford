@@ -3,7 +3,7 @@ title: "LCA newest"
 format: html
 editor: visual
 editor_options: 
-  chunk_output_type: console
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
@@ -13,759 +13,535 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 ### Libraries
 
 ```{r warnings = FALSE}
-library(stats)
-library(tidyverse)
-library(readxl)
-library(benford.analysis)
-library(patchwork)
-library(countrycode)
+library(stats)  # Base R statistical functions
+library(tidyverse)  # Collection of R packages for data manipulation, visualization, and analysis
+library(readxl)  # For reading Excel files
+library(benford.analysis)  # For Benford's Law analysis
+library(patchwork)  # For combining multiple ggplots
+library(countrycode)  # For converting country codes and names
+
+# Set a custom theme for all ggplots
 theme_set(theme(
-    plot.title = element_text(hjust = 0.5, margin = margin(b = 10), size = 13),
-    axis.text.x = element_text(size = 6,angle = 90, hjust = 1),
-    axis.text.y = element_text(size = 6),
-    axis.title.x = element_text(size = 6,margin = margin(t = 8)), # Adjust x-axis title size
-    axis.title.y = element_text(size = 6, angle = 90, margin = margin(r = 8)), 
-    legend.text = element_text(size = 7),    # Adjust legend text size
-    legend.title = element_text(size = 8),   # Adjust legend title size
-    legend.position = "bottom",                 # Position the legend at the top
-    legend.box = "horizontal",               # Arrange legend items horizontally
-    legend.spacing.x = unit(0.2, "cm"),       # Adjust spacing between legend items
-    panel.grid = element_blank(),
-    panel.background = element_rect(fill = "black"),
-    legend.key = element_rect(colour = "black", size = 0.6),
-    plot.margin = margin(t = 0,  # Top margin
-                             r = 0.3,  # Right margin
-                             b = 0,  # Bottom margin
-                             l = 0)) # Left margin
-  )     
+    plot.title = element_text(hjust = 0.5, margin = margin(b = 10), size = 13), # Center-align title with space below it
+    axis.text.x = element_text(size = 10, angle = 90, hjust = 1), # Rotate x-axis labels for better readability
+    axis.text.y = element_text(size = 10), # Set y-axis text size
+    axis.title.x = element_text(size = 12, margin = margin(t = 8)), # Customize x-axis title appearance
+    axis.title.y = element_text(size = 12, angle = 90, margin = margin(r = 8)), # Customize y-axis title appearance
+    legend.text = element_text(size = 10), # Set legend text size
+    legend.title = element_text(size = 12), # Set legend title size
+    legend.position = "bottom", # Place the legend below the plot
+    legend.box = "horizontal", # Arrange legend items horizontally
+    legend.spacing.x = unit(0.2, "cm"), # Add space between legend items
+    panel.grid = element_blank(), # Remove grid lines from the plot
+    panel.background = element_rect(fill = "black"), # Set the panel background color to black
+    legend.key = element_rect(colour = "black", size = 0.6), # Customize legend key border
+    plot.margin = margin(t = 0, r = 0.3, b = 0, l = 0) # Adjust plot margins (top, right, bottom, left)
+))
 
-
-#conformityColors <- c("Close conformity" = "#386641","Acceptable conformity" = "#6a994e","Marginally acceptable conformity" = "#a7c957","Nonconformity" = "#f2e8d0","Not suitable data" = "darkgrey")
-# conformityColors <- c("Close conformity" = "#274c77","Acceptable conformity" = "#6096ba","Marginally acceptable conformity" = "#a3cef1","Nonconformity" = "#e7ecef", "Not suitable data" = "#636393")
-# 
-# conformityColors <- c("Close conformity" = "#ec6342","Acceptable conformity" = "#f79639","Marginally acceptable conformity" = "#f6c543","Nonconformity" = "#f8f4e4", "Not suitable data" = "#636363")
-# 
-# # Aleksandar's colors
-#  conformityColors <- c("Close conformity" = "#75096b","Acceptable conformity" = "#c402b1","Marginally acceptable conformity" = "#fc72de","Nonconformity" = "#f2d9f1", "Not suitable data" = "#333333")
-  conformityColors <- c("Close conformity" = "#4478c5","Acceptable conformity" = "#7f9ec5","Marginally acceptable conformity" = "#c5b5df","Nonconformity" = "#fde5e1", "Not suitable data" = "#f9cbe7")
-# conformityColors <- c("Close conformity" = "#1E90FF","Acceptable conformity" = "#447ac4","Marginally acceptable conformity" = "#85aadf","Nonconformity" = "#fc72de", "Not suitable data" = "#f9cbe7")
-#1E90FF
-#black could be error in benford function.
-#569CF2" "#8EA8E4" "#C6B3D8" "#FFC0CB"
-```
-
-# Brewing colors
-
-```{r}
-colors <- c("#1E90FF", "#d01c8b")
-
-# Create a color palette function with colorRampPalette()
-color_palette <- colorRampPalette(colors)
-
-# Generate 4 colors within the specified range
-my_colors <- color_palette(5)
-
-# Print the colors
-print(my_colors)
-
-# Example usage with ggplot2
-df <- data.frame(x = 1:4, y = c(2, 3, 5, 4))
-
-ggplot(df, aes(x, y, fill = factor(x))) +
-  geom_bar(stat = "identity") +
-  scale_fill_manual(values = my_colors) +
-  theme_minimal()
+# Define a custom color palette for conformity categories
+conformityColors <- c(
+    "Close conformity" = "#4478c5", # Blue for close conformity
+    "Acceptable conformity" = "#7f9ec5", # Light blue for acceptable conformity
+    "Marginally acceptable conformity" = "#c5b5df", # Purple for marginal conformity
+    "Nonconformity" = "#fde5e1", # Light pink for nonconformity
+    "Not suitable data" = "#f9cbe7" # Pink for unsuitable data
+)
 ```
 
 ### Functions
 
 ```{r}
-
-benford_conforming <- function(data,n = 1) {
+benford_conforming <- function(data, n = 1) {
+  # Function to check conformity of numeric columns in a dataset to Benford's Law
   tryCatch({
-    if(nrow(data) < 500){
-      return("Missing data")
+    if (nrow(data) < 500) {
+      return(c("Missing data" = "Unsuitable data"))  # Return if insufficient data rows
     }
-    numeric_columns <- data |> select_if(is.numeric)
-    #cols_with_positive_values <- colSums(numeric_columns > 0) > 0
-    #numeric_columns <- numeric_columns[,cols_with_positive_values]
+    numeric_columns <- data |> dplyr::select_if(is.numeric)  # Select numeric columns
 
-    #numeric_columns |> mutate(across(where(is.numeric), ~abs(.))) -> numeric_columns
-    #numeric_columns |> select_if(function(x) (max(x) - min(x)) >= 1000) -> numeric_columns
-    if(numeric_columns |> length() == 0){
-      return("No numerical columns")
+    if (ncol(numeric_columns) == 0) {
+      return(c("No numeric columns" = "Unsuitable data"))  # Return if no numeric columns are found
+    }
+
+    # Apply Benford's Law to columns meeting conditions and retrieve conformity
+    result <- sapply(numeric_columns, function(x) {
+      if (mean(x, na.rm = TRUE) > median(x, na.rm = TRUE) & sum(x != 0, na.rm = TRUE) > 500) {
+        res <- benford(x, number.of.digits = n, sign = "both")
+        return(res$MAD.conformity)
+      } else {
+        return("Unsuitable data")
+      }
+    })
+
+    # Ensure there is always a named vector to avoid issues with empty results
+    if (length(result) == 0) {
+      return(c("No suitable columns" = "Unsuitable data"))
+    }
+
+    return(result)
+  }, error = function(e) {
+    # Handle errors gracefully by returning a default response
+    return(c("Error" = "Unsuitable data"))
+  })
+}
+
+
+benford_conforming_stats <- function(data, n = 1) {
+  # Function to return detailed Benford analysis results for numeric columns
+  tryCatch({
+    if (nrow(data) < 500) {
+      return("Missing data")  # Return if insufficient data rows
+    }
+    numeric_columns <- data |> select_if(is.numeric)  # Select numeric columns
+
+    if (numeric_columns |> length() == 0) {
+      return("No numerical columns")  # Return if no numeric columns are found
     }
     
-    numeric_columns |> ncol() -> num_of_numeric_cols
-    sapply(numeric_columns, function(x) {if(mean(x) > median(x) & sum(x != 0) > 500){res = benford(x, number.of.digits = n, sign = "both"); 
-    res$MAD.conformity}else("Not suitable data")}) -> result
-    #result[result != "Nonconformity"] |> length() -> num_of_conforming
+    numeric_columns |> ncol() -> num_of_numeric_cols  # Number of numeric columns
+    # Apply Benford's Law to columns meeting conditions and return detailed results
+    sapply(numeric_columns, function(x) {
+      if (mean(x) > median(x) & sum(x != 0) > 500) {  # Check if column meets criteria
+        benford(x, number.of.digits = n, sign = "both")
+      } else {
+        "Not suitable data"
+      }
+    }) -> result
     return(result)
-    #return(cat("Number of conforming cols", num_of_conforming, "out of", num_of_numeric_cols,"numerical cols\n"))
-    }, error = function(e) {
+  }, error = function(e) {
+    # Handle errors gracefully
+    return(NULL)
   })
-} 
+}
 
-benford_conforming_stats <- function(data,n = 1) {
-  tryCatch({
-    if(nrow(data) < 500){
-      return("Missing data")
-    }
-    numeric_columns <- data |> select_if(is.numeric)
-    #cols_with_positive_values <- colSums(numeric_columns > 0) > 0
-    #numeric_columns <- numeric_columns[,cols_with_positive_values]
-
-    #numeric_columns |> mutate(across(where(is.numeric), ~abs(.))) -> numeric_columns
-    #numeric_columns |> select_if(function(x) (max(x) - min(x)) >= 1000) -> numeric_columns
-    if(numeric_columns |> length() == 0){
-      return("No numerical columns")
-    }
-    
-    numeric_columns |> ncol() -> num_of_numeric_cols
-    sapply(numeric_columns, function(x) {if(mean(x) > median(x) & sum(x != 0) > 500){res = benford(x, number.of.digits = n, sign = "both"); 
-    res}else("Not suitable data")}) -> result
-    #result[result != "Nonconformity"] |> length() -> num_of_conforming
-    return(result)
-    #return(cat("Number of conforming cols", num_of_conforming, "out of", num_of_numeric_cols,"numerical cols\n"))
-    }, error = function(e) {
-  })
-} 
-
-benford_conforming_combined2 <- function(data, n = 1){
-  all.numeric.values <- unlist(data[sapply(data, is.numeric)], use.names = FALSE)
-  if(sum(all.numeric.values == 0) < 500 | mean(all.numeric.values) < median(all.numeric.values)){
-      return("Not suitable data")
-    }else{
-      return(benford(all.numeric.values, number.of.digits = n, sign = "both"))
-    }
+benford_conforming_combined2 <- function(data, n = 1) {
+  # Function to check conformity of all numeric values combined
+  all.numeric.values <- unlist(data[sapply(data, is.numeric)], use.names = FALSE)  # Combine all numeric values
+  if (sum(all.numeric.values == 0) < 500 | mean(all.numeric.values) < median(all.numeric.values)) {
+    return("Not suitable data")  # Return if conditions are not met
+  } else {
+    return(benford(all.numeric.values, number.of.digits = n, sign = "both"))  # Apply Benford's Law
+  }
 }
 
 first_digit <- function(number) {
+  # Function to extract the first significant digit of a number
   number |> as.character() |> str_extract("[1-9]") |> as.numeric() -> result
-  ifelse(!is.na(result), result, 0) 
+  ifelse(!is.na(result), result, 0)  # Return 0 for non-numeric values
 }
 
-benfordPlot <- function(BObject,title,suspectTreshold = NULL) {
-  suspectColor <- "#FF10F0"
-  nonSuspectColor <- "#1E90FF"
-  B_data <-getBfd(BObject)
-  if(suspectTreshold |> is.null()){
-      ggplot(data = B_data, aes(x = digits, y = data.dist * 100)) +
+benfordPlot <- function(BObject, title, suspectTreshold = NULL) {
+  # Function to create a Benford's Law plot
+  suspectColor <- "#FF10F0"  # Color for suspect deviations
+  nonSuspectColor <- "#1E90FF"  # Color for non-suspect deviations
+  B_data <- getBfd(BObject)  # Retrieve Benford distribution data
+  
+  if (suspectTreshold |> is.null()) {
+    # Plot without highlighting suspects
+    ggplot(data = B_data, aes(x = digits, y = data.dist * 100)) +
       theme_bw() +
       scale_x_continuous(name = "Digit", breaks = seq(0, 10, 1)) +
-      scale_y_continuous(name = "Percentage", expand = expand_scale(mult = c(0, 0.05))) +  # Adjust the 'mult' parameter to control the expansion
-      geom_col(color = "black", fill =nonSuspectColor, width = 0.4) +
+      scale_y_continuous(name = "Percentage", expand = expansion(mult = c(0, 0.05))) +
+      geom_col(color = "black", fill = nonSuspectColor, width = 0.5) +
       labs(title = title) +
-      stat_smooth(aes(x = digits, y = benford.dist * 100), fill = "#999999", color = '#444444', linewidth = 1.2, se = FALSE, alpha = 0.8) +
+      stat_smooth(aes(x = digits, y = benford.dist * 100), fill = "#999999", color = '#444444', linewidth = 1.4, se = FALSE, alpha = 0.5) +
       geom_point(size = 2) +
       theme(plot.title = element_text(size = 12, hjust = 0.5),
-      panel.border = element_rect(size = 1),
-      legend.position = "none") +
+            panel.border = element_rect(size = 1),
+            legend.position = "none") +
       guides(color = "none")
-  }else{
-      B_suspects <- getSuspects(BObject, B_data)
-      #B_data$suspect <- ifelse(B_data$squared.diff > suspectTreshold, "yes", "no")
-      B_data$suspect <- ifelse(abs(B_data$data.dist - B_data$benford.dist) >  suspectTreshold , "yes", "no")
-      ggplot(data = B_data, aes(x = digits, y = data.dist * 100, fill = suspect)) +
+  } else {
+    # Plot with suspect highlighting
+    B_data$suspect <- ifelse(abs(B_data$data.dist - B_data$benford.dist) > suspectTreshold, "yes", "no")
+    ggplot(data = B_data, aes(x = digits, y = data.dist * 100, fill = suspect)) +
       theme_bw() +
       scale_x_continuous(name = "Digit", breaks = seq(0, 10, 1)) +
-      scale_y_continuous(name = "Percentage", expand = expand_scale(mult = c(0, 0.05))) +
-      geom_col(color = "black", width = 0.4, show.legend = TRUE) +  # Ensure fill legend is shown
-      stat_smooth(aes(x = digits, y = benford.dist * 100), fill = "#999999", color = '#444444', linewidth = 1.3, se = FALSE, alpha = 0.8) +
-      geom_point(aes(x = digits, y = data.dist * 100), size = 2, color = "black", show.legend = FALSE) +  # Explicitly disable legend for points
+      scale_y_continuous(name = "Percentage", expand = expansion(mult = c(0, 0.05))) +
+      geom_col(color = "black", width = 0.5, show.legend = TRUE) +
+      stat_smooth(aes(x = digits, y = benford.dist * 100), fill = "#999999", color = '#444444', linewidth = 1.4, se = FALSE, alpha = 0.5) +
+      geom_point(aes(x = digits, y = data.dist * 100), size = 2, color = "black", show.legend = FALSE) +
       labs(title = title) +
       scale_fill_manual(values = c(nonSuspectColor, suspectColor)) +
       theme(
         plot.title = element_text(size = 12, hjust = 0.5),
         panel.border = element_rect(size = 1)
       ) +
-      guides(color = "none")  # Ensure no color legend is shown
+      guides(color = "none")
   }
 }
-
-benfordPlot(benford_bioenergiedat_18_all,"asd",0.01)
-plot(x = B_data$digits, y = B_data$benford.dist*100, type = "l")
 ```
 
-## Small Carbon Data
-
-```{r warning=FALSE}
-# data <- read_excel("Cut-off Cumulative LCI v3.9.1_bogdan.xlsx", sheet = "LCI")
-# data |> rename(Country = `Activity Name...3`) -> data
-# data$`Carbon dioxide, from soil or biomass stock...15` |> as.numeric() -> data[,15]
-# data |> na.omit() -> data
-# numeric_columns <- data[,data |> sapply(is.numeric)] 
-# numeric_columns |> ncol() -> num_of_numeric_cols
-# 
-# data |> mutate(across(where(is.numeric), ~abs(.))) 
-# sapply(numeric_columns, function(x) {res = benford(x, number.of.digits = 2); res$MAD.conformity}) -> result
-# result[result != "Nonconformity"] |> length() -> num_of_conforming
-# paste("Number of total numeric cols:",num_of_numeric_cols)
-# paste("Number of conforming cols:",num_of_conforming)
-# 
-# benford_conforming(data) |> table()
-# 
-# data |> benford_conforming() -> xx
-# xx[xx == "Nonconformity"] |> names()
-```
+### Importing Dataset
 
 ```{r}
-# data[,xx]
-```
+# Load the CSV file containing the dataset
+bigData <- read.csv("../data/Cut-off Cumulative LCI v3.10.csv")
 
-```{r}
-#test for China
+# Read the Excel file for header information (sheet 2, skip first 2 rows)
+read_xlsx("../data/headerLCI.xlsx", sheet = 2, skip = 2) -> header
+header[1, ] |> as.vector() -> headerNames  # Extract the first row of headers as a vector
+colnames(bigData)[1:5] -> temp  # Extract the first 5 column names from bigData
 
-# numeric_columns <- data[data$Country == "CN",data |> sapply(is.numeric)] 
-# numeric_columns |> abs() -> abs 
-# numeric_columns |> ncol() -> num_of_numeric_cols
-# 
-# sapply(numeric_columns, function(x) {res = benford(x, number.of.digits = 2); res$MAD.conformity}) -> result
-# result[result != "Nonconformity"] |> length() -> num_of_conforming
-# paste("Number of total numeric cols:",num_of_numeric_cols)
-# paste("Number of conforming cols:",num_of_conforming)
-
-```
-
-```{r warning=FALSE}
-
-# data |> group_by(Country) |> summarise(n = n()) |> arrange(desc(n)) -> rowsPerCountry
-# 
-# Countries <- unique(data$Country)
-# for (country in Countries) {
-#   countryData <- data |> dplyr::filter(Country == country)
-#     if(countryData |> nrow() > 200){
-#       cat(country,": ")
-#       countryData |> benford_conforming() -> result
-#       result[result != "Nonconformity"] |> length()
-#     }
-# }
-
-```
-
-## Country data cleaning
-
-```{r}
-# read_csv("contry_codes.csv") |> dplyr::filter(Name %in% c("Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Sweden")) |> pull(Code) -> EUCountries
-# 
-# data |> mutate(Country = case_when(
-#     str_detect(Country, "US-") ~ "US",
-#     str_detect(Country, "CA-") ~ "CA",
-#     str_detect(Country, "CN-") ~ "CN",
-#      str_detect(Country, "BR-") ~ "BR",
-#      str_detect(Country, "AU-") ~ "AU",
-#      str_detect(Country, "IN-") ~ "IN",
-#       Country %in% EUCountries ~ "EU",
-#     TRUE ~ as.character(Country)
-#   )) -> carbonDataCountriesGrouped
-# 
-# 
-# carbonDataCountriesGrouped |> group_by(Country) |> summarise(n = n()) |> arrange(desc(n))
-```
-
-### Importing big dataset
-
-```{r}
-bigData <- read.csv("Cut-off Cumulative LCI v3.10.csv")
-
-#bigData |> mutate_if(is.numeric, first_digit) -> bigDataFirstDigit
-```
-
-```{r}
-read_xlsx("headerLCI.xlsx", sheet = 2, skip=2) -> header
-header[1,] |> as.vector() -> headerNames
-colnames(bigData)[1:5] -> temp
+# Rename specific columns to align with standard names
 temp[2] <- "Activity Name"
 temp[3] <- "Country"
-temp |> str_replace_all(" ",".") -> temp
-headerNames <- c(temp,headerNames)
-#headerNames[-seq(1,5)] -> headerNames
-colnames(bigData) <- headerNames
-#colnames(bigDataFirstDigit) <- headerNames
-bigData |> select(-"Exchange Name|Compartment|Subcompartment") -> bigData
-#bigDataFirstDigit |> select(-"Exchange Name|Compartment|Subcompartment") -> bigDataFirstDigit
+temp |> str_replace_all(" ", ".") -> temp  # Replace spaces with periods in column names
+
+# Combine the modified temp column names with the headerNames
+headerNames <- c(temp, headerNames)
+colnames(bigData) <- headerNames  # Assign the new header names to bigData
+
+# Remove unwanted columns by pattern matching
+bigData |> select(-matches("Exchange Name|Compartment|Subcompartment")) -> bigData
+
+# Display the first few rows of the modified bigData
 head(bigData)
-#head(bigDataFirstDigit)
 ```
 
 ```{r warning=FALSE}
-#bigData |> benford_conforming() 
+# Summarize the number of rows per country and sort in descending order
+bigData |> 
+  group_by(Country) |> 
+  summarise(n = n()) |> 
+  arrange(desc(n)) -> rowsPerCountryBigData
 
-```
-
-```{r warning=FALSE}
-bigData |> group_by(Country) |> summarise(n = n()) |> arrange(desc(n)) -> rowsPerCountryBigData
+# View the summarized data by country
 rowsPerCountryBigData
-# CountriesBigData <- unique(bigData$Country)
-# counter <- 0
-# for (country in CountriesBigData) {
-#   countryData <- bigData |> dplyr::filter(Country == country)
-#   if(countryData |> nrow() > 200){
-#     counter <- counter + 1
-#     cat(country,": ")
-#     countryData |> benford_conforming()
-#   }
-# }
-
-
 ```
 
-```{r warning=F}
-# numeric_columns <- bigData[,bigData |> sapply(is.numeric)] 
-# cols_with_positive_values <- colSums(numeric_columns > 0) > 0
-# numeric_columns <- numeric_columns[,cols_with_positive_values]
-# numeric_columns |> select_if(function(x) (max(x) - min(x)) >= 1000) 
-
-
-```
+### Grouping Countries in the Dataset
 
 ```{r}
-# bigData |> group_by(Reference.Product.Unit) |> summarise(n = n()) |> arrange(desc(n)) -> rowsPerUnitBigData
-# 
-# UnitsBigData <- unique(bigData$Reference.Product.Unit)
-# counter <- 0
-# for (unit in UnitsBigData) {
-#   unitData <- bigData |> dplyr::filter(Reference.Product.Unit == unit)
-#   if(unitData |> nrow() > 200){
-#     counter <- counter + 1
-#     cat(unit,": ")
-#     unitData |> benford_conforming() -> result
-#     result[result != "Nonconformity"] |> length()
-#   }
-# }
+# Load the list of EU country codes for grouping
+read_csv("../data/contry_codes.csv") |> 
+  dplyr::filter(Name %in% c(
+    "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", 
+    "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", 
+    "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", 
+    "Netherlands", "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", 
+    "Spain", "Sweden"
+  )) |> 
+  pull(Code) -> EUCountries  # Extract country codes for EU countries
 
-```
+# Identify countries in the dataset with hyphens in their names
+bigData |> 
+  select(Country) |> 
+  dplyr::filter(str_detect(Country, "-")) |> 
+  unique() -> countriesToGroup
 
-### Grouping countries in big dataset
-
-```{r}
-read_csv("contry_codes.csv") |> dplyr::filter(Name %in% c("Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta", "Netherlands", "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Sweden")) |> pull(Code) -> EUCountries
-
-bigData |> select(Country) |> dplyr::filter(str_detect(Country,"-")) |> unique() -> countriesToGroup
-
-bigData |> mutate(Country = case_when(
-    str_detect(Country, "US-") ~ "US",
-    str_detect(Country, "CA-") ~ "CA",
-    str_detect(Country, "CN-") ~ "CN",
-     str_detect(Country, "BR-") ~ "BR",
-     str_detect(Country, "AU-") ~ "AU",
-     str_detect(Country, "IN-") ~ "IN",
-      Country %in% EUCountries ~ "EU",
-    TRUE ~ as.character(Country)
+# Group countries into broader categories
+bigData |> 
+  mutate(Country = case_when(
+    str_detect(Country, "US-") ~ "US",  # Group US states into "US"
+    str_detect(Country, "CA-") ~ "CA",  # Group Canadian provinces into "CA"
+    str_detect(Country, "CN-") ~ "CN",  # Group Chinese regions into "CN"
+    str_detect(Country, "BR-") ~ "BR",  # Group Brazilian regions into "BR"
+    str_detect(Country, "AU-") ~ "AU",  # Group Australian regions into "AU"
+    str_detect(Country, "IN-") ~ "IN",  # Group Indian regions into "IN"
+    Country %in% EUCountries ~ "EU",   # Group EU countries into "EU"
+    TRUE ~ as.character(Country)       # Retain other countries as they are
   )) -> bigDataCountriesGrouped
 
+# Summarize the number of rows per country before and after grouping
+bigData |> 
+  group_by(Country) |> 
+  summarise(n = n()) |> 
+  arrange(desc(n))
 
-bigData |> group_by(Country) |> summarise(n = n()) |> arrange(desc(n)) -> rowsPerCountry
-bigDataCountriesGrouped |> group_by(Country) |> summarise(n = n()) |> arrange(desc(n)) -> rowsPerCountryGrouped
-rowsPerCountryGrouped
-
-# bigDataFirstDigit |> mutate(Country = case_when(
-#     str_detect(Country, "US-") ~ "US",
-#     str_detect(Country, "CA-") ~ "CA",
-#     str_detect(Country, "CN-") ~ "CN",
-#      str_detect(Country, "BR-") ~ "BR",
-#      str_detect(Country, "AU-") ~ "AU",
-#      str_detect(Country, "IN-") ~ "IN",
-#       Country %in% EUCountries ~ "EU",
-#     TRUE ~ as.character(Country)
-#   )) -> bigDataFirstDigit
-# 
-
-
+bigDataCountriesGrouped |> 
+  group_by(Country) |> 
+  summarise(n = n()) |> 
+  arrange(desc(n))
 ```
 
-# Finding all columns that conform to Benford's law
+# Identifying Columns Conforming to Benford's Law
 
 ```{r}
-bigData |> benford_conforming() -> conforming_cols
+# Identify all columns in the dataset that conform to Benford's Law
+bigData |> benford_conforming() -> conforming_cols  # Apply the benford_conforming function to bigData
 
+# Count the total number of conforming columns
 conforming_cols |> length()
 
+# Extract column names with "Close conformity" to Benford's Law
 conforming_cols[conforming_cols == "Close conformity"] |> names() -> close_conforming_cols
+close_conforming_cols |> length()  # Count the number of close conforming columns
 
-close_conforming_cols |> length()
-
+# Extract column names with "Acceptable conformity" to Benford's Law
 conforming_cols[conforming_cols == "Acceptable conformity"] |> names() -> acceptable_conformity_cols
+acceptable_conformity_cols |> length()  # Count the number of acceptable conforming columns
 
-acceptable_conformity_cols |> length()
-
+# Extract column names with "Marginally acceptable conformity" to Benford's Law
 conforming_cols[conforming_cols == "Marginally acceptable conformity"] |> names() -> marginally_acceptable_cols
+marginally_acceptable_cols |> length()  # Count the number of marginally acceptable conforming columns
 
-marginally_acceptable_cols |> length()
 ```
 
 ```{r}
-#find minimum distorsion factor from MAD conformity from close conforming cols
+# Find the column with the minimum MAD (Mean Absolute Deviation) value among close conforming columns
 
+# Example of calculating MAD for a specific column (Silver I in ocean water)
 bigData |> select("Silver I|water|ocean") |> pull() |> benford() -> yy
-yy$MAD
+yy$MAD  # Retrieve MAD value for this column
 
-min_mad <- Inf
+# Initialize variables to track the minimum MAD value and its corresponding column
+min_mad <- Inf  # Start with an infinitely large MAD value
 min_mad_col <- ""
+
+# Iterate through all close conforming columns to find the column with the smallest MAD
 for (col in close_conforming_cols) {
-  mad <- benford(bigData[[col]], number.of.digits = 1, sign = "both")$MAD
-  if(mad < min_mad){
+  mad <- benford(bigData[[col]], number.of.digits = 1, sign = "both")$MAD  # Calculate MAD for the column
+  if (mad < min_mad) {  # Update minimum MAD and corresponding column if a lower MAD is found
     min_mad <- mad
     min_mad_col <- col
   }
 }
 
+# Visualize the Benford's Law conformity of the column with the smallest MAD
 bigData |> select(min_mad_col) |> pull() |> benford(1) |> plot()
 ```
 
 # Testing benford sample size with ecoinvent columns
 
 ```{r}
+# Function to sample a subset of a numeric vector and test its conformity to Benford's Law
 sample_f <- function(x, n) {
-  benford_vector <- sample(x, n) |> benford(1)
-  return(benford_vector$MAD.conformity)
+  benford_vector <- sample(x, n) |> benford(1)  # Apply Benford's Law on a random sample of size n
+  return(benford_vector$MAD.conformity)  # Return the MAD conformity result
 }
-```
 
+# Analyze Close Conforming Columns
+bigData |> select(min_mad_col) |> pull() -> perfect.benford.numbers.bigData  # Perfect Benford numbers
+bigData |> select(close_conforming_cols[1]) |> pull() -> close.conf.numbers.bigData  # Numbers from a close conforming column
 
-```{r}
-#close confrming columns
-bigData |> select(min_mad_col) |> pull() -> perfect.benford.numbers.bigData
-bigData |> select(close_conforming_cols[1]) |> pull() -> close.conf.numbers.bigData
 sample.df.bigData <- data.frame()
 
-  for (i in seq(50,1000,50)) {
-    replicate(1000, sample_f(perfect.benford.numbers.bigData, i)) -> vector
-    data.frame(sample.size = i, percentage.of.conforming = vector[vector != "Nonconformity"] |> length() / length(vector) * 100) -> df
-    sample.df.bigData <- rbind(sample.df.bigData, df)
-  }
+# Iterate over sample sizes (50 to 1000, step 50) and replicate the sampling 1000 times
+for (i in seq(50, 1000, 50)) {
+  replicate(1000, sample_f(perfect.benford.numbers.bigData, i)) -> vector
+  data.frame(
+    sample.size = i,
+    percentage.of.conforming = vector[vector != "Nonconformity"] |> length() / length(vector) * 100
+  ) -> df
+  sample.df.bigData <- rbind(sample.df.bigData, df)
+}
 
+# Plot conformity percentage for close conforming column
 ggplot(sample.df.bigData, aes(x = sample.size, y = percentage.of.conforming)) + 
   geom_col(fill = "#1E90FF", color = "black") +
   labs(x = "Sample Size", y = "Percentage of Conforming", 
        title = "Conformity Percentage by Sample Size",
-       subtitle = "Ecoinvent Close conforming column") +
-  scale_x_continuous(breaks = seq(50,1000,50)) +
-  scale_y_continuous(breaks = seq(0,100,10)) +
+       subtitle = "Ecoinvent Close Conforming Column") +
+  scale_x_continuous(breaks = seq(50, 1000, 50)) +
+  scale_y_continuous(breaks = seq(0, 100, 10)) +
   geom_hline(yintercept = 95, linetype = "dashed", color = "#FF5733") +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5, margin = margin(b = 10), size = 16),
         plot.subtitle = element_text(hjust = 0.5, margin = margin(b = 10), size = 10)) -> plot_close_conformity_sample
-#marginally acceptable columns
+
+# Analyze Marginally Acceptable Columns
 bigData |> select(marginally_acceptable_cols[1]) |> pull() -> marginally.acceptable.numbers.bigData
 
 sample.df.bigData <- data.frame()
 
-  for (i in seq(50,1000,50)) {
-    replicate(1000, sample_f(marginally.acceptable.numbers.bigData, i)) -> vector
-    data.frame(sample.size = i, percentage.of.conforming = vector[vector != "Nonconformity"] |> length() / length(vector) * 100) -> df
-    sample.df.bigData <- rbind(sample.df.bigData, df)
-  }
+for (i in seq(50, 1000, 50)) {
+  replicate(1000, sample_f(marginally.acceptable.numbers.bigData, i)) -> vector
+  data.frame(
+    sample.size = i,
+    percentage.of.conforming = vector[vector != "Nonconformity"] |> length() / length(vector) * 100
+  ) -> df
+  sample.df.bigData <- rbind(sample.df.bigData, df)
+}
 
+# Plot conformity percentage for marginally acceptable column
 ggplot(sample.df.bigData, aes(x = sample.size, y = percentage.of.conforming)) + 
   geom_col(fill = "#1E90FF", color = "black") +
   labs(x = "Sample Size", y = "Percentage of Conforming", 
        title = "Conformity Percentage by Sample Size",
-       subtitle = "Ecoinvent Marginally acceptable column") +
-  scale_x_continuous(breaks = seq(50,1000,50)) +
-  scale_y_continuous(breaks = seq(0,100,10)) +
+       subtitle = "Ecoinvent Marginally Acceptable Column") +
+  scale_x_continuous(breaks = seq(50, 1000, 50)) +
+  scale_y_continuous(breaks = seq(0, 100, 10)) +
   geom_hline(yintercept = 95, linetype = "dashed", color = "#FF5733") +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5, margin = margin(b = 10), size = 16),
         plot.subtitle = element_text(hjust = 0.5, margin = margin(b = 10), size = 10)) -> plot_marginal_conformity_sample
 
-#Acceptable columns
-
+# Analyze Acceptable Columns
 bigData |> select(acceptable_conformity_cols[1]) |> pull() -> acceptable.numbers.bigData
 
 sample.df.bigData <- data.frame()
 
-  for (i in seq(50,1000,50)) {
-    replicate(1000, sample_f(acceptable.numbers.bigData, i)) -> vector
-    data.frame(sample.size = i, percentage.of.conforming = vector[vector != "Nonconformity"] |> length() / length(vector) * 100) -> df
-    sample.df.bigData <- rbind(sample.df.bigData, df)
-  }
+for (i in seq(50, 1000, 50)) {
+  replicate(1000, sample_f(acceptable.numbers.bigData, i)) -> vector
+  data.frame(
+    sample.size = i,
+    percentage.of.conforming = vector[vector != "Nonconformity"] |> length() / length(vector) * 100
+  ) -> df
+  sample.df.bigData <- rbind(sample.df.bigData, df)
+}
 
+# Plot conformity percentage for acceptable column
 ggplot(sample.df.bigData, aes(x = sample.size, y = percentage.of.conforming)) + 
   geom_col(fill = "#1E90FF", color = "black") +
   labs(x = "Sample Size", y = "Percentage of Conforming", 
        title = "Conformity Percentage by Sample Size",
-       subtitle = "Ecoinvent Acceptable column") +
-  scale_x_continuous(breaks = seq(50,1000,50)) +
-  scale_y_continuous(breaks = seq(0,100,10)) +
+       subtitle = "Ecoinvent Acceptable Column") +
+  scale_x_continuous(breaks = seq(50, 1000, 50)) +
+  scale_y_continuous(breaks = seq(0, 100, 10)) +
   geom_hline(yintercept = 95, linetype = "dashed", color = "#FF5733") +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5, margin = margin(b = 10), size = 16),
         plot.subtitle = element_text(hjust = 0.5, margin = margin(b = 10), size = 10)) -> plot_acceptable_conformity_sample
 
-ggsave("plot_acceptable_conformity_sample.png", plot_acceptable_conformity_sample, width = 18, height = 10, units = "cm")
-ggsave("plot_marginal_conformity_sample.png", plot_marginal_conformity_sample, width = 18, height = 10, units = "cm")
-ggsave("plot_close_conformity_sample.png", plot_close_conformity_sample, width = 18, height = 10, units = "cm")
+# Save the generated plots as PNG files
+ggsave("../results/plot_acceptable_conformity_sample.pdf", plot_acceptable_conformity_sample, width = 18, height = 10, units = "cm")
+ggsave("../results/plot_marginal_conformity_sample.pdf", plot_marginal_conformity_sample, width = 18, height = 10, units = "cm")
+ggsave("../results/plot_close_conformity_sample.pdf", plot_close_conformity_sample, width = 18, height = 10, units = "cm")
+```
 
-#bigDataCountriesGrouped0 |> select(c(Country,(marginally_acceptable_cols |> names()))) -> bigDataMarginallyAcceptable
-#bigDataCountriesGrouped0 |> select(c(Country,(acceptable_conformity_cols |> names()))) -> bigDataAcceptable
+# Filtering and Summarizing Conforming Columns by Grouped Countries
+
+```{r}
+# Count the number of columns that conform to Benford's Law and are suitable for analysis
+(conforming_cols != "Nonconformity" & conforming_cols != "Unsuitable data") |> sum()
+
+conforming_cols |> table()
+# Extract names of columns that conform to Benford's Law
+conforming_cols[conforming_cols != "Nonconformity" & conforming_cols != "Unsuitable data"] |> names() -> conforming_cols_names
+
 ```
 
 ```{r}
-(conforming_cols != "Nonconformity" & conforming_cols != "Not suitable data") |> sum()
+# Filter the dataset to include key columns and conforming columns
+bigData |> 
+  select(Activity.UUID_Product.UUID, Activity.Name, Country, Reference.Product.Name, Reference.Product.Unit, conforming_cols_names) -> bigData
 
-conforming_cols[conforming_cols != "Nonconformity" & conforming_cols != "Not suitable data"] |> names() -> conforming_cols_names
+# Apply the same filtering to the grouped dataset
+bigDataCountriesGrouped |> 
+  select(Activity.UUID_Product.UUID, Activity.Name, Country, Reference.Product.Name, Reference.Product.Unit, conforming_cols_names) -> bigDataCountriesGrouped
 ```
 
 ```{r}
-bigData |> select(Activity.UUID_Product.UUID, Activity.Name, Country, Reference.Product.Name, Reference.Product.Unit, conforming_cols_names) -> bigData
-bigDataCountriesGrouped |> select(Activity.UUID_Product.UUID, Activity.Name, Country, Reference.Product.Name, Reference.Product.Unit, conforming_cols_names) -> bigDataCountriesGrouped
-
-bigDataCountriesGrouped |> select(Activity.UUID_Product.UUID, Activity.Name, Country, Reference.Product.Name, Reference.Product.Unit, close_conforming_cols) -> bigDataCountriesGrouped
-```
-
-```{r}
+# Display the first few rows of the filtered datasets
 bigData |> head()
 bigDataCountriesGrouped |> head()
 ```
 
 ```{r}
-# bigData[,conforming_cols == "Not suitable data"] |> head()
-```
+# Group by Activity Name and count occurrences, then sort in descending order
+bigDataCountriesGrouped |> 
+  group_by(Activity.Name) |> 
+  summarise(n = n()) |> 
+  arrange(desc(n)) -> rowsPerActivityCountriesGrouped
 
-```{r}
-# bigData |> head()
-# 
-# bigData |> benford_conforming() -> conforming_cols
-# 
-# conforming_cols |> length()
-# 
-# bigData |> select(Activity.UUID_Product.UUID, Activity.Name, Country, Reference.Product.Name, Reference.Product.Unit, conforming_cols) |> head()
-```
-
-```{r}
-bigDataCountriesGrouped |> group_by(Activity.Name) |> summarise(n = n()) |> arrange(desc(n)) -> rowsPerActivityCountriesGrouped
-
+# Extract unique Activity Names from the grouped dataset
 unique(bigDataCountriesGrouped$Activity.Name) -> uniqueActivitiesGrouped
 
-# counter <- 0
-# for (activity in uniqueActivitiesGrouped) {
-#   activityData <- bigDataCountriesGrouped |> dplyr::filter(Activity.Name == activity)
-#   if(activityData |> nrow() > 100){
-#     counter <- counter + 1
-#     cat(activity,": ")
-#     activityData |> benford_conforming() -> result
-#     result[result != "Nonconformity"] |> length()
-#   }
-# }
-
-```
-
-```{r warning=FALSE}
-
-# #425
-# bigDataCountriesGrouped |> dplyr::filter(str_detect(Activity.Name,"aluminium")) |> benford_conforming()
-# #1410
-# bigDataCountriesGrouped |> dplyr::filter(str_detect(Activity.Name,"wood")) |> benford_conforming()
-# #318
-# bigDataCountriesGrouped |> dplyr::filter(str_detect(Activity.Name,"concrete")) |> benford_conforming()
-# #3439
-# bigDataCountriesGrouped |> dplyr::filter(str_detect(Activity.Name,"electricity")) |> benford_conforming()
-# #1384
-# bigDataCountriesGrouped |> dplyr::filter(str_detect(Activity.Name,"heat")) |> benford_conforming()
-# #425
-# bigDataCountriesGrouped |> dplyr::filter(str_detect(Activity.Name,"aluminium")) |> benford_conforming()
 ```
 
 ```{r warning = F}
-bigDataCountriesGrouped |> group_by(Reference.Product.Name) |> summarise(n = n()) |> arrange(desc(n))
+# Group by Reference Product Name, count occurrences, and sort in descending order
+bigDataCountriesGrouped |> 
+  group_by(Reference.Product.Name) |> 
+  summarise(n = n()) |> 
+  arrange(desc(n))
 
+# Extract unique Reference Product Names from the grouped dataset
 unique(bigDataCountriesGrouped$Reference.Product.Name) -> uniqueRefProdName
-
-# counter <- 0
-# for (product in uniqueRefProdName) {
-#   productData <- bigDataCountriesGrouped |> dplyr::filter(Reference.Product.Name == product)
-#   if(productData |> nrow() >= 100){
-#     counter <- counter + 1
-#     cat(product,": ")
-#     productData |> benford_conforming() 
-#   }
-# }
 ```
 
 ```{r}
-#bigDataCountriesGrouped |>  select(-matches("unspecified", ignore.case = TRUE)) -> bigDataCountriesGrouped
-
+# Extract unique countries from the grouped dataset
 unique(bigDataCountriesGrouped$Country) -> uniqueCountriesGrouped
-
-counter <- 0
-# for (country in uniqueCountriesGrouped) {
-#   countryData <- bigDataCountriesGrouped |> dplyr::filter(Country == country)
-#   if(countryData |> nrow() > 100){
-#     counter <- counter + 1
-#     cat(country,": ")
-#     countryData |> benford_conforming()
-#   }
-# }
-
-
-#bigDataCountriesGrouped |> dplyr::filter(Country == "BA") |> benford_conforming()
-
-#bigDataCountriesGrouped |> dplyr::filter(Country == "RS") |> benford_conforming()
 ```
 
-## Countries of interest
+# Filtering Data for Countries of Interest
 
 ```{r}
-countries_of_interest <- c("CH", "EU", "BR", "CN", "CA", "US","IN")
-bigDataCountriesGrouped |> dplyr::filter(Country %in% countries_of_interest) -> data_interesting_countries
+# Define the countries of interest
+countries_of_interest <- c("CH", "EU", "BR", "CN", "CA", "US", "IN")
+
+# Filter the grouped dataset to include only rows from the countries of interest
+bigDataCountriesGrouped |> 
+  dplyr::filter(Country %in% countries_of_interest) -> data_interesting_countries
 ```
 
-### Compartments - Separating data into categories (Water, Air, Soil, Natural resource)
+# Separating Data into Compartments: Water, Air, Soil, Inventory Indicators, and Natural Resources
 
 ```{r}
+# Extract column names from the dataset
 bigDataCountriesGrouped |> colnames() -> col_names
 
+# Identify unique strings within column names that are enclosed by "|" (e.g., "|Water|")
 unique_strings <- unique(regmatches(names(bigDataCountriesGrouped), regexpr("\\|(.*?)\\|", names(bigDataCountriesGrouped))))
 
- 
+# Initialize an empty list to store dataframes for each category
 listOfDF <- list()             
 
+# Iterate through each unique string and separate the data by category
 for (i in 1:length(unique_strings)) {
-  name <- unique_strings[i]
-  bigDataCountriesGrouped |> select(Country,contains(name)) -> df
-  listOfDF[[i]]<- df
+  name <- unique_strings[i]  # Get the current compartment name
+  bigDataCountriesGrouped |> select(Country, contains(name)) -> df  # Select relevant columns for the compartment
+  listOfDF[[i]] <- df  # Store the filtered dataframe in the list
 }
 
-listOfDF[[2]] -> water.data
-listOfDF[[1]] -> air.data
-listOfDF[[3]] -> soil.data
-listOfDF[[5]] -> inventory.indicator.data
-# listOfDF[[1]] -> compartment.data
-listOfDF[[4]] -> natural.resource.data
+# Assign dataframes from the list to specific categories
+listOfDF[[2]] -> water.data                  # Data related to Water
+listOfDF[[1]] -> air.data                    # Data related to Air
+listOfDF[[3]] -> soil.data                   # Data related to Soil
+listOfDF[[5]] -> inventory.indicator.data    # Data related to Inventory Indicators
+listOfDF[[4]] -> natural.resource.data       # Data related to Natural Resources
 
+
+water.data |> ncol()
+air.data |> ncol()
+soil.data |> ncol()
+natural.resource.data |> ncol()
+bigDataCountriesGrouped |> ncol()
 ```
 
-### General plot for each category(Water, Air, Soil, Natural resource)
+# Carbon Analysis and Visualization Across Compartments
 
 ```{r}
-# #Water data
-# waterDataPlotDF <- data.frame()
-# 
-# for (country in countries_of_interest) {
-#   water.data |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
-#   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
-#   waterDataPlotDF <- rbind(waterDataPlotDF, df)
-# }
-# waterDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelsWaterData
-# # plotWater <- ggplot(data = waterDataPlotDF, aes(y = factor(Country, levels = factorLevelsWaterData),x = Colname, fill = factor(Conformity, levels = names(conformityColors)))) +
-# #   geom_tile(width = 1, height = 1) +
-# #   ylab("Country") +
-# #   xlab("Columns") +
-# #   labs(fill = "", title = "Water columns") +
-# #   theme(axis.text.x = element_blank(), legend.position = "none") + 
-# #   scale_fill_manual(values = conformityColors)
-# 
-# plotWater <- ggplot(data = waterDataPlotDF, aes(y = factor(Country, levels = factorLevelsWaterData), x = Colname, fill = factor(Conformity, levels = names(conformityColors)))) +
-#   geom_raster() +
-#   ylab("Country") +
-#   xlab("Columns") +
-#   labs(fill = "", title = "Water columns") +
-#   theme(axis.text.x = element_blank(), legend.position = "none") + 
-#   scale_fill_manual(values = conformityColors)
-# 
-# plotWater
-# 
-# 
-# #Air data
-# airDataPlotDF <- data.frame()
-# 
-# for (country in countries_of_interest) {
-#   air.data |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
-#   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
-#   airDataPlotDF <- rbind(airDataPlotDF, df)
-# }
-# airDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelsairData
-# # plotAir <- ggplot(data = airDataPlotDF, aes(y = factor(Country, levels = factorLevelsairData),x = Colname, fill = factor(Conformity, levels = names(conformityColors)))) +
-# #   geom_tile(width = 1, height = 1, size = 0) +
-# #   ylab("Country") +
-# #   xlab("Columns") +
-# #   labs(fill = "", title = "Air columns") +
-# #   theme(axis.text.x = element_blank(), legend.position = "none") + 
-# #   scale_fill_manual(values = conformityColors)
-# 
-# plotAir <- ggplot(data = airDataPlotDF, aes(y = factor(Country, levels = factorLevelsairData), x = Colname, fill = factor(Conformity, levels = names(conformityColors)))) +
-#   geom_raster() +
-#   ylab("Country") +
-#   xlab("Columns") +
-#   labs(fill = "", title = "Air columns") +
-#   theme(axis.text.x = element_blank(), legend.position = "none") + 
-#   scale_fill_manual(values = conformityColors)
-# 
-# plotAir
-# 
-# #Soil data
-# soilDataPlotDF <- data.frame()
-# 
-# for (country in countries_of_interest) {
-#   soil.data |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
-#   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
-#   soilDataPlotDF <- rbind(soilDataPlotDF, df)
-# }
-# soilDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelssoilData
-# plotSoil <- ggplot(data = soilDataPlotDF, aes(y = factor(Country, levels = factorLevelssoilData),x = Colname, fill = factor(Conformity, levels = names(conformityColors)))) +
-#   geom_raster() +
-#   ylab("Country") +
-#   xlab("Columns") +
-#   labs(fill = "", title = "Soil columns") +
-#   theme(axis.text.x = element_blank(), legend.position = "none") + 
-#   scale_fill_manual(values = conformityColors)
-# 
-# plotSoil
-# 
-# #Natural resources data
-# natural.resourceDataPlotDF <- data.frame()
-# 
-# for (country in countries_of_interest) {
-#   natural.resource.data |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
-#   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
-#   natural.resourceDataPlotDF <- rbind(natural.resourceDataPlotDF, df)
-# }
-# natural.resourceDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelsnaturalResourceData
-# plotNaturalResource <- ggplot(data = natural.resourceDataPlotDF, aes(y = factor(Country, levels = factorLevelsnaturalResourceData),x = Colname, fill = factor(Conformity, levels = names(conformityColors)))) +
-#   geom_raster() +
-#   ylab("Country") +
-#   xlab("Columns") +
-#   labs(fill = "", title = "Natural resource columns") +
-#   theme(axis.text.x = element_blank()) + 
-#   scale_fill_manual(values = conformityColors)
-# 
-# plotNaturalResource
-# 
-# all_categories_plot <- gridExtra::grid.arrange(plotAir,plotWater,plotSoil,plotNaturalResource, ncol = 1)
-# ggsave("all_categories_plot.jpg", all_categories_plot, width = 20, height = 28, units = "cm", limitsize = F)
-```
-
-### Carbon plots
-
-```{r}
+# Identify columns related to carbon in the air dataset
 matching_columns_carbon_air <- grep("carbon .*\\|", names(air.data), value = TRUE, ignore.case = TRUE)
 
-### Ceating datasets
-air.data |> select(Country,contains(matching_columns_carbon_air)) -> carbon.air.data
-water.data |> select(Country,contains(grep("carbon .*\\|", names(bigDataCountriesGrouped), value = TRUE, ignore.case = TRUE))) -> carbon.water.data
-soil.data |> select(Country,contains(grep("carbon .*\\|", names(bigDataCountriesGrouped), value = TRUE, ignore.case = TRUE))) -> carbon.soil.data
-natural.resource.data |> select(Country,contains(grep("carbon .*\\|", names(bigDataCountriesGrouped), value = TRUE, ignore.case = TRUE))) -> carbon.natural.resource.data
+# Create datasets for carbon-related columns across different compartments
+air.data |> select(Country, contains(matching_columns_carbon_air)) -> carbon.air.data
+water.data |> select(Country, contains(grep("carbon .*\\|", names(bigDataCountriesGrouped), value = TRUE, ignore.case = TRUE))) -> carbon.water.data
+soil.data |> select(Country, contains(grep("carbon .*\\|", names(bigDataCountriesGrouped), value = TRUE, ignore.case = TRUE))) -> carbon.soil.data
+natural.resource.data |> select(Country, contains(grep("carbon .*\\|", names(bigDataCountriesGrouped), value = TRUE, ignore.case = TRUE))) -> carbon.natural.resource.data
+bigDataCountriesGrouped |> select(Country, contains(grep("carbon .*\\|", names(bigDataCountriesGrouped), value = TRUE, ignore.case = TRUE))) -> carbon.data
 
-bigDataCountriesGrouped0 |> select(Country,contains(grep("carbon .*\\|", names(bigDataCountriesGrouped), value = TRUE, ignore.case = TRUE))) -> carbon.data
 ```
 
 ```{r}
-# General carbon plot
+# General Carbon Plot
 
+# Initialize an empty data frame to store carbon conformity data
 carbonDataPlotDF <- data.frame()
 
+# Evaluate Benford's conformity for carbon-related data across countries of interest
 for (country in countries_of_interest) {
   carbon.data |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
   carbonDataPlotDF <- rbind(carbonDataPlotDF, df)
 }
+
+# Add a label column for visualization
 carbonDataPlotDF <- carbonDataPlotDF %>%
   mutate(Label = as.integer(factor(Colname)))
 
-carbonDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelscarbonData
+# Generate ordered factor levels for countries based on conformity counts
+carbonDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelscarbonData
 
-plotCarbon <- ggplot(data = carbonDataPlotDF, aes(y = factor(Country, levels = factorLevelscarbonData),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Create a heatmap plot for carbon conformity across all compartments
+plotCarbon <- ggplot(data = carbonDataPlotDF, aes(y = factor(Country, levels = factorLevelscarbonData), 
+                                                  x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.4) +
   ylab("Country") +
   xlab("Columns") +
@@ -774,105 +550,163 @@ plotCarbon <- ggplot(data = carbonDataPlotDF, aes(y = factor(Country, levels = f
   coord_equal() +
   theme(legend.position = "top")
 plotCarbon
-carbon.data |> dplyr::filter(Country %in% countries_of_interest)|> group_by(Country) |> summarise(n = n()) |> arrange(desc(n))
 
-ggsave("plotCarbon.jpg", plotCarbon, width = 20, height = 10, units = "cm", limitsize = F)
+# Save the general carbon plot
+ggsave("../results/plotCarbon.pdf", plotCarbon, width = 20, height = 10, units = "cm", limitsize = FALSE)
 ```
 
 ```{r}
-#Carbon in air plot
+# Carbon in Air Plot
+
+# Initialize an empty data frame for carbon in air data
 carbon.airDataPlotDF <- data.frame()
 
+# Evaluate Benford's conformity for carbon in air data across countries of interest
 for (country in countries_of_interest) {
   carbon.air.data |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
   carbon.airDataPlotDF <- rbind(carbon.airDataPlotDF, df)
 }
+
+# Add a label column for visualization
 carbon.airDataPlotDF <- carbon.airDataPlotDF %>%
   mutate(Label = as.integer(factor(Colname)))
 
-carbon.airDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelscarbon.airData
+# Generate ordered factor levels for countries based on conformity counts
+carbon.airDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelscarbon.airData
 
-plotCarbonAir <- ggplot(data = carbon.airDataPlotDF, aes(y = factor(Country, levels = factorLevelscarbon.airData),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Create a heatmap plot for carbon conformity in air
+plotCarbonAir <- ggplot(data = carbon.airDataPlotDF, aes(y = factor(Country, levels = factorLevelscarbon.airData), 
+                                                         x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.4) +
   ylab("Country") +
   xlab("Columns") +
-  labs(fill = "", title = "Carbon in air") +
+  labs(fill = "", title = "Carbon in Air") +
   scale_fill_manual(values = conformityColors) +
   coord_equal() +
   theme(legend.position = "top")
-
 plotCarbonAir
 ```
 
 ```{r}
-#Carbon in water
-# 
-# carbon.waterDataPlotDF <- data.frame()
-# 
-# for (country in countries_of_interest) {
-#   carbon.water.data |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
-#   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
-#   carbon.waterDataPlotDF <- rbind(carbon.waterDataPlotDF, df)
-# }
-# 
-# carbon.waterDataPlotDF <- carbon.waterDataPlotDF %>%
-#   mutate(Label = as.integer(factor(Colname)))
-# 
-# carbon.waterDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelscarbon.waterData
-# 
-# plotCarbonWater <- ggplot(data = carbon.waterDataPlotDF, aes(y = factor(Country, levels = factorLevelscarbon.waterData),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
-#   geom_tile(color = "black", linewidth = 0.3) +
-#   ylab("Country") +
-#   xlab("Columns") +
-#   labs(fill = "", title = "Carbon in water") +
-#   scale_fill_manual(values = conformityColors) +
-#   coord_equal() +
-#   theme(legend.position = "none")
-# 
-# plotCarbonWater
+# Carbon in water
+carbon.waterDataPlotDF <- data.frame()
 
-#Carbon in soil
-# carbon.soilDataPlotDF <- data.frame()
-# 
-# for (country in countries_of_interest) {
-#   carbon.soil.data |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
-#   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
-#   carbon.soilDataPlotDF <- rbind(carbon.soilDataPlotDF, df)
-# }
-# 
-# carbon.soilDataPlotDF <- carbon.soilDataPlotDF %>%
-#   mutate(Label = as.integer(factor(Colname)))
-# 
-# carbon.soilDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelscarbon.soilData
-# 
-# plotCarbonSoil <- ggplot(data = carbon.soilDataPlotDF, aes(y = factor(Country, levels = factorLevelscarbon.soilData),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
-#   geom_tile(color = "black", linewidth = 0.3) +
-#   ylab("Country") +
-#   xlab("Columns") +
-#   labs(fill = "", title = "Carbon in soil") +
-#   scale_fill_manual(values = conformityColors) +
-#   coord_equal() +
-#   theme(legend.position = "none")
-# 
-# plotCarbonSoil
+# Loop through countries and perform Benford's Law analysis
+for (country in countries_of_interest) {
+  carbon.water.data |> 
+    dplyr::filter(Country == country) |> 
+    benford_conforming() -> benfordVec
+  
+  data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
+  
+  carbon.waterDataPlotDF <- rbind(carbon.waterDataPlotDF, df)
+}
 
-#Carbon in natural resources
+# Add a label column based on column names
+carbon.waterDataPlotDF <- carbon.waterDataPlotDF %>%
+  mutate(Label = as.integer(factor(Colname)))
 
+# Determine factor levels for countries based on conformity
+carbon.waterDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelscarbon.waterData
+
+# Plot: Carbon in water
+plotCarbonWater <- ggplot(data = carbon.waterDataPlotDF, 
+                          aes(y = factor(Country, levels = factorLevelscarbon.waterData),
+                              x = as.factor(Label), 
+                              fill = factor(Conformity, levels = names(conformityColors)))) +
+  geom_tile(color = "black", linewidth = 0.3) +
+  ylab("Country") +
+  xlab("Columns") +
+  labs(fill = "", title = "Carbon in water") +
+  scale_fill_manual(values = conformityColors) +
+  coord_equal() +
+  theme(legend.position = "none")
+
+# Display the plot with `plotCarbonWater`
+```
+
+```{r}
+# Carbon in soil
+carbon.soilDataPlotDF <- data.frame()
+
+# Loop through countries and perform Benford's Law analysis
+for (country in countries_of_interest) {
+  carbon.soil.data |> 
+    dplyr::filter(Country == country) |> 
+    benford_conforming() -> benfordVec
+  
+  data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
+  
+  carbon.soilDataPlotDF <- rbind(carbon.soilDataPlotDF, df)
+}
+
+# Add a label column based on column names
+carbon.soilDataPlotDF <- carbon.soilDataPlotDF %>%
+  mutate(Label = as.integer(factor(Colname)))
+
+# Determine factor levels for countries based on conformity
+carbon.soilDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelscarbon.soilData
+
+# Plot: Carbon in soil
+plotCarbonSoil <- ggplot(data = carbon.soilDataPlotDF, 
+                         aes(y = factor(Country, levels = factorLevelscarbon.soilData),
+                             x = as.factor(Label), 
+                             fill = factor(Conformity, levels = names(conformityColors)))) +
+  geom_tile(color = "black", linewidth = 0.3) +
+  ylab("Country") +
+  xlab("Columns") +
+  labs(fill = "", title = "Carbon in soil") +
+  scale_fill_manual(values = conformityColors) +
+  coord_equal() +
+  theme(legend.position = "none")
+
+# Display the plot with `plotCarbonSoil`
+```
+
+```{r}
+# Carbon in natural resources
 carbon.natural.resourceDataPlotDF <- data.frame()
 
+# Loop through countries and perform Benford's Law analysis
 for (country in countries_of_interest) {
-  carbon.natural.resource.data |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
+  carbon.natural.resource.data |> 
+    dplyr::filter(Country == country) |> 
+    benford_conforming() -> benfordVec
+  
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
+  
   carbon.natural.resourceDataPlotDF <- rbind(carbon.natural.resourceDataPlotDF, df)
 }
 
+# Add a label column based on column names
 carbon.natural.resourceDataPlotDF <- carbon.natural.resourceDataPlotDF %>%
   mutate(Label = as.integer(factor(Colname)))
 
-carbon.natural.resourceDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelscarbon.natural.resourceData
+# Determine factor levels for countries based on conformity
+carbon.natural.resourceDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelscarbon.natural.resourceData
 
-plotCarbonNaturalResource <- ggplot(data = carbon.natural.resourceDataPlotDF, aes(y = factor(Country, levels = factorLevelscarbon.natural.resourceData),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Plot: Carbon in natural resources
+plotCarbonNaturalResource <- ggplot(data = carbon.natural.resourceDataPlotDF, 
+                                    aes(y = factor(Country, levels = factorLevelscarbon.natural.resourceData),
+                                        x = as.factor(Label), 
+                                        fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.3) +
   ylab("Country") +
   xlab("Columns") +
@@ -881,152 +715,167 @@ plotCarbonNaturalResource <- ggplot(data = carbon.natural.resourceDataPlotDF, ae
   theme(legend.position = "none", plot.title = element_text(vjust = 0)) +
   coord_equal()
 
-plotCarbonNaturalResource
-
-gridExtra::grid.arrange(plotCarbonAir, plotCarbonNaturalResource, ncol = 1)
-#ggsave("all_categories_carbon.jpg", all_categories_carbon, width = 20, height = 12, units = "cm")
-
-bigDataCountriesGrouped |> dplyr::filter(Country == "IN")
+# Display the plot with `plotCarbonNaturalResource`
 ```
 
-### Arsenic plots
+# Heavy Metals Analysis and Visualization Across Compartments
 
 ```{r}
-#Arsenic data plot
-
-bigDataCountriesGrouped |> select(Country,matches("Arsenic|Arsine")) -> arsenic.data
-
-arsenicDataPlotDF <- data.frame()
-    
-for (country in countries_of_interest) {
-    arsenic.data |> dplyr::filter(Country == country) -> data
-    data |> benford_conforming() -> benfordVec
-    data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country) -> df
-    arsenicDataPlotDF <- rbind(arsenicDataPlotDF, df)
-}
-
-arsenicDataPlotDF <- arsenicDataPlotDF %>%
-  mutate(Label = as.integer(factor(Colname)))
-
-arsenicDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelsarsenicData
-
-plotArsenic <- ggplot(data = arsenicDataPlotDF, aes(y = factor(Country, levels = factorLevelsarsenicData),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
-  geom_tile(color = "black", linewidth = 0.5) +
-  ylab("Country") +
-  xlab("Columns") +
-  labs(fill = "", title = "Arsenic") +
-  scale_fill_manual(values = conformityColors) +
-  coord_equal()
-
-plotArsenic
-
-
-```
-
-### Heavy metals plots
-
-```{r}
-#Heavy metals in air
+# Heavy metals in air
 heavy_metals <- c("Lead", "Mercury", "Cadmium", "Arsenic", "Chromium", "Nickel", "Copper", "Zinc", "Manganese", "Iron")
-# select names of all columns that contain some of the heavy metals
 
-bigDataCountriesGrouped |> select(Country,matches(paste(heavy_metals, collapse = "|"))) |> colnames() -> heavyMetals
+# Extract columns related to heavy metals in air
+air.data |> select(Country, matches(paste(heavy_metals, collapse = "|"))) -> heavy.metals.air.data
 
-air.data |> select(Country,matches(paste(heavy_metals, collapse = "|"))) -> heavy.metals.air.data
-
+# Initialize an empty data frame for air data
 heavy.metals.airDataPlotDF <- data.frame()
 
+# Perform Benford's Law analysis for each country
 for (country in countries_of_interest) {
   heavy.metals.air.data |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
   heavy.metals.airDataPlotDF <- rbind(heavy.metals.airDataPlotDF, df)
 }
 
-  heavy.metals.airDataPlotDF <-   heavy.metals.airDataPlotDF %>%
+# Add a label column based on column names
+heavy.metals.airDataPlotDF <- heavy.metals.airDataPlotDF %>%
   mutate(Label = as.integer(factor(Colname)))
-  
-heavy.metals.airDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelsheavy.metals.airData
 
-plotheavy.metals.air <- ggplot(data = heavy.metals.airDataPlotDF, aes(y = factor(Country, levels = factorLevelsheavy.metals.airData),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Determine country order based on conformity
+heavy.metals.airDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelsheavy.metals.airData
+
+# Create plot for heavy metals in air
+plotheavy.metals.air <- ggplot(data = heavy.metals.airDataPlotDF, 
+                               aes(y = factor(Country, levels = factorLevelsheavy.metals.airData),
+                                   x = as.factor(Label), 
+                                   fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.3) +
   ylab("Country") +
   xlab("Columns") +
-  labs(fill = "", title = "Heavy metal in air") +
+  labs(fill = "", title = "Heavy metals in air") +
   scale_fill_manual(values = conformityColors) +
   coord_equal() +
   theme(legend.position = "none")
 
 plotheavy.metals.air
-#Heavy metals in soil
-soil.data |> select(Country,matches(paste(heavy_metals, collapse = "|"))) -> heavy.metals.soil.data
+```
 
+```{r}
+# Heavy metals in soil
+soil.data |> select(Country, matches(paste(heavy_metals, collapse = "|"))) -> heavy.metals.soil.data
+
+# Initialize an empty data frame for soil data
 heavy.metals.soilDataPlotDF <- data.frame()
 
+# Perform Benford's Law analysis for each country
 for (country in countries_of_interest) {
   heavy.metals.soil.data |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
   heavy.metals.soilDataPlotDF <- rbind(heavy.metals.soilDataPlotDF, df)
 }
 
-  heavy.metals.soilDataPlotDF <-   heavy.metals.soilDataPlotDF %>%
+# Add a label column based on column names
+heavy.metals.soilDataPlotDF <- heavy.metals.soilDataPlotDF %>%
   mutate(Label = as.integer(factor(Colname)))
-  
-heavy.metals.soilDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelsheavy.metals.soilData
 
-plotheavy.metals.soil <- ggplot(data = heavy.metals.soilDataPlotDF, aes(y = factor(Country, levels = factorLevelsheavy.metals.soilData),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Determine country order based on conformity
+heavy.metals.soilDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelsheavy.metals.soilData
+
+# Create plot for heavy metals in soil
+plotheavy.metals.soil <- ggplot(data = heavy.metals.soilDataPlotDF, 
+                                aes(y = factor(Country, levels = factorLevelsheavy.metals.soilData),
+                                    x = as.factor(Label), 
+                                    fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.3) +
   ylab("Country") +
   xlab("Columns") +
-  labs(fill = "", title = "Heavy metal in soil") +
+  labs(fill = "", title = "Heavy metals in soil") +
   scale_fill_manual(values = conformityColors) +
   coord_equal() +
   theme(legend.position = "none")
 
 plotheavy.metals.soil
-#Heavy metals in water
-water.data |> select(Country,matches(paste(heavy_metals, collapse = "|"))) -> heavy.metals.water.data
+```
 
+```{r}
+# Heavy metals in water
+water.data |> select(Country, matches(paste(heavy_metals, collapse = "|"))) -> heavy.metals.water.data
+
+# Initialize an empty data frame for water data
 heavy.metals.waterDataPlotDF <- data.frame()
 
+# Perform Benford's Law analysis for each country
 for (country in countries_of_interest) {
   heavy.metals.water.data |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
   heavy.metals.waterDataPlotDF <- rbind(heavy.metals.waterDataPlotDF, df)
 }
 
-  heavy.metals.waterDataPlotDF <-   heavy.metals.waterDataPlotDF %>%
+# Add a label column based on column names
+heavy.metals.waterDataPlotDF <- heavy.metals.waterDataPlotDF %>%
   mutate(Label = as.integer(factor(Colname)))
 
-heavy.metals.waterDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelsheavy.metals.waterData
+# Determine country order based on conformity
+heavy.metals.waterDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelsheavy.metals.waterData
 
-plotheavy.metals.water <- ggplot(data = heavy.metals.waterDataPlotDF, aes(y = factor(Country, levels = factorLevelsheavy.metals.waterData),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Create plot for heavy metals in water
+plotheavy.metals.water <- ggplot(data = heavy.metals.waterDataPlotDF, 
+                                 aes(y = factor(Country, levels = factorLevelsheavy.metals.waterData),
+                                     x = as.factor(Label), 
+                                     fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.3) +
   ylab("Country") +
   xlab("Columns") +
-  labs(fill = "", title = "Heavy metal in water") +
+  labs(fill = "", title = "Heavy metals in water") +
   scale_fill_manual(values = conformityColors) +
   coord_equal() +
   theme(legend.position = "none")
 
 plotheavy.metals.water
+```
 
-#Heavy metals in Natural resources
-natural.resource.data |> select(Country,matches(paste(heavy_metals, collapse = "|"))) -> heavy.metals.natural.resource.data
+```{r}
+# Heavy metals in natural resources
+natural.resource.data |> select(Country, matches(paste(heavy_metals, collapse = "|"))) -> heavy.metals.natural.resource.data
 
+# Initialize an empty data frame for natural resources data
 heavy.metals.natural.resourceDataPlotDF <- data.frame()
 
+# Perform Benford's Law analysis for each country
 for (country in countries_of_interest) {
   heavy.metals.natural.resource.data |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
   heavy.metals.natural.resourceDataPlotDF <- rbind(heavy.metals.natural.resourceDataPlotDF, df)
 }
 
-  heavy.metals.natural.resourceDataPlotDF <-   heavy.metals.natural.resourceDataPlotDF %>%
+# Add a label column based on column names
+heavy.metals.natural.resourceDataPlotDF <- heavy.metals.natural.resourceDataPlotDF %>%
   mutate(Label = as.integer(factor(Colname)))
 
-heavy.metals.natural.resourceDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelsheavy.metals.natural.resourceData
+# Determine country order based on conformity
+heavy.metals.natural.resourceDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelsheavy.metals.natural.resourceData
 
-plotheavy.metals.natural.resource <- ggplot(data = heavy.metals.natural.resourceDataPlotDF, aes(y = factor(Country, levels = factorLevelsheavy.metals.natural.resourceData),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Create plot for heavy metals in natural resources
+plotheavy.metals.natural.resource <- ggplot(data = heavy.metals.natural.resourceDataPlotDF, 
+                                            aes(y = factor(Country, levels = factorLevelsheavy.metals.natural.resourceData),
+                                                x = as.factor(Label), 
+                                                fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.3) +
   ylab("Country") +
   xlab("Columns") +
@@ -1035,149 +884,150 @@ plotheavy.metals.natural.resource <- ggplot(data = heavy.metals.natural.resource
   coord_equal()
 
 plotheavy.metals.natural.resource
-
-all_categories_heavy_metals <- gridExtra::grid.arrange(plotheavy.metals.air,plotheavy.metals.soil, plotheavy.metals.water, plotheavy.metals.natural.resource, ncol = 1)
-ggsave("all_categories_heavy_metals.jpg", all_categories_heavy_metals, width = 20, height = 28, units = "cm", limitsize = F)
 ```
 
-## Checking non conforming columns in heavy metals
-
 ```{r}
-#bigDataCountriesGrouped |> select("Country", "Arsenic|natural resource|in ground") |> dplyr::filter(Country %in% c("EU","CN","IN","US","BR","CH","CA") &  "Arsenic|natural resource|in ground" != 0) |> group_by(Country) |> summarise(sum = sum(`Arsenic|natural resource|in ground`), non.zero = sum(`Arsenic|natural resource|in ground` != 0), min = min(`Arsenic|natural resource|in ground`), max = max(`Arsenic|natural resource|in ground`), mean = mean(`Arsenic|natural resource|in ground`), median = median(`Arsenic|natural resource|in ground`), sd = sd(`Arsenic|natural resource|in ground`))
+# Combine all plots into a single figure
+all_categories_heavy_metals <- gridExtra::grid.arrange(
+  plotheavy.metals.air,
+  plotheavy.metals.soil,
+  plotheavy.metals.water,
+  plotheavy.metals.natural.resource,
+  ncol = 1
+)
 
-# Brasil, Swizerland, and EU are conforming
-
-bigDataCountriesGrouped |> select("Country", "Zinc II|water|surface water") |> dplyr::filter(Country %in% c("EU","CN","IN","US","BR","CH","CA") & `Zinc II|water|surface water` != 0) |> group_by(Country) |> summarise(n = n(),sum = sum(`Zinc II|water|surface water`), non.zero = sum(`Zinc II|water|surface water` != 0), min = min(`Zinc II|water|surface water`), max = max(`Zinc II|water|surface water`), mean = mean(`Zinc II|water|surface water`), median = median(`Zinc II|water|surface water`), sd = sd(`Zinc II|water|surface water`))
-
-
-
-data("census.2009")
-census.first.digit <- data.frame()
-census.2009$pop.2009 |> first_digit() |> sd()
-census.2009$pop.2009 |> first_digit() |> mean()
-
-
-census.2009 |> select(state, pop.2009) |>  group_by(state) |> summarise(n = n(),sum = sum(pop.2009), non.zero = sum(pop.2009 != 0), min = min(pop.2009), max = max(pop.2009), mean = mean(pop.2009), median = median(pop.2009), sd = sd(pop.2009)) |> arrange(desc(n)) |> dplyr::filter(n > 100) |> pull(state) -> states_of_interest
-states.df <- data.frame()
-for(state1 in states_of_interest){
-  census.2009 |> dplyr::filter(state == state1) |> pull(pop.2009) |> benford(1)-> b
-  data.frame(Conformity = b$MAD.conformity, State = state1, row.names = NULL) -> df
-  states.df <- rbind(states.df, df)
-}
-states.df |> group_by(Conformity) |> summarise(n = n()) |> arrange(desc(n))
-
-states.df[states.df$Conformity != "Nonconformity",] |> nrow() / states.df |> nrow() * 100
-
-
-census.2009 |> pull(pop.2009) |> benford(1)
-
-
-
+# Save the combined plot
+ggsave("../results/all_categories_heavy_metals.pdf", all_categories_heavy_metals, 
+       width = 20, height = 28, units = "cm", limitsize = FALSE)
 ```
 
-## Green house gases
+# Greenhouse Gases Analysis and Visualization
 
 ```{r}
-
+# Identify relevant columns for greenhouse gases
 bigDataCountriesGrouped |> colnames() -> colnames
 greenhouse_gases <- colnames[grep("(Country|Carbon Dioxide|Methane|Nitrous Oxide|Water Vapor|Ozone|Chlorofluorocarbons|Hydrofluorocarbons|Perfluorocarbons|Sulfur Hexafluoride)", colnames, ignore.case = TRUE)]
 
-bigDataCountriesGrouped[,greenhouse_gases] -> greenHouseGasesData
-greenHouseGasesData |> colnames() -> greenHouseGases
-unique(regmatches(names(greenHouseGasesData), regexpr("\\|(.*?)\\|", names(greenHouseGasesData))))
+# Extract greenhouse gases data from the dataset
+bigDataCountriesGrouped[, greenhouse_gases] -> greenHouseGasesData
 
+# Extract relevant greenhouse gas columns for air
 air.data |> colnames() -> airColnames
 GHGAir <- airColnames[grep("(Country|Carbon Dioxide|Methane|Nitrous Oxide|Water Vapor|Ozone|Chlorofluorocarbons|Hydrofluorocarbons|Perfluorocarbons|Sulfur Hexafluoride)", airColnames, ignore.case = TRUE)]
+air.data[, GHGAir] -> GHGAirAirData
 
-air.data[,GHGAir] -> GHGAirAirData
-
-greenHouseGasesData|> dplyr::filter(Country == "CN") |> benford_conforming() -> benfordVec
+# Test Benford's Law conformity for a specific country (e.g., China)
+greenHouseGasesData |> dplyr::filter(Country == "CN") |> benford_conforming() -> benfordVec
 benfordVec[44]
-
 ```
 
 ```{r}
+# Initialize an empty data frame for plotting
 greenHouseGasesDataPlotDF <- data.frame()
 
+# Perform Benford's Law conformity analysis for each country
 for (country in countries_of_interest) {
   greenHouseGasesData |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
   greenHouseGasesDataPlotDF <- rbind(greenHouseGasesDataPlotDF, df)
 }
-greenHouseGasesDataPlotDF|> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelsGreenHouseGasesDataPlotDF
 
+# Determine country order based on the number of conforming columns
+greenHouseGasesDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelsGreenHouseGasesDataPlotDF
+
+# Shorten column names for better readability in the plot
 greenHouseGasesDataPlotDF$ShortenedColname <- sub("^(.*?\\|.*?)\\|.*$", "\\1", greenHouseGasesDataPlotDF$Colname)
 greenHouseGasesDataPlotDF$ShortenedColname <- sub("\\|", " in the ", greenHouseGasesDataPlotDF$ShortenedColname)
+
+# Add a label column for plotting
 greenHouseGasesDataPlotDF <- greenHouseGasesDataPlotDF |> 
   mutate(Label = as.integer(factor(Colname)))
-plotGreenHouseGases <- ggplot(data = greenHouseGasesDataPlotDF, aes(y = factor(Country, levels = factorLevelsGreenHouseGasesDataPlotDF),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
-  geom_tile(color= "black", linewidth = 0.3) +
-  ylab("Country") +
-  xlab("Columns") +
-  labs(fill = "", title = "Green house gases") +
-  scale_fill_manual(values = conformityColors) +
-  coord_equal()
 
+# Create a heatmap plot for greenhouse gases
+plotGreenHouseGases <- ggplot(data = greenHouseGasesDataPlotDF, 
+                              aes(y = factor(Country, levels = factorLevelsGreenHouseGasesDataPlotDF), 
+                                  x = as.factor(Label), 
+                                  fill = factor(Conformity, levels = names(conformityColors)))) +
+  geom_tile(color = "black", linewidth = 0.3) +  # Draw tiles with black borders
+  ylab("Country") +                              # Label for y-axis
+  xlab("Columns") +                              # Label for x-axis
+  labs(fill = "", title = "Greenhouse Gases") +  # Legend and title
+  scale_fill_manual(values = conformityColors) + # Use predefined colors for conformity levels
+  coord_equal()                                  # Ensure equal aspect ratio for tiles
+
+# Display the plot
 plotGreenHouseGases
 
-ggsave("plotGreenHouseGases.jpg", plotGreenHouseGases, width = 20, height = 10, units = "cm", limitsize = F)
-
-
-
+# Save the plot to a file
+ggsave("../results/plotGreenHouseGases.pdf", plotGreenHouseGases, 
+       width = 20, height = 10, units = "cm", limitsize = FALSE)
 ```
 
-## Toxic substances
+## Toxic Substances Analysis and Visualization
 
 ```{r}
-
+# Identify relevant columns for toxic substances
 toxicSubstances <- colnames[grep("(Country|Mercury|Lead|Arsenic|Cadmium|Polychlorinated Biphenyls|Dioxins|Chromium|Volatile Organic Compounds)", colnames, ignore.case = TRUE)]
 
-bigDataCountriesGrouped[,toxicSubstances] -> toxicSubstancesData
+# Extract toxic substances data from the grouped dataset
+bigDataCountriesGrouped[, toxicSubstances] -> toxicSubstancesData
 
-unique(regmatches(names(toxicSubstancesData), regexpr("\\|(.*?)\\|", names(toxicSubstancesData))))
-
+# Extract columns related to toxic substances in air
 air.data |> colnames() -> airColnames
 toxicSubstancesAir <- airColnames[grep("(Country|Mercury|Lead|Arsenic|Cadmium|Polychlorinated Biphenyls|Dioxins|Chromium|Volatile Organic Compounds)", airColnames, ignore.case = TRUE)]
+air.data[, toxicSubstancesAir] -> toxicSubstancesAirData
 
-air.data[,toxicSubstancesAir] -> toxicSubstancesAirData
-
+# Extract columns related to toxic substances in water
 water.data |> colnames() -> waterColnames
 toxicSubstancesWater <- waterColnames[grep("(Country|Mercury|Lead|Arsenic|Cadmium|Polychlorinated Biphenyls|Dioxins|Chromium|Volatile Organic Compounds)", waterColnames, ignore.case = TRUE)]
+water.data[, toxicSubstancesWater] -> toxicSubstancesWaterData
 
-water.data[,toxicSubstancesWater] -> toxicSubstancesWaterData
-
+# Extract columns related to toxic substances in soil
 soil.data |> colnames() -> soilColnames
 toxicSubstancesSoil <- soilColnames[grep("(Country|Mercury|Lead|Arsenic|Cadmium|Polychlorinated Biphenyls|Dioxins|Chromium|Volatile Organic Compounds)", soilColnames, ignore.case = TRUE)]
+soil.data[, toxicSubstancesSoil] -> toxicSubstancesSoilData
 
-soil.data[,toxicSubstancesSoil] -> toxicSubstancesSoilData
-
+# Extract columns related to toxic substances in natural resources
 natural.resource.data |> colnames() -> naturalResourcesColnames
-
 toxicSubstancesNaturalResources <- naturalResourcesColnames[grep("(Country|Mercury|Lead|Arsenic|Cadmium|Polychlorinated Biphenyls|Dioxins|Chromium|Volatile Organic Compounds)", naturalResourcesColnames, ignore.case = TRUE)]
-
-natural.resource.data[,toxicSubstancesNaturalResources] -> toxicSubstancesNaturalResourcesData
-
-
+natural.resource.data[, toxicSubstancesNaturalResources] -> toxicSubstancesNaturalResourcesData
 ```
 
 ```{r}
+# Initialize an empty data frame for all toxic substances
 toxicSubstancesDataPlotDF <- data.frame()
 
+# Perform Benford's Law conformity analysis for all countries
 for (country in countries_of_interest) {
   toxicSubstancesData |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
   toxicSubstancesDataPlotDF <- rbind(toxicSubstancesDataPlotDF, df)
 }
-toxicSubstancesDataPlotDF|> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelstoxicSubstancesDataPlotDF
 
+# Determine country order based on the number of conforming columns
+toxicSubstancesDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelstoxicSubstancesDataPlotDF
+
+# Shorten column names for better readability in the plot
 toxicSubstancesDataPlotDF$ShortenedColname <- sub("^(.*?\\|.*?)\\|.*$", "\\1", toxicSubstancesDataPlotDF$Colname)
 toxicSubstancesDataPlotDF$ShortenedColname <- sub("\\|", " in the ", toxicSubstancesDataPlotDF$ShortenedColname)
-toxicSubstancesDataPlotDF <- toxicSubstancesDataPlotDF %>%
-  mutate(Label = as.integer(factor(Colname)))
-```
 
-```{r}
-plotToxicSubstances <- ggplot(data = toxicSubstancesDataPlotDF, aes(y = factor(Country, levels = factorLevelstoxicSubstancesDataPlotDF),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Add a label column for plotting
+toxicSubstancesDataPlotDF <- toxicSubstancesDataPlotDF |> 
+  mutate(Label = as.integer(factor(Colname)))
+
+# Create heatmap for all toxic substances
+plotToxicSubstances <- ggplot(data = toxicSubstancesDataPlotDF, 
+                               aes(y = factor(Country, levels = factorLevelstoxicSubstancesDataPlotDF), 
+                                   x = as.factor(Label), 
+                                   fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.15) +
   ylab("Country") +
   xlab("Columns") +
@@ -1185,18 +1035,16 @@ plotToxicSubstances <- ggplot(data = toxicSubstancesDataPlotDF, aes(y = factor(C
   scale_fill_manual(values = conformityColors) +
   coord_equal() +
   theme(axis.text.x = element_text(size = 5),
-        axis.text.y =element_text(size = 5),
+        axis.text.y = element_text(size = 5),
         legend.key = element_rect(colour = "black", size = 1))
 
-plotToxicSubstances
+# Save the plot
+ggsave("../results/plotToxicSubstances.pdf", plotToxicSubstances, width = 20, height = 10, units = "cm")
 
-ggsave("plotToxicSubstances.png", plotToxicSubstances, width = 20, height = 10, units = "cm")
 ```
 
-### Toxic substances per category
-
 ```{r}
-#TOXIC SUBSTANCES IN AIR
+# Initialize an empty data frame for air data
 toxicSubstancesAirDataPlotDF <- data.frame()
 
 for (country in countries_of_interest) {
@@ -1204,12 +1052,20 @@ for (country in countries_of_interest) {
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
   toxicSubstancesAirDataPlotDF <- rbind(toxicSubstancesAirDataPlotDF, df)
 }
-toxicSubstancesAirDataPlotDF <- toxicSubstancesAirDataPlotDF %>%
+
+toxicSubstancesAirDataPlotDF <- toxicSubstancesAirDataPlotDF |> 
   mutate(Label = as.integer(factor(Colname)))
 
-toxicSubstancesAirDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelsToxicSubstancesAirData
+toxicSubstancesAirDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelsToxicSubstancesAirData
 
-toxicSubstancesAirDataPlot <- ggplot(data = toxicSubstancesAirDataPlotDF, aes(y = factor(Country, levels = factorLevelsToxicSubstancesAirData),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+toxicSubstancesAirDataPlot <- ggplot(data = toxicSubstancesAirDataPlotDF, 
+                                     aes(y = factor(Country, levels = factorLevelsToxicSubstancesAirData), 
+                                         x = as.factor(Label), 
+                                         fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.3) +
   ylab("Country") +
   xlab("Columns") +
@@ -1217,10 +1073,10 @@ toxicSubstancesAirDataPlot <- ggplot(data = toxicSubstancesAirDataPlotDF, aes(y 
   scale_fill_manual(values = conformityColors) +
   coord_equal() +
   theme(legend.position = "top")
+```
 
-toxicSubstancesAirDataPlot
-
-#TOXIC SUBSTANCES IN WATER
+```{r}
+# Initialize an empty data frame for water data
 toxicSubstancesWaterDataPlotDF <- data.frame()
 
 for (country in countries_of_interest) {
@@ -1229,12 +1085,19 @@ for (country in countries_of_interest) {
   toxicSubstancesWaterDataPlotDF <- rbind(toxicSubstancesWaterDataPlotDF, df)
 }
 
-toxicSubstancesWaterDataPlotDF <- toxicSubstancesWaterDataPlotDF %>%
+toxicSubstancesWaterDataPlotDF <- toxicSubstancesWaterDataPlotDF |> 
   mutate(Label = as.integer(factor(Colname)))
 
-toxicSubstancesWaterDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelsToxicSubstancesWaterData
+toxicSubstancesWaterDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelsToxicSubstancesWaterData
 
-toxicSubstancesWaterDataPlot <- ggplot(data = toxicSubstancesWaterDataPlotDF, aes(y = factor(Country, levels = factorLevelsToxicSubstancesWaterData),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+toxicSubstancesWaterDataPlot <- ggplot(data = toxicSubstancesWaterDataPlotDF, 
+                                       aes(y = factor(Country, levels = factorLevelsToxicSubstancesWaterData), 
+                                           x = as.factor(Label), 
+                                           fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.3) +
   ylab("Country") +
   xlab("Columns") +
@@ -1242,25 +1105,35 @@ toxicSubstancesWaterDataPlot <- ggplot(data = toxicSubstancesWaterDataPlotDF, ae
   scale_fill_manual(values = conformityColors) +
   coord_equal() +
   theme(legend.position = "none")
+```
 
-toxicSubstancesWaterDataPlot
-
-#TOXIC SUBSTANCES IN SOIL
-
+```{r}
+# Initialize an empty data frame for soil data
 toxicSubstancesSoilDataPlotDF <- data.frame()
 
+# Perform Benford's Law conformity analysis for soil data
 for (country in countries_of_interest) {
   toxicSubstancesSoilData |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
   toxicSubstancesSoilDataPlotDF <- rbind(toxicSubstancesSoilDataPlotDF, df)
 }
 
-toxicSubstancesSoilDataPlotDF <- toxicSubstancesSoilDataPlotDF %>%
+# Add a label column for plotting
+toxicSubstancesSoilDataPlotDF <- toxicSubstancesSoilDataPlotDF |> 
   mutate(Label = as.integer(factor(Colname)))
 
-toxicSubstancesSoilDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelsToxicSubstancesSoilData
+# Determine country order based on the number of conforming columns
+toxicSubstancesSoilDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelsToxicSubstancesSoilData
 
-toxicSubstancesSoilDataPlot <- ggplot(data = toxicSubstancesSoilDataPlotDF, aes(y = factor(Country, levels = factorLevelsToxicSubstancesSoilData),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Create a heatmap plot for toxic substances in soil
+toxicSubstancesSoilDataPlot <- ggplot(data = toxicSubstancesSoilDataPlotDF, 
+                                      aes(y = factor(Country, levels = factorLevelsToxicSubstancesSoilData), 
+                                          x = as.factor(Label), 
+                                          fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.3) +
   ylab("Country") +
   xlab("Columns") +
@@ -1269,24 +1142,37 @@ toxicSubstancesSoilDataPlot <- ggplot(data = toxicSubstancesSoilDataPlotDF, aes(
   coord_equal() +
   theme(legend.position = "none")
 
+# Display the plot
 toxicSubstancesSoilDataPlot
+```
 
-#TOXIC SUBSTANCES IN NATURAL RESOURCES
-
+```{r}
+# Initialize an empty data frame for natural resources data
 toxicSubstancesNaturalResourcesDataPlotDF <- data.frame()
 
+# Perform Benford's Law conformity analysis for natural resources data
 for (country in countries_of_interest) {
   toxicSubstancesNaturalResourcesData |> dplyr::filter(Country == country) |> benford_conforming() -> benfordVec
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Country = country, row.names = NULL) -> df
   toxicSubstancesNaturalResourcesDataPlotDF <- rbind(toxicSubstancesNaturalResourcesDataPlotDF, df)
 }
 
-toxicSubstancesNaturalResourcesDataPlotDF <- toxicSubstancesNaturalResourcesDataPlotDF %>%
+# Add a label column for plotting
+toxicSubstancesNaturalResourcesDataPlotDF <- toxicSubstancesNaturalResourcesDataPlotDF |> 
   mutate(Label = as.integer(factor(Colname)))
 
-toxicSubstancesNaturalResourcesDataPlotDF |> group_by(Country) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Country)-> factorLevelsToxicSubstancesNaturalResourcesData
+# Determine country order based on the number of conforming columns
+toxicSubstancesNaturalResourcesDataPlotDF |> 
+  group_by(Country) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Country) -> factorLevelsToxicSubstancesNaturalResourcesData
 
-toxicSubstancesNaturalResourcesDataPlot <- ggplot(data = toxicSubstancesNaturalResourcesDataPlotDF, aes(y = factor(Country, levels = factorLevelsToxicSubstancesNaturalResourcesData),x = as.factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Create a heatmap plot for toxic substances in natural resources
+toxicSubstancesNaturalResourcesDataPlot <- ggplot(data = toxicSubstancesNaturalResourcesDataPlotDF, 
+                                                  aes(y = factor(Country, levels = factorLevelsToxicSubstancesNaturalResourcesData), 
+                                                      x = as.factor(Label), 
+                                                      fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.3) +
   ylab("Country") +
   xlab("Columns") +
@@ -1295,285 +1181,14 @@ toxicSubstancesNaturalResourcesDataPlot <- ggplot(data = toxicSubstancesNaturalR
   coord_equal() +
   theme(legend.position = "none")
 
+# Display the plot
 toxicSubstancesNaturalResourcesDataPlot
-
-#Combine and save plots
-
-all_categories_toxic_substances <- gridExtra::grid.arrange(toxicSubstancesAirDataPlot,toxicSubstancesWaterDataPlot, toxicSubstancesSoilDataPlot, toxicSubstancesNaturalResourcesDataPlot, layout_matrix = rbind(c(1,1), c(2,2), c(4, 3)),  heights = c(2,1.65,1.65))
-ggsave("all_categories_toxic_substances.jpg", all_categories_toxic_substances, width = 20, height = 28, units = "cm", limitsize = F)
 ```
 
-### Suspect detection plots
+# Checking Benford's Law Conformity for All Columns by Country
 
 ```{r}
-B <- benford((inventory.indicator.data[,2]), number.of.digits = 1)
-    B_data <-getBfd(B)
-    B_suspects <- getSuspects(B, data)
-    B_data$suspect <- ifelse(B_data$squared.diff > 6, "yes", "no")
-    
-    p<-ggplot(data=B_data, aes(x=digits, y=data.dist * 100, fill=suspect))+
-      theme_bw() +
-      scale_x_continuous(name="Digit",breaks= seq(0,10,1)) +
-      scale_y_continuous(name="Percentage") +
-      geom_col(width= 0.6)+stat_smooth(aes(x = digits, y = benford.dist * 100), fill="darkseagreen4",color='springgreen4', linewidth=1)+ 
-      scale_fill_manual(values = c("dodgerblue3", "red3","darkseagreen4"))+ 
-      theme(legend.position = "none")+
-      theme(plot.title = element_text(size=12))
-p
-
-
-```
-
-```{r}
-
-columns_of_interest <- names(inventory.indicator.data)[-1]
-
-# Create a list to store individual plots
-plot_list <- list()         
-
-for (column in columns_of_interest) {
-  B <- benford(inventory.indicator.data[[column]], number.of.digits = 1)
-  B_data <- getBfd(B)
-  B_suspects <- getSuspects(B, data)
-  B_data$suspect <- ifelse(B_data$squared.diff > 6, "yes", "no")
-  cat(B$MAD.conformity, "\n")
-   p <- ggplot(data = B_data, aes(x = digits, y = data.dist * 100, fill = suspect)) +
-    theme_bw() +
-    scale_x_continuous(name = "Digit", breaks = seq(0, 10, 1)) +
-    scale_y_continuous(name = "Percentage", expand = expand_scale(mult = c(0, 0.05))) + 
-    geom_col(width = 0.6, color = "black") +
-    geom_point(size = 0.7) +
-    labs(title = str_wrap(strsplit(column, "\\|")[[1]][1],width = 40))+
-    stat_smooth(aes(x = digits, y = benford.dist * 100), fill = "#999999", color = '#444444', linewidth = .4) +
-    scale_fill_manual(values = c("#FFC300", "#FF5733")) +
-    theme(plot.title = element_text(size = 12,hjust = 0.5),
-          panel.border = element_rect(size = 1),
-          legend.position = "none")
-  
-  plot_list[[column]] <- p
-}
-
-# Combine individual plots using grid.arrange from gridExtra
-combined_plots_inventory_indicator <- gridExtra::grid.arrange(plot_list[[1]],plot_list[[2]],plot_list[[3]],plot_list[[4]],ncol = 2)
-
-# Display the combined plot
-print(combined_plots_inventory_indicator)
-ggsave
-
-ggsave("combined_plots_inventory_indicator.jpg", combined_plots_inventory_indicator, width = 20, height = 13, units = "cm", limitsize = F)
-
-column
-```
-
-## Perfect Benford
-
-```{r}
-# generate_benfords_numbers <- function(n) {
-#   digits <- 1:9
-#   probabilities <- log10(1 + 1/digits)
-#   
-#   # Normalize probabilities to sum to 1
-#   probabilities <- probabilities / sum(probabilities)
-#   
-#   # Generate random numbers based on Benford's Law
-#   benfords_numbers <- sample(digits, n, replace = TRUE, prob = probabilities)
-#   
-#   return(benfords_numbers)
-# }
-# 
-# set.seed(123)  # Setting a seed for reproducibility
-# benfords_numbers <- generate_benfords_numbers(23523)
-# 
-# benfords_numbers |> benford(1)
-```
-
-# Finding optimal sample size
-
-```{r}
-# sample_f <- function(x, n) {
-#   benford_vector <- sample(x, n) |> benford(1)
-#   return(benford_vector$MAD.conformity)
-# }
-# 
-# 
-# replicate(100, sample_f(benfords_numbers, 550)) -> conformity_vector
-# conformity_vector[conformity_vector != "Nonconformity"] |> length() / length(conformity_vector) * 100
-# 
-# replicate_f <- function(){
-#   sample.df <- data.frame()
-# 
-#   for (i in seq(50,1000,50)) {
-#     replicate(1000, sample_f(benfords_numbers, i)) -> vector
-#     data.frame(sample.size = i, percentage.of.conforming = vector[vector != "Nonconformity"] |> length() / length(vector) * 100) -> df
-#     sample.df <- rbind(sample.df, df)
-#   }
-#   return(sample.df)
-# }
-# 
-# replicate_f() -> sample.df
-# 
-# replicate_f() -> sample.df2
-# 
-# replicate_f() -> sample.df3
-# 
-
-```
-
-```{r}
-# ggplot(data = sample.df, aes(x = sample.size, y = percentage.of.conforming)) +
-#   geom_line(linewidth = 1.2, color = "#1E90FF") +
-#   scale_x_continuous(name = "Sample size",breaks = seq(50,1000,50)) +
-#   scale_y_continuous(name = "Percentage of conforming", breaks = seq(0,100,10)) +
-#   geom_hline(yintercept = 95, linetype = "dashed", color = "#FF5733") +
-#   theme_bw()            
-# 
-# ggplot(sample.df3, aes(x = sample.size, y = percentage.of.conforming)) + 
-#   geom_col(fill = "#1E90FF", color = "black") +
-#   labs(x = "Sample Size", y = "Percentage of Conforming", 
-#        title = "Conformity Percentage by Sample Size",
-#        subtitle = "Numbers generated based on Benford probabilities") +
-#   scale_x_continuous(breaks = seq(50,1000,50)) +
-#   scale_y_continuous(breaks = seq(0,100,10)) +
-#   geom_hline(yintercept = 95, linetype = "dashed", color = "#FF5733") +
-#   theme_bw() +
-#   theme(plot.title = element_text(hjust = 0.5, margin = margin(b = 10), size = 16),
-#          plot.subtitle = element_text(hjust = 0.5, margin = margin(b = 10), size = 10))
-# 
-# ggsave("sample_size_conformity.png", width = 18, height = 10, units = "cm", limitsize = F)
-# 
-
-```
-
-```{r}
-B <- benford((benfords_numbers), number.of.digits = 1)
-    B_data <-getBfd(B)
-    B_suspects <- getSuspects(B, data)
-    B_data$suspect <- ifelse(B_data$squared.diff > 6, "yes", "no")
-    
-    ggplot(data = B_data, aes(x = digits, y = data.dist * 100, fill = suspect)) +
-  theme_bw() +
-  scale_x_continuous(name = "Digit", breaks = seq(0, 10, 1)) +
-  scale_y_continuous(name = "Percentage", expand = expand_scale(mult = c(0, 0.05))) +  # Adjust the 'mult' parameter to control the expansion
-  geom_col(color = "black") +
-      geom_point() +
-  stat_smooth(aes(x = digits, y = benford.dist * 100), fill = "#999999", color = '#444444', linewidth = 1) +
-  scale_fill_manual(values = c("#FFC300", "#FF5733")) +
-  theme(plot.title = element_text(size = 12),
-        panel.border = element_rect(size = 1))
-
-print(p)
-
-```
-
-## Example column suspect test
-
-```{r}
-toxicSubstancesWaterDataPlotDF
-toxicSubstancesWaterData |> dplyr::filter(Country %in% c("BR","EU","CH","CA"))|> pull("Cadmium II|water|surface water") |> benford(number.of.digits = 1) -> B
-B_data <-getBfd(B)
-B_suspects <- getSuspects(B, data)
-B_data$suspect <- ifelse(B_data$squared.diff > 6, "yes", "no")
-B$MAD.conformity
-ConfPlot <- ggplot(data = B_data, aes(x = digits, y = data.dist * 100, fill = suspect)) +
-  theme_bw() +
-  scale_x_continuous(name = "Digit", breaks = seq(0, 10, 1)) +
-  scale_y_continuous(name = "Percentage", expand = expand_scale(mult = c(0, 0.05))) +
-  geom_col(position = "dodge", width = 0.6, color = "black") +  # Adjust width for spacing between columns
-  geom_point(size = 0.7) +
-  labs(title = str_wrap("Cadmium II in surface water"), subtitle = "CONFORMING GROUP") +
-  stat_smooth(aes(x = digits, y = benford.dist * 100), fill = "#999999", color = '#444444', linewidth = 1) +
-  scale_fill_manual(values = c("#FFC300", "#FF5733")) +
-   theme(plot.title = element_text(size = 12, hjust = 0.5),
-        plot.subtitle = element_text(size = 10, hjust = 0.5),
-        panel.border = element_rect(size = 1))
-ConfPlot
-
-toxicSubstancesWaterDataPlotDF
-toxicSubstancesWaterData |> dplyr::filter(Country %in% c("IN","CN","US"))|> pull("Cadmium II|water|surface water") |> benford(number.of.digits = 1) -> B
-B_data <-getBfd(B)
-B_suspects <- getSuspects(B, data)
-B_data$suspect <- ifelse(B_data$squared.diff > 6, "yes", "no")
-
-NonConfPlot <- ggplot(data = B_data, aes(x = digits, y = data.dist * 100, fill = suspect)) +
-  theme_bw() +
-  scale_x_continuous(name = "Digit", breaks = seq(0, 10, 1)) +
-  scale_y_continuous(name = "Percentage", expand = expand_scale(mult = c(0, 0.05))) +
-  geom_col(position = "dodge", width = 0.6, color = "black") +  # Adjust width for spacing between columns
-  geom_point(size = 0.7) +
-  labs(title = str_wrap("Cadmium II in surface water"), subtitle = "NONCONFORMING GROUP") +
-  stat_smooth(aes(x = digits, y = benford.dist * 100), fill = "#999999", color = '#444444', linewidth = 1) +
-  scale_fill_manual(values = c("#FFC300", "#FF5733")) +
-  theme(plot.title = element_text(size = 12, hjust = 0.5),
-        plot.subtitle = element_text(size = 10, hjust = 0.5),
-        panel.border = element_rect(size = 1))
-
-NonConfPlot
-B$MAD.conformity
-gridExtra::grid.arrange(ConfPlot,NonConfPlot, ncol = 2) -> g
-ggsave("conforming_vs_nonconforming_same_column.jpg", g, width = 20, height = 7, units = "cm")
-```
-
-```{r}
-
-
-heavy.metals.water.data |> dplyr::filter(Country %in% c("BR", "EU", "CH")) |> pull("Zinc II|water|surface water") |> benford(number.of.digits = 1) -> B
-B_data <-getBfd(B)
-B_suspects <- getSuspects(B, data)
-B_data$suspect <- ifelse(B_data$squared.diff > 6, "yes", "no")
-ConfPlot <- ggplot(data = B_data, aes(x = digits, y = data.dist * 100, fill = suspect)) +
-  theme_bw() +
-  scale_x_continuous(name = "Digit", breaks = seq(0, 10, 1)) +
-  scale_y_continuous(name = "Percentage", expand = expand_scale(mult = c(0, 0.05))) +
-  geom_col(position = "dodge", width = 0.6, color = "black") +  # Adjust width for spacing between columns
-  geom_point(size = 0.7) +
-  labs(title = str_wrap("Zinc II in surface water - CONFORMING GROUP")) +
-  stat_smooth(aes(x = digits, y = benford.dist * 100), fill = "#999999", color = '#444444', linewidth = 1) +
-  scale_fill_manual(values = c("#FFC300", "#FF5733")) +
-  theme(plot.title = element_text(size = 12),
-        panel.border = element_rect(size = 1))
-ConfPlot
-
-
-```
-
-```{r}
-heavy.metals.water.data |> dplyr::filter(Country %in% c("CA", "US", "CN","IN")) |> pull("Zinc II|water|surface water") |> benford(number.of.digits = 1) -> B
-B_data <-getBfd(B)
-B_suspects <- getSuspects(B, data)
-B_data$suspect <- ifelse(B_data$squared.diff > 6, "yes", "no")
-NonConfPlot <- ggplot(data = B_data, aes(x = digits, y = data.dist * 100, fill = suspect)) +
-  theme_bw() +
-  scale_x_continuous(name = "Digit", breaks = seq(0, 10, 1)) +
-  scale_y_continuous(name = "Percentage", expand = expand_scale(mult = c(0, 0.05))) +
-  geom_col(position = "dodge", width = 0.6, color = "black") +  # Adjust width for spacing between columns
-  geom_point(size = 0.7) +
-  labs(title = str_wrap("Zinc II in surface water - NONCONFORMING GROUP")) +
-  stat_smooth(aes(x = digits, y = benford.dist * 100), fill = "#999999", color = '#444444', linewidth = 1) +
-  scale_fill_manual(values = c("#FFC300", "#FF5733")) +
-  theme(plot.title = element_text(size = 12),
-        panel.border = element_rect(size = 1))
-NonConfPlot
-```
-
-# Checking all columns together for each country
-
-```{r}
-# do.call(c, bigDataCountriesGrouped |> dplyr::filter(Country == "EU") |> select_if(is.numeric)) -> EU_all
-# 
-# do.call(c, bigDataCountriesGrouped |> dplyr::filter(Country == "CN") |> select_if(is.numeric)) -> CN_all
-# 
-# do.call(c, bigDataCountriesGrouped |> dplyr::filter(Country == "IN") |> select_if(is.numeric)) -> IN_all
-# 
-# do.call(c, bigDataCountriesGrouped |> dplyr::filter(Country == "BR") |> select_if(is.numeric)) -> BR_all
-# 
-# do.call(c, bigDataCountriesGrouped |> dplyr::filter(Country == "US") |> select_if(is.numeric)) -> US_all
-# 
-# do.call(c, bigDataCountriesGrouped |> dplyr::filter(Country == "CA") |> select_if(is.numeric)) -> CA_all
-# 
-# do.call(c, bigDataCountriesGrouped |> dplyr::filter(Country == "CH") |> select_if(is.numeric)) -> CH_all
-```
-
-```{r}
+# Checking Benford's Law conformity for all columns combined for each country
 bigDataCountriesGrouped |> dplyr::filter(Country == "EU") |> benford_conforming_combined2() -> EU_all_benford
 bigDataCountriesGrouped |> dplyr::filter(Country == "CN") |> benford_conforming_combined2() -> CN_all_benford
 bigDataCountriesGrouped |> dplyr::filter(Country == "IN") |> benford_conforming_combined2() -> IN_all_benford
@@ -1584,45 +1199,22 @@ bigDataCountriesGrouped |> dplyr::filter(Country == "CH") |> benford_conforming_
 ```
 
 ```{r}
-# first_digits_EU <- sapply(EU_all, first_digit)
-# first_digits_EU |> benford(number.of.digits = 1) -> EU_all_benford
-# EU_all_benford |> plot()
-# 
-# 
-# first_digits_CN <- sapply(CN_all, first_digit)
-# first_digits_CN |> benford(number.of.digits = 1) -> CN_all_benford
-# 
-# first_digits_IN <- sapply(IN_all, first_digit)
-# first_digits_IN |> benford(number.of.digits = 1) -> IN_all_benford
-# 
-# first_digits_BR <- sapply(BR_all, first_digit)
-# first_digits_BR |> benford(number.of.digits = 1) -> BR_all_benford
-# 
-# first_digits_US <- sapply(US_all, first_digit)
-# first_digits_US |> benford(number.of.digits = 1) -> US_all_benford
-# 
-# first_digits_CA <- sapply(CA_all, first_digit)
-# first_digits_CA |> benford(number.of.digits = 1) -> CA_all_benford
-# 
-# first_digits_CH <- sapply(CH_all, first_digit)
-# first_digits_CH |> benford(number.of.digits = 1) -> CH_all_benford
+# Display the MAD conformity results for each country
+cat("China:", CN_all_benford$MAD.conformity, "\n")
+cat("India:", IN_all_benford$MAD.conformity, "\n")
+cat("Brazil:", BR_all_benford$MAD.conformity, "\n")
+cat("USA:", US_all_benford$MAD.conformity, "\n")
+cat("Canada:", CA_all_benford$MAD.conformity, "\n")
+cat("Switzerland:", CH_all_benford$MAD.conformity, "\n")
+cat("EU:", EU_all_benford$MAD.conformity, "\n")
 ```
 
-```{r}
-cat("China:",CN_all_benford$MAD.conformity, "\n")
-cat("India:",IN_all_benford$MAD.conformity, "\n")
-cat("Brazil:",BR_all_benford$MAD.conformity, "\n")
-cat("USA:",US_all_benford$MAD.conformity, "\n")
-cat("Canada:",CA_all_benford$MAD.conformity, "\n")
-cat("Switzerland:",CH_all_benford$MAD.conformity, "\n")
-cat("EU:",EU_all_benford$MAD.conformity, "\n")
-```
-
-# Grouping by continent
+# Grouping Data by Continent
 
 ```{r}
+# Define a function to map country codes to continents
 get_continent <- function(country_code) {
-  # Define a list of country codes to continents, with updated classifications
+  # Define a mapping of country codes to their respective continents
   continent_map <- list(
     "US" = "North America", "BR" = "South America", "IN" = "Asia", 
     "CN" = "Asia", "CH" = "Europe", "EU" = "Europe", 
@@ -1678,23 +1270,29 @@ get_continent <- function(country_code) {
     "Europe without Switzerland and Austria" = "Europe", "RW" = "Unknown", "RER w/o DE+NL+RU" = "Europe"
   )
   
+  # Lookup the continent for the provided country code
   continent <- continent_map[[country_code]]
   
+  # Assign "Unknown" if the country code is not found in the mapping
   if (is.null(continent)) {
-    continent <- "Unknown"  # Fallback for unmapped codes
+    continent <- "Unknown"
   }
   
   return(continent)
 }
-# Test the function with a sample of the provided country codes
+
+# Test the function with a sample of country codes
 sample_codes <- c("US", "BR", "CN", "CH", "EU", "IN", "RoW", "IAI Area, Asia, without China and GCC", "UN-OCEANIA")
 sapply(sample_codes, get_continent)
 
+# Add a "Continent" column to the grouped dataset
 bigDataCountriesGrouped |> mutate(Continent = sapply(Country, get_continent)) -> bigDataCountriesGrouped
-#bigDataCountriesGrouped0 |> mutate(Continent = sapply(Country, get_continent)) -> bigDataCountriesGrouped0
 ```
 
+# Filtering Data by Continent and Counting Rows
+
 ```{r}
+# Filter data for each continent and store in separate datasets
 bigDataCountriesGrouped |> dplyr::filter(Continent == "Europe") -> EuropeData
 bigDataCountriesGrouped |> dplyr::filter(Continent == "Asia") -> AsiaData
 bigDataCountriesGrouped |> dplyr::filter(Continent == "North America") -> NorthAmericaData
@@ -1702,92 +1300,122 @@ bigDataCountriesGrouped |> dplyr::filter(Continent == "South America") -> SouthA
 bigDataCountriesGrouped |> dplyr::filter(Continent == "Africa") -> AfricaData
 bigDataCountriesGrouped |> dplyr::filter(Continent == "Australia/Oceania") -> AustraliaOceaniaData
 
-cat("Europe data rows:",EuropeData |> nrow(), "\n")
-cat("Asia data rows:",AsiaData |> nrow(), "\n")
-cat("North America data rows:",NorthAmericaData |> nrow(), "\n")
-cat("South America data rows:",SouthAmericaData |> nrow(), "\n")
-cat("Africa data rows:",AfricaData |> nrow(), "\n")
-cat("Australia/Oceania data rows:",AustraliaOceaniaData |> nrow(), "\n")
+# Print the number of rows for each continent's dataset
+cat("Europe data rows:", EuropeData |> nrow(), "\n")
+cat("Asia data rows:", AsiaData |> nrow(), "\n")
+cat("North America data rows:", NorthAmericaData |> nrow(), "\n")
+cat("South America data rows:", SouthAmericaData |> nrow(), "\n")
+cat("Africa data rows:", AfricaData |> nrow(), "\n")
+cat("Australia/Oceania data rows:", AustraliaOceaniaData |> nrow(), "\n")
 ```
 
-```{r}
-```
+# Analyzing Benford's Law Conformity by Continent
 
 ```{r}
-
+# Apply Benford's Law statistical analysis to each continent's dataset
 AsiaData |> benford_conforming_stats() -> AsiaColsBenfordVec
 EuropeData |> benford_conforming_stats() -> EuropeColsBenfordVec
 NorthAmericaData |> benford_conforming_stats() -> NorthAmericaColsBenfordVec
 SouthAmericaData |> benford_conforming_stats() -> SouthAmericaColsBenfordVec
 AfricaData |> benford_conforming_stats() -> AfricaColsBenfordVec
 AustraliaOceaniaData |> benford_conforming_stats() -> AustraliaOceaniaColsBenfordVec
-
-
 ```
 
 ```{r}
+# Apply Benford's Law conformity checks to each continent's dataset
 EuropeData |> benford_conforming() -> EuropeBenfordVec
 AsiaData |> benford_conforming() -> AsiaBenfordVec
 NorthAmericaData |> benford_conforming() -> NorthAmericaBenfordVec
 SouthAmericaData |> benford_conforming() -> SouthAmericaBenfordVec
 AfricaData |> benford_conforming() -> AfricaBenfordVec
 AustraliaOceaniaData |> benford_conforming() -> AustraliaOceaniaBenfordVec
-
-
-EuropeBenfordVec |> length()
 ```
 
-
 ```{r}
+# Create data frames for each continent containing conformity results and column names
 asia_df <- data.frame(Continent = "Asia", Conformity = AsiaBenfordVec, Colname = names(AsiaBenfordVec))
 europe_df <- data.frame(Continent = "Europe", Conformity = EuropeBenfordVec, Colname = names(EuropeBenfordVec))
 north_america_df <- data.frame(Continent = "North America", Conformity = NorthAmericaBenfordVec, Colname = names(NorthAmericaBenfordVec))
 south_america_df <- data.frame(Continent = "South America", Conformity = SouthAmericaBenfordVec, Colname = names(SouthAmericaBenfordVec))
 africa_df <- data.frame(Continent = "Africa", Conformity = AfricaBenfordVec, Colname = names(AfricaBenfordVec))
 
+# Display the number of columns analyzed for Asia
 AsiaBenfordVec |> length()
 
+# Combine all continent-specific data frames into one
 all_df <- rbind(asia_df, europe_df, north_america_df, south_america_df, africa_df)
+
+# Add a numerical label for each column name for use in visualizations
 all_df |> mutate(Label = as.integer(factor(Colname))) -> all_df
 ```
 
-# Carbon plot by continent
+# Carbon Plot by Continent
 
 ```{r}
+# Filter columns related to carbon across all continents
 matches <- grep("carbon .*\\|", all_df$Colname, value = TRUE, ignore.case = TRUE)
 all_df |> dplyr::filter(Colname %in% matches) -> carbon_df
+
+# Add a new label column for visualization purposes
 carbon_df |> mutate(Label2 = as.integer(factor(Colname))) -> carbon_df
-carbon_df |> group_by(Continent) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Continent)-> carbon_df_levels
-carbon_df |> ggplot(aes(y = factor(Continent, levels = carbon_df_levels), x = as.factor(Label2), fill = factor(Conformity, levels = names(conformityColors)))) +
-  geom_tile(color = "black", linewidth = 0.3) +
+
+# Generate ordered levels for continents based on the number of conforming columns
+carbon_df |> 
+  group_by(Continent) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Continent) -> carbon_df_levels
+
+# Create a heatmap plot for carbon-related columns by continent
+carbon_df |> 
+  ggplot(aes(y = factor(Continent, levels = carbon_df_levels), 
+             x = as.factor(Label2), 
+             fill = factor(Conformity, levels = names(conformityColors)))) +
+  geom_tile(color = "black", linewidth = 0.3) +  # Add tiles with borders
   ylab("Continent") +
   xlab("Columns") +
-  labs(fill = "", title = "Carbon by continent") +
-  scale_fill_manual(values = conformityColors) +
-  coord_equal() +
-  theme(legend.position = "top", legend.key = element_rect(colour = "black", size = 0.1))
+  labs(fill = "", title = "Carbon by Continent") +
+  scale_fill_manual(values = conformityColors) +  # Apply predefined colors for conformity levels
+  coord_equal() +  # Ensure equal aspect ratio for tiles
+  theme(
+    legend.position = "top", 
+    legend.key = element_rect(colour = "black", size = 0.1)  # Customize legend appearance
+  )
 
-ggsave("carbon_by_continent.jpg", last_plot(), width = 20, height = 10, units = "cm", limitsize = F)
+# Save the plot as a JPEG file
+ggsave("../results/carbon_by_continent.pdf", last_plot(), width = 20, height = 10, units = "cm", limitsize = FALSE)
 
+# Display the frequency of conformity levels in the carbon dataset
 carbon_df$Conformity |> table()
 
-carbon_df |> select(-Label) |> rename(Label = Label2) |> write_csv("carbon_by_continent.csv")
-
+# Save the carbon dataset for further analysis as a CSV file
+carbon_df |> 
+  select(-Label) |>  # Drop the original label column
+  rename(Label = Label2) |>  # Rename the new label column to "Label"
+  write_csv("../data/carbon_by_continent.csv")
 ```
 
-# Toxic substances plot by continent
+# Toxic Substances by Continent
 
 ```{r}
-# toxic substances by continent
-all_df |>  dplyr::filter(Colname %in% toxicSubstances) -> toxicSubstances_df
-all_df |> filter(Colname %in% close_conforming_cols)|>  dplyr::filter(Colname %in% toxicSubstances) -> toxicSubstances_df
+# Filter data for toxic substances
+all_df |> filter(Colname %in% close_conforming_cols) |> dplyr::filter(Colname %in% toxicSubstances) -> toxicSubstances_df
 
-
+# Add label for visualization
 toxicSubstances_df |> mutate(Label2 = as.integer(factor(Colname))) -> toxicSubstances_df
 
-toxicSubstances_df |> group_by(Continent) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Continent)-> toxicSubstances_df_levels
+# Generate ordered levels for continents based on the number of conforming columns
+toxicSubstances_df |> 
+  group_by(Continent) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Continent) -> toxicSubstances_df_levels
 
-toxicSubstances_df |> ggplot(aes(y = factor(Continent, levels = toxicSubstances_df_levels), x = as.factor(Label2), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Create a heatmap for toxic substances by continent
+toxicSubstances_df |> 
+  ggplot(aes(y = factor(Continent, levels = toxicSubstances_df_levels), 
+             x = as.factor(Label2), 
+             fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.25) +
   ylab("Continent") +
   xlab("Columns") +
@@ -1796,21 +1424,45 @@ toxicSubstances_df |> ggplot(aes(y = factor(Continent, levels = toxicSubstances_
   coord_equal() +
   theme(legend.position = "top")
 
-ggsave("toxic_substances_by_continent.png", last_plot(), width = 20, height = 10, units = "cm", limitsize = F)
+# Save the plot as a PNG file
+ggsave("../results/toxic_substances_by_continent.pdf", last_plot(), width = 20, height = 10, units = "cm", limitsize = FALSE)
 
-toxicSubstances_df |> select(-Label) |> rename(Label = Label2) |> write_csv("toxic_substances_by_continent.csv")
+# Save the data to a CSV file
+toxicSubstances_df |> 
+  select(-Label) |> 
+  rename(Label = Label2) |> 
+  write_csv("../data/toxic_substances_by_continent.csv")
+
 ```
 
-# Heavy metals by continent
+# Heavy Metals by Continent
 
 ```{r}
+#Heavy metals
+heavy_metals <- c("Lead", "Mercury", "Cadmium", "Arsenic", "Chromium", "Nickel", "Copper", "Zinc", "Manganese", "Iron")
+
+# Select names of all columns that contain some of the heavy metals
+
+bigDataCountriesGrouped |> select(Country,matches(paste(heavy_metals, collapse = "|"))) |> colnames() -> heavyMetals
+
+# Filter data for heavy metals
 all_df |> dplyr::filter(Colname %in% heavyMetals) -> heavyMetals_df
 
+# Add label for visualization
 heavyMetals_df |> mutate(Label2 = as.integer(factor(Colname))) -> heavyMetals_df
 
-heavyMetals_df |> group_by(Continent) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Continent)-> heavyMetals_df_levels
+# Generate ordered levels for continents based on the number of conforming columns
+heavyMetals_df |> 
+  group_by(Continent) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Continent) -> heavyMetals_df_levels
 
-heavyMetals_df |> ggplot(aes(y = factor(Continent, levels = heavyMetals_df_levels), x = as.factor(Label2), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Create a heatmap for heavy metals by continent
+heavyMetals_df |> 
+  ggplot(aes(y = factor(Continent, levels = heavyMetals_df_levels), 
+             x = as.factor(Label2), 
+             fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.2) +
   ylab("Continent") +
   xlab("Columns") +
@@ -1819,12 +1471,15 @@ heavyMetals_df |> ggplot(aes(y = factor(Continent, levels = heavyMetals_df_level
   coord_equal() +
   theme(legend.position = "top")
 
-# divide df into 2 parts
+# Divide the data into two parts for better visualization
+heavyMetals_df |> dplyr::filter(Label2 %in% 1:round(length(unique(heavyMetals_df$Label2)) / 2)) -> firstHalfHeavyMetals
+heavyMetals_df |> dplyr::filter(Label2 %in% (round(length(unique(heavyMetals_df$Label2)) / 2) + 1):length(unique(heavyMetals_df$Label2))) -> secondHalfHeavyMetals
 
-heavyMetals_df |> dplyr::filter(Label2 %in% 1:round(length(unique(heavyMetals_df$Label2))/2)) -> firstHalfHeavyMetals
-heavyMetals_df |> dplyr::filter(Label2 %in% (round(length(unique(heavyMetals_df$Label2))/2)+1):length(unique(heavyMetals_df$Label2))) -> secondHalfHeavyMetals
-
-firstHalfHeavyMetals |> ggplot(aes(y = factor(Continent, levels = heavyMetals_df_levels), x = as.factor(Label2), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Create separate plots for each half
+firstHalfHeavyMetals |> 
+  ggplot(aes(y = factor(Continent, levels = heavyMetals_df_levels), 
+             x = as.factor(Label2), 
+             fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.2) +
   ylab("Continent") +
   xlab("") +
@@ -1833,7 +1488,10 @@ firstHalfHeavyMetals |> ggplot(aes(y = factor(Continent, levels = heavyMetals_df
   coord_equal() +
   theme(legend.position = "top") -> pp1
 
-secondHalfHeavyMetals |> ggplot(aes(y = factor(Continent, levels = heavyMetals_df_levels), x = as.factor(Label2), fill = factor(Conformity, levels = names(conformityColors)))) +
+secondHalfHeavyMetals |> 
+  ggplot(aes(y = factor(Continent, levels = heavyMetals_df_levels), 
+             x = as.factor(Label2), 
+             fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.2) +
   ylab("Continent") +
   xlab("Columns") +
@@ -1842,161 +1500,214 @@ secondHalfHeavyMetals |> ggplot(aes(y = factor(Continent, levels = heavyMetals_d
   coord_equal() +
   theme(legend.position = "none") -> pp2
 
+# Combine the plots and save as PNG
 gridExtra::grid.arrange(pp1, pp2, ncol = 1) -> heavyMetalsPlot
+ggsave("../results/heavy_metals_by_continent.pdf", heavyMetalsPlot, width = 25, height = 10, units = "cm", limitsize = FALSE)
 
-pp1 + pp2 + plot_layout(ncol = 1)
-
-ggsave("heavy_metals_by_continent.png", heavyMetalsPlot, width = 25, height = 10, units = "cm", limitsize = F)
-
-firstHalfHeavyMetals |> rbind(secondHalfHeavyMetals) |> select(-Label) |> rename(Label = Label2) |> write_csv("heavy_metals_by_continent.csv")
-
+# Save the combined data to a CSV file
+firstHalfHeavyMetals |> 
+  rbind(secondHalfHeavyMetals) |> 
+  select(-Label) |> 
+  rename(Label = Label2) |> 
+  write_csv("../data/heavy_metals_by_continent.csv")
 ```
 
-# Green house gases by continent
+# Greenhouse Gases by Continent
 
 ```{r}
-all_df |> dplyr::filter(Colname %in% greenHouseGases) -> greenHouseGases_df
+# Filter data for greenhouse gases
+all_df |> dplyr::filter(Colname %in% greenhouse_gases) -> greenHouseGases_df
 
+# Add label for visualization
 greenHouseGases_df |> mutate(Label2 = as.integer(factor(Colname))) -> greenHouseGases_df
 
-greenHouseGases_df |> group_by(Continent) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Continent)-> greenHouseGases_df_levels
+# Generate ordered levels for continents based on the number of conforming columns
+greenHouseGases_df |> 
+  group_by(Continent) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Continent) -> greenHouseGases_df_levels
 
-greenHouseGases_df |> ggplot(aes(y = factor(Continent, levels = greenHouseGases_df_levels), x = as.factor(Label2), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Create a heatmap for greenhouse gases by continent
+greenHouseGases_df |> 
+  ggplot(aes(y = factor(Continent, levels = greenHouseGases_df_levels), 
+             x = as.factor(Label2), 
+             fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.3) +
   ylab("Continent") +
   xlab("Columns") +
-  labs(fill = "", title = "Green house gases by continent") +
+  labs(fill = "", title = "Greenhouse gases by continent") +
   scale_fill_manual(values = conformityColors) +
   coord_equal() +
   theme(legend.position = "top")
 
-ggsave("green_house_gases_by_continent.png", last_plot(), width = 25, height = 10, units = "cm", limitsize = F)
+# Save the plot as a PNG file
+ggsave("../results/green_house_gases_by_continent.pdf", last_plot(), width = 25, height = 10, units = "cm", limitsize = FALSE)
 
-greenHouseGases_df |> select(-Label) |> rename(Label = Label2) |> write_csv("green_house_gases_by_continent.csv")
+# Save the data to a CSV file
+greenHouseGases_df |> 
+  select(-Label) |> 
+  rename(Label = Label2) |> 
+  write_csv("../data/green_house_gases_by_continent.csv")
 
-greenHouseGases_df[str_detect("|air", rownames(greenHouseGases_df)),] -> greenHouseGases_df_air
+# Filter data for greenhouse gases specifically in air
+greenHouseGases_df[str_detect("|air", rownames(greenHouseGases_df)), ] -> greenHouseGases_df_air
 
-greenHouseGases_df_air |> ggplot(aes(y = factor(Continent, levels = greenHouseGases_df_levels), x = as.factor(Label2), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Create a heatmap for greenhouse gases in air
+greenHouseGases_df_air |> 
+  ggplot(aes(y = factor(Continent, levels = greenHouseGases_df_levels), 
+             x = as.factor(Label2), 
+             fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.3) +
   ylab("Continent") +
   xlab("Columns") +
-  labs(fill = "", title = "Green house gases by continent") +
+  labs(fill = "", title = "Greenhouse gases in air by continent") +
   scale_fill_manual(values = conformityColors) +
   coord_equal() +
   theme(legend.position = "top")
 ```
 
-# Compartments plots by continent
+# Water Data Plots by Continent
 
 ```{r}
-#Water data
-
+# Assign continents to the water data
 water.data |> mutate(Continent = sapply(Country, get_continent)) -> continentsWaterData
+
+# Get unique continents from the grouped data, excluding specific values
 bigDataCountriesGrouped |> pull(Continent) |> unique() -> continents
 continents[continents != "Unknown" & continents != "Rest of World" & continents != "Australia/Oceania"] -> continents_of_interest
+
+# Initialize an empty data frame for plotting
 continentsWaterDataPlotDF <- data.frame()
 
+# Perform Benford's Law analysis for each continent of interest
 for (continent in continents_of_interest) {
   continentsWaterData |> dplyr::filter(Continent == continent) |> benford_conforming() -> benfordVec
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Continent = continent, row.names = NULL) -> df
   continentsWaterDataPlotDF <- rbind(continentsWaterDataPlotDF, df)
 }
-continentsWaterDataPlotDF |> group_by(Continent) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Continent)-> factorLevelsWaterData
 
+# Generate ordered levels for continents based on conformity counts
+continentsWaterDataPlotDF |> 
+  group_by(Continent) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Continent) -> factorLevelsWaterData
+
+# Add numerical labels for columns
 continentsWaterDataPlotDF |> mutate(Label = as.integer(factor(Colname))) -> continentsWaterDataPlotDF
 
-# divide vector into 2 equal parts by Colname
-continentsWaterDataPlotDF$Colname |> unique() -> uniqueColnamesWaterData
+# Divide column names into two parts for better visualization
+uniqueColnamesWaterData <- continentsWaterDataPlotDF$Colname |> unique()
+uniqueColnamesWaterData[1:round(length(uniqueColnamesWaterData) / 2)] -> firstHalfWaterDataColnames
+uniqueColnamesWaterData[(round(length(uniqueColnamesWaterData) / 2) + 1):length(uniqueColnamesWaterData)] -> secondHalfWaterDataColnames
 
-uniqueColnamesWaterData[1:round(length(uniqueColnamesWaterData)/2)] -> firstHalfWaterDataColnames
-uniqueColnamesWaterData[(round(length(uniqueColnamesWaterData)/2)+1):length(uniqueColnamesWaterData)] -> secondHalfWaterDataColnames
-
+# Create separate data frames for each half
 continentsWaterDataPlotDF1 <- continentsWaterDataPlotDF |> dplyr::filter(Colname %in% firstHalfWaterDataColnames)
 continentsWaterDataPlotDF2 <- continentsWaterDataPlotDF |> dplyr::filter(Colname %in% secondHalfWaterDataColnames)
 
-continentsWaterDataPlotDF1 |> ggplot(aes(y = factor(Continent, levels = factorLevelsWaterData), x = factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Generate plots for each half
+continentsWaterDataPlotDF1 |> 
+  ggplot(aes(y = factor(Continent, levels = factorLevelsWaterData), x = factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.1) +
   ylab("Continent") +
   xlab("") +
   labs(fill = "", title = "Water columns") +
   scale_fill_manual(values = conformityColors) +
   coord_equal() +
-  theme(legend.position = "top", axis.text.x = element_text(size = 4),axis.text.y = element_text(size = 4, hjust = 1)) -> firstWaterPlot
+  theme(legend.position = "top", axis.text.x = element_text(size = 4), axis.text.y = element_text(size = 4, hjust = 1)) -> firstWaterPlot
 
-continentsWaterDataPlotDF2 |> ggplot(aes(y = factor(Continent, levels = factorLevelsWaterData), x = factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+continentsWaterDataPlotDF2 |> 
+  ggplot(aes(y = factor(Continent, levels = factorLevelsWaterData), x = factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.1) +
   ylab("Continent") +
   xlab("Columns") +
   labs(fill = "") +
   scale_fill_manual(values = conformityColors) +
   coord_equal() +
-  theme(legend.position = "none", axis.text.x = element_text(size = 4),axis.text.y = element_text(size = 4, hjust = 1)) -> secondWaterPlot
+  theme(legend.position = "none", axis.text.x = element_text(size = 4), axis.text.y = element_text(size = 4, hjust = 1)) -> secondWaterPlot
 
+# Combine the two plots into one layout
 gridExtra::grid.arrange(firstWaterPlot, secondWaterPlot, ncol = 1) -> waterPlot
 
-firstWaterPlot + secondWaterPlot + plot_layout(ncol = 1)
+# Save the water plot to a PDF
+ggsave("../results/water_by_continent.pdf", waterPlot, width = 25, height = 6, units = "cm", limitsize = TRUE)
 
-ggsave("water_by_continent.pdf", waterPlot, width = 25, height = 6, units = "cm", limitsize = T)
-
-continentsWaterDataPlotDF |> write_csv("water_by_continent.csv")
-
+# Save the data to a CSV file
+continentsWaterDataPlotDF |> write_csv("../data/water_by_continent.csv")
 ```
 
-```{r}
-# Do the same for air data
+# Air Data Plots by Continent
 
+```{r}
+# Assign continents to the air data
 air.data |> mutate(Continent = sapply(Country, get_continent)) -> continentsAirData
+
+# Get unique continents from the grouped data, excluding specific values
 bigDataCountriesGrouped |> pull(Continent) |> unique() -> continents
 continents[continents != "Unknown" & continents != "Rest of World" & continents != "Australia/Oceania"] -> continents_of_interest
+
+# Initialize an empty data frame for plotting
 continentsAirDataPlotDF <- data.frame()
 
+# Perform Benford's Law analysis for each continent of interest
 for (continent in continents_of_interest) {
   continentsAirData |> dplyr::filter(Continent == continent) |> benford_conforming() -> benfordVec
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Continent = continent, row.names = NULL) -> df
   continentsAirDataPlotDF <- rbind(continentsAirDataPlotDF, df)
 }
 
-continentsAirDataPlotDF |> group_by(Continent) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Continent)-> factorLevelsAirData
+# Generate ordered levels for continents based on conformity counts
+continentsAirDataPlotDF |> 
+  group_by(Continent) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Continent) -> factorLevelsAirData
 
+# Add numerical labels for columns
 continentsAirDataPlotDF |> mutate(Label = as.integer(factor(Colname))) -> continentsAirDataPlotDF
 
-# divide vector into 2 equal parts by Colname
-
+# Divide column names into two parts for better visualization
 uniqueColnamesAirData <- continentsAirDataPlotDF$Colname |> unique()
+uniqueColnamesAirData[1:round(length(uniqueColnamesAirData) / 2)] -> firstHalfAirDataColnames
+uniqueColnamesAirData[(round(length(uniqueColnamesAirData) / 2) + 1):length(uniqueColnamesAirData)] -> secondHalfAirDataColnames
 
-uniqueColnamesAirData[1:round(length(uniqueColnamesAirData)/2)] -> firstHalfAirDataColnames
-
-uniqueColnamesAirData[(round(length(uniqueColnamesAirData)/2)+1):length(uniqueColnamesAirData)] -> secondHalfAirDataColnames
-
+# Create separate data frames for each half
 continentsAirDataPlotDF1 <- continentsAirDataPlotDF |> dplyr::filter(Colname %in% firstHalfAirDataColnames)
 continentsAirDataPlotDF2 <- continentsAirDataPlotDF |> dplyr::filter(Colname %in% secondHalfAirDataColnames)
 
-continentsAirDataPlotDF1 |> ggplot(aes(y = factor(Continent, levels = factorLevelsAirData), x = factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+# Generate plots for each half
+continentsAirDataPlotDF1 |> 
+  ggplot(aes(y = factor(Continent, levels = factorLevelsAirData), x = factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.1) +
   ylab("Continent") +
   xlab("") +
   labs(fill = "", title = "Air columns") +
   scale_fill_manual(values = conformityColors) +
   coord_equal() +
-  theme(legend.position = "top", axis.text.x = element_text(size = 4),axis.text.y = element_text(size = 4, hjust = 1)) -> firstAirPlot
+  theme(legend.position = "top", axis.text.x = element_text(size = 4), axis.text.y = element_text(size = 4, hjust = 1)) -> firstAirPlot
 
-continentsAirDataPlotDF2 |> ggplot(aes(y = factor(Continent, levels = factorLevelsAirData), x = factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
+continentsAirDataPlotDF2 |> 
+  ggplot(aes(y = factor(Continent, levels = factorLevelsAirData), x = factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.1) +
   ylab("Continent") +
   xlab("Columns") +
   labs(fill = "") +
   scale_fill_manual(values = conformityColors) +
   coord_equal() +
-  theme(legend.position = "none", axis.text.x = element_text(size = 4),axis.text.y = element_text(size = 4, hjust = 1)) -> secondAirPlot
+  theme(legend.position = "none", axis.text.x = element_text(size = 4), axis.text.y = element_text(size = 4, hjust = 1)) -> secondAirPlot
 
+# Combine the two plots into one layout
 gridExtra::grid.arrange(firstAirPlot, secondAirPlot, ncol = 1) -> airPlot
 
-firstAirPlot + secondAirPlot + plot_layout(ncol = 1)
+# Save the air plot to a PDF
+ggsave("../results/air_by_continent.pdf", airPlot, width = 20, height = 10, units = "cm", limitsize = TRUE)
 
-ggsave("air_by_continent.pdf", airPlot, width = 20, height = 10, units = "cm", limitsize = T)
-
-continentsAirDataPlotDF |> write_csv("air_by_continent.csv")
+# Save the data to a CSV file
+continentsAirDataPlotDF |> write_csv("../data/air_by_continent.csv")
 ```
+
+# Soil Data Plots by Continent
 
 ```{r}
 # Do the same for soil data
@@ -2036,32 +1747,42 @@ continentsSoilDataPlotDF |> ggplot(aes(y = factor(Continent, levels = factorLeve
   coord_equal() +
   theme(legend.position = "top", axis.text.x = element_text(size = 4),axis.text.y = element_text(size = 4, hjust = 1)) -> soilPlot
 
-ggsave("soil_by_continent.pdf", soilPlot, width = 17.5, height = 4, units = "cm", limitsize = T)
+ggsave("../results/soil_by_continent.pdf", soilPlot, width = 17.5, height = 4, units = "cm", limitsize = T)
  
-continentsSoilDataPlotDF |> write_csv("soil_by_continent.csv")
+continentsSoilDataPlotDF |> write_csv("../data/soil_by_continent.csv")
 ```
 
-```{r}
-# Do same for natural resources data
+# Natural Resources Data Plots by Continent
 
+```{r}
+# Assign continents to the natural resources data
 natural.resource.data |> mutate(Continent = sapply(Country, get_continent)) -> continentsNaturalResourcesData
 
+# Get unique continents from the grouped data, excluding specific values
 bigDataCountriesGrouped |> pull(Continent) |> unique() -> continents
-
 continents[continents != "Unknown" & continents != "Rest of World" & continents != "Australia/Oceania"] -> continents_of_interest
 
+# Initialize an empty data frame for plotting
 continentsNaturalResourcesDataPlotDF <- data.frame()
 
+# Perform Benford's Law analysis for each continent of interest
 for (continent in continents_of_interest) {
   continentsNaturalResourcesData |> dplyr::filter(Continent == continent) |> benford_conforming() -> benfordVec
   data.frame(Colname = names(benfordVec), Conformity = benfordVec, Continent = continent, row.names = NULL) -> df
   continentsNaturalResourcesDataPlotDF <- rbind(continentsNaturalResourcesDataPlotDF, df)
 }
 
-continentsNaturalResourcesDataPlotDF |> group_by(Continent) |> summarise(n = sum(Conformity != "Nonconformity")) |> arrange(desc(n)) |> pull(Continent)-> factorLevelsNaturalResourcesData
+# Generate ordered levels for continents based on conformity counts
+continentsNaturalResourcesDataPlotDF |> 
+  group_by(Continent) |> 
+  summarise(n = sum(Conformity != "Nonconformity")) |> 
+  arrange(desc(n)) |> 
+  pull(Continent) -> factorLevelsNaturalResourcesData
 
+# Add numerical labels for columns
 continentsNaturalResourcesDataPlotDF |> mutate(Label = as.integer(factor(Colname))) -> continentsNaturalResourcesDataPlotDF
 
+# Create a plot for natural resources data by continent
 continentsNaturalResourcesDataPlotDF |> 
   ggplot(aes(y = factor(Continent, levels = factorLevelsNaturalResourcesData), x = factor(Label), fill = factor(Conformity, levels = names(conformityColors)))) +
   geom_tile(color = "black", linewidth = 0.1) +
@@ -2070,283 +1791,376 @@ continentsNaturalResourcesDataPlotDF |>
   labs(fill = "", title = "Natural resources columns") +
   scale_fill_manual(values = conformityColors) +
   coord_equal() +
-  theme(legend.position = "top", axis.text.x = element_text(size = 4),axis.text.y = element_text(size = 4, hjust = 1)) -> naturalResourcesPlot
+  theme(legend.position = "top", axis.text.x = element_text(size = 4), axis.text.y = element_text(size = 4, hjust = 1)) -> naturalResourcesPlot
 
-ggsave("natural_resources_by_continent.pdf", naturalResourcesPlot, width = 17.5, height = 4, units = "cm", limitsize = T)
+# Save the natural resources plot to a PDF
+ggsave("../results/natural_resources_by_continent.pdf", naturalResourcesPlot, width = 17.5, height = 4, units = "cm", limitsize = TRUE)
 
-continentsNaturalResourcesDataPlotDF |> write_csv("natural_resources_by_continent.csv")
+# Save the natural resources data to a CSV file
+continentsNaturalResourcesDataPlotDF |> write_csv("../data/natural_resources_by_continent.csv")
 ```
 
+# Europe: All Data Combined
+
 ```{r}
+# Perform Benford's Law analysis for all combined data from Europe
+bigDataCountriesGrouped |> 
+  dplyr::filter(Continent == "Europe") |> 
+  benford_conforming_combined2() -> benford_ecoinvent_EUROPE
 ```
 
-# Europe all data combined
+# Asia: All Data Combined
 
 ```{r}
-bigDataCountriesGrouped |> dplyr::filter(Continent == "Europe") |> benford_conforming_combined2() -> benford_ecoinvent_EUROPE
+# Perform Benford's Law analysis for all combined data from Asia
+bigDataCountriesGrouped |> 
+  dplyr::filter(Continent == "Asia") |> 
+  benford_conforming_combined2() -> benford_ecoinvent_ASIA
 ```
 
-# Asia all data combined
+# Australia: All Data Combined
 
 ```{r}
-bigDataCountriesGrouped |> dplyr::filter(Continent == "Asia") |> benford_conforming_combined2() -> benford_ecoinvent_ASIA
+# Perform Benford's Law analysis for Australia
+bigDataCountriesGrouped |> 
+  dplyr::filter(Country == "AU") |> 
+  benford_conforming_combined2() -> benford_ecoinvent_AUSTRALIA
 
+# Perform Benford's Law analysis for Australia/Oceania
+bigDataCountriesGrouped |> 
+  dplyr::filter(Continent == "Australia/Oceania") |> 
+  benford_conforming_combined2() -> benford_ecoinvent_AUSTRALIA_OCEANIA
 ```
 
-### Australia all data combined
+# Africa: All Data Combined
 
 ```{r}
-bigDataCountriesGrouped |> dplyr::filter(Country == "AU") |> benford_conforming_combined2() -> benford_ecoinvent_AUSTRALIA
-bigDataCountriesGrouped |> dplyr::filter(Continent == "Australia/Oceania") |> benford_conforming_combined2() -> benford_ecoinvent_AUSTRALIA_OCEANIA
+# Perform Benford's Law analysis for all combined data from Africa
+bigDataCountriesGrouped |> 
+  dplyr::filter(Continent == "Africa") |> 
+  benford_conforming_combined2() -> benford_ecoinvent_AFRICA
 ```
 
+# North America: All Data Combined
+
 ```{r}
-bigDataCountriesGrouped |> dplyr::filter(Continent == "Africa") |> benford_conforming_combined2() -> benford_ecoinvent_AFRICA
-bigDataCountriesGrouped |> dplyr::filter(Continent == "North America") |> benford_conforming_combined2() -> benford_ecoinvent_N_AMERICA
-bigDataCountriesGrouped |> dplyr::filter(Continent == "South America") |> benford_conforming_combined2() -> benford_ecoinvent_S_AMERICA
+# Perform Benford's Law analysis for all combined data from North America
+bigDataCountriesGrouped |> 
+  dplyr::filter(Continent == "North America") |> 
+  benford_conforming_combined2() -> benford_ecoinvent_N_AMERICA
 ```
 
-# Combined data for each continent
+# South America: All Data Combined
 
 ```{r}
+# Perform Benford's Law analysis for all combined data from South America
+bigDataCountriesGrouped |> 
+  dplyr::filter(Continent == "South America") |> 
+  benford_conforming_combined2() -> benford_ecoinvent_S_AMERICA
+```
+
+# Conformity of Each Coulumn - Per Continent
+
+```{r}
+# Perform Benford's Law analysis on individual columns for each continent
 EuropeData |> benford_conforming() -> EuropeBenfordVec
 AsiaData |> benford_conforming() -> AsiaBenfordVec
 NorthAmericaData |> benford_conforming() -> NorthAmericaBenfordVec
 SouthAmericaData |> benford_conforming() -> SouthAmericaBenfordVec
 AfricaData |> benford_conforming() -> AfricaBenfordVec
 AustraliaOceaniaData |> benford_conforming() -> AustraliaOceaniaBenfordVec
-
-EuropeBenfordVec |> length()
 ```
 
+# Benford's Law Plots for Continents
+
 ```{r}
-# EuropeBenfordVec |> benfordPlot("Europe")
-# AsiaBenfordVec |> benfordPlot("Asia")
-# NorthAmericaBenfordVec |> benfordPlot("North America")
-# SouthAmericaBenfordVec |> benfordPlot("South America")
-# AfricaBenfordVec |> benfordPlot("Africa")
-# AustraliaOceaniaBenfordVec |> benfordPlot("Australia/Oceania")
+# Generate Benford's Law plot for Europe
 benford_ecoinvent_EUROPE |> benfordPlot("Europe")
+
+# Generate Benford's Law plot for Asia
 benford_ecoinvent_ASIA |> benfordPlot("Asia")
+
+# Generate Benford's Law plot for North America
 benford_ecoinvent_N_AMERICA |> benfordPlot("North America")
+
+# Generate Benford's Law plot for South America
 benford_ecoinvent_S_AMERICA |> benfordPlot("South America")
+
+# Generate Benford's Law plot for Africa
 benford_ecoinvent_AFRICA |> benfordPlot("Africa")
+
+# Generate Benford's Law plot for Australia/Oceania
 benford_ecoinvent_AUSTRALIA_OCEANIA |> benfordPlot("Australia/Oceania")
 ```
 
+# Ecoinvent: All Data Combined
 
 ```{r}
-# AustraliaOceaniaData |> mutate_if(is.numeric, first_digit) |> benford_conforming_combined() -> AustraliaOceaniaBenfordVecFirstDigit
-# 
-# AustraliaOceaniaBenfordVecFirstDigit |> benfordPlot("Australia/Oceania") 
-# 
-# 
-# AustraliaOceaniaBenfordVec |> plot()
-# 
-# AustraliaOceaniaData |> benford_conforming_combined2(2)
-# 
-# benford_conforming_combined <- function(data, n = 1) {
-#     # Select and filter numeric columns, removing columns with all zeros
-#     numeric_columns <- data[, data |> sapply(is.numeric)]
-#     #numeric_columns <- numeric_columns[, colSums(numeric_columns) != 0]
-# 
-#     # Check if we have any numeric columns left
-#     if (ncol(numeric_columns) == 0) { 
-#       return("No numeric columns with positive values found")
-#     }
-# 
-#     # Combine numeric columns with positive values
-#     combined_column <- do.call(c, numeric_columns) 
-# 
-#     # Remove any potential 0 values (these can interfere with Benford)
-#     combined_column <- combined_column[combined_column != 0]
-# 
-#     # Perform Benford analysis
-#     result <- benford(combined_column, number.of.digits = n)
-# 
-#     return(result)
-# }
-# 
-# (unlist(AustraliaOceaniaData[sapply(AustraliaOceaniaData, is.numeric)], use.names = FALSE)) |> benford::benford(plot = T, mode = 1)
-
-
-```
-
-```{r}
-```
-
-# All Ecoinvent data together
-
-```{r}
-bigDataCountriesGrouped |> benford_conforming_combined() -> benford_ecoinvent_all
-
+# Perform Benford's Law analysis for all combined Ecoinvent data
+bigDataCountriesGrouped |> benford_conforming_combined2() -> benford_ecoinvent_all
 ```
 
 # Other datasets
 
-## World steel dataset
+## World Steel Dataset
 
-### All data
+### All Data
 
 ```{r}
-library(benford.analysis)
+# Load the World Steel 2020 dataset
+worldsteel_2020 <- read_delim("../data/worldsteel_2020.csv", 
+                              delim = ";", escape_double = FALSE, col_names = FALSE, 
+                              trim_ws = TRUE, skip = 113)
 
-
-
-worldsteel_2020 <- read_delim("worldsteel_2020.csv", 
-    delim = ";", escape_double = FALSE, col_names = FALSE, 
-    trim_ws = TRUE, skip = 113)
-
-worldsteel_2020 |> dplyr::filter(X5 == "Undefined") |> select(X4) |> mutate(X4 = as.numeric(X4)) |> na.omit() |> mutate(X4 = first_digit(X4)) |> pull() |> benford(number.of.digits = 1) -> benford_worldsteel_all
-
-
+# Perform Benford's Law analysis on undefined categories in the dataset
+worldsteel_2020 |> 
+  dplyr::filter(X5 == "Undefined") |>  # Filter for undefined categories
+  select(X4) |>  # Select relevant column
+  mutate(X4 = as.numeric(X4)) |>  # Convert to numeric
+  na.omit() |>  # Remove NA values
+  mutate(X4 = first_digit(X4)) |>  # Extract first digit
+  pull() |> 
+  benford(number.of.digits = 1) -> benford_worldsteel_all
 ```
 
-### Asia data
+### Asia Data
 
 ```{r}
-worldsteel_2020_Asia_all <- read_delim("worldsteel_2020_Asia_all.csv", 
-     delim = ";", escape_double = FALSE, col_names = FALSE, 
-     trim_ws = TRUE, skip = 112)
+# Load the World Steel Asia dataset
+worldsteel_2020_Asia_all <- read_delim("../data/worldsteel_2020_Asia_all.csv", 
+                                       delim = ";", escape_double = FALSE, col_names = FALSE, 
+                                       trim_ws = TRUE, skip = 112)
 
-worldsteel_2020_Asia_all |> dplyr::filter(X5 == "Undefined") |> select(X4) |> mutate(X4 = as.numeric(X4)) |> na.omit() |> mutate(X4 = first_digit(X4)) |> pull() |> benford(number.of.digits = 1) -> benford_worldsteel_ASIA
-
+# Perform Benford's Law analysis on undefined categories in Asia dataset
+worldsteel_2020_Asia_all |> 
+  dplyr::filter(X5 == "Undefined") |>  # Filter for undefined categories
+  select(X4) |>  # Select relevant column
+  mutate(X4 = as.numeric(X4)) |>  # Convert to numeric
+  na.omit() |>  # Remove NA values
+  mutate(X4 = first_digit(X4)) |>  # Extract first digit
+  pull() |> 
+  benford(number.of.digits = 1) -> benford_worldsteel_ASIA
 ```
 
-### Europe data
+### Europe Data
 
 ```{r}
-worldsteel_EUROPE <- read_delim("worldsteel_EUROPE.csv", 
-    delim = ";", escape_double = FALSE, col_names = FALSE, 
-    trim_ws = TRUE, skip = 110)
+# Load the World Steel Europe dataset
+worldsteel_EUROPE <- read_delim("../data/worldsteel_EUROPE.csv", 
+                                delim = ";", escape_double = FALSE, col_names = FALSE, 
+                                trim_ws = TRUE, skip = 110)
 
-worldsteel_EUROPE |> dplyr::filter(X5 == "Undefined") |> select(X4) |> mutate(X4 = as.numeric(X4)) |> na.omit() |> mutate(X4 = first_digit(X4)) |> pull() |> benford(number.of.digits = 1) -> benford_worldsteel_EUROPE
+# Perform Benford's Law analysis on undefined categories in Europe dataset
+worldsteel_EUROPE |> 
+  dplyr::filter(X5 == "Undefined") |>  # Filter for undefined categories
+  select(X4) |>  # Select relevant column
+  mutate(X4 = as.numeric(X4)) |>  # Convert to numeric
+  na.omit() |>  # Remove NA values
+  mutate(X4 = first_digit(X4)) |>  # Extract first digit
+  pull() |> 
+  benford(number.of.digits = 1) -> benford_worldsteel_EUROPE
 ```
 
-### Global data
+### Global Data
 
 ```{r}
-worldsteel_2020_GLO_all <- read_delim("worldsteel_2020_GLO_all.csv", 
-     delim = ";", escape_double = FALSE, col_names = FALSE, 
-     trim_ws = TRUE, skip = 110)
-worldsteel_2020_GLO_all |> dplyr::filter(X5 == "Undefined") |> select(X4) |> mutate(X4 = as.numeric(X4)) |> na.omit() |> mutate(X4 = first_digit(X4)) |> pull() |> benford(number.of.digits = 1) -> benford_worldsteel_GLO
+# Load the World Steel Global dataset
+worldsteel_2020_GLO_all <- read_delim("../data/worldsteel_2020_GLO_all.csv", 
+                                      delim = ";", escape_double = FALSE, col_names = FALSE, 
+                                      trim_ws = TRUE, skip = 110)
+
+# Perform Benford's Law analysis on undefined categories in Global dataset
+worldsteel_2020_GLO_all |> 
+  dplyr::filter(X5 == "Undefined") |>  # Filter for undefined categories
+  select(X4) |>  # Select relevant column
+  mutate(X4 = as.numeric(X4)) |>  # Convert to numeric
+  na.omit() |>  # Remove NA values
+  mutate(X4 = first_digit(X4)) |>  # Extract first digit
+  pull() |> 
+  benford(number.of.digits = 1) -> benford_worldsteel_GLO
 ```
 
-## OzLCI2019
+## OzLCI2019 Dataset
 
-### All data
+### All Data
 
 ```{r}
-OzLCI2019 <- read_delim("OzLCI2019.csv", 
-    delim = ";", escape_double = FALSE, col_names = FALSE, 
-    trim_ws = TRUE, skip = 97)
+# Load the OzLCI2019 dataset
+OzLCI2019 <- read_delim("../data/OzLCI2019.csv", 
+                        delim = ";", escape_double = FALSE, col_names = FALSE, 
+                        trim_ws = TRUE, skip = 97)
 
-OzLCI2019 |> dplyr::filter(X5 == "Undefined") |> select(X4) |> mutate(X4 = as.numeric(X4)) |> na.omit() |> mutate(X4 = first_digit(X4)) |> pull() |> benford(number.of.digits = 1) -> benford_OzLCI2019_all
+# Perform Benford's Law analysis on undefined categories in the dataset
+OzLCI2019 |> 
+  dplyr::filter(X5 == "Undefined") |>  # Filter for undefined categories
+  select(X4) |>  # Select relevant column
+  mutate(X4 = as.numeric(X4)) |>  # Convert to numeric
+  na.omit() |>  # Remove NA values
+  mutate(X4 = first_digit(X4)) |>  # Extract first digit
+  pull() |> 
+  benford(number.of.digits = 1) -> benford_OzLCI2019_all
 ```
 
-## Australia data
+### Australia Data
 
 ```{r}
-OzLCI2019_AUSTRALIA <- read_delim("OzLCI2019_AUSTRALIA.csv", 
-    delim = ";", escape_double = FALSE, col_names = FALSE, 
-    trim_ws = TRUE, skip = 97)
-OzLCI2019_AUSTRALIA |> dplyr::filter(X5 == "Undefined") |> select(X4) |> mutate(X4 = as.numeric(X4)) |> na.omit() |> mutate(X4 = first_digit(X4)) |> pull() |> benford(number.of.digits = 1) -> benford_OzLCI2019_AUSTRALIA
+# Load the OzLCI2019 Australia dataset
+OzLCI2019_AUSTRALIA <- read_delim("../data/OzLCI2019_AUSTRALIA.csv", 
+                                  delim = ";", escape_double = FALSE, col_names = FALSE, 
+                                  trim_ws = TRUE, skip = 97)
 
+# Perform Benford's Law analysis on undefined categories in the Australia dataset
+OzLCI2019_AUSTRALIA |> 
+  dplyr::filter(X5 == "Undefined") |>  # Filter for undefined categories
+  select(X4) |>  # Select relevant column
+  mutate(X4 = as.numeric(X4)) |>  # Convert to numeric
+  na.omit() |>  # Remove NA values
+  mutate(X4 = first_digit(X4)) |>  # Extract first digit
+  pull() |> 
+  benford(number.of.digits = 1) -> benford_OzLCI2019_AUSTRALIA
 ```
 
-### All data
+# GreenDelta Dataset
+
+### All Data
 
 ```{r}
-elcd_3_2_greendelta_v2_18_correction_20220908 <- read_delim("elcd_3_2_greendelta_v2_18_correction_20220908.csv", 
-    delim = ";", escape_double = FALSE, col_names = FALSE, 
-    trim_ws = TRUE, skip = 112)
+# Load the ELCD dataset
+elcd_3_2_greendelta_v2_18_correction_20220908 <- read_delim("../data/elcd_3_2_greendelta_v2_18_correction_20220908.csv", 
+                                                           delim = ";", escape_double = FALSE, col_names = FALSE, 
+                                                           trim_ws = TRUE, skip = 112)
 
-elcd_3_2_greendelta_v2_18_correction_20220908 |> dplyr::filter(X5 == "Undefined") |> select(X4) |> mutate(X4 = as.numeric(X4)) |> na.omit() |> mutate(X4 = first_digit(X4)) |> pull() |> benford(number.of.digits = 1) -> benford_elcd_3_2_greendelta_v2_18_correction_20220908_all
+# Perform Benford's Law analysis on undefined categories in the dataset
+elcd_3_2_greendelta_v2_18_correction_20220908 |> 
+  dplyr::filter(X5 == "Undefined") |>  # Filter for undefined categories
+  select(X4) |>  # Select relevant column
+  mutate(X4 = as.numeric(X4)) |>  # Convert to numeric
+  na.omit() |>  # Remove NA values
+  mutate(X4 = first_digit(X4)) |>  # Extract first digit
+  pull() |> 
+  benford(number.of.digits = 1) -> benford_elcd_3_2_greendelta_v2_18_correction_20220908_all
 ```
 
-### Europe data
+### Europe Data
 
 ```{r}
-greendelta_EUROPE <- read_delim("greendelta_EUROPE.csv", 
-    delim = ";", escape_double = FALSE, col_names = FALSE, 
-    trim_ws = TRUE, skip = 111)
+# Load the Europe-specific Greendelta dataset
+greendelta_EUROPE <- read_delim("../data/greendelta_EUROPE.csv", 
+                                delim = ";", escape_double = FALSE, col_names = FALSE, 
+                                trim_ws = TRUE, skip = 111)
 
-greendelta_EUROPE |> dplyr::filter(X5 == "Undefined") -> data
-data |> select(X4) |> mutate(X4 = as.numeric(X4)) |> na.omit() |> mutate(X4 = first_digit(X4)) |> pull() |> benford(number.of.digits = 1) -> benford_greendelta_EUROPE
+# Filter data for undefined categories
+greendelta_EUROPE |> 
+  dplyr::filter(X5 == "Undefined") -> data
+
+# Perform Benford's Law analysis on the filtered data
+data |> 
+  select(X4) |>  # Select relevant column
+  mutate(X4 = as.numeric(X4)) |>  # Convert to numeric
+  na.omit() |>  # Remove NA values
+  mutate(X4 = first_digit(X4)) |>  # Extract first digit
+  pull() |> 
+  benford(number.of.digits = 1) -> benford_greendelta_EUROPE
 ```
 
-## needs_18
+## Needs Dataset
 
-### All data
+### All Data
 
 ```{r}
-needs_18 <- read_delim("needs_18(1).csv", 
-    delim = ";", escape_double = FALSE, col_names = FALSE, 
-    trim_ws = TRUE, skip = 98)
+# Load the NEEDS dataset
+needs_18 <- read_delim("../data/needs_18(1).csv", 
+                       delim = ";", escape_double = FALSE, col_names = FALSE, 
+                       trim_ws = TRUE, skip = 98)
 
-needs_18 |> dplyr::filter(X5 == "Undefined") |> select(X4) |> mutate(X4 = as.numeric(X4)) |> na.omit() |> mutate(X4 = first_digit(X4)) |> pull() |> benford(number.of.digits = 1) -> benford_needs_18_all
+# Perform Benford's Law analysis on undefined categories in the dataset
+needs_18 |> 
+  dplyr::filter(X5 == "Undefined") |>  # Filter for undefined categories
+  select(X4) |>  # Select relevant column
+  mutate(X4 = as.numeric(X4)) |>  # Convert to numeric
+  na.omit() |>  # Remove NA values
+  mutate(X4 = first_digit(X4)) |>  # Extract first digit
+  pull() |> 
+  benford(number.of.digits = 1) -> benford_needs_18_all
 ```
 
-### Europe data
+### Europe Data
 
 ```{r}
-needs_EUROPE <- read_delim("needs_EUROPE.csv", 
-    delim = ";", escape_double = FALSE, col_names = FALSE, 
-    trim_ws = TRUE, skip = 100)
+# Load the NEEDS Europe dataset
+needs_EUROPE <- read_delim("../data/needs_EUROPE.csv", 
+                           delim = ";", escape_double = FALSE, col_names = FALSE, 
+                           trim_ws = TRUE, skip = 100)
 
-needs_EUROPE |> dplyr::filter(X5 == "Undefined") |> select(X4) |> mutate(X4 = as.numeric(X4)) |> na.omit() |> mutate(X4 = first_digit(X4)) |> pull() |> benford(number.of.digits = 1) -> benford_needs_EUROPE
-
+# Perform Benford's Law analysis on undefined categories in the Europe dataset
+needs_EUROPE |> 
+  dplyr::filter(X5 == "Undefined") |>  # Filter for undefined categories
+  select(X4) |>  # Select relevant column
+  mutate(X4 = as.numeric(X4)) |>  # Convert to numeric
+  na.omit() |>  # Remove NA values
+  mutate(X4 = first_digit(X4)) |>  # Extract first digit
+  pull() |> 
+  benford(number.of.digits = 1) -> benford_needs_EUROPE
 ```
 
-## bioenergiedat_18
+## Bioenergiedat Dataset
 
-### All data
+### All Data
 
 ```{r}
-bioenergiedat_18 <- read_delim("bioenergiedat_18.csv", 
-    delim = ";", escape_double = FALSE, col_names = FALSE, 
-     trim_ws = TRUE, skip = 100)
+# Load the Bioenergiedat dataset
+bioenergiedat_18 <- read_delim("../data/bioenergiedat_18.csv", 
+                               delim = ";", escape_double = FALSE, col_names = FALSE, 
+                               trim_ws = TRUE, skip = 100)
 
-bioenergiedat_18 |> dplyr::filter(X4 == "Undefined") |> select(X3) |> mutate(X3 = as.numeric(X3)) |> na.omit() |> mutate(X3 = first_digit(X3)) |> pull() |> benford(number.of.digits = 1) -> benford_bioenergiedat_18_all
-
-
+# Perform Benford's Law analysis on undefined categories in the dataset
+bioenergiedat_18 |> 
+  dplyr::filter(X4 == "Undefined") |>  # Filter for undefined categories
+  select(X3) |>  # Select relevant column
+  mutate(X3 = as.numeric(X3)) |>  # Convert to numeric
+  na.omit() |>  # Remove NA values
+  mutate(X3 = first_digit(X3)) |>  # Extract first digit
+  pull() |> 
+  benford(number.of.digits = 1) -> benford_bioenergiedat_18_all
 ```
 
-## Plots
+## Benford's Law Analysis and Visualization for Multiple Databases
 
 ```{r}
-
-benfordPlot(benford_worldsteel_all, "worldsteel database",suspectTreshold = 0.01) -> p2
-benfordPlot(benford_OzLCI2019_all, "OzLCI2019 database",suspectTreshold = 0.01) -> p3
+# Generate Benford plots for each dataset
+benfordPlot(benford_worldsteel_all, "worldsteel database", suspectTreshold = 0.01) -> p2
+benfordPlot(benford_OzLCI2019_all, "OzLCI2019 database", suspectTreshold = 0.01) -> p3
 benfordPlot(benford_elcd_3_2_greendelta_v2_18_correction_20220908_all, "Environmental Footprint database", suspectTreshold = 0.01) -> p4
-benfordPlot(benford_needs_18_all, "needs database",suspectTreshold = 0.01) -> p5
-(benfordPlot(benford_bioenergiedat_18_all, "bioenergiedat database", suspectTreshold = 0.01) -> p6)
-benfordPlot(benford_ecoinvent_all, "ecoinvent database",suspectTreshold = 0.01) -> p1
-
-#gridExtra::grid.arrange(p1, p2, p3, p4, p5, ncol = 2, layout_matrix = rbind(c(1, 2), c(3, 4), c(5))) -> allPlots
+benfordPlot(benford_needs_18_all, "needs database", suspectTreshold = 0.01) -> p5
+benfordPlot(benford_bioenergiedat_18_all, "bioenergiedat database", suspectTreshold = 0.01) -> p6
+benfordPlot(benford_ecoinvent_all, "ecoinvent database", suspectTreshold = 0.01) -> p1
 ```
 
 ```{r}
+# Function to extract the legend from a plot
 get_legend <- function(myggplot) {
   tmp <- ggplot_gtable(ggplot_build(myggplot))
   leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
   legend <- tmp$grobs[[leg]]
   return(legend)
 }
-p6 + guides(color = "none") -> p6
 
-p6 <- p6 + labs(color = "", fill = "Suspect (absolute difference between observed and expected > 1%)") + theme(
-    legend.text = element_text(size = 10),    # Adjust legend text size
-    legend.title = element_text(size = 12),   # Adjust legend title size
-    legend.position = "bottom",                 # Position the legend at the top
-    legend.box = "horizontal",               # Arrange legend items horizontally
-    legend.spacing.x = unit(0.3, "cm")) +
-    guides(color = "none")
-    
-legend <- get_legend(p6)  # Extract legend from p6
+# Customize legend for the Bioenergiedat plot
+p6 <- p6 + 
+  labs(color = "", fill = "Suspect (absolute difference between observed and expected > 1%)") + 
+  theme(
+    legend.text = element_text(size = 12),  # Adjust legend text size
+    legend.title = element_text(size = 12),  # Adjust legend title size
+    legend.position = "bottom",  # Position legend at the bottom
+    legend.box = "horizontal",  # Arrange legend items horizontally
+    legend.spacing.x = unit(0.3, "cm")
+  ) +
+  guides(color = "none")
 
+# Extract the legend
+legend <- get_legend(p6)
 
-# Remove legends from each plot
+# Remove legends from individual plots
 p1 <- p1 + theme(legend.position = "none")
 p2 <- p2 + theme(legend.position = "none")
 p3 <- p3 + theme(legend.position = "none")
@@ -2354,55 +2168,84 @@ p4 <- p4 + theme(legend.position = "none")
 p5 <- p5 + theme(legend.position = "none")
 p6 <- p6 + theme(legend.position = "none")
 
-
-
-# Combine the plots and the legend
+# Combine plots and place the legend at the top
 allPlots <- gridExtra::grid.arrange(
-  legend,  # Place the legend at the top
-  gridExtra::arrangeGrob(p1, p2, p3, p4, p5, p6, ncol = 2, layout_matrix = rbind(c(1, 2), c(3, 4), c(5, 6))),
-  nrow = 2, heights = c(1, 10)  # Adjust heights to make the legend smaller and place it at the top
+  legend,  # Add the legend as the first row
+  gridExtra::arrangeGrob(
+    p1, p2, p3, p4, p5, p6, 
+    ncol = 2, layout_matrix = rbind(c(1, 2), c(3, 4), c(5, 6))
+  ),
+  nrow = 2, heights = c(1, 10)  # Adjust heights to balance legend and plots
 )
-
-
 ```
 
 ```{r}
-
-ggsave(allPlots, file = "allDataComparison.png", width = 20, height = 28, units = "cm")
+# Save the combined plot with all databases compared
+ggsave(allPlots, file = "../results/allDataComparison.pdf", width = 20, height = 28, units = "cm")
 ```
 
+# Benford's Law Analysis: Regional and Continent Comparisons
+
+## Europe Data Comparison
+
 ```{r}
+# Generate Benford plots for Europe datasets
 benfordPlot(benford_worldsteel_EUROPE, "Worldsteel") -> p1_EU
 benfordPlot(benford_greendelta_EUROPE, "Greendelta") -> p2_EU
 benfordPlot(benford_needs_EUROPE, "Needs") -> p3_EU
 benfordPlot(benford_ecoinvent_EUROPE, "Ecoinvent") -> p4_EU
 
-gridExtra::grid.arrange(p1_EU, p2_EU, p3_EU, p4_EU, ncol = 2, top = "Europe data comparison") -> allPlots_EU
+# Combine plots into a grid layout with a title
+gridExtra::grid.arrange(
+  p1_EU, p2_EU, p3_EU, p4_EU, 
+  ncol = 2, 
+  top = "Europe data comparison"
+) -> allPlots_EU
 
-ggsave(allPlots_EU, file = "EuropeComparisonPlot.png", width = 20, height = 20, units = "cm")
-
+# Save the Europe comparison plot
+ggsave(allPlots_EU, file = "../results/EuropeComparisonPlot.pdf", width = 20, height = 20, units = "cm")
 ```
 
+## Asia Data Comparison
+
 ```{r}
+# Generate Benford plots for Asia datasets
 benfordPlot(benford_worldsteel_ASIA, "Worldsteel") -> p1_ASIA
 benfordPlot(benford_ecoinvent_ASIA, "Ecoinvent") -> p2_ASIA
 
-gridExtra::grid.arrange(p1_ASIA, p2_ASIA, ncol = 2, top = "Asia data comparison") -> allPlots_ASIA 
+# Combine plots into a grid layout with a title
+gridExtra::grid.arrange(
+  p1_ASIA, p2_ASIA, 
+  ncol = 2, 
+  top = "Asia data comparison"
+) -> allPlots_ASIA 
 
-ggsave(allPlots_ASIA, file = "AsiaComparisonPlot.png", width = 20, height = 10, units = "cm")
+# Save the Asia comparison plot
+ggsave(allPlots_ASIA, file = "../results/AsiaComparisonPlot.pdf", width = 20, height = 10, units = "cm")
 ```
 
-```{r}
+## Australia Data Comparison
 
+```{r}
+# Generate Benford plots for Australia datasets
 benfordPlot(benford_OzLCI2019_AUSTRALIA, "OzLCI2019") -> p1_AU
 benfordPlot(benford_ecoinvent_AUSTRALIA, "Ecoinvent") -> p2_AU
 
-gridExtra::grid.arrange(p1_AU, p2_AU, ncol = 2, top = "Australia data comparison") -> allPlots_AU
+# Combine plots into a grid layout with a title
+gridExtra::grid.arrange(
+  p1_AU, p2_AU, 
+  ncol = 2, 
+  top = "Australia data comparison"
+) -> allPlots_AU
 
-ggsave(allPlots_AU, file = "AustraliaComparisonPlot.png", width = 20, height = 10, units = "cm")
+# Save the Australia comparison plot
+ggsave(allPlots_AU, file = "../results/AustraliaComparisonPlot.pdf", width = 20, height = 10, units = "cm")
 ```
 
+## Continent Comparison: Ecoinvent Dataset
+
 ```{r}
+# Generate Benford plots for each continent in the Ecoinvent dataset
 benfordPlot(benford_ecoinvent_EUROPE, "Europe") -> EUROPE
 benfordPlot(benford_ecoinvent_ASIA, "Asia") -> ASIA
 benfordPlot(benford_ecoinvent_N_AMERICA, "North America") -> NAMERICA
@@ -2410,16 +2253,25 @@ benfordPlot(benford_ecoinvent_S_AMERICA, "South America") -> SAMERICA
 benfordPlot(benford_ecoinvent_AFRICA, "Africa") -> AFRICA
 benfordPlot(benford_ecoinvent_AUSTRALIA_OCEANIA, "Australia/Oceania") -> AUSTRALIA
 
-gridExtra::grid.arrange(EUROPE, ASIA, NAMERICA, SAMERICA, AFRICA, AUSTRALIA, ncol = 2, top = "Continent comparison Ecoinvent") -> allPlots_continent
+# Combine plots into a grid layout with a title
+gridExtra::grid.arrange(
+  EUROPE, ASIA, NAMERICA, SAMERICA, AFRICA, AUSTRALIA, 
+  ncol = 2, 
+  top = "Continent comparison Ecoinvent"
+) -> allPlots_continent
 
-ggsave(allPlots_continent, file = "ContinentComparisonPlot.png", width = 20, height = 28, units = "cm")
+# Save the continent comparison plot
+ggsave(allPlots_continent, file = "../results/ContinentComparisonPlot.pdf", width = 20, height = 28, units = "cm")
 ```
 
-# Dataframe for continents Benford stats
+# Statistical Analysis and Dataframes for Benford's Law Results
+
+## Function to Add Statistics to a Dataframe
 
 ```{r}
-addToStatsDF <- function(StatsDF, benfordVec,Continent, Database) {
-  # Extracting statistical measures from the benfordVec object
+# Function to add statistical results from Benford analysis to a dataframe
+addToStatsDF <- function(StatsDF, benfordVec, Continent, Database) {
+  # Extract statistical measures from the Benford object
   chisq_x_squared <- benfordVec$stats$chisq$statistic
   chisq_p_value <- benfordVec$stats$chisq$p.value
   mantissa_arc_test_statistic <- benfordVec$stats$mantissa.arc.test$statistic
@@ -2428,29 +2280,33 @@ addToStatsDF <- function(StatsDF, benfordVec,Continent, Database) {
   MAD <- benfordVec$MAD
   n <- benfordVec$info$n
   
-  # Creating a new row with the extracted data
-  newRow <- data.frame(Continent = Continent,
-                       Database = Database,
-                       ChiSq = chisq_x_squared, 
-                       ChiSqP = chisq_p_value, 
-                       MantissaArcTest = mantissa_arc_test_statistic, 
-                       MantissaArcTestP = mantissa_arc_test_p_value, 
-                       MADConformity = MAD_conformity, 
-                       MAD = MAD, 
-                       NumberOfObservations = n)
+  # Create a new row with the extracted data
+  newRow <- data.frame(
+    Continent = Continent,
+    Database = Database,
+    ChiSq = chisq_x_squared, 
+    ChiSqP = chisq_p_value, 
+    MantissaArcTest = mantissa_arc_test_statistic, 
+    MantissaArcTestP = mantissa_arc_test_p_value, 
+    MADConformity = MAD_conformity, 
+    MAD = MAD, 
+    NumberOfObservations = n
+  )
   
-  # Adding the new row to the continentsStatsDF data frame
+  # Append the new row to the existing dataframe
   updatedDF <- rbind(StatsDF, newRow)
-  # Remove row names
-  rownames(updatedDF) <- NULL
-  # Return the updated data frame
-  return(updatedDF)
+  rownames(updatedDF) <- NULL  # Reset row names
+  return(updatedDF)  # Return updated dataframe
 }
 ```
 
+## Creating Dataframes for Continental Statistics - Ecoinvent
+
 ```{r}
+# Initialize an empty dataframe for continents
 continentsStatsDF <- data.frame()
 
+# Add statistics for each continent from the Ecoinvent dataset
 addToStatsDF(continentsStatsDF, benford_ecoinvent_EUROPE, "Europe", "Ecoinvent") -> continentsStatsDF
 addToStatsDF(continentsStatsDF, benford_ecoinvent_ASIA, "Asia", "Ecoinvent") -> continentsStatsDF
 addToStatsDF(continentsStatsDF, benford_ecoinvent_N_AMERICA, "North America", "Ecoinvent") -> continentsStatsDF
@@ -2459,279 +2315,312 @@ addToStatsDF(continentsStatsDF, benford_ecoinvent_AFRICA, "Africa", "Ecoinvent")
 addToStatsDF(continentsStatsDF, benford_ecoinvent_AUSTRALIA_OCEANIA, "Australia/Oceania", "Ecoinvent") -> continentsStatsDF
 ```
 
-```{r}
-EuropeAllDBStatsDF <- data.frame()
-addToStatsDF(EuropeAllDBStatsDF, benford_worldsteel_EUROPE,"Europe","Worldsteel") -> EuropeAllDBStatsDF
-addToStatsDF(EuropeAllDBStatsDF, benford_greendelta_EUROPE,"Europe","Greendelta") -> EuropeAllDBStatsDF
-addToStatsDF(EuropeAllDBStatsDF, benford_needs_EUROPE,"Europe", "Needs") -> EuropeAllDBStatsDF
-addToStatsDF(EuropeAllDBStatsDF, benford_ecoinvent_EUROPE,"Europe", "Ecoinvent") -> EuropeAllDBStatsDF
-```
+## Creating Dataframes for Europe, Asia, and Australia - All Datasets
+
+### Europe Dataframe
 
 ```{r}
+# Initialize an empty dataframe for Europe
+EuropeAllDBStatsDF <- data.frame()
+
+# Add statistics for Europe datasets
+addToStatsDF(EuropeAllDBStatsDF, benford_worldsteel_EUROPE, "Europe", "Worldsteel") -> EuropeAllDBStatsDF
+addToStatsDF(EuropeAllDBStatsDF, benford_greendelta_EUROPE, "Europe", "Greendelta") -> EuropeAllDBStatsDF
+addToStatsDF(EuropeAllDBStatsDF, benford_needs_EUROPE, "Europe", "Needs") -> EuropeAllDBStatsDF
+addToStatsDF(EuropeAllDBStatsDF, benford_ecoinvent_EUROPE, "Europe", "Ecoinvent") -> EuropeAllDBStatsDF
+```
+
+### Asia Dataframe
+
+```{r}
+# Initialize an empty dataframe for Asia
 AsiaAllDBStatsDF <- data.frame()
+
+# Add statistics for Asia datasets
 addToStatsDF(AsiaAllDBStatsDF, benford_worldsteel_ASIA, "Asia", "Worldsteel") -> AsiaAllDBStatsDF
 addToStatsDF(AsiaAllDBStatsDF, benford_ecoinvent_ASIA, "Asia", "Ecoinvent") -> AsiaAllDBStatsDF
 ```
 
+### Australia Dataframe
+
 ```{r}
+# Initialize an empty dataframe for Australia
 AustraliaAllDBStatsDF <- data.frame()
+
+# Add statistics for Australia datasets
 addToStatsDF(AustraliaAllDBStatsDF, benford_OzLCI2019_AUSTRALIA, "Australia", "OzLCI2019") -> AustraliaAllDBStatsDF
 addToStatsDF(AustraliaAllDBStatsDF, benford_ecoinvent_AUSTRALIA, "Australia", "Ecoinvent") -> AustraliaAllDBStatsDF
 ```
 
+### Combining Dataframes for Comparison
+
 ```{r}
+# Combine statistics for Europe, Asia, and Australia into a single dataframe
 ComparisonBetweenDBStatsDF <- data.frame()
 rbind(EuropeAllDBStatsDF, AsiaAllDBStatsDF, AustraliaAllDBStatsDF) -> ComparisonBetweenDBStatsDF
 ```
 
+### Creating Dataframe for All Data Combined (Not Per Continent)
+
 ```{r}
+# Initialize an empty dataframe for all datasets
 allDfAllDataStatsDF <- data.frame()
-addToStatsDF(allDfAllDataStatsDF, benford_worldsteel_all,"All", "Worldsteel") -> allDfAllDataStatsDF
-addToStatsDF(allDfAllDataStatsDF, benford_OzLCI2019_all,"All", "OzLCI2019") -> allDfAllDataStatsDF
-addToStatsDF(allDfAllDataStatsDF, benford_elcd_3_2_greendelta_v2_18_correction_20220908_all,"All", "Greendelta") -> allDfAllDataStatsDF
-addToStatsDF(allDfAllDataStatsDF, benford_needs_18_all,"All", "Needs") -> allDfAllDataStatsDF
-addToStatsDF(allDfAllDataStatsDF, benford_bioenergiedat_18_all,"All", "Bioenergiedat") -> allDfAllDataStatsDF
+
+# Add statistics for all datasets combined
+addToStatsDF(allDfAllDataStatsDF, benford_worldsteel_all, "All", "Worldsteel") -> allDfAllDataStatsDF
+addToStatsDF(allDfAllDataStatsDF, benford_OzLCI2019_all, "All", "OzLCI2019") -> allDfAllDataStatsDF
+addToStatsDF(allDfAllDataStatsDF, benford_elcd_3_2_greendelta_v2_18_correction_20220908_all, "All", "Greendelta") -> allDfAllDataStatsDF
+addToStatsDF(allDfAllDataStatsDF, benford_needs_18_all, "All", "Needs") -> allDfAllDataStatsDF
+addToStatsDF(allDfAllDataStatsDF, benford_bioenergiedat_18_all, "All", "Bioenergiedat") -> allDfAllDataStatsDF
 ```
 
+### Saving Dataframes to CSV
+
 ```{r}
-write.csv(continentsStatsDF, "continentsStatsDF.csv")
-write.csv(ComparisonBetweenDBStatsDF, "ComparisonBetweenDBStatsDF.csv")
-write.csv(allDfAllDataStatsDF, "allDfAllDataStatsDF.csv")
+# Save the resulting dataframes as CSV files
+write.csv(continentsStatsDF, "../data/continentsStatsDF.csv")
+write.csv(ComparisonBetweenDBStatsDF, "../data/ComparisonBetweenDBStatsDF.csv")
+write.csv(allDfAllDataStatsDF, "../data/allDfAllDataStatsDF.csv")
 ```
 
-# Benford stats for all columns of Ecoinvent
+# Benford Analysis on Each Numeric Column - Ecoinvent
 
 ```{r}
-# Do benford on each numeric column and then run addToStatsDF
-
-benford_stats <- function(data, ecoinvendStatsDF) {
-  # Select and filter numeric columns, removing columns with all zeros
+# Function to calculate Benford statistics for each numeric column and add them to a dataframe
+benford_stats <- function(data, ecoinventStatsDF) {
+  # Select numeric columns and filter out columns with all zeros
   numeric_columns <- select_if(data, is.numeric)
-  #numeric_columns <- numeric_columns[, colSums(numeric_columns) != 0]
-
-  # Check if we have any numeric columns left
+  
+  # Check if any numeric columns remain
   if (ncol(numeric_columns) == 0) { 
     return("No numeric columns with positive values found")
   }
-  for(col in 1:ncol(numeric_columns)) {
-    benford(numeric_columns[col] |> pull() |> as.numeric(), number.of.digits = 1, sign = "both") -> benfordVec
-    addToStatsDF(ecoinvendStatsDF, benfordVec, "Ecoinvent", colnames(numeric_columns[col])) -> ecoinvendStatsDF
+  
+  # Iterate through each numeric column
+  for (col in 1:ncol(numeric_columns)) {
+    # Perform Benford analysis
+    benfordVec <- benford(numeric_columns[col] |> pull() |> as.numeric(), number.of.digits = 1, sign = "both")
+    # Add results to the statistics dataframe
+    addToStatsDF(ecoinventStatsDF, benfordVec, "Ecoinvent", colnames(numeric_columns[col])) -> ecoinventStatsDF
   }
   
-  return(ecoinvendStatsDF)
+  return(ecoinventStatsDF)
 }
-ecoinvendStatsDF <- data.frame()
-bigDataCountriesGrouped |> benford_stats(ecoinvendStatsDF) -> ecoinvendStatsDF
 
-ecoinvendStatsDF
-#change colnames of first 2 columns
+# Initialize an empty dataframe to store statistics
+ecoinventStatsDF <- data.frame()
 
-colnames(ecoinvendStatsDF)[c(1,2)] <- c("Database","Column")
+# Perform Benford analysis on the Ecoinvent dataset
+bigDataCountriesGrouped |> benford_stats(ecoinventStatsDF) -> ecoinventStatsDF
+
+# Update column names for clarity
+colnames(ecoinventStatsDF)[c(1,2)] <- c("Database", "Column")
 ```
 
 ```{r}
-
-write.csv(ecoinvendStatsDF, "ecoinvendStatsDF.csv")
+# Save the statistics dataframe to a CSV file
+write.csv(ecoinventStatsDF, "../data/ecoinventStatsDF.csv")
 ```
 
+# Generating Tables for Paper Submission
+
+## Table 1: Summary of All Datasets
+
 ```{r}
-# ecoinvendStatsDF <- data.frame()
-# #bigData |> select(-6) -> bigData
-# bigData |> benford_stats(ecoinvendStatsDF) -> ecoinvendStatsDF
-# 
-# ecoinvendStatsDF |> write.csv("ecoinvendStatsDF.csv")
+# Load the dataset, clean, and format data for Table 1
+read.csv("../data/allDfAllDataStatsDF.csv") |> 
+  select(-X, -Continent) |>  # Remove unnecessary columns
+  mutate_if(is.numeric, round, 3) -> table1.data  # Round numeric values to 3 decimal places
 
-ecoinvendStatsDF |> dplyr::filter(MADConformity == "Acceptable conformity" & NumberOfObservations > 100)
-# Stacked barplot where all conforming columns are accumulated in 1 bar and another is for nonconforming columns
-ecoinvendStatsDF |> mutate(MADConformity = ifelse(NumberOfObservations > 100, MADConformity, "Not suitable data"))
+# Update column names for better readability
+colnames(table1.data)[8] <- "N"          # Rename the column for Number of Observations
+colnames(table1.data)[4] <- "MantTest"   # Rename Mantissa Arc Test Statistic
+colnames(table1.data)[5] <- "MantP"      # Rename Mantissa Arc Test P-value
+colnames(table1.data)[6] <- "MADConf"    # Rename MAD Conformity
 
-ecoinvendStatsDF |> mutate(MADConformity = ifelse(NumberOfObservations > 100, MADConformity, "Not suitable data")) |> pull(MADConformity) |> table() |> as.data.frame() -> MADConformityTable
-
-MADConformityTable[c(2,1,3,5,4),] -> MADConformityTable
-
-MADConformityTable |> mutate(Category = ifelse(Var1 %in% c("Nonconformity","Not suitable data"), "Nonconforming", "Conforming")) -> MADConformityTable
-
-MADConformityTable |> ggplot(aes(x = Category, y = Freq, fill = Var1)) +
-  geom_bar(stat = "identity",color = "black") +
-  theme_bw() +
-  theme(plot.title = element_text(size = 12, hjust = 0.5), legend.text = element_text(size = 7),    # Adjust legend text size
-    legend.title = element_text(size = 8),   # Adjust legend title size
-    legend.position = "right",                 # Position the legend at the top             # Arrange legend items horizontally
-    legend.spacing.x = unit(0.2, "cm")) +
-  scale_fill_manual(values = conformityColors) +
-  labs(title = "Conformity of Ecoinvent columns", x = "Conformity", y = "Number of columns", fill = "")
-
-ggsave("ecoinvent_conformity.png", width = 14, height = 10, units = "cm")
-
-
-
-
+# Save the cleaned data as a CSV file for use in the paper
+table1.data |> write.csv("../data/table1.data.csv")
 ```
 
+## Table 2: Ecoinvent Conformity Data
+
 ```{r}
-library(dplyr)
-library(ggplot2)
+# Filter and clean Ecoinvent data for conformity analysis
+ecoinventStatsDF |> 
+  select(Column, MADConformity, NumberOfObservations) |>  # Select relevant columns
+  dplyr::filter(NumberOfObservations > 100) -> conformity.data.ecoinvent  # Filter columns with sufficient observations
+```
 
-# Stacked barplot where all conforming columns are accumulated in 1 bar and another is for nonconforming columns
-ecoinvendStatsDF %>%
-  mutate(MADConformity = ifelse(NumberOfObservations > 100, MADConformity, "Not suitable data"))
+# Data Preparation and EPI Score Calculation
 
-MADConformityTable <- ecoinvendStatsDF |> 
-  mutate(MADConformity = ifelse(NumberOfObservations > 100, MADConformity, "Not suitable data")) |> pull(MADConformity) |> table() |> 
-  as.data.frame()
+## Loading and Preparing Data
 
-# Define the order of levels
-level_order <- c("Not suitable data", "Nonconformity", "Marginally acceptable conformity", "Acceptable conformity", "Close conformity") |> rev()
+```{r}
+# Load Benford conformity data for continents
+read.csv("../data/continentsStatsDF.csv") -> continentsStatsDF
 
-MADConformityTable <- MADConformityTable %>%
-  mutate(Var1 = factor(Var1, levels = level_order))
+# Load EPI scores data from Excel
+EPI_data <- read_excel("../data/2022-epi.xlsx", 
+                       sheet = "3_EPI_Results")
 
-MADConformityTable |> mutate(Category = ifelse(Var1 %in% c("Nonconformity","Not suitable data"), "Nonconforming", "Conforming")) -> MADConformityTable
-# Define the colors for each level
-conformityColors <- c("Not suitable data" = "pink", 
-                      "Nonconformity" = "purple", 
-                      "Marginally acceptable conformity" = "lightblue", 
-                      "Acceptable conformity" = "blue", 
-                      "Close conformity" = "darkblue")
-
-ggplot(MADConformityTable, aes(x = Category, y = Freq, fill = Var1)) +
-  geom_bar(stat = "identity", color = "black") +
-  theme_bw() +
-  theme(plot.title = element_text(size = 12, hjust = 0.5), 
-        legend.text = element_text(size = 7),
-        legend.title = element_text(size = 8), 
-        legend.position = "right",
-        legend.spacing.x = unit(0.2, "cm")) +
-  scale_fill_manual(values = conformityColors, breaks = level_order, limits = level_order) +
-  labs(title = "Conformity of Ecoinvent columns", 
-       x = "Conformity", 
-       y = "Number of columns", 
-       fill = "")
-
-  ggsave("ecoinvent_conformity.png", width = 14, height = 10, units = "cm")
+# Preview EPI data
+EPI_data |> head()
 
 ```
 
-# Tables for paper
+## Mapping ISO Codes to Continents
 
 ```{r}
-read.csv("allDfAllDataStatsDF.csv") |> select(-X, -Continent) |> mutate_if(is.numeric, round, 3) -> table1.data
-
-colnames(table1.data)[8] <- "N"
-colnames(table1.data)[4] <- "MantTest"
-colnames(table1.data)[5] <- "MantP"
-colnames(table1.data)[6] <- "MADConf"
-
-table1.data |> write.csv("table1.data.csv")
-```
-
-```{r}
-ecoinvendStatsDF |> select(Column, MADConformity, NumberOfObservations) |> dplyr::filter(NumberOfObservations > 100) -> conformity.data.ecoinvent
-
-ifelse(conformity.data.ecoinvent$MADConformity == "Nonconformity", "Nonconformity", "Conformity") |> table()
-
-71 / 2193 * 100
-
-conformity.data.ecoinvent[str_detect(conformity.data.ecoinvent$Column, "\\|air\\|"),"MADConformity"] |> table()
-
-18/conformity.data.ecoinvent[str_detect(conformity.data.ecoinvent$Column, "\\|air\\|"),"MADConformity"] |> table() |> sum() * 100
-
-conformity.data.ecoinvent[str_detect(conformity.data.ecoinvent$Column, "\\|water\\|"),"MADConformity"] |> table()
-
-27/conformity.data.ecoinvent[str_detect(conformity.data.ecoinvent$Column, "\\|water\\|"),"MADConformity"] |> table() |> sum() * 100
-
-
-conformity.data.ecoinvent[str_detect(conformity.data.ecoinvent$Column, "\\|soil\\|"),"MADConformity"] |> table()
-15 / conformity.data.ecoinvent[str_detect(conformity.data.ecoinvent$Column, "\\|soil\\|"),"MADConformity"] |> table() |> sum() * 100
-
-conformity.data.ecoinvent[str_detect(conformity.data.ecoinvent$Column, "\\|natural resource\\|"),"MADConformity"] |> table()
-
-11 / conformity.data.ecoinvent[str_detect(conformity.data.ecoinvent$Column, "\\|natural resource\\|"),"MADConformity"] |> table() |> sum() *100
-
-str_detect(conformity.data.ecoinvent$Column, "\\|air\\|")
-str_detect(ecoinvendStatsDF$Column, "air")
-```
-
-# Correlation between Benford and EPI score
-
-```{r}
-europe_df |> head()
-
-read.csv("continentsStatsDF.csv", sep = ";") -> continentsStatsDF
-
-EPI_data <- read_excel("2022-epi.xlsx", 
-    sheet = "3_EPI_Results")
-
-EPI_data
-
-sapply(EPI_data$iso, get_continent)
-
-EPI_data$iso 
-
+# Function to map 3-letter ISO country codes to continents
 get_continent3letters <- function(country_codes) {
   continent <- countrycode(country_codes, origin = 'iso3c', destination = 'continent')
   return(continent)
 }
 
+# Add continent information to the EPI dataset
 get_continent3letters(EPI_data$iso) -> EPI_data$continent
 
-EPI_data |> select(country, iso, region, EPI.new,AIR.new,H2O.new,WRS.new,WMG.new,HMT.new, AGR.new ,continent) -> EPI_data
+# Select relevant columns for analysis
+EPI_data |> 
+  select(country, iso, region, EPI.new, AIR.new, H2O.new, WRS.new, WMG.new, HMT.new, AGR.new, continent) -> EPI_data
 
-EPI_data |> dplyr::filter(continent == "Europe") |> pull(EPI.new) |> mean() -> mean_EPI_europe
-
-EPI_data |> dplyr::filter(continent == "Asia") |> pull(EPI.new) |> mean() -> mean_EPI_asia
-
-EPI_data |> dplyr::filter(continent == "Africa") |> pull(EPI.new) |> mean() -> mean_EPI_africa
-
-
-```
-
-```{r}
+# Function to map ISO2 country codes to country names
 get_country_name <- function(iso2_codes) {
   country_names <- countrycode(iso2_codes, origin = 'iso2c', destination = 'country.name')
   return(country_names)
 }
-
-bigDataCountriesGrouped |> select(Country,Continent) |> dplyr::filter(Continent == "North America") |> unique() |> dplyr::filter(length(Country) == 2)
-
-bigDataCountriesGrouped |> select(Country,Continent) |> dplyr::filter(Continent == "North America") |> unique() |> dplyr::filter(str_length(Country) == 2)|> pull(Country) |> get_country_name() -> northAmericaCountries
-
-bigDataCountriesGrouped |> select(Country,Continent) |> dplyr::filter(Continent == "South America") |> unique() |> dplyr::filter(str_length(Country) == 2)|> pull(Country) |> get_country_name() -> southAmericaCountries
-
-bigDataCountriesGrouped |> select(Country,Continent) |> dplyr::filter(Continent == "Europe") |> unique() |> dplyr::filter(str_length(Country) == 2)|> pull(Country) |> get_country_name() -> europeCountries
-
-bigDataCountriesGrouped |> select(Country,Continent) |> dplyr::filter(Continent == "Asia") |> unique() |> dplyr::filter(str_length(Country) == 2)|> pull(Country) |> get_country_name() -> asiaCountries
-
-bigDataCountriesGrouped |> select(Country,Continent) |> dplyr::filter(Continent == "Africa") |> unique() |> dplyr::filter(str_length(Country) == 2)|> pull(Country) |> get_country_name() -> africaCountries
-
-
-
-bigDataCountriesGrouped |> select(Country,Continent) |> dplyr::filter(Continent == "Australia/Oceania") |> unique() |> dplyr::filter(str_length(Country) == 2)|> pull(Country) |> get_country_name() -> australiaCountries
-
-EPI_data[EPI_data$country %in% northAmericaCountries,]$continent <- "North America"
-
-EPI_data[EPI_data$country %in% southAmericaCountries,]$continent <- "South America"
-
-EPI_data[EPI_data$country %in% australiaCountries,]$continent <- "Australia/Oceania"
-
-EPI_data |> dplyr::filter(continent == "South America") |> pull(EPI.new) |> mean() -> mean_EPI_south_america
-
-EPI_data |> dplyr::filter(continent == "North America") |> pull(EPI.new) |> mean() -> mean_EPI_north_america
-
-EPI_data |> dplyr::filter(continent == "Australia/Oceania") |> pull(EPI.new) |> mean() -> mean_EPI_australia_oceania
-
-# Calculate means of all columns for each continent
-EPIDataMeans <- EPI_data |> select(EPI.new, AIR.new, H2O.new, WRS.new, WMG.new, HMT.new, AGR.new, continent) |> group_by(continent) |> summarise(AIR = mean(AIR.new), H2O = mean(H2O.new), WRS = mean(as.numeric(WRS.new), na.rm = F), WMG = mean(WMG.new), HMT = mean(HMT.new), AGR = mean(AGR.new))
-
 ```
 
+## Extracting Country Names By Continent
+
 ```{r}
-continentsStatsDF |> select(Continent, MAD) -> continentsMAD
+# North America
+bigDataCountriesGrouped |> 
+  select(Country, Continent) |> 
+  dplyr::filter(Continent == "North America") |> 
+  unique() |> 
+  dplyr::filter(str_length(Country) == 2) |> 
+  pull(Country) |> 
+  get_country_name() -> northAmericaCountries
 
-#continentsMAD$EPI <- c(mean_EPI_europe, mean_EPI_asia, mean_EPI_north_america, mean_EPI_south_america, mean_EPI_africa, mean_EPI_australia_oceania)
+# South America
+bigDataCountriesGrouped |> 
+  select(Country, Continent) |> 
+  dplyr::filter(Continent == "South America") |> 
+  unique() |> 
+  dplyr::filter(str_length(Country) == 2) |> 
+  pull(Country) |> 
+  get_country_name() -> southAmericaCountries
 
-#cor(continentsMAD$EPI, continentsMAD$MAD)
+# Europe
+bigDataCountriesGrouped |> 
+  select(Country, Continent) |> 
+  dplyr::filter(Continent == "Europe") |> 
+  unique() |> 
+  dplyr::filter(str_length(Country) == 2) |> 
+  pull(Country) |> 
+  get_country_name() -> europeCountries
 
+# Asia
+bigDataCountriesGrouped |> 
+  select(Country, Continent) |> 
+  dplyr::filter(Continent == "Asia") |> 
+  unique() |> 
+  dplyr::filter(str_length(Country) == 2) |> 
+  pull(Country) |> 
+  get_country_name() -> asiaCountries
+
+# Africa
+bigDataCountriesGrouped |> 
+  select(Country, Continent) |> 
+  dplyr::filter(Continent == "Africa") |> 
+  unique() |> 
+  dplyr::filter(str_length(Country) == 2) |> 
+  pull(Country) |> 
+  get_country_name() -> africaCountries
+
+# Australia/Oceania
+bigDataCountriesGrouped |> 
+  select(Country, Continent) |> 
+  dplyr::filter(Continent == "Australia/Oceania") |> 
+  unique() |> 
+  dplyr::filter(str_length(Country) == 2) |> 
+  pull(Country) |> 
+  get_country_name() -> australiaCountries
+```
+
+## Updating the EPI Dataset with Continent Information
+
+```{r}
+# Assign continent information to EPI dataset
+EPI_data[EPI_data$country %in% northAmericaCountries, ]$continent <- "North America"
+EPI_data[EPI_data$country %in% southAmericaCountries, ]$continent <- "South America"
+EPI_data[EPI_data$country %in% australiaCountries, ]$continent <- "Australia/Oceania"
+```
+
+## Calculating Mean EPI Scores by Continent
+
+```{r}
+# Calculate mean EPI scores for Europe
+EPI_data |> 
+  dplyr::filter(continent == "Europe") |> 
+  pull(EPI.new) |> 
+  mean() -> mean_EPI_europe
+
+# Calculate mean EPI scores for Asia
+EPI_data |> 
+  dplyr::filter(continent == "Asia") |> 
+  pull(EPI.new) |> 
+  mean() -> mean_EPI_asia
+
+# Calculate mean EPI scores for Africa
+EPI_data |> 
+  dplyr::filter(continent == "Africa") |> 
+  pull(EPI.new) |> 
+  mean() -> mean_EPI_africa
+
+# Calculate mean EPI scores for South America
+EPI_data |> 
+  dplyr::filter(continent == "South America") |> 
+  pull(EPI.new) |> 
+  mean() -> mean_EPI_south_america
+
+# Calculate mean EPI scores for North America
+EPI_data |> 
+  dplyr::filter(continent == "North America") |> 
+  pull(EPI.new) |> 
+  mean() -> mean_EPI_north_america
+
+# Calculate mean EPI scores for Australia/Oceania
+EPI_data |> 
+  dplyr::filter(continent == "Australia/Oceania") |> 
+  pull(EPI.new) |> 
+  mean() -> mean_EPI_australia_oceania
+```
+
+## Calculating Means of All Columns by Continent
+
+```{r}
+# Calculate the means of key metrics grouped by continent
+EPIDataMeans <- EPI_data |> 
+  select(EPI.new, AIR.new, H2O.new, WRS.new, WMG.new, HMT.new, AGR.new, continent) |> 
+  group_by(continent) |> 
+  summarise(
+    AIR = mean(AIR.new, na.rm = TRUE), 
+    H2O = mean(H2O.new, na.rm = TRUE), 
+    WRS = mean(as.numeric(WRS.new), na.rm = TRUE), 
+    WMG = mean(WMG.new, na.rm = TRUE), 
+    HMT = mean(HMT.new, na.rm = TRUE), 
+    AGR = mean(AGR.new, na.rm = TRUE)
+  )
+```
+
+# Calculating Benford Points for Each Continent
+
+## Ecoinvent Data
+
+```{r}
+# Assign point values based on Benford conformity levels
 europe_df <- europe_df |> 
   mutate(points = case_when(
     Conformity == "Nonconformity" ~ 0,
@@ -2781,19 +2670,12 @@ south_america_df <- south_america_df |>
   ))
 
 south_america_df$points |> sum() -> southAmericafBenfordPoints
-
-asia_df |> group_by(Conformity) |> reframe(Count = n(), Percentage = n()/nrow(asia_df) * 100) |> write.csv("asiaBenford.csv")
-
-europe_df |> group_by(Conformity) |> reframe(Count = n(), Percentage = n()/nrow(europe_df) * 100)|> write.csv("europeBenford.csv")
-
-africa_df |> group_by(Conformity) |> reframe(Count = n(), Percentage = n()/nrow(africa_df) * 100) |> write.csv("africaBenford.csv")
-
-south_america_df |> group_by(Conformity) |> reframe(Count = n(), Percentage = n()/nrow(south_america_df) * 100) |> write.csv("southAmericaBenford.csv")
-
-north_america_df |> group_by(Conformity) |> reframe(Count = n(), Percentage = n()/nrow(north_america_df) * 100) |> write.csv("northAmericaBenford.csv")
 ```
 
+## Heavy Metals Data
+
 ```{r}
+# Assign point values for heavy metals based on Benford conformity levels
 heavyMetals_df <- heavyMetals_df |> 
   mutate(points = case_when(
     Conformity == "Nonconformity" ~ 0,
@@ -2802,6 +2684,7 @@ heavyMetals_df <- heavyMetals_df |>
     Conformity == "Close conformity" ~ 3
   ))
 
+# Filter and calculate points for each continent
 heavy_metals_europe <- heavyMetals_df |> dplyr::filter(Continent == "Europe")
 heavy_metals_asia <- heavyMetals_df |> dplyr::filter(Continent == "Asia")
 heavy_metals_north_america <- heavyMetals_df |> dplyr::filter(Continent == "North America")
@@ -2813,37 +2696,107 @@ heavy_metals_asia$points |> sum() -> asiaHeavyMetalsBenfordPoints
 heavy_metals_north_america$points |> sum() -> northAmericaHeavyMetalsBenfordPoints
 heavy_metals_south_america$points |> sum() -> southAmericaHeavyMetalsBenfordPoints
 heavy_metals_africa$points |> sum() -> africaHeavyMetalsBenfordPoints
+```
 
-continentsMAD$BenfordPoints <- c(europeBenfordPoints,asiaBenfordPoints, northAmericafBenfordPoints, southAmericafBenfordPoints, africaBenfordPoints, 0)
+## Aggregating Benford Points and EPI Data
 
+```{r}
+# Get MAD value for each continent
+continentsStatsDF |> select(Continent, MAD) -> continentsMAD
+# Add Benford points and heavy metals points to continents MAD dataframe
+continentsMAD$BenfordPoints <- c(europeBenfordPoints, asiaBenfordPoints, northAmericafBenfordPoints, southAmericafBenfordPoints, africaBenfordPoints, 0)
 continentsMAD$HeavyMetalsBenfordPoints <- c(europeHeavyMetalsBenfordPoints, asiaHeavyMetalsBenfordPoints, northAmericaHeavyMetalsBenfordPoints, southAmericaHeavyMetalsBenfordPoints, africaHeavyMetalsBenfordPoints, 0)
 
-continentsMAD[continentsMAD$Continent != "Australia/Oceania",-1] |> cor() |> ggcorrplot::ggcorrplot(type = "upper",lab = T)
-
+# Merge with EPI data means
 continentsMAD |> inner_join(EPIDataMeans, by = c("Continent" = "continent")) -> continentsMAD
 ```
 
-```{r}
-carbonAtlas <- read_delim("carbonAtlas.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+## Correlation Analysis and Visualization
 
+```{r}
+# Calculate and visualize correlations between Benford points, MAD, and EPI metrics
+continentsMAD[continentsMAD$Continent != "Australia/Oceania", -1] |> 
+  cor() |> 
+  ggcorrplot::ggcorrplot(type = "upper", lab = TRUE)
+```
+
+## Generating CSV Files for Conformity Analysis
+
+```{r}
+# Save continent-specific Benford conformity breakdowns to CSV
+asia_df |> 
+  group_by(Conformity) |> 
+  reframe(Count = n(), Percentage = n()/nrow(asia_df) * 100) |> 
+  write.csv("../data/asiaBenford.csv")
+
+europe_df |> 
+  group_by(Conformity) |> 
+  reframe(Count = n(), Percentage = n()/nrow(europe_df) * 100) |> 
+  write.csv("../data/europeBenford.csv")
+
+africa_df |> 
+  group_by(Conformity) |> 
+  reframe(Count = n(), Percentage = n()/nrow(africa_df) * 100) |> 
+  write.csv("../data/africaBenford.csv")
+
+south_america_df |> 
+  group_by(Conformity) |> 
+  reframe(Count = n(), Percentage = n()/nrow(south_america_df) * 100) |> 
+  write.csv("../data/southAmericaBenford.csv")
+
+north_america_df |> 
+  group_by(Conformity) |> 
+  reframe(Count = n(), Percentage = n()/nrow(north_america_df) * 100) |> 
+  write.csv("../data/northAmericaBenford.csv")
+```
+
+## Load and Transform Carbon Atlas Data
+
+```{r}
+# Load the Carbon Atlas dataset
+carbonAtlas <- read_delim("../data/carbonAtlas.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+# Reshape the Carbon Atlas data to a long format
 pivot_longer(carbonAtlas, cols = 1:ncol(carbonAtlas), names_to = "Country", values_to = "Carbon") -> carbonAtlas
 
+# Add continent information based on full country names
 get_continent_full_country_name <- function(country_names) {
   continent <- countrycode(country_names, origin = 'country.name', destination = 'continent')
   return(continent)
 }
 
 carbonAtlas$Country |> get_continent_full_country_name() -> carbonAtlas$Continent
+```
 
+## Filter Carbon Atlas by Continents and Countries
+
+```{r}
+# Reapply loading and reshaping (for redundancy in the original code)
+carbonAtlas <- read_delim("../data/carbonAtlas.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+pivot_longer(carbonAtlas, cols = 1:ncol(carbonAtlas), names_to = "Country", values_to = "Carbon") -> carbonAtlas
+
+# Function to add continent information based on country names
+get_continent_full_country_name <- function(country_names) {
+  continent <- countrycode(country_names, origin = 'country.name', destination = 'continent')
+  return(continent)
+}
+
+# Assign continents to Carbon Atlas data
+carbonAtlas$Country |> get_continent_full_country_name() -> carbonAtlas$Continent
+
+# Adjust continent names for specific country groups
 carbonAtlas[carbonAtlas$Country %in% southAmericaCountries,]$Continent <- "South America"
 carbonAtlas[carbonAtlas$Country %in% northAmericaCountries,]$Continent <- "North America"
 
-carbonAtlas[carbonAtlas$Country %in% c(europeCountries,southAmericaCountries, northAmericaCountries, africaCountries, asiaCountries),] -> carbonAtlas
-
-# carbonAtlas |> group_by(Continent) |> summarise(CarbonAtlasEmission = mean(Carbon, na.rm = T)) |> inner_join(continentsMAD, by = "Continent") -> continentsMAD
+# Filter Carbon Atlas data for relevant continents and countries
+carbonAtlas[carbonAtlas$Country %in% c(europeCountries, southAmericaCountries, northAmericaCountries, africaCountries, asiaCountries),] -> carbonAtlas
 ```
 
+## Convert Conformity Levels to Points
+
 ```{r}
+# Convert conformity levels to points for water data
 continentsWaterDataPlotDF |> mutate(points = case_when(
     Conformity == "Nonconformity" ~ 0,
     Conformity == "Marginally acceptable conformity" ~ 1,
@@ -2851,6 +2804,7 @@ continentsWaterDataPlotDF |> mutate(points = case_when(
     Conformity == "Close conformity" ~ 3
   )) -> continentsWaterDataPlotDF
 
+# Convert conformity levels to points for air data
 continentsAirDataPlotDF |> mutate(points = case_when(
     Conformity == "Nonconformity" ~ 0,
     Conformity == "Marginally acceptable conformity" ~ 1,
@@ -2858,6 +2812,7 @@ continentsAirDataPlotDF |> mutate(points = case_when(
     Conformity == "Close conformity" ~ 3
   )) -> continentsAirDataPlotDF
 
+# Convert conformity levels to points for soil data
 continentsSoilDataPlotDF |> mutate(points = case_when(
     Conformity == "Nonconformity" ~ 0,
     Conformity == "Marginally acceptable conformity" ~ 1,
@@ -2865,43 +2820,77 @@ continentsSoilDataPlotDF |> mutate(points = case_when(
     Conformity == "Close conformity" ~ 3
   )) -> continentsSoilDataPlotDF
 
+# Convert conformity levels to points for natural resources data
 continentsNaturalResourcesDataPlotDF |> mutate(points = case_when(
     Conformity == "Nonconformity" ~ 0,
     Conformity == "Marginally acceptable conformity" ~ 1,
     Conformity == "Acceptable conformity" ~ 2,
     Conformity == "Close conformity" ~ 3
   )) -> continentsNaturalResourcesDataPlotDF
+```
 
+## Calculate Points for Each Continent
+
+```{r}
+# Calculate total points for water data by continent
 continentsWaterDataPlotDF |> group_by(Continent) |> summarise(pointsWater = sum(points)) -> continentsWaterBenfordPoints
 
+# Calculate total points for air data by continent
 continentsAirDataPlotDF |> group_by(Continent) |> summarise(pointsAir = sum(points)) -> continentsAirBenfordPoints
 
+# Calculate total points for soil data by continent
 continentsSoilDataPlotDF |> group_by(Continent) |> summarise(pointsSoil = sum(points)) -> continentsSoilBenfordPoints
 
+# Calculate total points for natural resources data by continent
 continentsNaturalResourcesDataPlotDF |> group_by(Continent) |> summarise(pointsNaturalRes = sum(points)) -> continentsNaturalResourcesBenfordPoints
 
-continentsMAD |> left_join(continentsWaterBenfordPoints, by = "Continent") |> left_join(continentsAirBenfordPoints, by = "Continent") |> left_join(continentsSoilBenfordPoints, by = "Continent") |> left_join(continentsNaturalResourcesBenfordPoints, by = "Continent") -> continentsMAD
+# Merge all points into a single data frame
+continentsMAD |> 
+  left_join(continentsWaterBenfordPoints, by = "Continent") |> 
+  left_join(continentsAirBenfordPoints, by = "Continent") |> 
+  left_join(continentsSoilBenfordPoints, by = "Continent") |> 
+  left_join(continentsNaturalResourcesBenfordPoints, by = "Continent") -> continentsMAD
+```
 
+## Correlation Analysis and Visualization
+
+```{r}
+# Generate correlation plot for continents excluding Australia/Oceania
 correlationPlot <- continentsMAD[continentsMAD$Continent != "Australia/Oceania", -1] |>
   cor() |>
   ggcorrplot::ggcorrplot(type = "upper", lab = TRUE, 
              colors = c("#d01c8b", "white", "#4478c5"),
              outline.color = "black")
 
+# Display the correlation plot
 correlationPlot
 
-correlationPlot |> ggsave(filename = "correlationPlot.pdf", width = 10, height = 10)
+# Save the correlation plot as a PDF
+correlationPlot |> ggsave(filename = "../results/correlationPlot.pdf", width = 10, height = 10)
+```
 
+## Carbon Emissions vs. Conformity Points
 
+```{r}
+# Convert carbon conformity levels to points and calculate total points for each continent
 carbon_df |> 
   mutate(points = case_when(
     Conformity == "Nonconformity" ~ 0,
     Conformity == "Marginally acceptable conformity" ~ 1,
     Conformity == "Acceptable conformity" ~ 2,
     Conformity == "Close conformity" ~ 3
-  )) |> group_by(Continent) |> summarise(pointsCarbon = sum(points)) -> continentsCarbonBenfordPoints
+  )) |> 
+  group_by(Continent) |> 
+  summarise(pointsCarbon = sum(points)) -> continentsCarbonBenfordPoints
 
-carbonAtlas |> group_by(Continent) |> summarise(CarbonAtlasEmission = sum(Carbon, na.rm = T)) |> inner_join(continentsCarbonBenfordPoints, by = "Continent") |> select(-1) |> cor() |> ggcorrplot::ggcorrplot(type = "upper", lab = TRUE, 
+# Merge carbon emissions with conformity points and calculate correlation
+carbonAtlas |> 
+  group_by(Continent) |> 
+  summarise(CarbonAtlasEmission = sum(Carbon, na.rm = TRUE)) |> 
+  inner_join(continentsCarbonBenfordPoints, by = "Continent") |> 
+  select(-1) |> 
+  cor() |> 
+  ggcorrplot::ggcorrplot(type = "upper", lab = TRUE, 
              colors = c("#d01c8b", "white", "#4478c5"),
              outline.color = "black")
 ```

@@ -1,0 +1,136 @@
+Continent,Conformity,Colname,Label
+Asia,Acceptable conformity,"Carbon dioxide, fossil|air|lower stratosphere + upper troposphere",1
+Asia,Nonconformity,"Carbon dioxide, fossil|air|non-urban air or from high stacks",2
+Asia,Nonconformity,"Carbon dioxide, fossil|air|unspecified",3
+Asia,Nonconformity,"Carbon dioxide, fossil|air|urban air close to ground",4
+Asia,Nonconformity,"Carbon dioxide, from soil or biomass stock|air|non-urban air or from high stacks",5
+Asia,Nonconformity,"Carbon dioxide, from soil or biomass stock|air|unspecified",6
+Asia,Marginally acceptable conformity,"Carbon dioxide, in air|natural resource|in air",7
+Asia,Nonconformity,"Carbon dioxide, non-fossil|air|non-urban air or from high stacks",8
+Asia,Marginally acceptable conformity,"Carbon dioxide, non-fossil|air|unspecified",9
+Asia,Nonconformity,"Carbon dioxide, non-fossil|air|urban air close to ground",10
+Asia,Nonconformity,"Carbon dioxide, to soil or biomass stock|soil|agricultural",11
+Asia,Nonconformity,"Carbon dioxide, to soil or biomass stock|soil|unspecified",12
+Asia,Acceptable conformity,Carbon disulfide|air|non-urban air or from high stacks,13
+Asia,Nonconformity,Carbon disulfide|air|unspecified,14
+Asia,Marginally acceptable conformity,Carbon disulfide|air|urban air close to ground,15
+Asia,Nonconformity,Carbon disulfide|water|surface water,16
+Asia,Marginally acceptable conformity,"Carbon monoxide, fossil|air|lower stratosphere + upper troposphere",17
+Asia,Nonconformity,"Carbon monoxide, fossil|air|non-urban air or from high stacks",18
+Asia,Nonconformity,"Carbon monoxide, fossil|air|unspecified",19
+Asia,Nonconformity,"Carbon monoxide, fossil|air|urban air close to ground",20
+Asia,Nonconformity,"Carbon monoxide, from soil or biomass stock|air|non-urban air or from high stacks",21
+Asia,Nonconformity,"Carbon monoxide, non-fossil|air|non-urban air or from high stacks",22
+Asia,Nonconformity,"Carbon monoxide, non-fossil|air|unspecified",23
+Asia,Nonconformity,"Carbon monoxide, non-fossil|air|urban air close to ground",24
+Asia,Nonconformity,Carbon tetrachloride|air|unspecified,25
+Asia,Nonconformity,Carbon tetrachloride|air|urban air close to ground,26
+Asia,Nonconformity,Carbon tetrachloride|water|unspecified,27
+Europe,Marginally acceptable conformity,"Carbon dioxide, fossil|air|lower stratosphere + upper troposphere",1
+Europe,Acceptable conformity,"Carbon dioxide, fossil|air|non-urban air or from high stacks",2
+Europe,Acceptable conformity,"Carbon dioxide, fossil|air|unspecified",3
+Europe,Marginally acceptable conformity,"Carbon dioxide, fossil|air|urban air close to ground",4
+Europe,Close conformity,"Carbon dioxide, from soil or biomass stock|air|non-urban air or from high stacks",5
+Europe,Acceptable conformity,"Carbon dioxide, from soil or biomass stock|air|unspecified",6
+Europe,Acceptable conformity,"Carbon dioxide, in air|natural resource|in air",7
+Europe,Acceptable conformity,"Carbon dioxide, non-fossil|air|non-urban air or from high stacks",8
+Europe,Acceptable conformity,"Carbon dioxide, non-fossil|air|unspecified",9
+Europe,Nonconformity,"Carbon dioxide, non-fossil|air|urban air close to ground",10
+Europe,Acceptable conformity,"Carbon dioxide, to soil or biomass stock|soil|agricultural",11
+Europe,Acceptable conformity,"Carbon dioxide, to soil or biomass stock|soil|unspecified",12
+Europe,Marginally acceptable conformity,Carbon disulfide|air|non-urban air or from high stacks,13
+Europe,Marginally acceptable conformity,Carbon disulfide|air|unspecified,14
+Europe,Acceptable conformity,Carbon disulfide|air|urban air close to ground,15
+Europe,Acceptable conformity,Carbon disulfide|water|surface water,16
+Europe,Acceptable conformity,"Carbon monoxide, fossil|air|lower stratosphere + upper troposphere",17
+Europe,Acceptable conformity,"Carbon monoxide, fossil|air|non-urban air or from high stacks",18
+Europe,Acceptable conformity,"Carbon monoxide, fossil|air|unspecified",19
+Europe,Marginally acceptable conformity,"Carbon monoxide, fossil|air|urban air close to ground",20
+Europe,Marginally acceptable conformity,"Carbon monoxide, from soil or biomass stock|air|non-urban air or from high stacks",21
+Europe,Acceptable conformity,"Carbon monoxide, non-fossil|air|non-urban air or from high stacks",22
+Europe,Acceptable conformity,"Carbon monoxide, non-fossil|air|unspecified",23
+Europe,Acceptable conformity,"Carbon monoxide, non-fossil|air|urban air close to ground",24
+Europe,Acceptable conformity,Carbon tetrachloride|air|unspecified,25
+Europe,Acceptable conformity,Carbon tetrachloride|air|urban air close to ground,26
+Europe,Acceptable conformity,Carbon tetrachloride|water|unspecified,27
+North America,Nonconformity,"Carbon dioxide, fossil|air|lower stratosphere + upper troposphere",1
+North America,Nonconformity,"Carbon dioxide, fossil|air|non-urban air or from high stacks",2
+North America,Nonconformity,"Carbon dioxide, fossil|air|unspecified",3
+North America,Nonconformity,"Carbon dioxide, fossil|air|urban air close to ground",4
+North America,Acceptable conformity,"Carbon dioxide, from soil or biomass stock|air|non-urban air or from high stacks",5
+North America,Acceptable conformity,"Carbon dioxide, from soil or biomass stock|air|unspecified",6
+North America,Marginally acceptable conformity,"Carbon dioxide, in air|natural resource|in air",7
+North America,Acceptable conformity,"Carbon dioxide, non-fossil|air|non-urban air or from high stacks",8
+North America,Nonconformity,"Carbon dioxide, non-fossil|air|unspecified",9
+North America,Acceptable conformity,"Carbon dioxide, non-fossil|air|urban air close to ground",10
+North America,Nonconformity,"Carbon dioxide, to soil or biomass stock|soil|agricultural",11
+North America,Acceptable conformity,"Carbon dioxide, to soil or biomass stock|soil|unspecified",12
+North America,Acceptable conformity,Carbon disulfide|air|non-urban air or from high stacks,13
+North America,Nonconformity,Carbon disulfide|air|unspecified,14
+North America,Acceptable conformity,Carbon disulfide|air|urban air close to ground,15
+North America,Nonconformity,Carbon disulfide|water|surface water,16
+North America,Nonconformity,"Carbon monoxide, fossil|air|lower stratosphere + upper troposphere",17
+North America,Nonconformity,"Carbon monoxide, fossil|air|non-urban air or from high stacks",18
+North America,Nonconformity,"Carbon monoxide, fossil|air|unspecified",19
+North America,Acceptable conformity,"Carbon monoxide, fossil|air|urban air close to ground",20
+North America,Marginally acceptable conformity,"Carbon monoxide, from soil or biomass stock|air|non-urban air or from high stacks",21
+North America,Nonconformity,"Carbon monoxide, non-fossil|air|non-urban air or from high stacks",22
+North America,Marginally acceptable conformity,"Carbon monoxide, non-fossil|air|unspecified",23
+North America,Acceptable conformity,"Carbon monoxide, non-fossil|air|urban air close to ground",24
+North America,Marginally acceptable conformity,Carbon tetrachloride|air|unspecified,25
+North America,Nonconformity,Carbon tetrachloride|air|urban air close to ground,26
+North America,Nonconformity,Carbon tetrachloride|water|unspecified,27
+South America,Nonconformity,"Carbon dioxide, fossil|air|lower stratosphere + upper troposphere",1
+South America,Nonconformity,"Carbon dioxide, fossil|air|non-urban air or from high stacks",2
+South America,Acceptable conformity,"Carbon dioxide, fossil|air|unspecified",3
+South America,Nonconformity,"Carbon dioxide, fossil|air|urban air close to ground",4
+South America,Acceptable conformity,"Carbon dioxide, from soil or biomass stock|air|non-urban air or from high stacks",5
+South America,Nonconformity,"Carbon dioxide, from soil or biomass stock|air|unspecified",6
+South America,Marginally acceptable conformity,"Carbon dioxide, in air|natural resource|in air",7
+South America,Acceptable conformity,"Carbon dioxide, non-fossil|air|non-urban air or from high stacks",8
+South America,Nonconformity,"Carbon dioxide, non-fossil|air|unspecified",9
+South America,Acceptable conformity,"Carbon dioxide, non-fossil|air|urban air close to ground",10
+South America,Close conformity,"Carbon dioxide, to soil or biomass stock|soil|agricultural",11
+South America,Nonconformity,"Carbon dioxide, to soil or biomass stock|soil|unspecified",12
+South America,Acceptable conformity,Carbon disulfide|air|non-urban air or from high stacks,13
+South America,Marginally acceptable conformity,Carbon disulfide|air|unspecified,14
+South America,Acceptable conformity,Carbon disulfide|air|urban air close to ground,15
+South America,Marginally acceptable conformity,Carbon disulfide|water|surface water,16
+South America,Nonconformity,"Carbon monoxide, fossil|air|lower stratosphere + upper troposphere",17
+South America,Marginally acceptable conformity,"Carbon monoxide, fossil|air|non-urban air or from high stacks",18
+South America,Nonconformity,"Carbon monoxide, fossil|air|unspecified",19
+South America,Marginally acceptable conformity,"Carbon monoxide, fossil|air|urban air close to ground",20
+South America,Acceptable conformity,"Carbon monoxide, from soil or biomass stock|air|non-urban air or from high stacks",21
+South America,Acceptable conformity,"Carbon monoxide, non-fossil|air|non-urban air or from high stacks",22
+South America,Acceptable conformity,"Carbon monoxide, non-fossil|air|unspecified",23
+South America,Close conformity,"Carbon monoxide, non-fossil|air|urban air close to ground",24
+South America,Marginally acceptable conformity,Carbon tetrachloride|air|unspecified,25
+South America,Acceptable conformity,Carbon tetrachloride|air|urban air close to ground,26
+South America,Acceptable conformity,Carbon tetrachloride|water|unspecified,27
+Africa,Nonconformity,"Carbon dioxide, fossil|air|lower stratosphere + upper troposphere",1
+Africa,Nonconformity,"Carbon dioxide, fossil|air|non-urban air or from high stacks",2
+Africa,Nonconformity,"Carbon dioxide, fossil|air|unspecified",3
+Africa,Nonconformity,"Carbon dioxide, fossil|air|urban air close to ground",4
+Africa,Nonconformity,"Carbon dioxide, from soil or biomass stock|air|non-urban air or from high stacks",5
+Africa,Nonconformity,"Carbon dioxide, from soil or biomass stock|air|unspecified",6
+Africa,Nonconformity,"Carbon dioxide, in air|natural resource|in air",7
+Africa,Nonconformity,"Carbon dioxide, non-fossil|air|non-urban air or from high stacks",8
+Africa,Nonconformity,"Carbon dioxide, non-fossil|air|unspecified",9
+Africa,Nonconformity,"Carbon dioxide, non-fossil|air|urban air close to ground",10
+Africa,Nonconformity,"Carbon dioxide, to soil or biomass stock|soil|agricultural",11
+Africa,Nonconformity,"Carbon dioxide, to soil or biomass stock|soil|unspecified",12
+Africa,Nonconformity,Carbon disulfide|air|non-urban air or from high stacks,13
+Africa,Nonconformity,Carbon disulfide|air|unspecified,14
+Africa,Nonconformity,Carbon disulfide|air|urban air close to ground,15
+Africa,Nonconformity,Carbon disulfide|water|surface water,16
+Africa,Nonconformity,"Carbon monoxide, fossil|air|lower stratosphere + upper troposphere",17
+Africa,Nonconformity,"Carbon monoxide, fossil|air|non-urban air or from high stacks",18
+Africa,Nonconformity,"Carbon monoxide, fossil|air|unspecified",19
+Africa,Nonconformity,"Carbon monoxide, fossil|air|urban air close to ground",20
+Africa,Nonconformity,"Carbon monoxide, from soil or biomass stock|air|non-urban air or from high stacks",21
+Africa,Nonconformity,"Carbon monoxide, non-fossil|air|non-urban air or from high stacks",22
+Africa,Nonconformity,"Carbon monoxide, non-fossil|air|unspecified",23
+Africa,Nonconformity,"Carbon monoxide, non-fossil|air|urban air close to ground",24
+Africa,Nonconformity,Carbon tetrachloride|air|unspecified,25
+Africa,Nonconformity,Carbon tetrachloride|air|urban air close to ground,26
+Africa,Nonconformity,Carbon tetrachloride|water|unspecified,27

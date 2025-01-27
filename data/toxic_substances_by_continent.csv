@@ -1,0 +1,116 @@
+Continent,Conformity,Colname,Label
+Asia,Marginally acceptable conformity,Arsenic ion|water|ocean,1
+Asia,Nonconformity,Arsenic ion|water|surface water,2
+Asia,Nonconformity,"Cadmium II|air|low population density, long-term",3
+Asia,Nonconformity,Cadmium II|water|surface water,4
+Asia,Acceptable conformity,"Chromium III|air|low population density, long-term",6
+Asia,Nonconformity,Chromium III|air|unspecified,7
+Asia,Nonconformity,"Chromium VI|air|low population density, long-term",8
+Asia,Marginally acceptable conformity,Chromium VI|water|ground-,9
+Asia,Nonconformity,Chromium-51|air|non-urban air or from high stacks,5
+Asia,Nonconformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|low population density, long-term",10
+Asia,Nonconformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|urban air close to ground",11
+Asia,Nonconformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|soil|unspecified",12
+Asia,Marginally acceptable conformity,Lead|natural resource|in ground,17
+Asia,Nonconformity,Lead II|water|surface water,16
+Asia,Nonconformity,Lead-210|air|urban air close to ground,13
+Asia,Acceptable conformity,Lead-210|water|ocean,14
+Asia,Marginally acceptable conformity,Lead-210|water|surface water,15
+Asia,Marginally acceptable conformity,Mercury|natural resource|in ground,22
+Asia,Nonconformity,Mercury II|air|urban air close to ground,18
+Asia,Nonconformity,Mercury II|soil|unspecified,19
+Asia,Nonconformity,Mercury II|water|ocean,20
+Asia,Nonconformity,Mercury II|water|surface water,21
+Asia,Marginally acceptable conformity,"VOC, volatile organic compounds|water|ocean",23
+Europe,Acceptable conformity,Arsenic ion|water|ocean,1
+Europe,Acceptable conformity,Arsenic ion|water|surface water,2
+Europe,Close conformity,"Cadmium II|air|low population density, long-term",3
+Europe,Acceptable conformity,Cadmium II|water|surface water,4
+Europe,Close conformity,"Chromium III|air|low population density, long-term",6
+Europe,Marginally acceptable conformity,Chromium III|air|unspecified,7
+Europe,Acceptable conformity,"Chromium VI|air|low population density, long-term",8
+Europe,Acceptable conformity,Chromium VI|water|ground-,9
+Europe,Acceptable conformity,Chromium-51|air|non-urban air or from high stacks,5
+Europe,Acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|low population density, long-term",10
+Europe,Acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|urban air close to ground",11
+Europe,Marginally acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|soil|unspecified",12
+Europe,Acceptable conformity,Lead|natural resource|in ground,17
+Europe,Acceptable conformity,Lead II|water|surface water,16
+Europe,Nonconformity,Lead-210|air|urban air close to ground,13
+Europe,Acceptable conformity,Lead-210|water|ocean,14
+Europe,Acceptable conformity,Lead-210|water|surface water,15
+Europe,Acceptable conformity,Mercury|natural resource|in ground,22
+Europe,Marginally acceptable conformity,Mercury II|air|urban air close to ground,18
+Europe,Marginally acceptable conformity,Mercury II|soil|unspecified,19
+Europe,Acceptable conformity,Mercury II|water|ocean,20
+Europe,Close conformity,Mercury II|water|surface water,21
+Europe,Close conformity,"VOC, volatile organic compounds|water|ocean",23
+North America,Acceptable conformity,Arsenic ion|water|ocean,1
+North America,Acceptable conformity,Arsenic ion|water|surface water,2
+North America,Marginally acceptable conformity,"Cadmium II|air|low population density, long-term",3
+North America,Acceptable conformity,Cadmium II|water|surface water,4
+North America,Acceptable conformity,"Chromium III|air|low population density, long-term",6
+North America,Acceptable conformity,Chromium III|air|unspecified,7
+North America,Marginally acceptable conformity,"Chromium VI|air|low population density, long-term",8
+North America,Nonconformity,Chromium VI|water|ground-,9
+North America,Marginally acceptable conformity,Chromium-51|air|non-urban air or from high stacks,5
+North America,Acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|low population density, long-term",10
+North America,Acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|urban air close to ground",11
+North America,Acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|soil|unspecified",12
+North America,Marginally acceptable conformity,Lead|natural resource|in ground,17
+North America,Nonconformity,Lead II|water|surface water,16
+North America,Nonconformity,Lead-210|air|urban air close to ground,13
+North America,Nonconformity,Lead-210|water|ocean,14
+North America,Nonconformity,Lead-210|water|surface water,15
+North America,Marginally acceptable conformity,Mercury|natural resource|in ground,22
+North America,Marginally acceptable conformity,Mercury II|air|urban air close to ground,18
+North America,Nonconformity,Mercury II|soil|unspecified,19
+North America,Nonconformity,Mercury II|water|ocean,20
+North America,Nonconformity,Mercury II|water|surface water,21
+North America,Nonconformity,"VOC, volatile organic compounds|water|ocean",23
+South America,Acceptable conformity,Arsenic ion|water|ocean,1
+South America,Acceptable conformity,Arsenic ion|water|surface water,2
+South America,Marginally acceptable conformity,"Cadmium II|air|low population density, long-term",3
+South America,Acceptable conformity,Cadmium II|water|surface water,4
+South America,Marginally acceptable conformity,"Chromium III|air|low population density, long-term",6
+South America,Acceptable conformity,Chromium III|air|unspecified,7
+South America,Acceptable conformity,"Chromium VI|air|low population density, long-term",8
+South America,Acceptable conformity,Chromium VI|water|ground-,9
+South America,Acceptable conformity,Chromium-51|air|non-urban air or from high stacks,5
+South America,Marginally acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|low population density, long-term",10
+South America,Acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|urban air close to ground",11
+South America,Marginally acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|soil|unspecified",12
+South America,Marginally acceptable conformity,Lead|natural resource|in ground,17
+South America,Nonconformity,Lead II|water|surface water,16
+South America,Marginally acceptable conformity,Lead-210|air|urban air close to ground,13
+South America,Marginally acceptable conformity,Lead-210|water|ocean,14
+South America,Acceptable conformity,Lead-210|water|surface water,15
+South America,Acceptable conformity,Mercury|natural resource|in ground,22
+South America,Marginally acceptable conformity,Mercury II|air|urban air close to ground,18
+South America,Acceptable conformity,Mercury II|soil|unspecified,19
+South America,Marginally acceptable conformity,Mercury II|water|ocean,20
+South America,Acceptable conformity,Mercury II|water|surface water,21
+South America,Acceptable conformity,"VOC, volatile organic compounds|water|ocean",23
+Africa,Nonconformity,Arsenic ion|water|ocean,1
+Africa,Marginally acceptable conformity,Arsenic ion|water|surface water,2
+Africa,Nonconformity,"Cadmium II|air|low population density, long-term",3
+Africa,Nonconformity,Cadmium II|water|surface water,4
+Africa,Nonconformity,"Chromium III|air|low population density, long-term",6
+Africa,Nonconformity,Chromium III|air|unspecified,7
+Africa,Nonconformity,"Chromium VI|air|low population density, long-term",8
+Africa,Acceptable conformity,Chromium VI|water|ground-,9
+Africa,Nonconformity,Chromium-51|air|non-urban air or from high stacks,5
+Africa,Nonconformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|low population density, long-term",10
+Africa,Nonconformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|urban air close to ground",11
+Africa,Nonconformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|soil|unspecified",12
+Africa,Nonconformity,Lead|natural resource|in ground,17
+Africa,Nonconformity,Lead II|water|surface water,16
+Africa,Nonconformity,Lead-210|air|urban air close to ground,13
+Africa,Nonconformity,Lead-210|water|ocean,14
+Africa,Nonconformity,Lead-210|water|surface water,15
+Africa,Nonconformity,Mercury|natural resource|in ground,22
+Africa,Nonconformity,Mercury II|air|urban air close to ground,18
+Africa,Nonconformity,Mercury II|soil|unspecified,19
+Africa,Nonconformity,Mercury II|water|ocean,20
+Africa,Nonconformity,Mercury II|water|surface water,21
+Africa,Nonconformity,"VOC, volatile organic compounds|water|ocean",23

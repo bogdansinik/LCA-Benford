@@ -1,0 +1,1206 @@
+Colname,Conformity,Continent,Label
+Aluminium|natural resource|in ground,Nonconformity,North America,1
+Anhydrite|natural resource|in ground,Nonconformity,North America,2
+Argon|natural resource|in air,Nonconformity,North America,3
+Barium|natural resource|in ground,Nonconformity,North America,4
+Basalt|natural resource|in ground,Nonconformity,North America,5
+Borax|natural resource|in ground,Acceptable conformity,North America,6
+Boron|natural resource|in ground,Nonconformity,North America,7
+Bromine|natural resource|in water,Acceptable conformity,North America,8
+Cadmium|natural resource|in ground,Nonconformity,North America,9
+Calcium|natural resource|in ground,Nonconformity,North America,10
+"Carbon dioxide, in air|natural resource|in air",Marginally acceptable conformity,North America,11
+"Carbon, organic, in soil or biomass stock|natural resource|in ground",Marginally acceptable conformity,North America,12
+Carnallite|natural resource|in water,Nonconformity,North America,13
+Cerium|natural resource|in ground,Nonconformity,North America,14
+Chromium|natural resource|in ground,Marginally acceptable conformity,North America,15
+Chrysotile|natural resource|in ground,Nonconformity,North America,16
+"Clay, bentonite|natural resource|in ground",Acceptable conformity,North America,17
+"Coal, brown|natural resource|in ground",Nonconformity,North America,18
+"Coal, hard|natural resource|in ground",Acceptable conformity,North America,19
+Copper|natural resource|in ground,Marginally acceptable conformity,North America,20
+Diatomite|natural resource|in ground,Acceptable conformity,North America,21
+Dolomite|natural resource|in ground,Nonconformity,North America,22
+Dysprosium|natural resource|in ground,Marginally acceptable conformity,North America,23
+"Energy, geothermal, converted|natural resource|in ground",Marginally acceptable conformity,North America,24
+"Energy, gross calorific value, in biomass|natural resource|biotic",Acceptable conformity,North America,26
+"Energy, gross calorific value, in biomass, primary forest|natural resource|biotic",Nonconformity,North America,25
+"Energy, kinetic (in wind), converted|natural resource|in air",Nonconformity,North America,27
+"Energy, potential (in hydropower reservoir), converted|natural resource|in water",Nonconformity,North America,28
+"Energy, solar, converted|natural resource|in air",Nonconformity,North America,29
+Erbium|natural resource|in ground,Acceptable conformity,North America,30
+Europium|natural resource|in ground,Nonconformity,North America,31
+Feldspar|natural resource|in ground,Nonconformity,North America,32
+"Fish, demersal, in ocean|natural resource|biotic",Acceptable conformity,North America,33
+"Fish, pelagic, in ocean|natural resource|biotic",Marginally acceptable conformity,North America,34
+Fluorine|natural resource|in ground,Nonconformity,North America,35
+Fluorspar|natural resource|in ground,Nonconformity,North America,36
+Gadolinium|natural resource|in ground,Nonconformity,North America,37
+Gallium|natural resource|in ground,Nonconformity,North America,38
+Gangue|natural resource|in ground,Nonconformity,North America,39
+"Gas, mine, off-gas, process, coal mining|natural resource|in ground",Nonconformity,North America,40
+"Gas, natural|natural resource|in ground",Nonconformity,North America,41
+Gold|natural resource|in ground,Nonconformity,North America,42
+Granite|natural resource|in ground,Acceptable conformity,North America,43
+Graphite|natural resource|in ground,Acceptable conformity,North America,44
+Gypsum|natural resource|in ground,Nonconformity,North America,45
+Hafnium|natural resource|in ground,Nonconformity,North America,46
+Holmium|natural resource|in ground,Nonconformity,North America,47
+Indium|natural resource|in ground,Nonconformity,North America,48
+Iodine|natural resource|in water,Marginally acceptable conformity,North America,49
+Iron|natural resource|in ground,Nonconformity,North America,50
+Kaolinite|natural resource|in ground,Nonconformity,North America,51
+Kieserite|natural resource|in ground,Nonconformity,North America,52
+Krypton|natural resource|in air,Acceptable conformity,North America,53
+Lanthanum|natural resource|in ground,Nonconformity,North America,54
+Laterite|natural resource|in ground,Nonconformity,North America,55
+Lead|natural resource|in ground,Marginally acceptable conformity,North America,56
+Lithium|natural resource|in ground,Nonconformity,North America,57
+Lutetium|natural resource|in ground,Acceptable conformity,North America,58
+Magnesite|natural resource|in ground,Nonconformity,North America,59
+Magnesium|natural resource|in ground,Nonconformity,North America,60
+Manganese|natural resource|in ground,Nonconformity,North America,61
+Mercury|natural resource|in ground,Marginally acceptable conformity,North America,62
+Molybdenum|natural resource|in ground,Marginally acceptable conformity,North America,63
+Neodymium|natural resource|in ground,Nonconformity,North America,64
+Niobium|natural resource|in ground,Acceptable conformity,North America,65
+Nitrogen|natural resource|in air,Nonconformity,North America,66
+"Occupation, annual crop|natural resource|land",Acceptable conformity,North America,72
+"Occupation, annual crop, irrigated|natural resource|land",Nonconformity,North America,68
+"Occupation, annual crop, irrigated, intensive|natural resource|land",Nonconformity,North America,67
+"Occupation, annual crop, non-irrigated|natural resource|land",Nonconformity,North America,71
+"Occupation, annual crop, non-irrigated, extensive|natural resource|land",Acceptable conformity,North America,69
+"Occupation, annual crop, non-irrigated, intensive|natural resource|land",Marginally acceptable conformity,North America,70
+"Occupation, arable land, unspecified use|natural resource|land",Marginally acceptable conformity,North America,73
+"Occupation, bare area (non-use)|natural resource|land",Nonconformity,North America,74
+"Occupation, construction site|natural resource|land",Nonconformity,North America,75
+"Occupation, cropland fallow (non-use)|natural resource|land",Nonconformity,North America,76
+"Occupation, dump site|natural resource|land",Nonconformity,North America,77
+"Occupation, forest, extensive|natural resource|land",Nonconformity,North America,78
+"Occupation, forest, intensive|natural resource|land",Nonconformity,North America,79
+"Occupation, grassland, natural (non-use)|natural resource|land",Acceptable conformity,North America,80
+"Occupation, grassland, natural, for livestock grazing|natural resource|land",Acceptable conformity,North America,81
+"Occupation, industrial area|natural resource|land",Acceptable conformity,North America,82
+"Occupation, inland waterbody, unspecified|natural resource|land",Nonconformity,North America,83
+"Occupation, lake, artificial|natural resource|land",Marginally acceptable conformity,North America,84
+"Occupation, mineral extraction site|natural resource|land",Acceptable conformity,North America,85
+"Occupation, pasture, man made|natural resource|land",Acceptable conformity,North America,88
+"Occupation, pasture, man made, extensive|natural resource|land",Acceptable conformity,North America,86
+"Occupation, pasture, man made, intensive|natural resource|land",Nonconformity,North America,87
+"Occupation, permanent crop|natural resource|land",Nonconformity,North America,92
+"Occupation, permanent crop, irrigated|natural resource|land",Acceptable conformity,North America,90
+"Occupation, permanent crop, irrigated, intensive|natural resource|land",Nonconformity,North America,89
+"Occupation, permanent crop, non-irrigated|natural resource|land",Nonconformity,North America,91
+"Occupation, river, artificial|natural resource|land",Marginally acceptable conformity,North America,93
+"Occupation, seabed, drilling and mining|natural resource|land",Acceptable conformity,North America,94
+"Occupation, seabed, infrastructure|natural resource|land",Acceptable conformity,North America,95
+"Occupation, traffic area, rail network|natural resource|land",Acceptable conformity,North America,96
+"Occupation, traffic area, rail/road embankment|natural resource|land",Acceptable conformity,North America,97
+"Occupation, traffic area, road network|natural resource|land",Marginally acceptable conformity,North America,98
+"Occupation, unspecified|natural resource|land",Marginally acceptable conformity,North America,100
+"Occupation, unspecified, natural (non-use)|natural resource|land",Nonconformity,North America,99
+"Occupation, urban, discontinuously built|natural resource|land",Nonconformity,North America,101
+"Oil, crude|natural resource|in ground",Nonconformity,North America,102
+Olivine|natural resource|in ground,Marginally acceptable conformity,North America,103
+Oxygen|natural resource|in air,Nonconformity,North America,104
+Palladium|natural resource|in ground,Nonconformity,North America,105
+Peat|natural resource|biotic,Nonconformity,North America,106
+Perlite|natural resource|in ground,Nonconformity,North America,107
+Phosphorus|natural resource|in ground,Nonconformity,North America,108
+Platinum|natural resource|in ground,Marginally acceptable conformity,North America,109
+Potassium|natural resource|in ground,Nonconformity,North America,110
+Praseodymium|natural resource|in ground,Nonconformity,North America,111
+Rhenium|natural resource|in ground,Nonconformity,North America,112
+Rhodium|natural resource|in ground,Marginally acceptable conformity,North America,113
+Samarium|natural resource|in ground,Nonconformity,North America,114
+"Sand, unspecified|natural resource|in ground",Nonconformity,North America,115
+Scandium|natural resource|in ground,Nonconformity,North America,116
+Selenium|natural resource|in ground,Nonconformity,North America,117
+Shale|natural resource|in ground,Nonconformity,North America,118
+Silicon|natural resource|in ground,Nonconformity,North America,119
+Silver|natural resource|in ground,Nonconformity,North America,120
+Sodium|natural resource|in ground,Nonconformity,North America,124
+Sodium chloride|natural resource|in ground,Nonconformity,North America,121
+Sodium nitrate|natural resource|in ground,Acceptable conformity,North America,122
+Sodium sulfate|natural resource|in ground,Acceptable conformity,North America,123
+Spodumene|natural resource|in ground,Acceptable conformity,North America,125
+Steatite|natural resource|in ground,Marginally acceptable conformity,North America,126
+Strontium|natural resource|in ground,Nonconformity,North America,127
+Sulfur|natural resource|in ground,Nonconformity,North America,128
+Sylvite|natural resource|in ground,Acceptable conformity,North America,129
+Talc|natural resource|in ground,Nonconformity,North America,130
+Tantalum|natural resource|in ground,Marginally acceptable conformity,North America,131
+Tellurium|natural resource|in ground,Acceptable conformity,North America,132
+Terbium|natural resource|in ground,Acceptable conformity,North America,133
+Thulium|natural resource|in ground,Acceptable conformity,North America,134
+Tin|natural resource|in ground,Nonconformity,North America,135
+Titanium|natural resource|in ground,Nonconformity,North America,136
+"Transformation, from annual crop|natural resource|land",Marginally acceptable conformity,North America,142
+"Transformation, from annual crop, irrigated|natural resource|land",Nonconformity,North America,138
+"Transformation, from annual crop, irrigated, intensive|natural resource|land",Nonconformity,North America,137
+"Transformation, from annual crop, non-irrigated|natural resource|land",Nonconformity,North America,141
+"Transformation, from annual crop, non-irrigated, extensive|natural resource|land",Acceptable conformity,North America,139
+"Transformation, from annual crop, non-irrigated, intensive|natural resource|land",Nonconformity,North America,140
+"Transformation, from arable land, unspecified use|natural resource|land",Acceptable conformity,North America,143
+"Transformation, from cropland fallow (non-use)|natural resource|land",Nonconformity,North America,144
+"Transformation, from dump site|natural resource|land",Nonconformity,North America,148
+"Transformation, from dump site, inert material landfill|natural resource|land",Acceptable conformity,North America,145
+"Transformation, from dump site, residual material landfill|natural resource|land",Acceptable conformity,North America,146
+"Transformation, from dump site, sanitary landfill|natural resource|land",Acceptable conformity,North America,147
+"Transformation, from forest, extensive|natural resource|land",Acceptable conformity,North America,149
+"Transformation, from forest, intensive|natural resource|land",Nonconformity,North America,150
+"Transformation, from forest, primary (non-use)|natural resource|land",Marginally acceptable conformity,North America,151
+"Transformation, from forest, secondary (non-use)|natural resource|land",Marginally acceptable conformity,North America,152
+"Transformation, from forest, unspecified|natural resource|land",Marginally acceptable conformity,North America,153
+"Transformation, from grassland, natural (non-use)|natural resource|land",Nonconformity,North America,154
+"Transformation, from grassland, natural, for livestock grazing|natural resource|land",Marginally acceptable conformity,North America,155
+"Transformation, from heterogeneous, agricultural|natural resource|land",Nonconformity,North America,156
+"Transformation, from industrial area|natural resource|land",Marginally acceptable conformity,North America,157
+"Transformation, from mineral extraction site|natural resource|land",Nonconformity,North America,158
+"Transformation, from pasture, man made|natural resource|land",Nonconformity,North America,161
+"Transformation, from pasture, man made, extensive|natural resource|land",Acceptable conformity,North America,159
+"Transformation, from pasture, man made, intensive|natural resource|land",Acceptable conformity,North America,160
+"Transformation, from permanent crop|natural resource|land",Acceptable conformity,North America,165
+"Transformation, from permanent crop, irrigated|natural resource|land",Nonconformity,North America,163
+"Transformation, from permanent crop, irrigated, intensive|natural resource|land",Nonconformity,North America,162
+"Transformation, from permanent crop, non-irrigated|natural resource|land",Nonconformity,North America,164
+"Transformation, from river, natural (non-use)|natural resource|land",Acceptable conformity,North America,166
+"Transformation, from seabed, infrastructure|natural resource|land",Nonconformity,North America,167
+"Transformation, from seabed, unspecified|natural resource|land",Acceptable conformity,North America,168
+"Transformation, from shrub land, sclerophyllous|natural resource|land",Acceptable conformity,North America,169
+"Transformation, from traffic area, rail/road embankment|natural resource|land",Nonconformity,North America,170
+"Transformation, from traffic area, road network|natural resource|land",Nonconformity,North America,171
+"Transformation, from unspecified|natural resource|land",Nonconformity,North America,173
+"Transformation, from unspecified, natural (non-use)|natural resource|land",Nonconformity,North America,172
+"Transformation, from wetland, inland (non-use)|natural resource|land",Nonconformity,North America,174
+"Transformation, to annual crop|natural resource|land",Acceptable conformity,North America,180
+"Transformation, to annual crop, irrigated|natural resource|land",Nonconformity,North America,176
+"Transformation, to annual crop, irrigated, intensive|natural resource|land",Nonconformity,North America,175
+"Transformation, to annual crop, non-irrigated|natural resource|land",Nonconformity,North America,179
+"Transformation, to annual crop, non-irrigated, extensive|natural resource|land",Acceptable conformity,North America,177
+"Transformation, to annual crop, non-irrigated, intensive|natural resource|land",Acceptable conformity,North America,178
+"Transformation, to arable land, unspecified use|natural resource|land",Acceptable conformity,North America,181
+"Transformation, to cropland fallow (non-use)|natural resource|land",Nonconformity,North America,182
+"Transformation, to dump site|natural resource|land",Nonconformity,North America,186
+"Transformation, to dump site, inert material landfill|natural resource|land",Acceptable conformity,North America,183
+"Transformation, to dump site, residual material landfill|natural resource|land",Nonconformity,North America,184
+"Transformation, to dump site, sanitary landfill|natural resource|land",Acceptable conformity,North America,185
+"Transformation, to forest, extensive|natural resource|land",Nonconformity,North America,187
+"Transformation, to forest, intensive|natural resource|land",Nonconformity,North America,188
+"Transformation, to forest, secondary (non-use)|natural resource|land",Acceptable conformity,North America,189
+"Transformation, to forest, unspecified|natural resource|land",Nonconformity,North America,190
+"Transformation, to grassland, natural (non-use)|natural resource|land",Acceptable conformity,North America,191
+"Transformation, to grassland, natural, for livestock grazing|natural resource|land",Acceptable conformity,North America,192
+"Transformation, to heterogeneous, agricultural|natural resource|land",Acceptable conformity,North America,193
+"Transformation, to industrial area|natural resource|land",Nonconformity,North America,194
+"Transformation, to inland waterbody, unspecified|natural resource|land",Nonconformity,North America,195
+"Transformation, to lake, artificial|natural resource|land",Acceptable conformity,North America,196
+"Transformation, to mineral extraction site|natural resource|land",Marginally acceptable conformity,North America,197
+"Transformation, to pasture, man made|natural resource|land",Nonconformity,North America,200
+"Transformation, to pasture, man made, extensive|natural resource|land",Acceptable conformity,North America,198
+"Transformation, to pasture, man made, intensive|natural resource|land",Acceptable conformity,North America,199
+"Transformation, to permanent crop|natural resource|land",Nonconformity,North America,204
+"Transformation, to permanent crop, irrigated|natural resource|land",Nonconformity,North America,202
+"Transformation, to permanent crop, irrigated, intensive|natural resource|land",Nonconformity,North America,201
+"Transformation, to permanent crop, non-irrigated|natural resource|land",Nonconformity,North America,203
+"Transformation, to river, artificial|natural resource|land",Marginally acceptable conformity,North America,205
+"Transformation, to seabed, drilling and mining|natural resource|land",Acceptable conformity,North America,206
+"Transformation, to seabed, infrastructure|natural resource|land",Marginally acceptable conformity,North America,207
+"Transformation, to seabed, unspecified|natural resource|land",Nonconformity,North America,208
+"Transformation, to traffic area, rail network|natural resource|land",Marginally acceptable conformity,North America,209
+"Transformation, to traffic area, rail/road embankment|natural resource|land",Acceptable conformity,North America,210
+"Transformation, to traffic area, road network|natural resource|land",Marginally acceptable conformity,North America,211
+"Transformation, to unspecified|natural resource|land",Nonconformity,North America,213
+"Transformation, to unspecified, natural (non-use)|natural resource|land",Nonconformity,North America,212
+"Transformation, to urban, discontinuously built|natural resource|land",Nonconformity,North America,214
+"Transformation, to wetland, inland (non-use)|natural resource|land",Acceptable conformity,North America,215
+Ulexite|natural resource|in ground,Marginally acceptable conformity,North America,216
+Uranium|natural resource|in ground,Nonconformity,North America,217
+Vanadium|natural resource|in ground,Nonconformity,North America,218
+"Volume occupied, final repository for low-active radioactive waste|natural resource|in ground",Marginally acceptable conformity,North America,219
+"Volume occupied, final repository for radioactive waste|natural resource|in ground",Acceptable conformity,North America,220
+"Volume occupied, reservoir|natural resource|in water",Acceptable conformity,North America,221
+"Volume occupied, underground deposit|natural resource|in ground",Acceptable conformity,North America,222
+"Water, cooling, unspecified natural origin|natural resource|in water",Nonconformity,North America,223
+"Water, in air|natural resource|in air",Marginally acceptable conformity,North America,224
+"Water, lake|natural resource|in water",Nonconformity,North America,225
+"Water, river|natural resource|in water",Nonconformity,North America,226
+"Water, salt, ocean|natural resource|in water",Marginally acceptable conformity,North America,227
+"Water, salt, sole|natural resource|in water",Nonconformity,North America,228
+"Water, turbine use, unspecified natural origin|natural resource|in water",Acceptable conformity,North America,229
+"Water, unspecified natural origin|natural resource|fossil well",Marginally acceptable conformity,North America,230
+"Water, unspecified natural origin|natural resource|in ground",Nonconformity,North America,231
+"Water, unspecified natural origin|natural resource|in water",Marginally acceptable conformity,North America,232
+"Water, well, in ground|natural resource|in water",Marginally acceptable conformity,North America,233
+"Wood, hard, standing|natural resource|biotic",Marginally acceptable conformity,North America,234
+"Wood, soft, standing|natural resource|biotic",Nonconformity,North America,235
+"Wood, unspecified, standing|natural resource|biotic",Marginally acceptable conformity,North America,236
+Xenon|natural resource|in air,Acceptable conformity,North America,237
+Ytterbium|natural resource|in ground,Nonconformity,North America,238
+Yttrium|natural resource|in ground,Acceptable conformity,North America,239
+Zinc|natural resource|in ground,Marginally acceptable conformity,North America,240
+Zirconium|natural resource|in ground,Nonconformity,North America,241
+Aluminium|natural resource|in ground,Acceptable conformity,Europe,1
+Anhydrite|natural resource|in ground,Marginally acceptable conformity,Europe,2
+Argon|natural resource|in air,Acceptable conformity,Europe,3
+Barium|natural resource|in ground,Acceptable conformity,Europe,4
+Basalt|natural resource|in ground,Nonconformity,Europe,5
+Borax|natural resource|in ground,Acceptable conformity,Europe,6
+Boron|natural resource|in ground,Acceptable conformity,Europe,7
+Bromine|natural resource|in water,Close conformity,Europe,8
+Cadmium|natural resource|in ground,Acceptable conformity,Europe,9
+Calcium|natural resource|in ground,Acceptable conformity,Europe,10
+"Carbon dioxide, in air|natural resource|in air",Acceptable conformity,Europe,11
+"Carbon, organic, in soil or biomass stock|natural resource|in ground",Acceptable conformity,Europe,12
+Carnallite|natural resource|in water,Acceptable conformity,Europe,13
+Cerium|natural resource|in ground,Marginally acceptable conformity,Europe,14
+Chromium|natural resource|in ground,Marginally acceptable conformity,Europe,15
+Chrysotile|natural resource|in ground,Acceptable conformity,Europe,16
+"Clay, bentonite|natural resource|in ground",Acceptable conformity,Europe,17
+"Coal, brown|natural resource|in ground",Marginally acceptable conformity,Europe,18
+"Coal, hard|natural resource|in ground",Acceptable conformity,Europe,19
+Copper|natural resource|in ground,Acceptable conformity,Europe,20
+Diatomite|natural resource|in ground,Marginally acceptable conformity,Europe,21
+Dolomite|natural resource|in ground,Acceptable conformity,Europe,22
+Dysprosium|natural resource|in ground,Acceptable conformity,Europe,23
+"Energy, geothermal, converted|natural resource|in ground",Acceptable conformity,Europe,24
+"Energy, gross calorific value, in biomass|natural resource|biotic",Acceptable conformity,Europe,26
+"Energy, gross calorific value, in biomass, primary forest|natural resource|biotic",Marginally acceptable conformity,Europe,25
+"Energy, kinetic (in wind), converted|natural resource|in air",Marginally acceptable conformity,Europe,27
+"Energy, potential (in hydropower reservoir), converted|natural resource|in water",Nonconformity,Europe,28
+"Energy, solar, converted|natural resource|in air",Nonconformity,Europe,29
+Erbium|natural resource|in ground,Marginally acceptable conformity,Europe,30
+Europium|natural resource|in ground,Marginally acceptable conformity,Europe,31
+Feldspar|natural resource|in ground,Marginally acceptable conformity,Europe,32
+"Fish, demersal, in ocean|natural resource|biotic",Marginally acceptable conformity,Europe,33
+"Fish, pelagic, in ocean|natural resource|biotic",Acceptable conformity,Europe,34
+Fluorine|natural resource|in ground,Acceptable conformity,Europe,35
+Fluorspar|natural resource|in ground,Acceptable conformity,Europe,36
+Gadolinium|natural resource|in ground,Nonconformity,Europe,37
+Gallium|natural resource|in ground,Nonconformity,Europe,38
+Gangue|natural resource|in ground,Nonconformity,Europe,39
+"Gas, mine, off-gas, process, coal mining|natural resource|in ground",Acceptable conformity,Europe,40
+"Gas, natural|natural resource|in ground",Acceptable conformity,Europe,41
+Gold|natural resource|in ground,Acceptable conformity,Europe,42
+Granite|natural resource|in ground,Nonconformity,Europe,43
+Graphite|natural resource|in ground,Acceptable conformity,Europe,44
+Gypsum|natural resource|in ground,Acceptable conformity,Europe,45
+Hafnium|natural resource|in ground,Close conformity,Europe,46
+Holmium|natural resource|in ground,Marginally acceptable conformity,Europe,47
+Indium|natural resource|in ground,Acceptable conformity,Europe,48
+Iodine|natural resource|in water,Acceptable conformity,Europe,49
+Iron|natural resource|in ground,Marginally acceptable conformity,Europe,50
+Kaolinite|natural resource|in ground,Acceptable conformity,Europe,51
+Kieserite|natural resource|in ground,Close conformity,Europe,52
+Krypton|natural resource|in air,Marginally acceptable conformity,Europe,53
+Lanthanum|natural resource|in ground,Acceptable conformity,Europe,54
+Laterite|natural resource|in ground,Acceptable conformity,Europe,55
+Lead|natural resource|in ground,Acceptable conformity,Europe,56
+Lithium|natural resource|in ground,Marginally acceptable conformity,Europe,57
+Lutetium|natural resource|in ground,Marginally acceptable conformity,Europe,58
+Magnesite|natural resource|in ground,Marginally acceptable conformity,Europe,59
+Magnesium|natural resource|in ground,Acceptable conformity,Europe,60
+Manganese|natural resource|in ground,Acceptable conformity,Europe,61
+Mercury|natural resource|in ground,Acceptable conformity,Europe,62
+Molybdenum|natural resource|in ground,Nonconformity,Europe,63
+Neodymium|natural resource|in ground,Marginally acceptable conformity,Europe,64
+Niobium|natural resource|in ground,Marginally acceptable conformity,Europe,65
+Nitrogen|natural resource|in air,Acceptable conformity,Europe,66
+"Occupation, annual crop|natural resource|land",Close conformity,Europe,72
+"Occupation, annual crop, irrigated|natural resource|land",Marginally acceptable conformity,Europe,68
+"Occupation, annual crop, irrigated, intensive|natural resource|land",Acceptable conformity,Europe,67
+"Occupation, annual crop, non-irrigated|natural resource|land",Acceptable conformity,Europe,71
+"Occupation, annual crop, non-irrigated, extensive|natural resource|land",Acceptable conformity,Europe,69
+"Occupation, annual crop, non-irrigated, intensive|natural resource|land",Acceptable conformity,Europe,70
+"Occupation, arable land, unspecified use|natural resource|land",Acceptable conformity,Europe,73
+"Occupation, bare area (non-use)|natural resource|land",Marginally acceptable conformity,Europe,74
+"Occupation, construction site|natural resource|land",Nonconformity,Europe,75
+"Occupation, cropland fallow (non-use)|natural resource|land",Nonconformity,Europe,76
+"Occupation, dump site|natural resource|land",Acceptable conformity,Europe,77
+"Occupation, forest, extensive|natural resource|land",Marginally acceptable conformity,Europe,78
+"Occupation, forest, intensive|natural resource|land",Acceptable conformity,Europe,79
+"Occupation, grassland, natural (non-use)|natural resource|land",Marginally acceptable conformity,Europe,80
+"Occupation, grassland, natural, for livestock grazing|natural resource|land",Acceptable conformity,Europe,81
+"Occupation, industrial area|natural resource|land",Acceptable conformity,Europe,82
+"Occupation, inland waterbody, unspecified|natural resource|land",Marginally acceptable conformity,Europe,83
+"Occupation, lake, artificial|natural resource|land",Acceptable conformity,Europe,84
+"Occupation, mineral extraction site|natural resource|land",Marginally acceptable conformity,Europe,85
+"Occupation, pasture, man made|natural resource|land",Acceptable conformity,Europe,88
+"Occupation, pasture, man made, extensive|natural resource|land",Acceptable conformity,Europe,86
+"Occupation, pasture, man made, intensive|natural resource|land",Marginally acceptable conformity,Europe,87
+"Occupation, permanent crop|natural resource|land",Acceptable conformity,Europe,92
+"Occupation, permanent crop, irrigated|natural resource|land",Acceptable conformity,Europe,90
+"Occupation, permanent crop, irrigated, intensive|natural resource|land",Marginally acceptable conformity,Europe,89
+"Occupation, permanent crop, non-irrigated|natural resource|land",Acceptable conformity,Europe,91
+"Occupation, river, artificial|natural resource|land",Acceptable conformity,Europe,93
+"Occupation, seabed, drilling and mining|natural resource|land",Acceptable conformity,Europe,94
+"Occupation, seabed, infrastructure|natural resource|land",Acceptable conformity,Europe,95
+"Occupation, traffic area, rail network|natural resource|land",Acceptable conformity,Europe,96
+"Occupation, traffic area, rail/road embankment|natural resource|land",Nonconformity,Europe,97
+"Occupation, traffic area, road network|natural resource|land",Acceptable conformity,Europe,98
+"Occupation, unspecified|natural resource|land",Acceptable conformity,Europe,100
+"Occupation, unspecified, natural (non-use)|natural resource|land",Acceptable conformity,Europe,99
+"Occupation, urban, discontinuously built|natural resource|land",Acceptable conformity,Europe,101
+"Oil, crude|natural resource|in ground",Acceptable conformity,Europe,102
+Olivine|natural resource|in ground,Marginally acceptable conformity,Europe,103
+Oxygen|natural resource|in air,Marginally acceptable conformity,Europe,104
+Palladium|natural resource|in ground,Acceptable conformity,Europe,105
+Peat|natural resource|biotic,Acceptable conformity,Europe,106
+Perlite|natural resource|in ground,Acceptable conformity,Europe,107
+Phosphorus|natural resource|in ground,Acceptable conformity,Europe,108
+Platinum|natural resource|in ground,Close conformity,Europe,109
+Potassium|natural resource|in ground,Marginally acceptable conformity,Europe,110
+Praseodymium|natural resource|in ground,Marginally acceptable conformity,Europe,111
+Rhenium|natural resource|in ground,Marginally acceptable conformity,Europe,112
+Rhodium|natural resource|in ground,Close conformity,Europe,113
+Samarium|natural resource|in ground,Acceptable conformity,Europe,114
+"Sand, unspecified|natural resource|in ground",Acceptable conformity,Europe,115
+Scandium|natural resource|in ground,Nonconformity,Europe,116
+Selenium|natural resource|in ground,Marginally acceptable conformity,Europe,117
+Shale|natural resource|in ground,Acceptable conformity,Europe,118
+Silicon|natural resource|in ground,Nonconformity,Europe,119
+Silver|natural resource|in ground,Acceptable conformity,Europe,120
+Sodium|natural resource|in ground,Acceptable conformity,Europe,124
+Sodium chloride|natural resource|in ground,Acceptable conformity,Europe,121
+Sodium nitrate|natural resource|in ground,Acceptable conformity,Europe,122
+Sodium sulfate|natural resource|in ground,Acceptable conformity,Europe,123
+Spodumene|natural resource|in ground,Marginally acceptable conformity,Europe,125
+Steatite|natural resource|in ground,Acceptable conformity,Europe,126
+Strontium|natural resource|in ground,Marginally acceptable conformity,Europe,127
+Sulfur|natural resource|in ground,Nonconformity,Europe,128
+Sylvite|natural resource|in ground,Acceptable conformity,Europe,129
+Talc|natural resource|in ground,Nonconformity,Europe,130
+Tantalum|natural resource|in ground,Acceptable conformity,Europe,131
+Tellurium|natural resource|in ground,Marginally acceptable conformity,Europe,132
+Terbium|natural resource|in ground,Close conformity,Europe,133
+Thulium|natural resource|in ground,Marginally acceptable conformity,Europe,134
+Tin|natural resource|in ground,Marginally acceptable conformity,Europe,135
+Titanium|natural resource|in ground,Acceptable conformity,Europe,136
+"Transformation, from annual crop|natural resource|land",Acceptable conformity,Europe,142
+"Transformation, from annual crop, irrigated|natural resource|land",Marginally acceptable conformity,Europe,138
+"Transformation, from annual crop, irrigated, intensive|natural resource|land",Acceptable conformity,Europe,137
+"Transformation, from annual crop, non-irrigated|natural resource|land",Acceptable conformity,Europe,141
+"Transformation, from annual crop, non-irrigated, extensive|natural resource|land",Acceptable conformity,Europe,139
+"Transformation, from annual crop, non-irrigated, intensive|natural resource|land",Marginally acceptable conformity,Europe,140
+"Transformation, from arable land, unspecified use|natural resource|land",Acceptable conformity,Europe,143
+"Transformation, from cropland fallow (non-use)|natural resource|land",Marginally acceptable conformity,Europe,144
+"Transformation, from dump site|natural resource|land",Acceptable conformity,Europe,148
+"Transformation, from dump site, inert material landfill|natural resource|land",Nonconformity,Europe,145
+"Transformation, from dump site, residual material landfill|natural resource|land",Nonconformity,Europe,146
+"Transformation, from dump site, sanitary landfill|natural resource|land",Acceptable conformity,Europe,147
+"Transformation, from forest, extensive|natural resource|land",Marginally acceptable conformity,Europe,149
+"Transformation, from forest, intensive|natural resource|land",Acceptable conformity,Europe,150
+"Transformation, from forest, primary (non-use)|natural resource|land",Acceptable conformity,Europe,151
+"Transformation, from forest, secondary (non-use)|natural resource|land",Acceptable conformity,Europe,152
+"Transformation, from forest, unspecified|natural resource|land",Acceptable conformity,Europe,153
+"Transformation, from grassland, natural (non-use)|natural resource|land",Acceptable conformity,Europe,154
+"Transformation, from grassland, natural, for livestock grazing|natural resource|land",Acceptable conformity,Europe,155
+"Transformation, from heterogeneous, agricultural|natural resource|land",Acceptable conformity,Europe,156
+"Transformation, from industrial area|natural resource|land",Acceptable conformity,Europe,157
+"Transformation, from mineral extraction site|natural resource|land",Acceptable conformity,Europe,158
+"Transformation, from pasture, man made|natural resource|land",Marginally acceptable conformity,Europe,161
+"Transformation, from pasture, man made, extensive|natural resource|land",Close conformity,Europe,159
+"Transformation, from pasture, man made, intensive|natural resource|land",Acceptable conformity,Europe,160
+"Transformation, from permanent crop|natural resource|land",Acceptable conformity,Europe,165
+"Transformation, from permanent crop, irrigated|natural resource|land",Marginally acceptable conformity,Europe,163
+"Transformation, from permanent crop, irrigated, intensive|natural resource|land",Acceptable conformity,Europe,162
+"Transformation, from permanent crop, non-irrigated|natural resource|land",Acceptable conformity,Europe,164
+"Transformation, from river, natural (non-use)|natural resource|land",Nonconformity,Europe,166
+"Transformation, from seabed, infrastructure|natural resource|land",Acceptable conformity,Europe,167
+"Transformation, from seabed, unspecified|natural resource|land",Acceptable conformity,Europe,168
+"Transformation, from shrub land, sclerophyllous|natural resource|land",Nonconformity,Europe,169
+"Transformation, from traffic area, rail/road embankment|natural resource|land",Close conformity,Europe,170
+"Transformation, from traffic area, road network|natural resource|land",Acceptable conformity,Europe,171
+"Transformation, from unspecified|natural resource|land",Marginally acceptable conformity,Europe,173
+"Transformation, from unspecified, natural (non-use)|natural resource|land",Nonconformity,Europe,172
+"Transformation, from wetland, inland (non-use)|natural resource|land",Acceptable conformity,Europe,174
+"Transformation, to annual crop|natural resource|land",Acceptable conformity,Europe,180
+"Transformation, to annual crop, irrigated|natural resource|land",Marginally acceptable conformity,Europe,176
+"Transformation, to annual crop, irrigated, intensive|natural resource|land",Acceptable conformity,Europe,175
+"Transformation, to annual crop, non-irrigated|natural resource|land",Acceptable conformity,Europe,179
+"Transformation, to annual crop, non-irrigated, extensive|natural resource|land",Acceptable conformity,Europe,177
+"Transformation, to annual crop, non-irrigated, intensive|natural resource|land",Marginally acceptable conformity,Europe,178
+"Transformation, to arable land, unspecified use|natural resource|land",Acceptable conformity,Europe,181
+"Transformation, to cropland fallow (non-use)|natural resource|land",Nonconformity,Europe,182
+"Transformation, to dump site|natural resource|land",Nonconformity,Europe,186
+"Transformation, to dump site, inert material landfill|natural resource|land",Nonconformity,Europe,183
+"Transformation, to dump site, residual material landfill|natural resource|land",Nonconformity,Europe,184
+"Transformation, to dump site, sanitary landfill|natural resource|land",Acceptable conformity,Europe,185
+"Transformation, to forest, extensive|natural resource|land",Nonconformity,Europe,187
+"Transformation, to forest, intensive|natural resource|land",Marginally acceptable conformity,Europe,188
+"Transformation, to forest, secondary (non-use)|natural resource|land",Acceptable conformity,Europe,189
+"Transformation, to forest, unspecified|natural resource|land",Nonconformity,Europe,190
+"Transformation, to grassland, natural (non-use)|natural resource|land",Marginally acceptable conformity,Europe,191
+"Transformation, to grassland, natural, for livestock grazing|natural resource|land",Acceptable conformity,Europe,192
+"Transformation, to heterogeneous, agricultural|natural resource|land",Acceptable conformity,Europe,193
+"Transformation, to industrial area|natural resource|land",Nonconformity,Europe,194
+"Transformation, to inland waterbody, unspecified|natural resource|land",Marginally acceptable conformity,Europe,195
+"Transformation, to lake, artificial|natural resource|land",Marginally acceptable conformity,Europe,196
+"Transformation, to mineral extraction site|natural resource|land",Acceptable conformity,Europe,197
+"Transformation, to pasture, man made|natural resource|land",Acceptable conformity,Europe,200
+"Transformation, to pasture, man made, extensive|natural resource|land",Close conformity,Europe,198
+"Transformation, to pasture, man made, intensive|natural resource|land",Marginally acceptable conformity,Europe,199
+"Transformation, to permanent crop|natural resource|land",Acceptable conformity,Europe,204
+"Transformation, to permanent crop, irrigated|natural resource|land",Marginally acceptable conformity,Europe,202
+"Transformation, to permanent crop, irrigated, intensive|natural resource|land",Acceptable conformity,Europe,201
+"Transformation, to permanent crop, non-irrigated|natural resource|land",Acceptable conformity,Europe,203
+"Transformation, to river, artificial|natural resource|land",Acceptable conformity,Europe,205
+"Transformation, to seabed, drilling and mining|natural resource|land",Acceptable conformity,Europe,206
+"Transformation, to seabed, infrastructure|natural resource|land",Acceptable conformity,Europe,207
+"Transformation, to seabed, unspecified|natural resource|land",Acceptable conformity,Europe,208
+"Transformation, to traffic area, rail network|natural resource|land",Acceptable conformity,Europe,209
+"Transformation, to traffic area, rail/road embankment|natural resource|land",Acceptable conformity,Europe,210
+"Transformation, to traffic area, road network|natural resource|land",Marginally acceptable conformity,Europe,211
+"Transformation, to unspecified|natural resource|land",Acceptable conformity,Europe,213
+"Transformation, to unspecified, natural (non-use)|natural resource|land",Nonconformity,Europe,212
+"Transformation, to urban, discontinuously built|natural resource|land",Acceptable conformity,Europe,214
+"Transformation, to wetland, inland (non-use)|natural resource|land",Acceptable conformity,Europe,215
+Ulexite|natural resource|in ground,Marginally acceptable conformity,Europe,216
+Uranium|natural resource|in ground,Acceptable conformity,Europe,217
+Vanadium|natural resource|in ground,Acceptable conformity,Europe,218
+"Volume occupied, final repository for low-active radioactive waste|natural resource|in ground",Acceptable conformity,Europe,219
+"Volume occupied, final repository for radioactive waste|natural resource|in ground",Acceptable conformity,Europe,220
+"Volume occupied, reservoir|natural resource|in water",Acceptable conformity,Europe,221
+"Volume occupied, underground deposit|natural resource|in ground",Acceptable conformity,Europe,222
+"Water, cooling, unspecified natural origin|natural resource|in water",Acceptable conformity,Europe,223
+"Water, in air|natural resource|in air",Acceptable conformity,Europe,224
+"Water, lake|natural resource|in water",Acceptable conformity,Europe,225
+"Water, river|natural resource|in water",Marginally acceptable conformity,Europe,226
+"Water, salt, ocean|natural resource|in water",Acceptable conformity,Europe,227
+"Water, salt, sole|natural resource|in water",Marginally acceptable conformity,Europe,228
+"Water, turbine use, unspecified natural origin|natural resource|in water",Acceptable conformity,Europe,229
+"Water, unspecified natural origin|natural resource|fossil well",Acceptable conformity,Europe,230
+"Water, unspecified natural origin|natural resource|in ground",Nonconformity,Europe,231
+"Water, unspecified natural origin|natural resource|in water",Nonconformity,Europe,232
+"Water, well, in ground|natural resource|in water",Close conformity,Europe,233
+"Wood, hard, standing|natural resource|biotic",Marginally acceptable conformity,Europe,234
+"Wood, soft, standing|natural resource|biotic",Acceptable conformity,Europe,235
+"Wood, unspecified, standing|natural resource|biotic",Marginally acceptable conformity,Europe,236
+Xenon|natural resource|in air,Acceptable conformity,Europe,237
+Ytterbium|natural resource|in ground,Marginally acceptable conformity,Europe,238
+Yttrium|natural resource|in ground,Acceptable conformity,Europe,239
+Zinc|natural resource|in ground,Acceptable conformity,Europe,240
+Zirconium|natural resource|in ground,Acceptable conformity,Europe,241
+Aluminium|natural resource|in ground,Nonconformity,South America,1
+Anhydrite|natural resource|in ground,Nonconformity,South America,2
+Argon|natural resource|in air,Acceptable conformity,South America,3
+Barium|natural resource|in ground,Acceptable conformity,South America,4
+Basalt|natural resource|in ground,Marginally acceptable conformity,South America,5
+Borax|natural resource|in ground,Acceptable conformity,South America,6
+Boron|natural resource|in ground,Acceptable conformity,South America,7
+Bromine|natural resource|in water,Marginally acceptable conformity,South America,8
+Cadmium|natural resource|in ground,Marginally acceptable conformity,South America,9
+Calcium|natural resource|in ground,Nonconformity,South America,10
+"Carbon dioxide, in air|natural resource|in air",Marginally acceptable conformity,South America,11
+"Carbon, organic, in soil or biomass stock|natural resource|in ground",Acceptable conformity,South America,12
+Carnallite|natural resource|in water,Nonconformity,South America,13
+Cerium|natural resource|in ground,Nonconformity,South America,14
+Chromium|natural resource|in ground,Acceptable conformity,South America,15
+Chrysotile|natural resource|in ground,Nonconformity,South America,16
+"Clay, bentonite|natural resource|in ground",Nonconformity,South America,17
+"Coal, brown|natural resource|in ground",Acceptable conformity,South America,18
+"Coal, hard|natural resource|in ground",Acceptable conformity,South America,19
+Copper|natural resource|in ground,Acceptable conformity,South America,20
+Diatomite|natural resource|in ground,Acceptable conformity,South America,21
+Dolomite|natural resource|in ground,Nonconformity,South America,22
+Dysprosium|natural resource|in ground,Nonconformity,South America,23
+"Energy, geothermal, converted|natural resource|in ground",Marginally acceptable conformity,South America,24
+"Energy, gross calorific value, in biomass|natural resource|biotic",Acceptable conformity,South America,26
+"Energy, gross calorific value, in biomass, primary forest|natural resource|biotic",Nonconformity,South America,25
+"Energy, kinetic (in wind), converted|natural resource|in air",Acceptable conformity,South America,27
+"Energy, potential (in hydropower reservoir), converted|natural resource|in water",Acceptable conformity,South America,28
+"Energy, solar, converted|natural resource|in air",Acceptable conformity,South America,29
+Erbium|natural resource|in ground,Marginally acceptable conformity,South America,30
+Europium|natural resource|in ground,Nonconformity,South America,31
+Feldspar|natural resource|in ground,Nonconformity,South America,32
+"Fish, demersal, in ocean|natural resource|biotic",Acceptable conformity,South America,33
+"Fish, pelagic, in ocean|natural resource|biotic",Acceptable conformity,South America,34
+Fluorine|natural resource|in ground,Nonconformity,South America,35
+Fluorspar|natural resource|in ground,Nonconformity,South America,36
+Gadolinium|natural resource|in ground,Nonconformity,South America,37
+Gallium|natural resource|in ground,Nonconformity,South America,38
+Gangue|natural resource|in ground,Nonconformity,South America,39
+"Gas, mine, off-gas, process, coal mining|natural resource|in ground",Acceptable conformity,South America,40
+"Gas, natural|natural resource|in ground",Marginally acceptable conformity,South America,41
+Gold|natural resource|in ground,Marginally acceptable conformity,South America,42
+Granite|natural resource|in ground,Marginally acceptable conformity,South America,43
+Graphite|natural resource|in ground,Nonconformity,South America,44
+Gypsum|natural resource|in ground,Nonconformity,South America,45
+Hafnium|natural resource|in ground,Marginally acceptable conformity,South America,46
+Holmium|natural resource|in ground,Marginally acceptable conformity,South America,47
+Indium|natural resource|in ground,Acceptable conformity,South America,48
+Iodine|natural resource|in water,Acceptable conformity,South America,49
+Iron|natural resource|in ground,Nonconformity,South America,50
+Kaolinite|natural resource|in ground,Nonconformity,South America,51
+Kieserite|natural resource|in ground,Acceptable conformity,South America,52
+Krypton|natural resource|in air,Acceptable conformity,South America,53
+Lanthanum|natural resource|in ground,Nonconformity,South America,54
+Laterite|natural resource|in ground,Marginally acceptable conformity,South America,55
+Lead|natural resource|in ground,Marginally acceptable conformity,South America,56
+Lithium|natural resource|in ground,Acceptable conformity,South America,57
+Lutetium|natural resource|in ground,Marginally acceptable conformity,South America,58
+Magnesite|natural resource|in ground,Acceptable conformity,South America,59
+Magnesium|natural resource|in ground,Nonconformity,South America,60
+Manganese|natural resource|in ground,Nonconformity,South America,61
+Mercury|natural resource|in ground,Acceptable conformity,South America,62
+Molybdenum|natural resource|in ground,Marginally acceptable conformity,South America,63
+Neodymium|natural resource|in ground,Nonconformity,South America,64
+Niobium|natural resource|in ground,Nonconformity,South America,65
+Nitrogen|natural resource|in air,Close conformity,South America,66
+"Occupation, annual crop|natural resource|land",Nonconformity,South America,72
+"Occupation, annual crop, irrigated|natural resource|land",Acceptable conformity,South America,68
+"Occupation, annual crop, irrigated, intensive|natural resource|land",Close conformity,South America,67
+"Occupation, annual crop, non-irrigated|natural resource|land",Acceptable conformity,South America,71
+"Occupation, annual crop, non-irrigated, extensive|natural resource|land",Acceptable conformity,South America,69
+"Occupation, annual crop, non-irrigated, intensive|natural resource|land",Acceptable conformity,South America,70
+"Occupation, arable land, unspecified use|natural resource|land",Acceptable conformity,South America,73
+"Occupation, bare area (non-use)|natural resource|land",Marginally acceptable conformity,South America,74
+"Occupation, construction site|natural resource|land",Nonconformity,South America,75
+"Occupation, cropland fallow (non-use)|natural resource|land",Nonconformity,South America,76
+"Occupation, dump site|natural resource|land",Nonconformity,South America,77
+"Occupation, forest, extensive|natural resource|land",Nonconformity,South America,78
+"Occupation, forest, intensive|natural resource|land",Acceptable conformity,South America,79
+"Occupation, grassland, natural (non-use)|natural resource|land",Marginally acceptable conformity,South America,80
+"Occupation, grassland, natural, for livestock grazing|natural resource|land",Nonconformity,South America,81
+"Occupation, industrial area|natural resource|land",Nonconformity,South America,82
+"Occupation, inland waterbody, unspecified|natural resource|land",Marginally acceptable conformity,South America,83
+"Occupation, lake, artificial|natural resource|land",Acceptable conformity,South America,84
+"Occupation, mineral extraction site|natural resource|land",Nonconformity,South America,85
+"Occupation, pasture, man made|natural resource|land",Acceptable conformity,South America,88
+"Occupation, pasture, man made, extensive|natural resource|land",Marginally acceptable conformity,South America,86
+"Occupation, pasture, man made, intensive|natural resource|land",Nonconformity,South America,87
+"Occupation, permanent crop|natural resource|land",Marginally acceptable conformity,South America,92
+"Occupation, permanent crop, irrigated|natural resource|land",Nonconformity,South America,90
+"Occupation, permanent crop, irrigated, intensive|natural resource|land",Acceptable conformity,South America,89
+"Occupation, permanent crop, non-irrigated|natural resource|land",Acceptable conformity,South America,91
+"Occupation, river, artificial|natural resource|land",Marginally acceptable conformity,South America,93
+"Occupation, seabed, drilling and mining|natural resource|land",Marginally acceptable conformity,South America,94
+"Occupation, seabed, infrastructure|natural resource|land",Marginally acceptable conformity,South America,95
+"Occupation, traffic area, rail network|natural resource|land",Acceptable conformity,South America,96
+"Occupation, traffic area, rail/road embankment|natural resource|land",Acceptable conformity,South America,97
+"Occupation, traffic area, road network|natural resource|land",Close conformity,South America,98
+"Occupation, unspecified|natural resource|land",Marginally acceptable conformity,South America,100
+"Occupation, unspecified, natural (non-use)|natural resource|land",Nonconformity,South America,99
+"Occupation, urban, discontinuously built|natural resource|land",Marginally acceptable conformity,South America,101
+"Oil, crude|natural resource|in ground",Marginally acceptable conformity,South America,102
+Olivine|natural resource|in ground,Acceptable conformity,South America,103
+Oxygen|natural resource|in air,Marginally acceptable conformity,South America,104
+Palladium|natural resource|in ground,Acceptable conformity,South America,105
+Peat|natural resource|biotic,Nonconformity,South America,106
+Perlite|natural resource|in ground,Acceptable conformity,South America,107
+Phosphorus|natural resource|in ground,Marginally acceptable conformity,South America,108
+Platinum|natural resource|in ground,Acceptable conformity,South America,109
+Potassium|natural resource|in ground,Acceptable conformity,South America,110
+Praseodymium|natural resource|in ground,Nonconformity,South America,111
+Rhenium|natural resource|in ground,Nonconformity,South America,112
+Rhodium|natural resource|in ground,Marginally acceptable conformity,South America,113
+Samarium|natural resource|in ground,Nonconformity,South America,114
+"Sand, unspecified|natural resource|in ground",Marginally acceptable conformity,South America,115
+Scandium|natural resource|in ground,Nonconformity,South America,116
+Selenium|natural resource|in ground,Acceptable conformity,South America,117
+Shale|natural resource|in ground,Nonconformity,South America,118
+Silicon|natural resource|in ground,Nonconformity,South America,119
+Silver|natural resource|in ground,Acceptable conformity,South America,120
+Sodium|natural resource|in ground,Marginally acceptable conformity,South America,124
+Sodium chloride|natural resource|in ground,Marginally acceptable conformity,South America,121
+Sodium nitrate|natural resource|in ground,Acceptable conformity,South America,122
+Sodium sulfate|natural resource|in ground,Nonconformity,South America,123
+Spodumene|natural resource|in ground,Acceptable conformity,South America,125
+Steatite|natural resource|in ground,Marginally acceptable conformity,South America,126
+Strontium|natural resource|in ground,Marginally acceptable conformity,South America,127
+Sulfur|natural resource|in ground,Nonconformity,South America,128
+Sylvite|natural resource|in ground,Acceptable conformity,South America,129
+Talc|natural resource|in ground,Nonconformity,South America,130
+Tantalum|natural resource|in ground,Marginally acceptable conformity,South America,131
+Tellurium|natural resource|in ground,Marginally acceptable conformity,South America,132
+Terbium|natural resource|in ground,Nonconformity,South America,133
+Thulium|natural resource|in ground,Marginally acceptable conformity,South America,134
+Tin|natural resource|in ground,Nonconformity,South America,135
+Titanium|natural resource|in ground,Marginally acceptable conformity,South America,136
+"Transformation, from annual crop|natural resource|land",Marginally acceptable conformity,South America,142
+"Transformation, from annual crop, irrigated|natural resource|land",Marginally acceptable conformity,South America,138
+"Transformation, from annual crop, irrigated, intensive|natural resource|land",Marginally acceptable conformity,South America,137
+"Transformation, from annual crop, non-irrigated|natural resource|land",Acceptable conformity,South America,141
+"Transformation, from annual crop, non-irrigated, extensive|natural resource|land",Acceptable conformity,South America,139
+"Transformation, from annual crop, non-irrigated, intensive|natural resource|land",Marginally acceptable conformity,South America,140
+"Transformation, from arable land, unspecified use|natural resource|land",Marginally acceptable conformity,South America,143
+"Transformation, from cropland fallow (non-use)|natural resource|land",Nonconformity,South America,144
+"Transformation, from dump site|natural resource|land",Nonconformity,South America,148
+"Transformation, from dump site, inert material landfill|natural resource|land",Nonconformity,South America,145
+"Transformation, from dump site, residual material landfill|natural resource|land",Nonconformity,South America,146
+"Transformation, from dump site, sanitary landfill|natural resource|land",Marginally acceptable conformity,South America,147
+"Transformation, from forest, extensive|natural resource|land",Acceptable conformity,South America,149
+"Transformation, from forest, intensive|natural resource|land",Acceptable conformity,South America,150
+"Transformation, from forest, primary (non-use)|natural resource|land",Marginally acceptable conformity,South America,151
+"Transformation, from forest, secondary (non-use)|natural resource|land",Acceptable conformity,South America,152
+"Transformation, from forest, unspecified|natural resource|land",Nonconformity,South America,153
+"Transformation, from grassland, natural (non-use)|natural resource|land",Nonconformity,South America,154
+"Transformation, from grassland, natural, for livestock grazing|natural resource|land",Acceptable conformity,South America,155
+"Transformation, from heterogeneous, agricultural|natural resource|land",Nonconformity,South America,156
+"Transformation, from industrial area|natural resource|land",Acceptable conformity,South America,157
+"Transformation, from mineral extraction site|natural resource|land",Nonconformity,South America,158
+"Transformation, from pasture, man made|natural resource|land",Marginally acceptable conformity,South America,161
+"Transformation, from pasture, man made, extensive|natural resource|land",Marginally acceptable conformity,South America,159
+"Transformation, from pasture, man made, intensive|natural resource|land",Acceptable conformity,South America,160
+"Transformation, from permanent crop|natural resource|land",Nonconformity,South America,165
+"Transformation, from permanent crop, irrigated|natural resource|land",Acceptable conformity,South America,163
+"Transformation, from permanent crop, irrigated, intensive|natural resource|land",Acceptable conformity,South America,162
+"Transformation, from permanent crop, non-irrigated|natural resource|land",Marginally acceptable conformity,South America,164
+"Transformation, from river, natural (non-use)|natural resource|land",Acceptable conformity,South America,166
+"Transformation, from seabed, infrastructure|natural resource|land",Acceptable conformity,South America,167
+"Transformation, from seabed, unspecified|natural resource|land",Marginally acceptable conformity,South America,168
+"Transformation, from shrub land, sclerophyllous|natural resource|land",Nonconformity,South America,169
+"Transformation, from traffic area, rail/road embankment|natural resource|land",Acceptable conformity,South America,170
+"Transformation, from traffic area, road network|natural resource|land",Nonconformity,South America,171
+"Transformation, from unspecified|natural resource|land",Acceptable conformity,South America,173
+"Transformation, from unspecified, natural (non-use)|natural resource|land",Acceptable conformity,South America,172
+"Transformation, from wetland, inland (non-use)|natural resource|land",Marginally acceptable conformity,South America,174
+"Transformation, to annual crop|natural resource|land",Marginally acceptable conformity,South America,180
+"Transformation, to annual crop, irrigated|natural resource|land",Marginally acceptable conformity,South America,176
+"Transformation, to annual crop, irrigated, intensive|natural resource|land",Acceptable conformity,South America,175
+"Transformation, to annual crop, non-irrigated|natural resource|land",Acceptable conformity,South America,179
+"Transformation, to annual crop, non-irrigated, extensive|natural resource|land",Acceptable conformity,South America,177
+"Transformation, to annual crop, non-irrigated, intensive|natural resource|land",Acceptable conformity,South America,178
+"Transformation, to arable land, unspecified use|natural resource|land",Nonconformity,South America,181
+"Transformation, to cropland fallow (non-use)|natural resource|land",Acceptable conformity,South America,182
+"Transformation, to dump site|natural resource|land",Marginally acceptable conformity,South America,186
+"Transformation, to dump site, inert material landfill|natural resource|land",Nonconformity,South America,183
+"Transformation, to dump site, residual material landfill|natural resource|land",Nonconformity,South America,184
+"Transformation, to dump site, sanitary landfill|natural resource|land",Marginally acceptable conformity,South America,185
+"Transformation, to forest, extensive|natural resource|land",Acceptable conformity,South America,187
+"Transformation, to forest, intensive|natural resource|land",Acceptable conformity,South America,188
+"Transformation, to forest, secondary (non-use)|natural resource|land",Marginally acceptable conformity,South America,189
+"Transformation, to forest, unspecified|natural resource|land",Nonconformity,South America,190
+"Transformation, to grassland, natural (non-use)|natural resource|land",Nonconformity,South America,191
+"Transformation, to grassland, natural, for livestock grazing|natural resource|land",Nonconformity,South America,192
+"Transformation, to heterogeneous, agricultural|natural resource|land",Acceptable conformity,South America,193
+"Transformation, to industrial area|natural resource|land",Acceptable conformity,South America,194
+"Transformation, to inland waterbody, unspecified|natural resource|land",Marginally acceptable conformity,South America,195
+"Transformation, to lake, artificial|natural resource|land",Nonconformity,South America,196
+"Transformation, to mineral extraction site|natural resource|land",Marginally acceptable conformity,South America,197
+"Transformation, to pasture, man made|natural resource|land",Nonconformity,South America,200
+"Transformation, to pasture, man made, extensive|natural resource|land",Marginally acceptable conformity,South America,198
+"Transformation, to pasture, man made, intensive|natural resource|land",Nonconformity,South America,199
+"Transformation, to permanent crop|natural resource|land",Nonconformity,South America,204
+"Transformation, to permanent crop, irrigated|natural resource|land",Acceptable conformity,South America,202
+"Transformation, to permanent crop, irrigated, intensive|natural resource|land",Acceptable conformity,South America,201
+"Transformation, to permanent crop, non-irrigated|natural resource|land",Marginally acceptable conformity,South America,203
+"Transformation, to river, artificial|natural resource|land",Marginally acceptable conformity,South America,205
+"Transformation, to seabed, drilling and mining|natural resource|land",Marginally acceptable conformity,South America,206
+"Transformation, to seabed, infrastructure|natural resource|land",Acceptable conformity,South America,207
+"Transformation, to seabed, unspecified|natural resource|land",Acceptable conformity,South America,208
+"Transformation, to traffic area, rail network|natural resource|land",Acceptable conformity,South America,209
+"Transformation, to traffic area, rail/road embankment|natural resource|land",Acceptable conformity,South America,210
+"Transformation, to traffic area, road network|natural resource|land",Nonconformity,South America,211
+"Transformation, to unspecified|natural resource|land",Marginally acceptable conformity,South America,213
+"Transformation, to unspecified, natural (non-use)|natural resource|land",Nonconformity,South America,212
+"Transformation, to urban, discontinuously built|natural resource|land",Acceptable conformity,South America,214
+"Transformation, to wetland, inland (non-use)|natural resource|land",Marginally acceptable conformity,South America,215
+Ulexite|natural resource|in ground,Nonconformity,South America,216
+Uranium|natural resource|in ground,Acceptable conformity,South America,217
+Vanadium|natural resource|in ground,Nonconformity,South America,218
+"Volume occupied, final repository for low-active radioactive waste|natural resource|in ground",Acceptable conformity,South America,219
+"Volume occupied, final repository for radioactive waste|natural resource|in ground",Acceptable conformity,South America,220
+"Volume occupied, reservoir|natural resource|in water",Marginally acceptable conformity,South America,221
+"Volume occupied, underground deposit|natural resource|in ground",Acceptable conformity,South America,222
+"Water, cooling, unspecified natural origin|natural resource|in water",Nonconformity,South America,223
+"Water, in air|natural resource|in air",Acceptable conformity,South America,224
+"Water, lake|natural resource|in water",Marginally acceptable conformity,South America,225
+"Water, river|natural resource|in water",Acceptable conformity,South America,226
+"Water, salt, ocean|natural resource|in water",Acceptable conformity,South America,227
+"Water, salt, sole|natural resource|in water",Nonconformity,South America,228
+"Water, turbine use, unspecified natural origin|natural resource|in water",Marginally acceptable conformity,South America,229
+"Water, unspecified natural origin|natural resource|fossil well",Acceptable conformity,South America,230
+"Water, unspecified natural origin|natural resource|in ground",Nonconformity,South America,231
+"Water, unspecified natural origin|natural resource|in water",Marginally acceptable conformity,South America,232
+"Water, well, in ground|natural resource|in water",Nonconformity,South America,233
+"Wood, hard, standing|natural resource|biotic",Acceptable conformity,South America,234
+"Wood, soft, standing|natural resource|biotic",Acceptable conformity,South America,235
+"Wood, unspecified, standing|natural resource|biotic",Nonconformity,South America,236
+Xenon|natural resource|in air,Acceptable conformity,South America,237
+Ytterbium|natural resource|in ground,Marginally acceptable conformity,South America,238
+Yttrium|natural resource|in ground,Marginally acceptable conformity,South America,239
+Zinc|natural resource|in ground,Nonconformity,South America,240
+Zirconium|natural resource|in ground,Marginally acceptable conformity,South America,241
+Aluminium|natural resource|in ground,Nonconformity,Asia,1
+Anhydrite|natural resource|in ground,Nonconformity,Asia,2
+Argon|natural resource|in air,Nonconformity,Asia,3
+Barium|natural resource|in ground,Acceptable conformity,Asia,4
+Basalt|natural resource|in ground,Marginally acceptable conformity,Asia,5
+Borax|natural resource|in ground,Nonconformity,Asia,6
+Boron|natural resource|in ground,Nonconformity,Asia,7
+Bromine|natural resource|in water,Marginally acceptable conformity,Asia,8
+Cadmium|natural resource|in ground,Nonconformity,Asia,9
+Calcium|natural resource|in ground,Nonconformity,Asia,10
+"Carbon dioxide, in air|natural resource|in air",Marginally acceptable conformity,Asia,11
+"Carbon, organic, in soil or biomass stock|natural resource|in ground",Nonconformity,Asia,12
+Carnallite|natural resource|in water,Nonconformity,Asia,13
+Cerium|natural resource|in ground,Nonconformity,Asia,14
+Chromium|natural resource|in ground,Marginally acceptable conformity,Asia,15
+Chrysotile|natural resource|in ground,Nonconformity,Asia,16
+"Clay, bentonite|natural resource|in ground",Marginally acceptable conformity,Asia,17
+"Coal, brown|natural resource|in ground",Nonconformity,Asia,18
+"Coal, hard|natural resource|in ground",Nonconformity,Asia,19
+Copper|natural resource|in ground,Marginally acceptable conformity,Asia,20
+Diatomite|natural resource|in ground,Marginally acceptable conformity,Asia,21
+Dolomite|natural resource|in ground,Nonconformity,Asia,22
+Dysprosium|natural resource|in ground,Nonconformity,Asia,23
+"Energy, geothermal, converted|natural resource|in ground",Nonconformity,Asia,24
+"Energy, gross calorific value, in biomass|natural resource|biotic",Nonconformity,Asia,26
+"Energy, gross calorific value, in biomass, primary forest|natural resource|biotic",Nonconformity,Asia,25
+"Energy, kinetic (in wind), converted|natural resource|in air",Nonconformity,Asia,27
+"Energy, potential (in hydropower reservoir), converted|natural resource|in water",Nonconformity,Asia,28
+"Energy, solar, converted|natural resource|in air",Nonconformity,Asia,29
+Erbium|natural resource|in ground,Nonconformity,Asia,30
+Europium|natural resource|in ground,Nonconformity,Asia,31
+Feldspar|natural resource|in ground,Nonconformity,Asia,32
+"Fish, demersal, in ocean|natural resource|biotic",Marginally acceptable conformity,Asia,33
+"Fish, pelagic, in ocean|natural resource|biotic",Nonconformity,Asia,34
+Fluorine|natural resource|in ground,Nonconformity,Asia,35
+Fluorspar|natural resource|in ground,Marginally acceptable conformity,Asia,36
+Gadolinium|natural resource|in ground,Nonconformity,Asia,37
+Gallium|natural resource|in ground,Nonconformity,Asia,38
+Gangue|natural resource|in ground,Nonconformity,Asia,39
+"Gas, mine, off-gas, process, coal mining|natural resource|in ground",Nonconformity,Asia,40
+"Gas, natural|natural resource|in ground",Nonconformity,Asia,41
+Gold|natural resource|in ground,Nonconformity,Asia,42
+Granite|natural resource|in ground,Nonconformity,Asia,43
+Graphite|natural resource|in ground,Marginally acceptable conformity,Asia,44
+Gypsum|natural resource|in ground,Nonconformity,Asia,45
+Hafnium|natural resource|in ground,Nonconformity,Asia,46
+Holmium|natural resource|in ground,Nonconformity,Asia,47
+Indium|natural resource|in ground,Nonconformity,Asia,48
+Iodine|natural resource|in water,Marginally acceptable conformity,Asia,49
+Iron|natural resource|in ground,Nonconformity,Asia,50
+Kaolinite|natural resource|in ground,Nonconformity,Asia,51
+Kieserite|natural resource|in ground,Nonconformity,Asia,52
+Krypton|natural resource|in air,Acceptable conformity,Asia,53
+Lanthanum|natural resource|in ground,Nonconformity,Asia,54
+Laterite|natural resource|in ground,Nonconformity,Asia,55
+Lead|natural resource|in ground,Marginally acceptable conformity,Asia,56
+Lithium|natural resource|in ground,Nonconformity,Asia,57
+Lutetium|natural resource|in ground,Nonconformity,Asia,58
+Magnesite|natural resource|in ground,Nonconformity,Asia,59
+Magnesium|natural resource|in ground,Nonconformity,Asia,60
+Manganese|natural resource|in ground,Nonconformity,Asia,61
+Mercury|natural resource|in ground,Marginally acceptable conformity,Asia,62
+Molybdenum|natural resource|in ground,Nonconformity,Asia,63
+Neodymium|natural resource|in ground,Nonconformity,Asia,64
+Niobium|natural resource|in ground,Nonconformity,Asia,65
+Nitrogen|natural resource|in air,Nonconformity,Asia,66
+"Occupation, annual crop|natural resource|land",Nonconformity,Asia,72
+"Occupation, annual crop, irrigated|natural resource|land",Nonconformity,Asia,68
+"Occupation, annual crop, irrigated, intensive|natural resource|land",Marginally acceptable conformity,Asia,67
+"Occupation, annual crop, non-irrigated|natural resource|land",Nonconformity,Asia,71
+"Occupation, annual crop, non-irrigated, extensive|natural resource|land",Nonconformity,Asia,69
+"Occupation, annual crop, non-irrigated, intensive|natural resource|land",Marginally acceptable conformity,Asia,70
+"Occupation, arable land, unspecified use|natural resource|land",Nonconformity,Asia,73
+"Occupation, bare area (non-use)|natural resource|land",Nonconformity,Asia,74
+"Occupation, construction site|natural resource|land",Nonconformity,Asia,75
+"Occupation, cropland fallow (non-use)|natural resource|land",Nonconformity,Asia,76
+"Occupation, dump site|natural resource|land",Nonconformity,Asia,77
+"Occupation, forest, extensive|natural resource|land",Nonconformity,Asia,78
+"Occupation, forest, intensive|natural resource|land",Marginally acceptable conformity,Asia,79
+"Occupation, grassland, natural (non-use)|natural resource|land",Nonconformity,Asia,80
+"Occupation, grassland, natural, for livestock grazing|natural resource|land",Nonconformity,Asia,81
+"Occupation, industrial area|natural resource|land",Marginally acceptable conformity,Asia,82
+"Occupation, inland waterbody, unspecified|natural resource|land",Marginally acceptable conformity,Asia,83
+"Occupation, lake, artificial|natural resource|land",Nonconformity,Asia,84
+"Occupation, mineral extraction site|natural resource|land",Acceptable conformity,Asia,85
+"Occupation, pasture, man made|natural resource|land",Marginally acceptable conformity,Asia,88
+"Occupation, pasture, man made, extensive|natural resource|land",Nonconformity,Asia,86
+"Occupation, pasture, man made, intensive|natural resource|land",Marginally acceptable conformity,Asia,87
+"Occupation, permanent crop|natural resource|land",Nonconformity,Asia,92
+"Occupation, permanent crop, irrigated|natural resource|land",Nonconformity,Asia,90
+"Occupation, permanent crop, irrigated, intensive|natural resource|land",Nonconformity,Asia,89
+"Occupation, permanent crop, non-irrigated|natural resource|land",Nonconformity,Asia,91
+"Occupation, river, artificial|natural resource|land",Nonconformity,Asia,93
+"Occupation, seabed, drilling and mining|natural resource|land",Acceptable conformity,Asia,94
+"Occupation, seabed, infrastructure|natural resource|land",Nonconformity,Asia,95
+"Occupation, traffic area, rail network|natural resource|land",Nonconformity,Asia,96
+"Occupation, traffic area, rail/road embankment|natural resource|land",Nonconformity,Asia,97
+"Occupation, traffic area, road network|natural resource|land",Acceptable conformity,Asia,98
+"Occupation, unspecified|natural resource|land",Acceptable conformity,Asia,100
+"Occupation, unspecified, natural (non-use)|natural resource|land",Nonconformity,Asia,99
+"Occupation, urban, discontinuously built|natural resource|land",Nonconformity,Asia,101
+"Oil, crude|natural resource|in ground",Nonconformity,Asia,102
+Olivine|natural resource|in ground,Nonconformity,Asia,103
+Oxygen|natural resource|in air,Nonconformity,Asia,104
+Palladium|natural resource|in ground,Nonconformity,Asia,105
+Peat|natural resource|biotic,Nonconformity,Asia,106
+Perlite|natural resource|in ground,Nonconformity,Asia,107
+Phosphorus|natural resource|in ground,Nonconformity,Asia,108
+Platinum|natural resource|in ground,Nonconformity,Asia,109
+Potassium|natural resource|in ground,Nonconformity,Asia,110
+Praseodymium|natural resource|in ground,Nonconformity,Asia,111
+Rhenium|natural resource|in ground,Nonconformity,Asia,112
+Rhodium|natural resource|in ground,Nonconformity,Asia,113
+Samarium|natural resource|in ground,Nonconformity,Asia,114
+"Sand, unspecified|natural resource|in ground",Nonconformity,Asia,115
+Scandium|natural resource|in ground,Nonconformity,Asia,116
+Selenium|natural resource|in ground,Nonconformity,Asia,117
+Shale|natural resource|in ground,Nonconformity,Asia,118
+Silicon|natural resource|in ground,Nonconformity,Asia,119
+Silver|natural resource|in ground,Nonconformity,Asia,120
+Sodium|natural resource|in ground,Nonconformity,Asia,124
+Sodium chloride|natural resource|in ground,Marginally acceptable conformity,Asia,121
+Sodium nitrate|natural resource|in ground,Nonconformity,Asia,122
+Sodium sulfate|natural resource|in ground,Acceptable conformity,Asia,123
+Spodumene|natural resource|in ground,Acceptable conformity,Asia,125
+Steatite|natural resource|in ground,Nonconformity,Asia,126
+Strontium|natural resource|in ground,Nonconformity,Asia,127
+Sulfur|natural resource|in ground,Nonconformity,Asia,128
+Sylvite|natural resource|in ground,Acceptable conformity,Asia,129
+Talc|natural resource|in ground,Nonconformity,Asia,130
+Tantalum|natural resource|in ground,Marginally acceptable conformity,Asia,131
+Tellurium|natural resource|in ground,Nonconformity,Asia,132
+Terbium|natural resource|in ground,Nonconformity,Asia,133
+Thulium|natural resource|in ground,Nonconformity,Asia,134
+Tin|natural resource|in ground,Nonconformity,Asia,135
+Titanium|natural resource|in ground,Nonconformity,Asia,136
+"Transformation, from annual crop|natural resource|land",Nonconformity,Asia,142
+"Transformation, from annual crop, irrigated|natural resource|land",Nonconformity,Asia,138
+"Transformation, from annual crop, irrigated, intensive|natural resource|land",Nonconformity,Asia,137
+"Transformation, from annual crop, non-irrigated|natural resource|land",Nonconformity,Asia,141
+"Transformation, from annual crop, non-irrigated, extensive|natural resource|land",Nonconformity,Asia,139
+"Transformation, from annual crop, non-irrigated, intensive|natural resource|land",Acceptable conformity,Asia,140
+"Transformation, from arable land, unspecified use|natural resource|land",Marginally acceptable conformity,Asia,143
+"Transformation, from cropland fallow (non-use)|natural resource|land",Marginally acceptable conformity,Asia,144
+"Transformation, from dump site|natural resource|land",Nonconformity,Asia,148
+"Transformation, from dump site, inert material landfill|natural resource|land",Marginally acceptable conformity,Asia,145
+"Transformation, from dump site, residual material landfill|natural resource|land",Nonconformity,Asia,146
+"Transformation, from dump site, sanitary landfill|natural resource|land",Marginally acceptable conformity,Asia,147
+"Transformation, from forest, extensive|natural resource|land",Nonconformity,Asia,149
+"Transformation, from forest, intensive|natural resource|land",Nonconformity,Asia,150
+"Transformation, from forest, primary (non-use)|natural resource|land",Nonconformity,Asia,151
+"Transformation, from forest, secondary (non-use)|natural resource|land",Nonconformity,Asia,152
+"Transformation, from forest, unspecified|natural resource|land",Nonconformity,Asia,153
+"Transformation, from grassland, natural (non-use)|natural resource|land",Nonconformity,Asia,154
+"Transformation, from grassland, natural, for livestock grazing|natural resource|land",Nonconformity,Asia,155
+"Transformation, from heterogeneous, agricultural|natural resource|land",Nonconformity,Asia,156
+"Transformation, from industrial area|natural resource|land",Nonconformity,Asia,157
+"Transformation, from mineral extraction site|natural resource|land",Nonconformity,Asia,158
+"Transformation, from pasture, man made|natural resource|land",Nonconformity,Asia,161
+"Transformation, from pasture, man made, extensive|natural resource|land",Marginally acceptable conformity,Asia,159
+"Transformation, from pasture, man made, intensive|natural resource|land",Nonconformity,Asia,160
+"Transformation, from permanent crop|natural resource|land",Nonconformity,Asia,165
+"Transformation, from permanent crop, irrigated|natural resource|land",Nonconformity,Asia,163
+"Transformation, from permanent crop, irrigated, intensive|natural resource|land",Nonconformity,Asia,162
+"Transformation, from permanent crop, non-irrigated|natural resource|land",Nonconformity,Asia,164
+"Transformation, from river, natural (non-use)|natural resource|land",Acceptable conformity,Asia,166
+"Transformation, from seabed, infrastructure|natural resource|land",Nonconformity,Asia,167
+"Transformation, from seabed, unspecified|natural resource|land",Acceptable conformity,Asia,168
+"Transformation, from shrub land, sclerophyllous|natural resource|land",Nonconformity,Asia,169
+"Transformation, from traffic area, rail/road embankment|natural resource|land",Nonconformity,Asia,170
+"Transformation, from traffic area, road network|natural resource|land",Nonconformity,Asia,171
+"Transformation, from unspecified|natural resource|land",Nonconformity,Asia,173
+"Transformation, from unspecified, natural (non-use)|natural resource|land",Nonconformity,Asia,172
+"Transformation, from wetland, inland (non-use)|natural resource|land",Nonconformity,Asia,174
+"Transformation, to annual crop|natural resource|land",Nonconformity,Asia,180
+"Transformation, to annual crop, irrigated|natural resource|land",Nonconformity,Asia,176
+"Transformation, to annual crop, irrigated, intensive|natural resource|land",Marginally acceptable conformity,Asia,175
+"Transformation, to annual crop, non-irrigated|natural resource|land",Nonconformity,Asia,179
+"Transformation, to annual crop, non-irrigated, extensive|natural resource|land",Nonconformity,Asia,177
+"Transformation, to annual crop, non-irrigated, intensive|natural resource|land",Nonconformity,Asia,178
+"Transformation, to arable land, unspecified use|natural resource|land",Acceptable conformity,Asia,181
+"Transformation, to cropland fallow (non-use)|natural resource|land",Marginally acceptable conformity,Asia,182
+"Transformation, to dump site|natural resource|land",Nonconformity,Asia,186
+"Transformation, to dump site, inert material landfill|natural resource|land",Marginally acceptable conformity,Asia,183
+"Transformation, to dump site, residual material landfill|natural resource|land",Nonconformity,Asia,184
+"Transformation, to dump site, sanitary landfill|natural resource|land",Marginally acceptable conformity,Asia,185
+"Transformation, to forest, extensive|natural resource|land",Nonconformity,Asia,187
+"Transformation, to forest, intensive|natural resource|land",Nonconformity,Asia,188
+"Transformation, to forest, secondary (non-use)|natural resource|land",Acceptable conformity,Asia,189
+"Transformation, to forest, unspecified|natural resource|land",Nonconformity,Asia,190
+"Transformation, to grassland, natural (non-use)|natural resource|land",Nonconformity,Asia,191
+"Transformation, to grassland, natural, for livestock grazing|natural resource|land",Acceptable conformity,Asia,192
+"Transformation, to heterogeneous, agricultural|natural resource|land",Marginally acceptable conformity,Asia,193
+"Transformation, to industrial area|natural resource|land",Nonconformity,Asia,194
+"Transformation, to inland waterbody, unspecified|natural resource|land",Marginally acceptable conformity,Asia,195
+"Transformation, to lake, artificial|natural resource|land",Nonconformity,Asia,196
+"Transformation, to mineral extraction site|natural resource|land",Nonconformity,Asia,197
+"Transformation, to pasture, man made|natural resource|land",Nonconformity,Asia,200
+"Transformation, to pasture, man made, extensive|natural resource|land",Marginally acceptable conformity,Asia,198
+"Transformation, to pasture, man made, intensive|natural resource|land",Nonconformity,Asia,199
+"Transformation, to permanent crop|natural resource|land",Nonconformity,Asia,204
+"Transformation, to permanent crop, irrigated|natural resource|land",Nonconformity,Asia,202
+"Transformation, to permanent crop, irrigated, intensive|natural resource|land",Nonconformity,Asia,201
+"Transformation, to permanent crop, non-irrigated|natural resource|land",Nonconformity,Asia,203
+"Transformation, to river, artificial|natural resource|land",Nonconformity,Asia,205
+"Transformation, to seabed, drilling and mining|natural resource|land",Acceptable conformity,Asia,206
+"Transformation, to seabed, infrastructure|natural resource|land",Nonconformity,Asia,207
+"Transformation, to seabed, unspecified|natural resource|land",Nonconformity,Asia,208
+"Transformation, to traffic area, rail network|natural resource|land",Nonconformity,Asia,209
+"Transformation, to traffic area, rail/road embankment|natural resource|land",Nonconformity,Asia,210
+"Transformation, to traffic area, road network|natural resource|land",Acceptable conformity,Asia,211
+"Transformation, to unspecified|natural resource|land",Nonconformity,Asia,213
+"Transformation, to unspecified, natural (non-use)|natural resource|land",Nonconformity,Asia,212
+"Transformation, to urban, discontinuously built|natural resource|land",Nonconformity,Asia,214
+"Transformation, to wetland, inland (non-use)|natural resource|land",Marginally acceptable conformity,Asia,215
+Ulexite|natural resource|in ground,Nonconformity,Asia,216
+Uranium|natural resource|in ground,Nonconformity,Asia,217
+Vanadium|natural resource|in ground,Nonconformity,Asia,218
+"Volume occupied, final repository for low-active radioactive waste|natural resource|in ground",Nonconformity,Asia,219
+"Volume occupied, final repository for radioactive waste|natural resource|in ground",Nonconformity,Asia,220
+"Volume occupied, reservoir|natural resource|in water",Nonconformity,Asia,221
+"Volume occupied, underground deposit|natural resource|in ground",Nonconformity,Asia,222
+"Water, cooling, unspecified natural origin|natural resource|in water",Nonconformity,Asia,223
+"Water, in air|natural resource|in air",Nonconformity,Asia,224
+"Water, lake|natural resource|in water",Nonconformity,Asia,225
+"Water, river|natural resource|in water",Nonconformity,Asia,226
+"Water, salt, ocean|natural resource|in water",Nonconformity,Asia,227
+"Water, salt, sole|natural resource|in water",Nonconformity,Asia,228
+"Water, turbine use, unspecified natural origin|natural resource|in water",Nonconformity,Asia,229
+"Water, unspecified natural origin|natural resource|fossil well",Nonconformity,Asia,230
+"Water, unspecified natural origin|natural resource|in ground",Nonconformity,Asia,231
+"Water, unspecified natural origin|natural resource|in water",Nonconformity,Asia,232
+"Water, well, in ground|natural resource|in water",Nonconformity,Asia,233
+"Wood, hard, standing|natural resource|biotic",Nonconformity,Asia,234
+"Wood, soft, standing|natural resource|biotic",Nonconformity,Asia,235
+"Wood, unspecified, standing|natural resource|biotic",Nonconformity,Asia,236
+Xenon|natural resource|in air,Nonconformity,Asia,237
+Ytterbium|natural resource|in ground,Nonconformity,Asia,238
+Yttrium|natural resource|in ground,Nonconformity,Asia,239
+Zinc|natural resource|in ground,Nonconformity,Asia,240
+Zirconium|natural resource|in ground,Nonconformity,Asia,241
+Aluminium|natural resource|in ground,Marginally acceptable conformity,Africa,1
+Anhydrite|natural resource|in ground,Nonconformity,Africa,2
+Argon|natural resource|in air,Nonconformity,Africa,3
+Barium|natural resource|in ground,Nonconformity,Africa,4
+Basalt|natural resource|in ground,Nonconformity,Africa,5
+Borax|natural resource|in ground,Acceptable conformity,Africa,6
+Boron|natural resource|in ground,Nonconformity,Africa,7
+Bromine|natural resource|in water,Acceptable conformity,Africa,8
+Cadmium|natural resource|in ground,Nonconformity,Africa,9
+Calcium|natural resource|in ground,Nonconformity,Africa,10
+"Carbon dioxide, in air|natural resource|in air",Nonconformity,Africa,11
+"Carbon, organic, in soil or biomass stock|natural resource|in ground",Nonconformity,Africa,12
+Carnallite|natural resource|in water,Nonconformity,Africa,13
+Cerium|natural resource|in ground,Nonconformity,Africa,14
+Chromium|natural resource|in ground,Marginally acceptable conformity,Africa,15
+Chrysotile|natural resource|in ground,Nonconformity,Africa,16
+"Clay, bentonite|natural resource|in ground",Marginally acceptable conformity,Africa,17
+"Coal, brown|natural resource|in ground",Nonconformity,Africa,18
+"Coal, hard|natural resource|in ground",Nonconformity,Africa,19
+Copper|natural resource|in ground,Nonconformity,Africa,20
+Diatomite|natural resource|in ground,Nonconformity,Africa,21
+Dolomite|natural resource|in ground,Nonconformity,Africa,22
+Dysprosium|natural resource|in ground,Marginally acceptable conformity,Africa,23
+"Energy, geothermal, converted|natural resource|in ground",Nonconformity,Africa,24
+"Energy, gross calorific value, in biomass|natural resource|biotic",Nonconformity,Africa,26
+"Energy, gross calorific value, in biomass, primary forest|natural resource|biotic",Nonconformity,Africa,25
+"Energy, kinetic (in wind), converted|natural resource|in air",Nonconformity,Africa,27
+"Energy, potential (in hydropower reservoir), converted|natural resource|in water",Nonconformity,Africa,28
+"Energy, solar, converted|natural resource|in air",Nonconformity,Africa,29
+Erbium|natural resource|in ground,Nonconformity,Africa,30
+Europium|natural resource|in ground,Nonconformity,Africa,31
+Feldspar|natural resource|in ground,Nonconformity,Africa,32
+"Fish, demersal, in ocean|natural resource|biotic",Nonconformity,Africa,33
+"Fish, pelagic, in ocean|natural resource|biotic",Nonconformity,Africa,34
+Fluorine|natural resource|in ground,Nonconformity,Africa,35
+Fluorspar|natural resource|in ground,Nonconformity,Africa,36
+Gadolinium|natural resource|in ground,Nonconformity,Africa,37
+Gallium|natural resource|in ground,Nonconformity,Africa,38
+Gangue|natural resource|in ground,Nonconformity,Africa,39
+"Gas, mine, off-gas, process, coal mining|natural resource|in ground",Nonconformity,Africa,40
+"Gas, natural|natural resource|in ground",Nonconformity,Africa,41
+Gold|natural resource|in ground,Nonconformity,Africa,42
+Granite|natural resource|in ground,Nonconformity,Africa,43
+Graphite|natural resource|in ground,Nonconformity,Africa,44
+Gypsum|natural resource|in ground,Nonconformity,Africa,45
+Hafnium|natural resource|in ground,Nonconformity,Africa,46
+Holmium|natural resource|in ground,Nonconformity,Africa,47
+Indium|natural resource|in ground,Nonconformity,Africa,48
+Iodine|natural resource|in water,Nonconformity,Africa,49
+Iron|natural resource|in ground,Nonconformity,Africa,50
+Kaolinite|natural resource|in ground,Nonconformity,Africa,51
+Kieserite|natural resource|in ground,Nonconformity,Africa,52
+Krypton|natural resource|in air,Nonconformity,Africa,53
+Lanthanum|natural resource|in ground,Nonconformity,Africa,54
+Laterite|natural resource|in ground,Nonconformity,Africa,55
+Lead|natural resource|in ground,Nonconformity,Africa,56
+Lithium|natural resource|in ground,Nonconformity,Africa,57
+Lutetium|natural resource|in ground,Marginally acceptable conformity,Africa,58
+Magnesite|natural resource|in ground,Nonconformity,Africa,59
+Magnesium|natural resource|in ground,Nonconformity,Africa,60
+Manganese|natural resource|in ground,Nonconformity,Africa,61
+Mercury|natural resource|in ground,Nonconformity,Africa,62
+Molybdenum|natural resource|in ground,Nonconformity,Africa,63
+Neodymium|natural resource|in ground,Nonconformity,Africa,64
+Niobium|natural resource|in ground,Nonconformity,Africa,65
+Nitrogen|natural resource|in air,Nonconformity,Africa,66
+"Occupation, annual crop|natural resource|land",Marginally acceptable conformity,Africa,72
+"Occupation, annual crop, irrigated|natural resource|land",Nonconformity,Africa,68
+"Occupation, annual crop, irrigated, intensive|natural resource|land",Nonconformity,Africa,67
+"Occupation, annual crop, non-irrigated|natural resource|land",Nonconformity,Africa,71
+"Occupation, annual crop, non-irrigated, extensive|natural resource|land",Nonconformity,Africa,69
+"Occupation, annual crop, non-irrigated, intensive|natural resource|land",Nonconformity,Africa,70
+"Occupation, arable land, unspecified use|natural resource|land",Nonconformity,Africa,73
+"Occupation, bare area (non-use)|natural resource|land",Nonconformity,Africa,74
+"Occupation, construction site|natural resource|land",Nonconformity,Africa,75
+"Occupation, cropland fallow (non-use)|natural resource|land",Nonconformity,Africa,76
+"Occupation, dump site|natural resource|land",Nonconformity,Africa,77
+"Occupation, forest, extensive|natural resource|land",Nonconformity,Africa,78
+"Occupation, forest, intensive|natural resource|land",Nonconformity,Africa,79
+"Occupation, grassland, natural (non-use)|natural resource|land",Nonconformity,Africa,80
+"Occupation, grassland, natural, for livestock grazing|natural resource|land",Nonconformity,Africa,81
+"Occupation, industrial area|natural resource|land",Nonconformity,Africa,82
+"Occupation, inland waterbody, unspecified|natural resource|land",Nonconformity,Africa,83
+"Occupation, lake, artificial|natural resource|land",Nonconformity,Africa,84
+"Occupation, mineral extraction site|natural resource|land",Nonconformity,Africa,85
+"Occupation, pasture, man made|natural resource|land",Nonconformity,Africa,88
+"Occupation, pasture, man made, extensive|natural resource|land",Nonconformity,Africa,86
+"Occupation, pasture, man made, intensive|natural resource|land",Nonconformity,Africa,87
+"Occupation, permanent crop|natural resource|land",Acceptable conformity,Africa,92
+"Occupation, permanent crop, irrigated|natural resource|land",Nonconformity,Africa,90
+"Occupation, permanent crop, irrigated, intensive|natural resource|land",Nonconformity,Africa,89
+"Occupation, permanent crop, non-irrigated|natural resource|land",Nonconformity,Africa,91
+"Occupation, river, artificial|natural resource|land",Nonconformity,Africa,93
+"Occupation, seabed, drilling and mining|natural resource|land",Nonconformity,Africa,94
+"Occupation, seabed, infrastructure|natural resource|land",Nonconformity,Africa,95
+"Occupation, traffic area, rail network|natural resource|land",Marginally acceptable conformity,Africa,96
+"Occupation, traffic area, rail/road embankment|natural resource|land",Nonconformity,Africa,97
+"Occupation, traffic area, road network|natural resource|land",Nonconformity,Africa,98
+"Occupation, unspecified|natural resource|land",Marginally acceptable conformity,Africa,100
+"Occupation, unspecified, natural (non-use)|natural resource|land",Nonconformity,Africa,99
+"Occupation, urban, discontinuously built|natural resource|land",Nonconformity,Africa,101
+"Oil, crude|natural resource|in ground",Acceptable conformity,Africa,102
+Olivine|natural resource|in ground,Nonconformity,Africa,103
+Oxygen|natural resource|in air,Nonconformity,Africa,104
+Palladium|natural resource|in ground,Nonconformity,Africa,105
+Peat|natural resource|biotic,Nonconformity,Africa,106
+Perlite|natural resource|in ground,Acceptable conformity,Africa,107
+Phosphorus|natural resource|in ground,Nonconformity,Africa,108
+Platinum|natural resource|in ground,Nonconformity,Africa,109
+Potassium|natural resource|in ground,Nonconformity,Africa,110
+Praseodymium|natural resource|in ground,Nonconformity,Africa,111
+Rhenium|natural resource|in ground,Nonconformity,Africa,112
+Rhodium|natural resource|in ground,Marginally acceptable conformity,Africa,113
+Samarium|natural resource|in ground,Nonconformity,Africa,114
+"Sand, unspecified|natural resource|in ground",Acceptable conformity,Africa,115
+Scandium|natural resource|in ground,Nonconformity,Africa,116
+Selenium|natural resource|in ground,Nonconformity,Africa,117
+Shale|natural resource|in ground,Nonconformity,Africa,118
+Silicon|natural resource|in ground,Nonconformity,Africa,119
+Silver|natural resource|in ground,Nonconformity,Africa,120
+Sodium|natural resource|in ground,Nonconformity,Africa,124
+Sodium chloride|natural resource|in ground,Nonconformity,Africa,121
+Sodium nitrate|natural resource|in ground,Nonconformity,Africa,122
+Sodium sulfate|natural resource|in ground,Nonconformity,Africa,123
+Spodumene|natural resource|in ground,Nonconformity,Africa,125
+Steatite|natural resource|in ground,Marginally acceptable conformity,Africa,126
+Strontium|natural resource|in ground,Acceptable conformity,Africa,127
+Sulfur|natural resource|in ground,Nonconformity,Africa,128
+Sylvite|natural resource|in ground,Nonconformity,Africa,129
+Talc|natural resource|in ground,Nonconformity,Africa,130
+Tantalum|natural resource|in ground,Nonconformity,Africa,131
+Tellurium|natural resource|in ground,Nonconformity,Africa,132
+Terbium|natural resource|in ground,Nonconformity,Africa,133
+Thulium|natural resource|in ground,Marginally acceptable conformity,Africa,134
+Tin|natural resource|in ground,Nonconformity,Africa,135
+Titanium|natural resource|in ground,Nonconformity,Africa,136
+"Transformation, from annual crop|natural resource|land",Acceptable conformity,Africa,142
+"Transformation, from annual crop, irrigated|natural resource|land",Nonconformity,Africa,138
+"Transformation, from annual crop, irrigated, intensive|natural resource|land",Nonconformity,Africa,137
+"Transformation, from annual crop, non-irrigated|natural resource|land",Nonconformity,Africa,141
+"Transformation, from annual crop, non-irrigated, extensive|natural resource|land",Nonconformity,Africa,139
+"Transformation, from annual crop, non-irrigated, intensive|natural resource|land",Nonconformity,Africa,140
+"Transformation, from arable land, unspecified use|natural resource|land",Acceptable conformity,Africa,143
+"Transformation, from cropland fallow (non-use)|natural resource|land",Marginally acceptable conformity,Africa,144
+"Transformation, from dump site|natural resource|land",Nonconformity,Africa,148
+"Transformation, from dump site, inert material landfill|natural resource|land",Nonconformity,Africa,145
+"Transformation, from dump site, residual material landfill|natural resource|land",Nonconformity,Africa,146
+"Transformation, from dump site, sanitary landfill|natural resource|land",Acceptable conformity,Africa,147
+"Transformation, from forest, extensive|natural resource|land",Nonconformity,Africa,149
+"Transformation, from forest, intensive|natural resource|land",Nonconformity,Africa,150
+"Transformation, from forest, primary (non-use)|natural resource|land",Marginally acceptable conformity,Africa,151
+"Transformation, from forest, secondary (non-use)|natural resource|land",Nonconformity,Africa,152
+"Transformation, from forest, unspecified|natural resource|land",Nonconformity,Africa,153
+"Transformation, from grassland, natural (non-use)|natural resource|land",Nonconformity,Africa,154
+"Transformation, from grassland, natural, for livestock grazing|natural resource|land",Nonconformity,Africa,155
+"Transformation, from heterogeneous, agricultural|natural resource|land",Nonconformity,Africa,156
+"Transformation, from industrial area|natural resource|land",Marginally acceptable conformity,Africa,157
+"Transformation, from mineral extraction site|natural resource|land",Nonconformity,Africa,158
+"Transformation, from pasture, man made|natural resource|land",Nonconformity,Africa,161
+"Transformation, from pasture, man made, extensive|natural resource|land",Nonconformity,Africa,159
+"Transformation, from pasture, man made, intensive|natural resource|land",Nonconformity,Africa,160
+"Transformation, from permanent crop|natural resource|land",Nonconformity,Africa,165
+"Transformation, from permanent crop, irrigated|natural resource|land",Nonconformity,Africa,163
+"Transformation, from permanent crop, irrigated, intensive|natural resource|land",Nonconformity,Africa,162
+"Transformation, from permanent crop, non-irrigated|natural resource|land",Nonconformity,Africa,164
+"Transformation, from river, natural (non-use)|natural resource|land",Nonconformity,Africa,166
+"Transformation, from seabed, infrastructure|natural resource|land",Nonconformity,Africa,167
+"Transformation, from seabed, unspecified|natural resource|land",Nonconformity,Africa,168
+"Transformation, from shrub land, sclerophyllous|natural resource|land",Nonconformity,Africa,169
+"Transformation, from traffic area, rail/road embankment|natural resource|land",Marginally acceptable conformity,Africa,170
+"Transformation, from traffic area, road network|natural resource|land",Nonconformity,Africa,171
+"Transformation, from unspecified|natural resource|land",Nonconformity,Africa,173
+"Transformation, from unspecified, natural (non-use)|natural resource|land",Nonconformity,Africa,172
+"Transformation, from wetland, inland (non-use)|natural resource|land",Marginally acceptable conformity,Africa,174
+"Transformation, to annual crop|natural resource|land",Nonconformity,Africa,180
+"Transformation, to annual crop, irrigated|natural resource|land",Nonconformity,Africa,176
+"Transformation, to annual crop, irrigated, intensive|natural resource|land",Nonconformity,Africa,175
+"Transformation, to annual crop, non-irrigated|natural resource|land",Nonconformity,Africa,179
+"Transformation, to annual crop, non-irrigated, extensive|natural resource|land",Nonconformity,Africa,177
+"Transformation, to annual crop, non-irrigated, intensive|natural resource|land",Nonconformity,Africa,178
+"Transformation, to arable land, unspecified use|natural resource|land",Acceptable conformity,Africa,181
+"Transformation, to cropland fallow (non-use)|natural resource|land",Nonconformity,Africa,182
+"Transformation, to dump site|natural resource|land",Nonconformity,Africa,186
+"Transformation, to dump site, inert material landfill|natural resource|land",Nonconformity,Africa,183
+"Transformation, to dump site, residual material landfill|natural resource|land",Nonconformity,Africa,184
+"Transformation, to dump site, sanitary landfill|natural resource|land",Acceptable conformity,Africa,185
+"Transformation, to forest, extensive|natural resource|land",Nonconformity,Africa,187
+"Transformation, to forest, intensive|natural resource|land",Nonconformity,Africa,188
+"Transformation, to forest, secondary (non-use)|natural resource|land",Nonconformity,Africa,189
+"Transformation, to forest, unspecified|natural resource|land",Nonconformity,Africa,190
+"Transformation, to grassland, natural (non-use)|natural resource|land",Nonconformity,Africa,191
+"Transformation, to grassland, natural, for livestock grazing|natural resource|land",Nonconformity,Africa,192
+"Transformation, to heterogeneous, agricultural|natural resource|land",Nonconformity,Africa,193
+"Transformation, to industrial area|natural resource|land",Nonconformity,Africa,194
+"Transformation, to inland waterbody, unspecified|natural resource|land",Nonconformity,Africa,195
+"Transformation, to lake, artificial|natural resource|land",Acceptable conformity,Africa,196
+"Transformation, to mineral extraction site|natural resource|land",Nonconformity,Africa,197
+"Transformation, to pasture, man made|natural resource|land",Nonconformity,Africa,200
+"Transformation, to pasture, man made, extensive|natural resource|land",Nonconformity,Africa,198
+"Transformation, to pasture, man made, intensive|natural resource|land",Nonconformity,Africa,199
+"Transformation, to permanent crop|natural resource|land",Nonconformity,Africa,204
+"Transformation, to permanent crop, irrigated|natural resource|land",Nonconformity,Africa,202
+"Transformation, to permanent crop, irrigated, intensive|natural resource|land",Nonconformity,Africa,201
+"Transformation, to permanent crop, non-irrigated|natural resource|land",Nonconformity,Africa,203
+"Transformation, to river, artificial|natural resource|land",Nonconformity,Africa,205
+"Transformation, to seabed, drilling and mining|natural resource|land",Nonconformity,Africa,206
+"Transformation, to seabed, infrastructure|natural resource|land",Nonconformity,Africa,207
+"Transformation, to seabed, unspecified|natural resource|land",Nonconformity,Africa,208
+"Transformation, to traffic area, rail network|natural resource|land",Nonconformity,Africa,209
+"Transformation, to traffic area, rail/road embankment|natural resource|land",Nonconformity,Africa,210
+"Transformation, to traffic area, road network|natural resource|land",Nonconformity,Africa,211
+"Transformation, to unspecified|natural resource|land",Acceptable conformity,Africa,213
+"Transformation, to unspecified, natural (non-use)|natural resource|land",Nonconformity,Africa,212
+"Transformation, to urban, discontinuously built|natural resource|land",Nonconformity,Africa,214
+"Transformation, to wetland, inland (non-use)|natural resource|land",Nonconformity,Africa,215
+Ulexite|natural resource|in ground,Marginally acceptable conformity,Africa,216
+Uranium|natural resource|in ground,Nonconformity,Africa,217
+Vanadium|natural resource|in ground,Nonconformity,Africa,218
+"Volume occupied, final repository for low-active radioactive waste|natural resource|in ground",Nonconformity,Africa,219
+"Volume occupied, final repository for radioactive waste|natural resource|in ground",Marginally acceptable conformity,Africa,220
+"Volume occupied, reservoir|natural resource|in water",Nonconformity,Africa,221
+"Volume occupied, underground deposit|natural resource|in ground",Nonconformity,Africa,222
+"Water, cooling, unspecified natural origin|natural resource|in water",Nonconformity,Africa,223
+"Water, in air|natural resource|in air",Nonconformity,Africa,224
+"Water, lake|natural resource|in water",Nonconformity,Africa,225
+"Water, river|natural resource|in water",Nonconformity,Africa,226
+"Water, salt, ocean|natural resource|in water",Nonconformity,Africa,227
+"Water, salt, sole|natural resource|in water",Nonconformity,Africa,228
+"Water, turbine use, unspecified natural origin|natural resource|in water",Nonconformity,Africa,229
+"Water, unspecified natural origin|natural resource|fossil well",Marginally acceptable conformity,Africa,230
+"Water, unspecified natural origin|natural resource|in ground",Nonconformity,Africa,231
+"Water, unspecified natural origin|natural resource|in water",Nonconformity,Africa,232
+"Water, well, in ground|natural resource|in water",Nonconformity,Africa,233
+"Wood, hard, standing|natural resource|biotic",Nonconformity,Africa,234
+"Wood, soft, standing|natural resource|biotic",Nonconformity,Africa,235
+"Wood, unspecified, standing|natural resource|biotic",Nonconformity,Africa,236
+Xenon|natural resource|in air,Nonconformity,Africa,237
+Ytterbium|natural resource|in ground,Nonconformity,Africa,238
+Yttrium|natural resource|in ground,Acceptable conformity,Africa,239
+Zinc|natural resource|in ground,Nonconformity,Africa,240
+Zirconium|natural resource|in ground,Nonconformity,Africa,241

@@ -1,0 +1,241 @@
+Continent,Conformity,Colname,Label
+Asia,Acceptable conformity,"Carbon dioxide, fossil|air|lower stratosphere + upper troposphere",1
+Asia,Nonconformity,"Carbon dioxide, fossil|air|non-urban air or from high stacks",2
+Asia,Nonconformity,"Carbon dioxide, fossil|air|unspecified",3
+Asia,Nonconformity,"Carbon dioxide, fossil|air|urban air close to ground",4
+Asia,Nonconformity,"Carbon dioxide, from soil or biomass stock|air|non-urban air or from high stacks",5
+Asia,Nonconformity,"Carbon dioxide, from soil or biomass stock|air|unspecified",6
+Asia,Marginally acceptable conformity,"Carbon dioxide, in air|natural resource|in air",7
+Asia,Nonconformity,"Carbon dioxide, non-fossil|air|non-urban air or from high stacks",8
+Asia,Marginally acceptable conformity,"Carbon dioxide, non-fossil|air|unspecified",9
+Asia,Nonconformity,"Carbon dioxide, non-fossil|air|urban air close to ground",10
+Asia,Nonconformity,"Carbon dioxide, to soil or biomass stock|soil|agricultural",11
+Asia,Nonconformity,"Carbon dioxide, to soil or biomass stock|soil|unspecified",12
+Asia,Nonconformity,Chlorodifluoromethane|air|non-urban air or from high stacks,13
+Asia,Marginally acceptable conformity,Chlorodifluoromethane|air|unspecified,14
+Asia,Nonconformity,Chlorodifluoromethane|air|urban air close to ground,15
+Asia,Nonconformity,Dichlorodifluoromethane|air|urban air close to ground,16
+Asia,Nonconformity,Dichlorofluoromethane|air|urban air close to ground,17
+Asia,Nonconformity,Dichloromethane|air|non-urban air or from high stacks,18
+Asia,Nonconformity,Dichloromethane|air|unspecified,19
+Asia,Nonconformity,Dichloromethane|air|urban air close to ground,20
+Asia,Close conformity,Dichloromethane|water|surface water,21
+Asia,Nonconformity,Difluoromethane|air|unspecified,22
+Asia,Nonconformity,"Methane, bromo-, Halon 1001|air|unspecified",23
+Asia,Acceptable conformity,"Methane, bromo-, Halon 1001|air|urban air close to ground",24
+Asia,Nonconformity,"Methane, bromochlorodifluoro-, Halon 1211|air|non-urban air or from high stacks",25
+Asia,Marginally acceptable conformity,"Methane, bromotrifluoro-, Halon 1301|air|non-urban air or from high stacks",26
+Asia,Nonconformity,"Methane, bromotrifluoro-, Halon 1301|air|urban air close to ground",27
+Asia,Nonconformity,"Methane, fossil|air|non-urban air or from high stacks",28
+Asia,Nonconformity,"Methane, fossil|air|unspecified",29
+Asia,Marginally acceptable conformity,"Methane, fossil|air|urban air close to ground",30
+Asia,Nonconformity,"Methane, from soil or biomass stock|air|non-urban air or from high stacks",31
+Asia,Nonconformity,"Methane, non-fossil|air|non-urban air or from high stacks",32
+Asia,Nonconformity,"Methane, non-fossil|air|unspecified",33
+Asia,Nonconformity,"Methane, non-fossil|air|urban air close to ground",34
+Asia,Acceptable conformity,Methanesulfonic acid|air|urban air close to ground,35
+Asia,Nonconformity,"NMVOC, non-methane volatile organic compounds|air|lower stratosphere + upper troposphere",36
+Asia,Nonconformity,"NMVOC, non-methane volatile organic compounds|air|non-urban air or from high stacks",37
+Asia,Nonconformity,"NMVOC, non-methane volatile organic compounds|air|unspecified",38
+Asia,Nonconformity,"NMVOC, non-methane volatile organic compounds|air|urban air close to ground",39
+Asia,Nonconformity,Ozone|air|unspecified,40
+Asia,Nonconformity,Ozone|air|urban air close to ground,41
+Asia,Marginally acceptable conformity,Sulfur hexafluoride|air|unspecified,42
+Asia,Nonconformity,Sulfur hexafluoride|air|urban air close to ground,43
+Asia,Nonconformity,Tetrafluoromethane|air|unspecified,44
+Asia,Nonconformity,Tetrafluoromethane|air|urban air close to ground,45
+Asia,Nonconformity,Trichlorofluoromethane|air|urban air close to ground,46
+Asia,Nonconformity,Trifluoromethane|air|non-urban air or from high stacks,47
+Asia,Nonconformity,Trifluoromethane|air|urban air close to ground,48
+Europe,Marginally acceptable conformity,"Carbon dioxide, fossil|air|lower stratosphere + upper troposphere",1
+Europe,Acceptable conformity,"Carbon dioxide, fossil|air|non-urban air or from high stacks",2
+Europe,Acceptable conformity,"Carbon dioxide, fossil|air|unspecified",3
+Europe,Marginally acceptable conformity,"Carbon dioxide, fossil|air|urban air close to ground",4
+Europe,Close conformity,"Carbon dioxide, from soil or biomass stock|air|non-urban air or from high stacks",5
+Europe,Acceptable conformity,"Carbon dioxide, from soil or biomass stock|air|unspecified",6
+Europe,Acceptable conformity,"Carbon dioxide, in air|natural resource|in air",7
+Europe,Acceptable conformity,"Carbon dioxide, non-fossil|air|non-urban air or from high stacks",8
+Europe,Acceptable conformity,"Carbon dioxide, non-fossil|air|unspecified",9
+Europe,Nonconformity,"Carbon dioxide, non-fossil|air|urban air close to ground",10
+Europe,Acceptable conformity,"Carbon dioxide, to soil or biomass stock|soil|agricultural",11
+Europe,Acceptable conformity,"Carbon dioxide, to soil or biomass stock|soil|unspecified",12
+Europe,Nonconformity,Chlorodifluoromethane|air|non-urban air or from high stacks,13
+Europe,Nonconformity,Chlorodifluoromethane|air|unspecified,14
+Europe,Marginally acceptable conformity,Chlorodifluoromethane|air|urban air close to ground,15
+Europe,Acceptable conformity,Dichlorodifluoromethane|air|urban air close to ground,16
+Europe,Acceptable conformity,Dichlorofluoromethane|air|urban air close to ground,17
+Europe,Acceptable conformity,Dichloromethane|air|non-urban air or from high stacks,18
+Europe,Marginally acceptable conformity,Dichloromethane|air|unspecified,19
+Europe,Acceptable conformity,Dichloromethane|air|urban air close to ground,20
+Europe,Acceptable conformity,Dichloromethane|water|surface water,21
+Europe,Acceptable conformity,Difluoromethane|air|unspecified,22
+Europe,Acceptable conformity,"Methane, bromo-, Halon 1001|air|unspecified",23
+Europe,Close conformity,"Methane, bromo-, Halon 1001|air|urban air close to ground",24
+Europe,Marginally acceptable conformity,"Methane, bromochlorodifluoro-, Halon 1211|air|non-urban air or from high stacks",25
+Europe,Acceptable conformity,"Methane, bromotrifluoro-, Halon 1301|air|non-urban air or from high stacks",26
+Europe,Nonconformity,"Methane, bromotrifluoro-, Halon 1301|air|urban air close to ground",27
+Europe,Acceptable conformity,"Methane, fossil|air|non-urban air or from high stacks",28
+Europe,Nonconformity,"Methane, fossil|air|unspecified",29
+Europe,Marginally acceptable conformity,"Methane, fossil|air|urban air close to ground",30
+Europe,Marginally acceptable conformity,"Methane, from soil or biomass stock|air|non-urban air or from high stacks",31
+Europe,Nonconformity,"Methane, non-fossil|air|non-urban air or from high stacks",32
+Europe,Nonconformity,"Methane, non-fossil|air|unspecified",33
+Europe,Marginally acceptable conformity,"Methane, non-fossil|air|urban air close to ground",34
+Europe,Acceptable conformity,Methanesulfonic acid|air|urban air close to ground,35
+Europe,Marginally acceptable conformity,"NMVOC, non-methane volatile organic compounds|air|lower stratosphere + upper troposphere",36
+Europe,Marginally acceptable conformity,"NMVOC, non-methane volatile organic compounds|air|non-urban air or from high stacks",37
+Europe,Nonconformity,"NMVOC, non-methane volatile organic compounds|air|unspecified",38
+Europe,Acceptable conformity,"NMVOC, non-methane volatile organic compounds|air|urban air close to ground",39
+Europe,Nonconformity,Ozone|air|unspecified,40
+Europe,Acceptable conformity,Ozone|air|urban air close to ground,41
+Europe,Acceptable conformity,Sulfur hexafluoride|air|unspecified,42
+Europe,Acceptable conformity,Sulfur hexafluoride|air|urban air close to ground,43
+Europe,Marginally acceptable conformity,Tetrafluoromethane|air|unspecified,44
+Europe,Acceptable conformity,Tetrafluoromethane|air|urban air close to ground,45
+Europe,Marginally acceptable conformity,Trichlorofluoromethane|air|urban air close to ground,46
+Europe,Acceptable conformity,Trifluoromethane|air|non-urban air or from high stacks,47
+Europe,Marginally acceptable conformity,Trifluoromethane|air|urban air close to ground,48
+North America,Nonconformity,"Carbon dioxide, fossil|air|lower stratosphere + upper troposphere",1
+North America,Nonconformity,"Carbon dioxide, fossil|air|non-urban air or from high stacks",2
+North America,Nonconformity,"Carbon dioxide, fossil|air|unspecified",3
+North America,Nonconformity,"Carbon dioxide, fossil|air|urban air close to ground",4
+North America,Acceptable conformity,"Carbon dioxide, from soil or biomass stock|air|non-urban air or from high stacks",5
+North America,Acceptable conformity,"Carbon dioxide, from soil or biomass stock|air|unspecified",6
+North America,Marginally acceptable conformity,"Carbon dioxide, in air|natural resource|in air",7
+North America,Acceptable conformity,"Carbon dioxide, non-fossil|air|non-urban air or from high stacks",8
+North America,Nonconformity,"Carbon dioxide, non-fossil|air|unspecified",9
+North America,Acceptable conformity,"Carbon dioxide, non-fossil|air|urban air close to ground",10
+North America,Nonconformity,"Carbon dioxide, to soil or biomass stock|soil|agricultural",11
+North America,Acceptable conformity,"Carbon dioxide, to soil or biomass stock|soil|unspecified",12
+North America,Nonconformity,Chlorodifluoromethane|air|non-urban air or from high stacks,13
+North America,Nonconformity,Chlorodifluoromethane|air|unspecified,14
+North America,Nonconformity,Chlorodifluoromethane|air|urban air close to ground,15
+North America,Nonconformity,Dichlorodifluoromethane|air|urban air close to ground,16
+North America,Marginally acceptable conformity,Dichlorofluoromethane|air|urban air close to ground,17
+North America,Marginally acceptable conformity,Dichloromethane|air|non-urban air or from high stacks,18
+North America,Marginally acceptable conformity,Dichloromethane|air|unspecified,19
+North America,Nonconformity,Dichloromethane|air|urban air close to ground,20
+North America,Marginally acceptable conformity,Dichloromethane|water|surface water,21
+North America,Nonconformity,Difluoromethane|air|unspecified,22
+North America,Nonconformity,"Methane, bromo-, Halon 1001|air|unspecified",23
+North America,Acceptable conformity,"Methane, bromo-, Halon 1001|air|urban air close to ground",24
+North America,Marginally acceptable conformity,"Methane, bromochlorodifluoro-, Halon 1211|air|non-urban air or from high stacks",25
+North America,Marginally acceptable conformity,"Methane, bromotrifluoro-, Halon 1301|air|non-urban air or from high stacks",26
+North America,Nonconformity,"Methane, bromotrifluoro-, Halon 1301|air|urban air close to ground",27
+North America,Nonconformity,"Methane, fossil|air|non-urban air or from high stacks",28
+North America,Nonconformity,"Methane, fossil|air|unspecified",29
+North America,Nonconformity,"Methane, fossil|air|urban air close to ground",30
+North America,Nonconformity,"Methane, from soil or biomass stock|air|non-urban air or from high stacks",31
+North America,Nonconformity,"Methane, non-fossil|air|non-urban air or from high stacks",32
+North America,Nonconformity,"Methane, non-fossil|air|unspecified",33
+North America,Acceptable conformity,"Methane, non-fossil|air|urban air close to ground",34
+North America,Marginally acceptable conformity,Methanesulfonic acid|air|urban air close to ground,35
+North America,Nonconformity,"NMVOC, non-methane volatile organic compounds|air|lower stratosphere + upper troposphere",36
+North America,Acceptable conformity,"NMVOC, non-methane volatile organic compounds|air|non-urban air or from high stacks",37
+North America,Nonconformity,"NMVOC, non-methane volatile organic compounds|air|unspecified",38
+North America,Nonconformity,"NMVOC, non-methane volatile organic compounds|air|urban air close to ground",39
+North America,Nonconformity,Ozone|air|unspecified,40
+North America,Nonconformity,Ozone|air|urban air close to ground,41
+North America,Nonconformity,Sulfur hexafluoride|air|unspecified,42
+North America,Marginally acceptable conformity,Sulfur hexafluoride|air|urban air close to ground,43
+North America,Nonconformity,Tetrafluoromethane|air|unspecified,44
+North America,Nonconformity,Tetrafluoromethane|air|urban air close to ground,45
+North America,Nonconformity,Trichlorofluoromethane|air|urban air close to ground,46
+North America,Marginally acceptable conformity,Trifluoromethane|air|non-urban air or from high stacks,47
+North America,Nonconformity,Trifluoromethane|air|urban air close to ground,48
+South America,Nonconformity,"Carbon dioxide, fossil|air|lower stratosphere + upper troposphere",1
+South America,Nonconformity,"Carbon dioxide, fossil|air|non-urban air or from high stacks",2
+South America,Acceptable conformity,"Carbon dioxide, fossil|air|unspecified",3
+South America,Nonconformity,"Carbon dioxide, fossil|air|urban air close to ground",4
+South America,Acceptable conformity,"Carbon dioxide, from soil or biomass stock|air|non-urban air or from high stacks",5
+South America,Nonconformity,"Carbon dioxide, from soil or biomass stock|air|unspecified",6
+South America,Marginally acceptable conformity,"Carbon dioxide, in air|natural resource|in air",7
+South America,Acceptable conformity,"Carbon dioxide, non-fossil|air|non-urban air or from high stacks",8
+South America,Nonconformity,"Carbon dioxide, non-fossil|air|unspecified",9
+South America,Acceptable conformity,"Carbon dioxide, non-fossil|air|urban air close to ground",10
+South America,Close conformity,"Carbon dioxide, to soil or biomass stock|soil|agricultural",11
+South America,Nonconformity,"Carbon dioxide, to soil or biomass stock|soil|unspecified",12
+South America,Marginally acceptable conformity,Chlorodifluoromethane|air|non-urban air or from high stacks,13
+South America,Nonconformity,Chlorodifluoromethane|air|unspecified,14
+South America,Marginally acceptable conformity,Chlorodifluoromethane|air|urban air close to ground,15
+South America,Acceptable conformity,Dichlorodifluoromethane|air|urban air close to ground,16
+South America,Acceptable conformity,Dichlorofluoromethane|air|urban air close to ground,17
+South America,Acceptable conformity,Dichloromethane|air|non-urban air or from high stacks,18
+South America,Marginally acceptable conformity,Dichloromethane|air|unspecified,19
+South America,Acceptable conformity,Dichloromethane|air|urban air close to ground,20
+South America,Acceptable conformity,Dichloromethane|water|surface water,21
+South America,Acceptable conformity,Difluoromethane|air|unspecified,22
+South America,Marginally acceptable conformity,"Methane, bromo-, Halon 1001|air|unspecified",23
+South America,Marginally acceptable conformity,"Methane, bromo-, Halon 1001|air|urban air close to ground",24
+South America,Acceptable conformity,"Methane, bromochlorodifluoro-, Halon 1211|air|non-urban air or from high stacks",25
+South America,Acceptable conformity,"Methane, bromotrifluoro-, Halon 1301|air|non-urban air or from high stacks",26
+South America,Nonconformity,"Methane, bromotrifluoro-, Halon 1301|air|urban air close to ground",27
+South America,Marginally acceptable conformity,"Methane, fossil|air|non-urban air or from high stacks",28
+South America,Marginally acceptable conformity,"Methane, fossil|air|unspecified",29
+South America,Marginally acceptable conformity,"Methane, fossil|air|urban air close to ground",30
+South America,Acceptable conformity,"Methane, from soil or biomass stock|air|non-urban air or from high stacks",31
+South America,Marginally acceptable conformity,"Methane, non-fossil|air|non-urban air or from high stacks",32
+South America,Acceptable conformity,"Methane, non-fossil|air|unspecified",33
+South America,Nonconformity,"Methane, non-fossil|air|urban air close to ground",34
+South America,Acceptable conformity,Methanesulfonic acid|air|urban air close to ground,35
+South America,Nonconformity,"NMVOC, non-methane volatile organic compounds|air|lower stratosphere + upper troposphere",36
+South America,Marginally acceptable conformity,"NMVOC, non-methane volatile organic compounds|air|non-urban air or from high stacks",37
+South America,Acceptable conformity,"NMVOC, non-methane volatile organic compounds|air|unspecified",38
+South America,Acceptable conformity,"NMVOC, non-methane volatile organic compounds|air|urban air close to ground",39
+South America,Nonconformity,Ozone|air|unspecified,40
+South America,Acceptable conformity,Ozone|air|urban air close to ground,41
+South America,Nonconformity,Sulfur hexafluoride|air|unspecified,42
+South America,Marginally acceptable conformity,Sulfur hexafluoride|air|urban air close to ground,43
+South America,Acceptable conformity,Tetrafluoromethane|air|unspecified,44
+South America,Acceptable conformity,Tetrafluoromethane|air|urban air close to ground,45
+South America,Marginally acceptable conformity,Trichlorofluoromethane|air|urban air close to ground,46
+South America,Marginally acceptable conformity,Trifluoromethane|air|non-urban air or from high stacks,47
+South America,Acceptable conformity,Trifluoromethane|air|urban air close to ground,48
+Africa,Nonconformity,"Carbon dioxide, fossil|air|lower stratosphere + upper troposphere",1
+Africa,Nonconformity,"Carbon dioxide, fossil|air|non-urban air or from high stacks",2
+Africa,Nonconformity,"Carbon dioxide, fossil|air|unspecified",3
+Africa,Nonconformity,"Carbon dioxide, fossil|air|urban air close to ground",4
+Africa,Nonconformity,"Carbon dioxide, from soil or biomass stock|air|non-urban air or from high stacks",5
+Africa,Nonconformity,"Carbon dioxide, from soil or biomass stock|air|unspecified",6
+Africa,Nonconformity,"Carbon dioxide, in air|natural resource|in air",7
+Africa,Nonconformity,"Carbon dioxide, non-fossil|air|non-urban air or from high stacks",8
+Africa,Nonconformity,"Carbon dioxide, non-fossil|air|unspecified",9
+Africa,Nonconformity,"Carbon dioxide, non-fossil|air|urban air close to ground",10
+Africa,Nonconformity,"Carbon dioxide, to soil or biomass stock|soil|agricultural",11
+Africa,Nonconformity,"Carbon dioxide, to soil or biomass stock|soil|unspecified",12
+Africa,Nonconformity,Chlorodifluoromethane|air|non-urban air or from high stacks,13
+Africa,Nonconformity,Chlorodifluoromethane|air|unspecified,14
+Africa,Marginally acceptable conformity,Chlorodifluoromethane|air|urban air close to ground,15
+Africa,Nonconformity,Dichlorodifluoromethane|air|urban air close to ground,16
+Africa,Marginally acceptable conformity,Dichlorofluoromethane|air|urban air close to ground,17
+Africa,Nonconformity,Dichloromethane|air|non-urban air or from high stacks,18
+Africa,Nonconformity,Dichloromethane|air|unspecified,19
+Africa,Nonconformity,Dichloromethane|air|urban air close to ground,20
+Africa,Nonconformity,Dichloromethane|water|surface water,21
+Africa,Nonconformity,Difluoromethane|air|unspecified,22
+Africa,Nonconformity,"Methane, bromo-, Halon 1001|air|unspecified",23
+Africa,Nonconformity,"Methane, bromo-, Halon 1001|air|urban air close to ground",24
+Africa,Nonconformity,"Methane, bromochlorodifluoro-, Halon 1211|air|non-urban air or from high stacks",25
+Africa,Nonconformity,"Methane, bromotrifluoro-, Halon 1301|air|non-urban air or from high stacks",26
+Africa,Nonconformity,"Methane, bromotrifluoro-, Halon 1301|air|urban air close to ground",27
+Africa,Nonconformity,"Methane, fossil|air|non-urban air or from high stacks",28
+Africa,Nonconformity,"Methane, fossil|air|unspecified",29
+Africa,Marginally acceptable conformity,"Methane, fossil|air|urban air close to ground",30
+Africa,Nonconformity,"Methane, from soil or biomass stock|air|non-urban air or from high stacks",31
+Africa,Nonconformity,"Methane, non-fossil|air|non-urban air or from high stacks",32
+Africa,Marginally acceptable conformity,"Methane, non-fossil|air|unspecified",33
+Africa,Nonconformity,"Methane, non-fossil|air|urban air close to ground",34
+Africa,Marginally acceptable conformity,Methanesulfonic acid|air|urban air close to ground,35
+Africa,Nonconformity,"NMVOC, non-methane volatile organic compounds|air|lower stratosphere + upper troposphere",36
+Africa,Nonconformity,"NMVOC, non-methane volatile organic compounds|air|non-urban air or from high stacks",37
+Africa,Nonconformity,"NMVOC, non-methane volatile organic compounds|air|unspecified",38
+Africa,Nonconformity,"NMVOC, non-methane volatile organic compounds|air|urban air close to ground",39
+Africa,Nonconformity,Ozone|air|unspecified,40
+Africa,Nonconformity,Ozone|air|urban air close to ground,41
+Africa,Nonconformity,Sulfur hexafluoride|air|unspecified,42
+Africa,Nonconformity,Sulfur hexafluoride|air|urban air close to ground,43
+Africa,Nonconformity,Tetrafluoromethane|air|unspecified,44
+Africa,Marginally acceptable conformity,Tetrafluoromethane|air|urban air close to ground,45
+Africa,Nonconformity,Trichlorofluoromethane|air|urban air close to ground,46
+Africa,Nonconformity,Trifluoromethane|air|non-urban air or from high stacks,47
+Africa,Marginally acceptable conformity,Trifluoromethane|air|urban air close to ground,48
