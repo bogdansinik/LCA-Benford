@@ -2367,6 +2367,7 @@ rbind(EuropeAllDBStatsDF, AsiaAllDBStatsDF, AustraliaAllDBStatsDF) -> Comparison
 allDfAllDataStatsDF <- data.frame()
 
 # Add statistics for all datasets combined
+addToStatsDF(allDfAllDataStatsDF, benford_ecoinvent_all, "All", "Ecoinvent") -> allDfAllDataStatsDF
 addToStatsDF(allDfAllDataStatsDF, benford_worldsteel_all, "All", "Worldsteel") -> allDfAllDataStatsDF
 addToStatsDF(allDfAllDataStatsDF, benford_OzLCI2019_all, "All", "OzLCI2019") -> allDfAllDataStatsDF
 addToStatsDF(allDfAllDataStatsDF, benford_elcd_3_2_greendelta_v2_18_correction_20220908_all, "All", "Greendelta") -> allDfAllDataStatsDF
