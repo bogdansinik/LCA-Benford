@@ -1570,6 +1570,43 @@ greenHouseGases_df_air |>
 # Water Data Plots by Continent
 
 ```{r}
+# Selecting only close conforming columns for the sake of visability for further analysis
+bigDataCountriesGrouped |> 
+  select(Activity.UUID_Product.UUID, Activity.Name, Country, Continent, Reference.Product.Name, Reference.Product.Unit, close_conforming_cols) -> bigDataCountriesGrouped
+
+# Extract column names from the dataset
+bigDataCountriesGrouped |> colnames() -> col_names
+
+# Identify unique strings within column names that are enclosed by "|" (e.g., "|Water|")
+unique_strings <- unique(regmatches(names(bigDataCountriesGrouped), regexpr("\\|(.*?)\\|", names(bigDataCountriesGrouped))))
+
+# Initialize an empty list to store dataframes for each category
+listOfDF <- list()             
+
+# Iterate through each unique string and separate the data by category
+for (i in 1:length(unique_strings)) {
+  name <- unique_strings[i]  # Get the current compartment name
+  bigDataCountriesGrouped |> select(Country, contains(name)) -> df  # Select relevant columns for the compartment
+  listOfDF[[i]] <- df  # Store the filtered dataframe in the list
+}
+
+# Assign dataframes from the list to specific categories
+listOfDF[[2]] -> water.data                  # Data related to Water
+listOfDF[[1]] -> air.data                    # Data related to Air
+listOfDF[[3]] -> soil.data                   # Data related to Soil
+listOfDF[[5]] -> inventory.indicator.data    # Data related to Inventory Indicators
+listOfDF[[4]] -> natural.resource.data       # Data related to Natural Resources
+
+
+water.data |> ncol()
+air.data |> ncol()
+soil.data |> ncol()
+natural.resource.data |> ncol()
+bigDataCountriesGrouped |> ncol()
+```
+
+
+```{r}
 # Assign continents to the water data
 water.data |> mutate(Continent = sapply(Country, get_continent)) -> continentsWaterData
 
