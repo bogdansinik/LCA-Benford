@@ -19,7 +19,10 @@ library(readxl)  # For reading Excel files
 library(benford.analysis)  # For Benford's Law analysis
 library(patchwork)  # For combining multiple ggplots
 library(countrycode)  # For converting country codes and names
-
+library(readr) # For reading CSV files
+library(dplyr) # For data manipulation
+library(stringr) # For string manipulation
+ 
 # Set a custom theme for all ggplots
 theme_set(theme(
     plot.title = element_text(hjust = 0.5, margin = margin(b = 10), size = 13), # Center-align title with space below it
@@ -329,9 +332,7 @@ for (i in seq(50, 1000, 50)) {
 # Plot conformity percentage for close conforming column
 ggplot(sample.df.bigData, aes(x = sample.size, y = percentage.of.conforming)) + 
   geom_col(fill = "#1E90FF", color = "black") +
-  labs(x = "Sample Size", y = "Percentage of Conforming", 
-       title = "Conformity Percentage by Sample Size",
-       subtitle = "Ecoinvent Close Conforming Column") +
+  labs(x = "Sample Size", y = "Percentage of Conforming") +
   scale_x_continuous(breaks = seq(50, 1000, 50)) +
   scale_y_continuous(breaks = seq(0, 100, 10)) +
   geom_hline(yintercept = 95, linetype = "dashed", color = "#FF5733") +
@@ -419,6 +420,9 @@ bigData |>
 # Apply the same filtering to the grouped dataset
 bigDataCountriesGrouped |> 
   select(Activity.UUID_Product.UUID, Activity.Name, Country, Reference.Product.Name, Reference.Product.Unit, conforming_cols_names) -> bigDataCountriesGrouped
+
+bigDataCountriesGrouped |> 
+  select(Activity.UUID_Product.UUID, Activity.Name, Country, Reference.Product.Name, Reference.Product.Unit, close_conforming_cols) -> bigDataCountriesGrouped1
 ```
 
 ```{r}
@@ -1605,7 +1609,6 @@ natural.resource.data |> ncol()
 bigDataCountriesGrouped |> ncol()
 ```
 
-
 ```{r}
 # Assign continents to the water data
 water.data |> mutate(Continent = sapply(Country, get_continent)) -> continentsWaterData
@@ -2161,16 +2164,36 @@ bioenergiedat_18 |>
   benford(number.of.digits = 1) -> benford_bioenergiedat_18_all
 ```
 
+## exiobase3.8
+
+### All Data
+
+```{r}
+# Load the exiobase3.8 dataset
+exiobase3_monetary <- read_delim("exiobase3_monetary_20181212_fixedlcia_July2021.csv", 
+    delim = ";", escape_double = FALSE, col_names = FALSE, 
+    trim_ws = TRUE, skip = 40)
+
+exiobase3_monetary |> 
+  select(X5) |>  # Select relevant column
+  mutate(X5 = as.numeric(X5)) |> 
+  na.omit() |>  # Remove NA values
+  mutate(X5 = first_digit(X5)) |>
+  pull() |> 
+  benford(number.of.digits = 1) -> benford_exiobase3_monetary_all
+```
+
 ## Benford's Law Analysis and Visualization for Multiple Databases
 
 ```{r}
 # Generate Benford plots for each dataset
 benfordPlot(benford_worldsteel_all, "worldsteel database", suspectTreshold = 0.01) -> p2
 benfordPlot(benford_OzLCI2019_all, "OzLCI2019 database", suspectTreshold = 0.01) -> p3
-benfordPlot(benford_elcd_3_2_greendelta_v2_18_correction_20220908_all, "Environmental Footprint database", suspectTreshold = 0.01) -> p4
+benfordPlot(benford_elcd_3_2_greendelta_v2_18_correction_20220908_all, "ELCD database", suspectTreshold = 0.01) -> p4
 benfordPlot(benford_needs_18_all, "needs database", suspectTreshold = 0.01) -> p5
 benfordPlot(benford_bioenergiedat_18_all, "bioenergiedat database", suspectTreshold = 0.01) -> p6
 benfordPlot(benford_ecoinvent_all, "ecoinvent database", suspectTreshold = 0.01) -> p1
+benfordPlot(benford_exiobase3_monetary_all, "exiobase 3 database", suspectTreshold = 0.01) -> p8
 ```
 
 ```{r}
@@ -2204,16 +2227,24 @@ p3 <- p3 + theme(legend.position = "none")
 p4 <- p4 + theme(legend.position = "none")
 p5 <- p5 + theme(legend.position = "none")
 p6 <- p6 + theme(legend.position = "none")
-
+p8 <- p8 + theme(legend.position="none")
 # Combine plots and place the legend at the top
+
 allPlots <- gridExtra::grid.arrange(
-  legend,  # Add the legend as the first row
+  legend,  # First row: the legend
   gridExtra::arrangeGrob(
-    p1, p2, p3, p4, p5, p6, 
-    ncol = 2, layout_matrix = rbind(c(1, 2), c(3, 4), c(5, 6))
+    p1, p2, p3, p4, p5, p6, p8, 
+    layout_matrix = rbind(
+      c(1, 2),   # First row: p1, p2
+      c(3, 4),   # Second row: p3, p4
+      c(5, 6),   # Third row: p5, p6
+      c(7)   # Fourth row: centered p8 (leave left cell empty)
+    )
   ),
-  nrow = 2, heights = c(1, 10)  # Adjust heights to balance legend and plots
+  nrow = 4,  # Total of 4 rows: legend + 3 rows of plots
+  heights = c(1, 20, 1, 1)  # Control heights: legend smaller, plots bigger
 )
+
 ```
 
 ```{r}
@@ -2749,6 +2780,519 @@ continentsMAD$HeavyMetalsBenfordPoints <- c(europeHeavyMetalsBenfordPoints, asia
 continentsMAD |> inner_join(EPIDataMeans, by = c("Continent" = "continent")) -> continentsMAD
 ```
 
+## MAD value for each continent and compartment
+```{r}
+# WATER
+continentsWaterData |> filter(Continent == "Europe") -> europeWaterData
+continentsWaterData |> filter(Continent == "Asia") -> asiaWaterData
+continentsWaterData |> filter(Continent == "North America") -> northAmericaWaterData
+continentsWaterData |> filter(Continent == "South America") -> southAmericaWaterData
+continentsWaterData |> filter(Continent == "Africa") -> africaWaterData
+continentsWaterData |> filter(Continent == "Australia/Oceania") -> australiaWaterData
+
+australiaWaterData |> benford_conforming_combined2() -> australia_water_BENFORD
+australia_water_BENFORD$MAD -> australia_water_MAD
+
+europeWaterData |> benford_conforming_combined2() -> europe_water_BENFORD
+europe_water_BENFORD$MAD -> europe_water_MAD
+
+asiaWaterData |> benford_conforming_combined2() -> asia_water_BENFORD
+asia_water_BENFORD$MAD -> asia_water_MAD
+
+northAmericaWaterData |> benford_conforming_combined2() -> north_america_water_BENFORD
+north_america_water_BENFORD$MAD -> north_america_water_MAD
+
+southAmericaWaterData |> benford_conforming_combined2() -> south_america_water_BENFORD
+south_america_water_BENFORD$MAD -> south_america_water_MAD
+  
+africaWaterData |> benford_conforming_combined2() -> africa_water_BENFORD
+africa_water_BENFORD$MAD -> africa_water_MAD
+
+continentsWaterDataPlotDF <- data.frame(
+  Continent = c("Europe", "Asia", "North America", "South America", "Africa", "Australia/Oceania"),
+  MAD_Water = c(europe_water_MAD, asia_water_MAD, north_america_water_MAD, south_america_water_MAD, africa_water_MAD, australia_water_MAD)
+)
+# AIR
+continentsAirData |> filter(Continent == "Europe") -> europeAirData
+continentsAirData |> filter(Continent == "Asia") -> asiaAirData
+continentsAirData |> filter(Continent == "North America") -> northAmericaAirData
+continentsAirData |> filter(Continent == "South America") -> southAmericaAirData
+continentsAirData |> filter(Continent == "Africa") -> africaAirData
+continentsAirData |> filter(Continent == "Australia/Oceania") -> australiaAirData
+
+australiaAirData |> benford_conforming_combined2() -> australia_air_BENFORD
+australia_air_BENFORD$MAD -> australia_air_MAD
+
+europeAirData |> benford_conforming_combined2() -> europe_air_BENFORD
+europe_air_BENFORD$MAD -> europe_air_MAD
+
+asiaAirData |> benford_conforming_combined2() -> asia_air_BENFORD
+asia_air_BENFORD$MAD -> asia_air_MAD
+
+northAmericaAirData |> benford_conforming_combined2() -> north_america_air_BENFORD
+north_america_air_BENFORD$MAD -> north_america_air_MAD
+
+southAmericaAirData |> benford_conforming_combined2() -> south_america_air_BENFORD
+south_america_air_BENFORD$MAD -> south_america_air_MAD
+
+africaAirData |> benford_conforming_combined2() -> africa_air_BENFORD
+africa_air_BENFORD$MAD -> africa_air_MAD
+
+continentsAirDataPlotDF <- data.frame(
+  Continent = c("Europe", "Asia", "North America", "South America", "Africa", "Australia/Oceania"),
+  MAD_Air = c(europe_air_MAD, asia_air_MAD, north_america_air_MAD, south_america_air_MAD, africa_air_MAD, australia_air_MAD)
+)
+
+# SOIL
+continentsSoilData |> filter(Continent == "Europe") -> europeSoilData
+continentsSoilData |> filter(Continent == "Asia") -> asiaSoilData
+continentsSoilData |> filter(Continent == "North America") -> northAmericaSoilData
+continentsSoilData |> filter(Continent == "South America") -> southAmericaSoilData
+continentsSoilData |> filter(Continent == "Africa") -> africaSoilData
+continentsSoilData |> filter(Continent == "Australia/Oceania") -> australiaSoilData
+
+australiaSoilData |> benford_conforming_combined2() -> australia_soil_BENFORD
+australia_soil_BENFORD$MAD -> australia_soil_MAD
+
+europeSoilData |> benford_conforming_combined2() -> europe_soil_BENFORD
+europe_soil_BENFORD$MAD -> europe_soil_MAD
+
+asiaSoilData |> benford_conforming_combined2() -> asia_soil_BENFORD
+asia_soil_BENFORD$MAD -> asia_soil_MAD
+
+northAmericaSoilData |> benford_conforming_combined2() -> north_america_soil_BENFORD
+north_america_soil_BENFORD$MAD -> north_america_soil_MAD
+
+southAmericaSoilData |> benford_conforming_combined2() -> south_america_soil_BENFORD
+south_america_soil_BENFORD$MAD -> south_america_soil_MAD
+
+africaSoilData |> benford_conforming_combined2() -> africa_soil_BENFORD
+africa_soil_BENFORD$MAD -> africa_soil_MAD
+
+continentsSoilDataPlotDF <- data.frame(
+  Continent = c("Europe", "Asia", "North America", "South America", "Africa", "Australia/Oceania"),
+  MAD_Soil = c(europe_soil_MAD, asia_soil_MAD, north_america_soil_MAD, south_america_soil_MAD, africa_soil_MAD, australia_soil_MAD)
+)
+
+# NATURAL RESOURCES
+continentsNaturalResourcesData |> filter(Continent == "Europe") -> europeNaturalResourcesData
+continentsNaturalResourcesData |> filter(Continent == "Asia") -> asiaNaturalResourcesData
+continentsNaturalResourcesData |> filter(Continent == "North America") -> northAmericaNaturalResourcesData
+continentsNaturalResourcesData |> filter(Continent == "South America") -> southAmericaNaturalResourcesData
+continentsNaturalResourcesData |> filter(Continent == "Africa") -> africaNaturalResourcesData
+continentsNaturalResourcesData |> filter(Continent == "Australia/Oceania") -> australiaNaturalResourcesData
+
+australiaNaturalResourcesData |> benford_conforming_combined2() -> australia_natural_resources_BENFORD
+australia_natural_resources_BENFORD$MAD -> australia_natural_resources_MAD
+
+europeNaturalResourcesData |> benford_conforming_combined2() -> europe_natural_resources_BENFORD
+europe_natural_resources_BENFORD$MAD -> europe_natural_resources_MAD
+
+asiaNaturalResourcesData |> benford_conforming_combined2() -> asia_natural_resources_BENFORD
+asia_natural_resources_BENFORD$MAD -> asia_natural_resources_MAD
+
+northAmericaNaturalResourcesData |> benford_conforming_combined2() -> north_america_natural_resources_BENFORD
+north_america_natural_resources_BENFORD$MAD -> north_america_natural_resources_MAD
+
+southAmericaNaturalResourcesData |> benford_conforming_combined2() -> south_america_natural_resources_BENFORD
+south_america_natural_resources_BENFORD$MAD -> south_america_natural_resources_MAD
+
+africaNaturalResourcesData |> benford_conforming_combined2() -> africa_natural_resources_BENFORD
+africa_natural_resources_BENFORD$MAD -> africa_natural_resources_MAD
+
+
+#heavy metals
+bigDataCountriesGrouped |> select(Continent, heavyMetals) -> continentsHeavyMetals
+
+continentsHeavyMetals |> filter(Continent == "Europe") -> europeHeavyMetals
+continentsHeavyMetals |> filter(Continent == "Asia") -> asiaHeavyMetals
+continentsHeavyMetals |> filter(Continent == "North America") -> northAmericaHeavyMetals
+continentsHeavyMetals |> filter(Continent == "South America") -> southAmericaHeavyMetals
+continentsHeavyMetals |> filter(Continent == "Africa") -> africaHeavyMetals
+continentsHeavyMetals |> filter(Continent == "Australia/Oceania") -> australiaHeavyMetals
+
+australiaHeavyMetals |> benford_conforming_combined2() -> australia_heavy_metals_BENFORD
+australia_heavy_metals_BENFORD$MAD -> australia_heavy_metals_MAD
+
+europeHeavyMetals |> benford_conforming_combined2() -> europe_heavy_metals_BENFORD
+europe_heavy_metals_BENFORD$MAD -> europe_heavy_metals_MAD
+
+asiaHeavyMetals |> benford_conforming_combined2() -> asia_heavy_metals_BENFORD
+asia_heavy_metals_BENFORD$MAD -> asia_heavy_metals_MAD
+
+northAmericaHeavyMetals |> benford_conforming_combined2() -> north_america_heavy_metals_BENFORD
+north_america_heavy_metals_BENFORD$MAD -> north_america_heavy_metals_MAD
+
+southAmericaHeavyMetals |> benford_conforming_combined2() -> south_america_heavy_metals_BENFORD
+south_america_heavy_metals_BENFORD$MAD -> south_america_heavy_metals_MAD
+
+africaHeavyMetals |> benford_conforming_combined2() -> africa_heavy_metals_BENFORD
+africa_heavy_metals_BENFORD$MAD -> africa_heavy_metals_MAD
+
+continentsHeavyMetalsDataPlotDF <- data.frame(
+  Continent = c("Europe", "Asia", "North America", "South America", "Africa", "Australia/Oceania"),
+  MAD_HeavyMetals = c(europe_heavy_metals_MAD, asia_heavy_metals_MAD, north_america_heavy_metals_MAD, south_america_heavy_metals_MAD, africa_heavy_metals_MAD, australia_heavy_metals_MAD)
+)
+
+
+continentsNaturalResourcesDataPlotDF <- data.frame(
+  Continent = c("Europe", "Asia", "North America", "South America", "Africa", "Australia/Oceania"),
+  MAD_NaturalResources = c(europe_natural_resources_MAD, asia_natural_resources_MAD, north_america_natural_resources_MAD, south_america_natural_resources_MAD, africa_natural_resources_MAD, australia_natural_resources_MAD)
+)
+
+
+continentsMAD |> 
+  select(Continent, H2O, AIR, AGR, WMG, WRS, HMT, ) |> inner_join(continentsWaterDataPlotDF, by = "Continent") |> 
+  inner_join(continentsAirDataPlotDF, by = "Continent") |>
+  inner_join(continentsSoilDataPlotDF, by = "Continent") |>
+  inner_join(continentsNaturalResourcesDataPlotDF, by = "Continent") |> 
+  inner_join(continentsHeavyMetalsDataPlotDF, by = "Continent") |> 
+  filter(Continent != "Australia/Oceania") |> 
+  select(-Continent) |> 
+  cor() |> 
+   ggcorrplot::ggcorrplot(type = "upper", lab = TRUE, 
+             colors = c("#d01c8b", "white", "#4478c5"),
+             outline.color = "black")
+```
+
+## Average MAD for each continent (average of each column MAD)
+
+```{r}
+benford_conforming_MAD <- function(data, n = 1) {
+  # Function to return detailed Benford analysis results for numeric columns
+  tryCatch({
+    if (nrow(data) < 500) {
+      return("Missing data")  # Return if insufficient data rows
+    }
+    numeric_columns <- data |> select_if(is.numeric)  # Select numeric columns
+
+    if (numeric_columns |> length() == 0) {
+      return("No numerical columns")  # Return if no numeric columns are found
+    }
+    
+    numeric_columns |> ncol() -> num_of_numeric_cols  # Number of numeric columns
+    # Apply Benford's Law to columns meeting conditions and return detailed results
+    sapply(numeric_columns, function(x) {
+      if (mean(x) > median(x) & sum(x != 0) > 500) {  # Check if column meets criteria
+        benford(x, number.of.digits = n, sign = "both")$MAD
+      } else {
+        "Not suitable data"
+      }
+    }) -> result
+    return(result)
+  }, error = function(e) {
+    # Handle errors gracefully
+    return(NULL)
+  })
+}
+
+## WATER
+
+# Europe
+europeWaterData |> 
+  benford_conforming_MAD() -> europeWaterDataMAD
+europeWaterDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = europeWaterDataMAD) |> 
+  mutate(Continent = "Europe") -> europeWaterDataMAD
+
+europeWaterDataMAD |> group_by(Continent) |> 
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> europeWaterDataMAD_AVG
+
+# Asia
+asiaWaterData |> 
+  benford_conforming_MAD() -> asiaWaterDataMAD
+asiaWaterDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = asiaWaterDataMAD) |> 
+  mutate(Continent = "Asia") -> asiaWaterDataMAD
+
+asiaWaterDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> asiaWaterDataMAD_AVG
+
+# North America
+northAmericaWaterData |> 
+  benford_conforming_MAD() -> northAmericaWaterDataMAD
+northAmericaWaterDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = northAmericaWaterDataMAD) |> 
+  mutate(Continent = "North America") -> northAmericaWaterDataMAD
+
+northAmericaWaterDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> northAmericaWaterDataMAD_AVG
+
+# South America
+southAmericaWaterData |> 
+  benford_conforming_MAD() -> southAmericaWaterDataMAD
+southAmericaWaterDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = southAmericaWaterDataMAD) |> 
+  mutate(Continent = "South America") -> southAmericaWaterDataMAD
+
+southAmericaWaterDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> southAmericaWaterDataMAD_AVG
+
+# Africa
+africaWaterData |> 
+  benford_conforming_MAD() -> africaWaterDataMAD
+africaWaterDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = africaWaterDataMAD) |> 
+  mutate(Continent = "Africa") -> africaWaterDataMAD
+
+africaWaterDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> africaWaterDataMAD_AVG
+
+# AIR
+
+# Europe
+europeAirData |> 
+  benford_conforming_MAD() -> europeAirDataMAD
+europeAirDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = europeAirDataMAD) |> 
+  mutate(Continent = "Europe") -> europeAirDataMAD
+
+europeAirDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> europeAirDataMAD_AVG
+
+# Asia
+asiaAirData |> 
+  benford_conforming_MAD() -> asiaAirDataMAD
+asiaAirDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = asiaAirDataMAD) |> 
+  mutate(Continent = "Asia") -> asiaAirDataMAD
+
+asiaAirDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> asiaAirDataMAD_AVG
+
+# North America
+northAmericaAirData |> 
+  benford_conforming_MAD() -> northAmericaAirDataMAD
+northAmericaAirDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = northAmericaAirDataMAD) |> 
+  mutate(Continent = "North America") -> northAmericaAirDataMAD
+
+northAmericaAirDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> northAmericaAirDataMAD_AVG
+
+# South America
+southAmericaAirData |> 
+  benford_conforming_MAD() -> southAmericaAirDataMAD
+southAmericaAirDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = southAmericaAirDataMAD) |> 
+  mutate(Continent = "South America") -> southAmericaAirDataMAD
+
+southAmericaAirDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> southAmericaAirDataMAD_AVG
+
+# Africa
+africaAirData |> 
+  benford_conforming_MAD() -> africaAirDataMAD
+africaAirDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = africaAirDataMAD) |> 
+  mutate(Continent = "Africa") -> africaAirDataMAD
+
+africaAirDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> africaAirDataMAD_AVG
+
+# SOIL
+
+# Europe
+europeSoilData |> 
+  benford_conforming_MAD() -> europeSoilDataMAD
+europeSoilDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = europeSoilDataMAD) |> 
+  mutate(Continent = "Europe") -> europeSoilDataMAD
+
+europeSoilDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> europeSoilDataMAD_AVG
+
+# Asia
+asiaSoilData |> 
+  benford_conforming_MAD() -> asiaSoilDataMAD
+asiaSoilDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = asiaSoilDataMAD) |> 
+  mutate(Continent = "Asia") -> asiaSoilDataMAD
+
+asiaSoilDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> asiaSoilDataMAD_AVG
+
+# North America
+northAmericaSoilData |> 
+  benford_conforming_MAD() -> northAmericaSoilDataMAD
+northAmericaSoilDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = northAmericaSoilDataMAD) |> 
+  mutate(Continent = "North America") -> northAmericaSoilDataMAD
+
+northAmericaSoilDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> northAmericaSoilDataMAD_AVG
+
+# South America
+southAmericaSoilData |> 
+  benford_conforming_MAD() -> southAmericaSoilDataMAD
+southAmericaSoilDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = southAmericaSoilDataMAD) |> 
+  mutate(Continent = "South America") -> southAmericaSoilDataMAD
+
+southAmericaSoilDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> southAmericaSoilDataMAD_AVG
+
+# Africa
+africaSoilData |> 
+  benford_conforming_MAD() -> africaSoilDataMAD
+africaSoilDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = africaSoilDataMAD) |> 
+  mutate(Continent = "Africa") -> africaSoilDataMAD
+
+africaSoilDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> africaSoilDataMAD_AVG
+
+# NATURAL RESOURCES
+
+# Europe
+europeNaturalResourcesData |> 
+  benford_conforming_MAD() -> europeNaturalResourcesDataMAD
+europeNaturalResourcesDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = europeNaturalResourcesDataMAD) |> 
+  mutate(Continent = "Europe") -> europeNaturalResourcesDataMAD
+
+europeNaturalResourcesDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> europeNaturalResourcesDataMAD_AVG
+
+# Asia
+asiaNaturalResourcesData |> 
+  benford_conforming_MAD() -> asiaNaturalResourcesDataMAD
+asiaNaturalResourcesDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = asiaNaturalResourcesDataMAD) |> 
+  mutate(Continent = "Asia") -> asiaNaturalResourcesDataMAD
+
+asiaNaturalResourcesDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> asiaNaturalResourcesDataMAD_AVG
+
+# North America
+northAmericaNaturalResourcesData |> 
+  benford_conforming_MAD() -> northAmericaNaturalResourcesDataMAD
+northAmericaNaturalResourcesDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = northAmericaNaturalResourcesDataMAD) |> 
+  mutate(Continent = "North America") -> northAmericaNaturalResourcesDataMAD
+
+northAmericaNaturalResourcesDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> northAmericaNaturalResourcesDataMAD_AVG
+
+# South America
+southAmericaNaturalResourcesData |> 
+  benford_conforming_MAD() -> southAmericaNaturalResourcesDataMAD
+southAmericaNaturalResourcesDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = southAmericaNaturalResourcesDataMAD) |> 
+  mutate(Continent = "South America") -> southAmericaNaturalResourcesDataMAD
+
+southAmericaNaturalResourcesDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> southAmericaNaturalResourcesDataMAD_AVG
+
+# Africa
+africaNaturalResourcesData |> 
+  benford_conforming_MAD() -> africaNaturalResourcesDataMAD
+africaNaturalResourcesDataMAD |>
+  as.data.frame() |> 
+  rename(MAD = africaNaturalResourcesDataMAD) |> 
+  mutate(Continent = "Africa") -> africaNaturalResourcesDataMAD
+africaNaturalResourcesDataMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> africaNaturalResourcesDataMAD_AVG
+
+# Heavy Metals
+
+# Europe
+europeHeavyMetals |> 
+  benford_conforming_MAD() -> europeHeavyMetalsMAD
+europeHeavyMetalsMAD |>
+  as.data.frame() |> 
+  rename(MAD = europeHeavyMetalsMAD) |> 
+  mutate(Continent = "Europe") -> europeHeavyMetalsMAD
+
+europeHeavyMetalsMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> europeHeavyMetalsMAD_AVG
+
+# Asia
+asiaHeavyMetals |> 
+  benford_conforming_MAD() -> asiaHeavyMetalsMAD
+asiaHeavyMetalsMAD |>
+  as.data.frame() |> 
+  rename(MAD = asiaHeavyMetalsMAD) |> 
+  mutate(Continent = "Asia") -> asiaHeavyMetalsMAD
+
+asiaHeavyMetalsMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> asiaHeavyMetalsMAD_AVG
+
+# North America
+northAmericaHeavyMetals |> 
+  benford_conforming_MAD() -> northAmericaHeavyMetalsMAD
+northAmericaHeavyMetalsMAD |>
+  as.data.frame() |> 
+  rename(MAD = northAmericaHeavyMetalsMAD) |> 
+  mutate(Continent = "North America") -> northAmericaHeavyMetalsMAD
+
+northAmericaHeavyMetalsMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> northAmericaHeavyMetalsMAD_AVG
+
+# South America
+southAmericaHeavyMetals |> 
+  benford_conforming_MAD() -> southAmericaHeavyMetalsMAD
+southAmericaHeavyMetalsMAD |>
+  as.data.frame() |> 
+  rename(MAD = southAmericaHeavyMetalsMAD) |> 
+  mutate(Continent = "South America") -> southAmericaHeavyMetalsMAD
+
+southAmericaHeavyMetalsMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> southAmericaHeavyMetalsMAD_AVG
+
+# Africa
+africaHeavyMetals |> 
+  benford_conforming_MAD() -> africaHeavyMetalsMAD
+africaHeavyMetalsMAD |>
+  as.data.frame() |> 
+  rename(MAD = africaHeavyMetalsMAD) |> 
+  mutate(Continent = "Africa") -> africaHeavyMetalsMAD
+
+africaHeavyMetalsMAD |> group_by(Continent) |>
+  reframe(avg_MAD = mean(MAD, na.rm = TRUE)) -> africaHeavyMetalsMAD_AVG
+
+# Combine all MAD dataframes into one
+continentsMAD_average <- data.frame(
+  Continent = c("Europe", "Asia", "North America", "South America", "Africa"),
+  MAD_Water = c(europeWaterDataMAD_AVG$avg_MAD, asiaWaterDataMAD_AVG$avg_MAD, northAmericaWaterDataMAD_AVG$avg_MAD, southAmericaWaterDataMAD_AVG$avg_MAD, africaWaterDataMAD_AVG$avg_MAD),
+  MAD_Air = c(europeAirDataMAD_AVG$avg_MAD, asiaAirDataMAD_AVG$avg_MAD, northAmericaAirDataMAD_AVG$avg_MAD, southAmericaAirDataMAD_AVG$avg_MAD, africaAirDataMAD_AVG$avg_MAD),
+  MAD_Soil = c(europeSoilDataMAD_AVG$avg_MAD, asiaSoilDataMAD_AVG$avg_MAD, northAmericaSoilDataMAD_AVG$avg_MAD, southAmericaSoilDataMAD_AVG$avg_MAD, africaSoilDataMAD_AVG$avg_MAD),
+  MAD_NaturalResources = c(europeNaturalResourcesDataMAD_AVG$avg_MAD, asiaNaturalResourcesDataMAD_AVG$avg_MAD, northAmericaNaturalResourcesDataMAD_AVG$avg_MAD, southAmericaNaturalResourcesDataMAD_AVG$avg_MAD, africaNaturalResourcesDataMAD_AVG$avg_MAD),
+  MAD_HeavyMetals = c(europeHeavyMetalsMAD_AVG$avg_MAD, asiaHeavyMetalsMAD_AVG$avg_MAD, northAmericaHeavyMetalsMAD_AVG$avg_MAD, southAmericaHeavyMetalsMAD_AVG$avg_MAD, africaHeavyMetalsMAD_AVG$avg_MAD)
+  
+)
+
+continentsMAD |> filter(Continent != "Australia/Oceania") |> select(Continent, H2O, AIR, AGR, WMG, WRS, HMT) |>
+   rename('Sanitation & Drinking Water' = H2O, "Air Quality" = AIR, "Agriculture" = AGR, "Solid Waste" = WMG, "Water Resources"=WRS, "Heavy Metals"=HMT) |> 
+  inner_join(continentsMAD_average) -> continentsMAD_average
+
+continentsMAD_average |> 
+  select(-Continent) |>
+  cor() |>
+  ggcorrplot::ggcorrplot(type = "upper", lab = TRUE, 
+             colors = c("#d01c8b", "white", "#4478c5"),
+             outline.color = "black")
+```
+
 ## Correlation Analysis and Visualization
 
 ```{r}
@@ -2928,6 +3472,48 @@ carbonAtlas |>
   inner_join(continentsCarbonBenfordPoints, by = "Continent") |> 
   select(-1) |> 
   cor() |> 
+   ggcorrplot::ggcorrplot(type = "upper", lab = TRUE, 
+             colors = c("#d01c8b", "white", "#4478c5"),
+             outline.color = "black")
+
+bigDataCountriesGrouped |> select(Continent, matches) -> CarbonContinentsData
+
+CarbonContinentsData |> filter(Continent == "Europe") -> europeCarbonData
+CarbonContinentsData |> filter(Continent == "Asia") -> asiaCarbonData
+CarbonContinentsData |> filter(Continent == "North America") -> northAmericaCarbonData
+CarbonContinentsData |> filter(Continent == "South America") -> southAmericaCarbonData
+CarbonContinentsData |> filter(Continent == "Africa") -> africaCarbonData
+CarbonContinentsData |> filter(Continent == "Australia/Oceania") -> australiaCarbonData
+
+australiaCarbonData |> benford_conforming_combined2() -> australia_carbon_BENFORD
+australia_carbon_BENFORD$MAD -> australia_carbon_MAD
+
+europeCarbonData |> benford_conforming_combined2() -> europe_carbon_BENFORD
+europe_carbon_BENFORD$MAD -> europe_carbon_MAD
+
+asiaCarbonData |> benford_conforming_combined2() -> asia_carbon_BENFORD
+asia_carbon_BENFORD$MAD -> asia_carbon_MAD
+
+northAmericaCarbonData |> benford_conforming_combined2() -> north_america_carbon_BENFORD
+north_america_carbon_BENFORD$MAD -> north_america_carbon_MAD
+
+southAmericaCarbonData |> benford_conforming_combined2() -> south_america_carbon_BENFORD
+south_america_carbon_BENFORD$MAD -> south_america_carbon_MAD
+
+africaCarbonData |> benford_conforming_combined2() -> africa_carbon_BENFORD
+africa_carbon_BENFORD$MAD -> africa_carbon_MAD
+
+continentsCarbonDataPlotDF <- data.frame(
+  Continent = c("Europe", "Asia", "North America", "South America", "Africa", "Australia/Oceania"),
+  MAD_Carbon = c(europe_carbon_MAD, asia_carbon_MAD, north_america_carbon_MAD, south_america_carbon_MAD, africa_carbon_MAD, australia_carbon_MAD)
+)
+
+carbonAtlas |> 
+  group_by(Continent) |> 
+  summarise(CarbonAtlasEmission = sum(Carbon, na.rm = TRUE)) |>
+  inner_join(continentsCarbonDataPlotDF, by = "Continent") |>
+  select(-1) |>
+  cor() |>
   ggcorrplot::ggcorrplot(type = "upper", lab = TRUE, 
              colors = c("#d01c8b", "white", "#4478c5"),
              outline.color = "black")
