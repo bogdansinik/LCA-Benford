@@ -7,7 +7,7 @@ This repository provides data and R scripts for analyzing Life-Cycle Assessment 
 |    Database   | Observations (Rows) | Features (Columns) | Numerical Values Extracted | Format | Public |
 |---------------|----------------------|--------------------|----------------------------|--------|--------|
 | Needs         | 877971              | 9                  | 808382                     | csv    | ✅      |
-| Greendelta    | 277626              | 9                  | 205344                     | csv    | ✅      |
+| ELCD          | 277626              | 9                  | 205344                     | csv    | ✅      |
 | OzLCI2019     | 243247              | 9                  | 178940                     | csv    | ✅      |
 | Worldsteel    | 79103               | 9                  | 73044                      | csv    | ✅      |
 | Ecoinvent     | 23523               | 2651               | 47403170                   | csv    | ❌      |
