@@ -12,6 +12,7 @@ This repository provides data and R scripts for analyzing Life-Cycle Assessment 
 | Worldsteel    | 79103               | 9                  | 73044                      | csv    | ✅      |
 | Ecoinvent     | 23523               | 2651               | 47403170                   | csv    | ❌      |
 | Bioenergiedat | 23037               | 8                  | 834                        | csv    | ✅      |
+| Exiobase      | 7531                | 6                  | 6477                       | csv    | ✅      |
 
 ## Features
 
