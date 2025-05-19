@@ -1,116 +1,621 @@
 Continent,Conformity,Colname,Label
-Asia,Marginally acceptable conformity,Arsenic ion|water|ocean,1
-Asia,Nonconformity,Arsenic ion|water|surface water,2
-Asia,Nonconformity,"Cadmium II|air|low population density, long-term",3
-Asia,Nonconformity,Cadmium II|water|surface water,4
-Asia,Acceptable conformity,"Chromium III|air|low population density, long-term",6
-Asia,Nonconformity,Chromium III|air|unspecified,7
-Asia,Nonconformity,"Chromium VI|air|low population density, long-term",8
-Asia,Marginally acceptable conformity,Chromium VI|water|ground-,9
-Asia,Nonconformity,Chromium-51|air|non-urban air or from high stacks,5
-Asia,Nonconformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|low population density, long-term",10
-Asia,Nonconformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|urban air close to ground",11
-Asia,Nonconformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|soil|unspecified",12
-Asia,Marginally acceptable conformity,Lead|natural resource|in ground,17
-Asia,Nonconformity,Lead II|water|surface water,16
-Asia,Nonconformity,Lead-210|air|urban air close to ground,13
-Asia,Acceptable conformity,Lead-210|water|ocean,14
-Asia,Marginally acceptable conformity,Lead-210|water|surface water,15
-Asia,Marginally acceptable conformity,Mercury|natural resource|in ground,22
-Asia,Nonconformity,Mercury II|air|urban air close to ground,18
-Asia,Nonconformity,Mercury II|soil|unspecified,19
-Asia,Nonconformity,Mercury II|water|ocean,20
-Asia,Nonconformity,Mercury II|water|surface water,21
-Asia,Marginally acceptable conformity,"VOC, volatile organic compounds|water|ocean",23
-Europe,Acceptable conformity,Arsenic ion|water|ocean,1
-Europe,Acceptable conformity,Arsenic ion|water|surface water,2
-Europe,Close conformity,"Cadmium II|air|low population density, long-term",3
-Europe,Acceptable conformity,Cadmium II|water|surface water,4
-Europe,Close conformity,"Chromium III|air|low population density, long-term",6
-Europe,Marginally acceptable conformity,Chromium III|air|unspecified,7
-Europe,Acceptable conformity,"Chromium VI|air|low population density, long-term",8
-Europe,Acceptable conformity,Chromium VI|water|ground-,9
-Europe,Acceptable conformity,Chromium-51|air|non-urban air or from high stacks,5
-Europe,Acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|low population density, long-term",10
-Europe,Acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|urban air close to ground",11
-Europe,Marginally acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|soil|unspecified",12
-Europe,Acceptable conformity,Lead|natural resource|in ground,17
-Europe,Acceptable conformity,Lead II|water|surface water,16
-Europe,Nonconformity,Lead-210|air|urban air close to ground,13
-Europe,Acceptable conformity,Lead-210|water|ocean,14
-Europe,Acceptable conformity,Lead-210|water|surface water,15
-Europe,Acceptable conformity,Mercury|natural resource|in ground,22
-Europe,Marginally acceptable conformity,Mercury II|air|urban air close to ground,18
-Europe,Marginally acceptable conformity,Mercury II|soil|unspecified,19
-Europe,Acceptable conformity,Mercury II|water|ocean,20
-Europe,Close conformity,Mercury II|water|surface water,21
-Europe,Close conformity,"VOC, volatile organic compounds|water|ocean",23
-North America,Acceptable conformity,Arsenic ion|water|ocean,1
-North America,Acceptable conformity,Arsenic ion|water|surface water,2
-North America,Marginally acceptable conformity,"Cadmium II|air|low population density, long-term",3
-North America,Acceptable conformity,Cadmium II|water|surface water,4
-North America,Acceptable conformity,"Chromium III|air|low population density, long-term",6
-North America,Acceptable conformity,Chromium III|air|unspecified,7
-North America,Marginally acceptable conformity,"Chromium VI|air|low population density, long-term",8
-North America,Nonconformity,Chromium VI|water|ground-,9
-North America,Marginally acceptable conformity,Chromium-51|air|non-urban air or from high stacks,5
-North America,Acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|low population density, long-term",10
-North America,Acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|urban air close to ground",11
-North America,Acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|soil|unspecified",12
-North America,Marginally acceptable conformity,Lead|natural resource|in ground,17
-North America,Nonconformity,Lead II|water|surface water,16
-North America,Nonconformity,Lead-210|air|urban air close to ground,13
-North America,Nonconformity,Lead-210|water|ocean,14
-North America,Nonconformity,Lead-210|water|surface water,15
-North America,Marginally acceptable conformity,Mercury|natural resource|in ground,22
-North America,Marginally acceptable conformity,Mercury II|air|urban air close to ground,18
-North America,Nonconformity,Mercury II|soil|unspecified,19
-North America,Nonconformity,Mercury II|water|ocean,20
-North America,Nonconformity,Mercury II|water|surface water,21
-North America,Nonconformity,"VOC, volatile organic compounds|water|ocean",23
-South America,Acceptable conformity,Arsenic ion|water|ocean,1
-South America,Acceptable conformity,Arsenic ion|water|surface water,2
-South America,Marginally acceptable conformity,"Cadmium II|air|low population density, long-term",3
-South America,Acceptable conformity,Cadmium II|water|surface water,4
-South America,Marginally acceptable conformity,"Chromium III|air|low population density, long-term",6
-South America,Acceptable conformity,Chromium III|air|unspecified,7
-South America,Acceptable conformity,"Chromium VI|air|low population density, long-term",8
-South America,Acceptable conformity,Chromium VI|water|ground-,9
-South America,Acceptable conformity,Chromium-51|air|non-urban air or from high stacks,5
-South America,Marginally acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|low population density, long-term",10
-South America,Acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|urban air close to ground",11
-South America,Marginally acceptable conformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|soil|unspecified",12
-South America,Marginally acceptable conformity,Lead|natural resource|in ground,17
-South America,Nonconformity,Lead II|water|surface water,16
-South America,Marginally acceptable conformity,Lead-210|air|urban air close to ground,13
-South America,Marginally acceptable conformity,Lead-210|water|ocean,14
-South America,Acceptable conformity,Lead-210|water|surface water,15
-South America,Acceptable conformity,Mercury|natural resource|in ground,22
-South America,Marginally acceptable conformity,Mercury II|air|urban air close to ground,18
-South America,Acceptable conformity,Mercury II|soil|unspecified,19
-South America,Marginally acceptable conformity,Mercury II|water|ocean,20
-South America,Acceptable conformity,Mercury II|water|surface water,21
-South America,Acceptable conformity,"VOC, volatile organic compounds|water|ocean",23
-Africa,Nonconformity,Arsenic ion|water|ocean,1
-Africa,Marginally acceptable conformity,Arsenic ion|water|surface water,2
-Africa,Nonconformity,"Cadmium II|air|low population density, long-term",3
-Africa,Nonconformity,Cadmium II|water|surface water,4
-Africa,Nonconformity,"Chromium III|air|low population density, long-term",6
-Africa,Nonconformity,Chromium III|air|unspecified,7
-Africa,Nonconformity,"Chromium VI|air|low population density, long-term",8
-Africa,Acceptable conformity,Chromium VI|water|ground-,9
-Africa,Nonconformity,Chromium-51|air|non-urban air or from high stacks,5
-Africa,Nonconformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|low population density, long-term",10
-Africa,Nonconformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|air|urban air close to ground",11
-Africa,Nonconformity,"Dioxins, measured as 2,3,7,8-tetrachlorodibenzo-p-dioxin|soil|unspecified",12
-Africa,Nonconformity,Lead|natural resource|in ground,17
-Africa,Nonconformity,Lead II|water|surface water,16
-Africa,Nonconformity,Lead-210|air|urban air close to ground,13
-Africa,Nonconformity,Lead-210|water|ocean,14
-Africa,Nonconformity,Lead-210|water|surface water,15
-Africa,Nonconformity,Mercury|natural resource|in ground,22
-Africa,Nonconformity,Mercury II|air|urban air close to ground,18
-Africa,Nonconformity,Mercury II|soil|unspecified,19
-Africa,Nonconformity,Mercury II|water|ocean,20
-Africa,Nonconformity,Mercury II|water|surface water,21
-Africa,Nonconformity,"VOC, volatile organic compounds|water|ocean",23
+Asia,Marginally acceptable conformity,"1,1,1-Trichloroethane|water|surface water",1
+Asia,Marginally acceptable conformity,"2,4-DB|soil|agricultural",2
+Asia,Marginally acceptable conformity,"2,4-DB|water|surface water",3
+Asia,Nonconformity,"2,4-Dichlorophenol|air|urban air close to ground",4
+Asia,Nonconformity,Abamectin|water|unspecified,5
+Asia,Nonconformity,Acrolein|air|non-urban air or from high stacks,6
+Asia,Nonconformity,Acrolein|air|unspecified,7
+Asia,Nonconformity,"Actinides, radioactive, unspecified|water|ocean",8
+Asia,Marginally acceptable conformity,"Ammonia|air|low population density, long-term",9
+Asia,Nonconformity,Antimony ion|soil|agricultural,13
+Asia,Nonconformity,"Antimony ion|water|ground-, long-term",14
+Asia,Nonconformity,Antimony ion|water|ocean,15
+Asia,Nonconformity,Antimony-122|water|surface water,10
+Asia,Marginally acceptable conformity,Antimony-125|air|non-urban air or from high stacks,11
+Asia,Nonconformity,Antimony-125|water|surface water,12
+Asia,Marginally acceptable conformity,Arsenic ion|water|ocean,16
+Asia,Nonconformity,Arsenic ion|water|surface water,17
+Asia,Nonconformity,Atrazine|soil|agricultural,18
+Asia,Acceptable conformity,Barium|natural resource|in ground,23
+Asia,Nonconformity,Barium II|soil|agricultural,19
+Asia,Nonconformity,Barium II|water|ocean,20
+Asia,Nonconformity,Barium II|water|surface water,21
+Asia,Acceptable conformity,Barium II|water|unspecified,22
+Asia,Nonconformity,Benomyl|soil|agricultural,24
+Asia,Nonconformity,Benzene|water|ocean,25
+Asia,Nonconformity,Benzene|water|surface water,26
+Asia,Nonconformity,"Beryllium II|air|low population density, long-term",27
+Asia,Nonconformity,Beryllium II|soil|industrial,28
+Asia,Nonconformity,Beryllium II|soil|unspecified,29
+Asia,Nonconformity,"Cadmium II|air|low population density, long-term",30
+Asia,Nonconformity,Cadmium II|water|surface water,31
+Asia,Nonconformity,Chlorothalonil|soil|agricultural,32
+Asia,Acceptable conformity,"Chromium III|air|low population density, long-term",33
+Asia,Nonconformity,Chromium III|air|unspecified,34
+Asia,Nonconformity,"Chromium VI|air|low population density, long-term",35
+Asia,Marginally acceptable conformity,Chromium VI|water|ground-,36
+Asia,Marginally acceptable conformity,Cobalt II|air|urban air close to ground,41
+Asia,Nonconformity,"Cobalt II|water|ground-, long-term",42
+Asia,Marginally acceptable conformity,Cobalt II|water|ocean,43
+Asia,Nonconformity,Cobalt-57|water|surface water,37
+Asia,Acceptable conformity,Cobalt-58|air|non-urban air or from high stacks,38
+Asia,Nonconformity,Cobalt-58|water|surface water,39
+Asia,Nonconformity,Cobalt-60|water|surface water,40
+Asia,Marginally acceptable conformity,Deltamethrin|soil|agricultural,44
+Asia,Nonconformity,Dichloromethane|air|non-urban air or from high stacks,45
+Asia,Acceptable conformity,Diphenyltin|water|ocean,46
+Asia,Nonconformity,Emamectin benzoate|water|unspecified,47
+Asia,Nonconformity,Ethyl benzene|water|ocean,48
+Asia,Nonconformity,Ethylene dichloride|air|non-urban air or from high stacks,49
+Asia,Acceptable conformity,Ethylene dichloride|air|urban air close to ground,50
+Asia,Acceptable conformity,Ethylene oxide|air|unspecified,51
+Asia,Nonconformity,Formaldehyde|water|unspecified,52
+Asia,Marginally acceptable conformity,Glyphosate|soil|forestry,53
+Asia,Nonconformity,Glyphosate|water|ground-,54
+Asia,Marginally acceptable conformity,Lead|natural resource|in ground,59
+Asia,Nonconformity,Lead II|water|surface water,58
+Asia,Nonconformity,Lead-210|air|urban air close to ground,55
+Asia,Acceptable conformity,Lead-210|water|ocean,56
+Asia,Marginally acceptable conformity,Lead-210|water|surface water,57
+Asia,Nonconformity,Linuron|soil|agricultural,60
+Asia,Nonconformity,MCPA|water|ground-,62
+Asia,Nonconformity,Mecoprop-P|soil|agricultural,63
+Asia,Marginally acceptable conformity,Mercury|natural resource|in ground,68
+Asia,Nonconformity,Mercury II|air|urban air close to ground,64
+Asia,Nonconformity,Mercury II|soil|unspecified,65
+Asia,Nonconformity,Mercury II|water|ocean,66
+Asia,Nonconformity,Mercury II|water|surface water,67
+Asia,Nonconformity,Metamitron|soil|agricultural,69
+Asia,Nonconformity,Molybdenum VI|air|non-urban air or from high stacks,70
+Asia,Nonconformity,Molybdenum VI|water|ground-,71
+Asia,Marginally acceptable conformity,Molybdenum VI|water|ocean,72
+Asia,Nonconformity,Monobutyltin (III)|water|ocean,73
+Asia,Close conformity,"Nickel II|air|low population density, long-term",74
+Asia,Nonconformity,Nickel II|air|urban air close to ground,75
+Asia,Nonconformity,"Nickel II|water|ground-, long-term",76
+Asia,Nonconformity,Nickel II|water|surface water,77
+Asia,Nonconformity,Nitrobenzene|air|urban air close to ground,78
+Asia,Nonconformity,Nitrobenzene|water|surface water,79
+Asia,Nonconformity,Nitrobenzene|water|unspecified,80
+Asia,Nonconformity,Octaethylene glycol monododecyl ether|air|unspecified,84
+Asia,Nonconformity,Pentachlorophenol|air|unspecified,85
+Asia,Acceptable conformity,Phenol|air|urban air close to ground,86
+Asia,Marginally acceptable conformity,Phenol|water|ocean,87
+Asia,Nonconformity,Phenyltin|water|ocean,88
+Asia,Nonconformity,Platinum|air|urban air close to ground,89
+Asia,Nonconformity,Platinum|natural resource|in ground,90
+Asia,Nonconformity,Propiconazole|soil|agricultural,91
+Asia,Nonconformity,Selenium IV|air|non-urban air or from high stacks,92
+Asia,Nonconformity,Selenium IV|air|urban air close to ground,93
+Asia,Nonconformity,"Selenium IV|water|ground-, long-term",94
+Asia,Acceptable conformity,Selenium IV|water|unspecified,95
+Asia,Nonconformity,"Thallium I|air|low population density, long-term",96
+Asia,Nonconformity,Thallium I|soil|industrial,97
+Asia,Nonconformity,Thallium I|soil|unspecified,98
+Asia,Nonconformity,Thallium I|water|surface water,99
+Asia,Nonconformity,Thiram|soil|agricultural,100
+Asia,Acceptable conformity,Tin ion|air|unspecified,101
+Asia,Nonconformity,Tin ion|air|urban air close to ground,102
+Asia,Nonconformity,Tin ion|soil|unspecified,103
+Asia,Marginally acceptable conformity,Tin ion|water|ocean,104
+Asia,Marginally acceptable conformity,Toluene|air|urban air close to ground,105
+Asia,Nonconformity,Toluene|water|ocean,106
+Asia,Marginally acceptable conformity,Toluene|water|surface water,107
+Asia,Nonconformity,Tributyltin compounds|water|unspecified,108
+Asia,Marginally acceptable conformity,Triethylene glycol|water|unspecified,109
+Asia,Marginally acceptable conformity,Trioctyltin|water|ocean,110
+Asia,Nonconformity,Triphenyltin|water|ocean,111
+Asia,Marginally acceptable conformity,Vanadium V|air|urban air close to ground,112
+Asia,Nonconformity,Vanadium V|soil|industrial,113
+Asia,Nonconformity,Vanadium V|soil|unspecified,114
+Asia,Marginally acceptable conformity,Vanadium V|water|ground-,115
+Asia,Acceptable conformity,Vanadium V|water|ocean,116
+Asia,Nonconformity,Vanadium V|water|surface water,117
+Asia,Marginally acceptable conformity,Vinyl chloride|water|surface water,118
+Asia,Nonconformity,Zeta-cypermethrin|soil|agricultural,119
+Asia,Marginally acceptable conformity,Zinc II|soil|industrial,122
+Asia,Marginally acceptable conformity,Zinc II|water|ocean,123
+Asia,Nonconformity,Zinc II|water|surface water,124
+Asia,Nonconformity,Zinc-65|air|non-urban air or from high stacks,120
+Asia,Nonconformity,Zinc-65|water|surface water,121
+Asia,Nonconformity,m-Xylene|water|surface water,61
+Asia,Nonconformity,o-Chlorotoluene|air|urban air close to ground,81
+Asia,Nonconformity,o-Chlorotoluene|water|surface water,82
+Asia,Nonconformity,o-Nitrotoluene|air|urban air close to ground,83
+Europe,Acceptable conformity,"1,1,1-Trichloroethane|water|surface water",1
+Europe,Acceptable conformity,"2,4-DB|soil|agricultural",2
+Europe,Acceptable conformity,"2,4-DB|water|surface water",3
+Europe,Acceptable conformity,"2,4-Dichlorophenol|air|urban air close to ground",4
+Europe,Acceptable conformity,Abamectin|water|unspecified,5
+Europe,Acceptable conformity,Acrolein|air|non-urban air or from high stacks,6
+Europe,Close conformity,Acrolein|air|unspecified,7
+Europe,Acceptable conformity,"Actinides, radioactive, unspecified|water|ocean",8
+Europe,Acceptable conformity,"Ammonia|air|low population density, long-term",9
+Europe,Close conformity,Antimony ion|soil|agricultural,13
+Europe,Acceptable conformity,"Antimony ion|water|ground-, long-term",14
+Europe,Acceptable conformity,Antimony ion|water|ocean,15
+Europe,Marginally acceptable conformity,Antimony-122|water|surface water,10
+Europe,Acceptable conformity,Antimony-125|air|non-urban air or from high stacks,11
+Europe,Marginally acceptable conformity,Antimony-125|water|surface water,12
+Europe,Acceptable conformity,Arsenic ion|water|ocean,16
+Europe,Acceptable conformity,Arsenic ion|water|surface water,17
+Europe,Acceptable conformity,Atrazine|soil|agricultural,18
+Europe,Acceptable conformity,Barium|natural resource|in ground,23
+Europe,Marginally acceptable conformity,Barium II|soil|agricultural,19
+Europe,Acceptable conformity,Barium II|water|ocean,20
+Europe,Acceptable conformity,Barium II|water|surface water,21
+Europe,Acceptable conformity,Barium II|water|unspecified,22
+Europe,Close conformity,Benomyl|soil|agricultural,24
+Europe,Acceptable conformity,Benzene|water|ocean,25
+Europe,Acceptable conformity,Benzene|water|surface water,26
+Europe,Acceptable conformity,"Beryllium II|air|low population density, long-term",27
+Europe,Acceptable conformity,Beryllium II|soil|industrial,28
+Europe,Marginally acceptable conformity,Beryllium II|soil|unspecified,29
+Europe,Close conformity,"Cadmium II|air|low population density, long-term",30
+Europe,Acceptable conformity,Cadmium II|water|surface water,31
+Europe,Marginally acceptable conformity,Chlorothalonil|soil|agricultural,32
+Europe,Close conformity,"Chromium III|air|low population density, long-term",33
+Europe,Marginally acceptable conformity,Chromium III|air|unspecified,34
+Europe,Acceptable conformity,"Chromium VI|air|low population density, long-term",35
+Europe,Acceptable conformity,Chromium VI|water|ground-,36
+Europe,Acceptable conformity,Cobalt II|air|urban air close to ground,41
+Europe,Acceptable conformity,"Cobalt II|water|ground-, long-term",42
+Europe,Close conformity,Cobalt II|water|ocean,43
+Europe,Marginally acceptable conformity,Cobalt-57|water|surface water,37
+Europe,Acceptable conformity,Cobalt-58|air|non-urban air or from high stacks,38
+Europe,Marginally acceptable conformity,Cobalt-58|water|surface water,39
+Europe,Acceptable conformity,Cobalt-60|water|surface water,40
+Europe,Acceptable conformity,Deltamethrin|soil|agricultural,44
+Europe,Acceptable conformity,Dichloromethane|air|non-urban air or from high stacks,45
+Europe,Acceptable conformity,Diphenyltin|water|ocean,46
+Europe,Acceptable conformity,Emamectin benzoate|water|unspecified,47
+Europe,Acceptable conformity,Ethyl benzene|water|ocean,48
+Europe,Nonconformity,Ethylene dichloride|air|non-urban air or from high stacks,49
+Europe,Acceptable conformity,Ethylene dichloride|air|urban air close to ground,50
+Europe,Acceptable conformity,Ethylene oxide|air|unspecified,51
+Europe,Acceptable conformity,Formaldehyde|water|unspecified,52
+Europe,Acceptable conformity,Glyphosate|soil|forestry,53
+Europe,Acceptable conformity,Glyphosate|water|ground-,54
+Europe,Acceptable conformity,Lead|natural resource|in ground,59
+Europe,Acceptable conformity,Lead II|water|surface water,58
+Europe,Nonconformity,Lead-210|air|urban air close to ground,55
+Europe,Acceptable conformity,Lead-210|water|ocean,56
+Europe,Acceptable conformity,Lead-210|water|surface water,57
+Europe,Acceptable conformity,Linuron|soil|agricultural,60
+Europe,Marginally acceptable conformity,MCPA|water|ground-,62
+Europe,Acceptable conformity,Mecoprop-P|soil|agricultural,63
+Europe,Acceptable conformity,Mercury|natural resource|in ground,68
+Europe,Marginally acceptable conformity,Mercury II|air|urban air close to ground,64
+Europe,Marginally acceptable conformity,Mercury II|soil|unspecified,65
+Europe,Acceptable conformity,Mercury II|water|ocean,66
+Europe,Close conformity,Mercury II|water|surface water,67
+Europe,Acceptable conformity,Metamitron|soil|agricultural,69
+Europe,Acceptable conformity,Molybdenum VI|air|non-urban air or from high stacks,70
+Europe,Marginally acceptable conformity,Molybdenum VI|water|ground-,71
+Europe,Acceptable conformity,Molybdenum VI|water|ocean,72
+Europe,Marginally acceptable conformity,Monobutyltin (III)|water|ocean,73
+Europe,Acceptable conformity,"Nickel II|air|low population density, long-term",74
+Europe,Acceptable conformity,Nickel II|air|urban air close to ground,75
+Europe,Acceptable conformity,"Nickel II|water|ground-, long-term",76
+Europe,Acceptable conformity,Nickel II|water|surface water,77
+Europe,Close conformity,Nitrobenzene|air|urban air close to ground,78
+Europe,Acceptable conformity,Nitrobenzene|water|surface water,79
+Europe,Acceptable conformity,Nitrobenzene|water|unspecified,80
+Europe,Marginally acceptable conformity,Octaethylene glycol monododecyl ether|air|unspecified,84
+Europe,Marginally acceptable conformity,Pentachlorophenol|air|unspecified,85
+Europe,Acceptable conformity,Phenol|air|urban air close to ground,86
+Europe,Acceptable conformity,Phenol|water|ocean,87
+Europe,Acceptable conformity,Phenyltin|water|ocean,88
+Europe,Acceptable conformity,Platinum|air|urban air close to ground,89
+Europe,Close conformity,Platinum|natural resource|in ground,90
+Europe,Acceptable conformity,Propiconazole|soil|agricultural,91
+Europe,Acceptable conformity,Selenium IV|air|non-urban air or from high stacks,92
+Europe,Marginally acceptable conformity,Selenium IV|air|urban air close to ground,93
+Europe,Acceptable conformity,"Selenium IV|water|ground-, long-term",94
+Europe,Close conformity,Selenium IV|water|unspecified,95
+Europe,Acceptable conformity,"Thallium I|air|low population density, long-term",96
+Europe,Acceptable conformity,Thallium I|soil|industrial,97
+Europe,Marginally acceptable conformity,Thallium I|soil|unspecified,98
+Europe,Acceptable conformity,Thallium I|water|surface water,99
+Europe,Close conformity,Thiram|soil|agricultural,100
+Europe,Acceptable conformity,Tin ion|air|unspecified,101
+Europe,Acceptable conformity,Tin ion|air|urban air close to ground,102
+Europe,Nonconformity,Tin ion|soil|unspecified,103
+Europe,Acceptable conformity,Tin ion|water|ocean,104
+Europe,Acceptable conformity,Toluene|air|urban air close to ground,105
+Europe,Close conformity,Toluene|water|ocean,106
+Europe,Acceptable conformity,Toluene|water|surface water,107
+Europe,Acceptable conformity,Tributyltin compounds|water|unspecified,108
+Europe,Acceptable conformity,Triethylene glycol|water|unspecified,109
+Europe,Close conformity,Trioctyltin|water|ocean,110
+Europe,Acceptable conformity,Triphenyltin|water|ocean,111
+Europe,Acceptable conformity,Vanadium V|air|urban air close to ground,112
+Europe,Acceptable conformity,Vanadium V|soil|industrial,113
+Europe,Nonconformity,Vanadium V|soil|unspecified,114
+Europe,Acceptable conformity,Vanadium V|water|ground-,115
+Europe,Acceptable conformity,Vanadium V|water|ocean,116
+Europe,Acceptable conformity,Vanadium V|water|surface water,117
+Europe,Acceptable conformity,Vinyl chloride|water|surface water,118
+Europe,Acceptable conformity,Zeta-cypermethrin|soil|agricultural,119
+Europe,Acceptable conformity,Zinc II|soil|industrial,122
+Europe,Acceptable conformity,Zinc II|water|ocean,123
+Europe,Close conformity,Zinc II|water|surface water,124
+Europe,Acceptable conformity,Zinc-65|air|non-urban air or from high stacks,120
+Europe,Acceptable conformity,Zinc-65|water|surface water,121
+Europe,Close conformity,m-Xylene|water|surface water,61
+Europe,Acceptable conformity,o-Chlorotoluene|air|urban air close to ground,81
+Europe,Acceptable conformity,o-Chlorotoluene|water|surface water,82
+Europe,Close conformity,o-Nitrotoluene|air|urban air close to ground,83
+North America,Acceptable conformity,"1,1,1-Trichloroethane|water|surface water",1
+North America,Nonconformity,"2,4-DB|soil|agricultural",2
+North America,Acceptable conformity,"2,4-DB|water|surface water",3
+North America,Acceptable conformity,"2,4-Dichlorophenol|air|urban air close to ground",4
+North America,Nonconformity,Abamectin|water|unspecified,5
+North America,Acceptable conformity,Acrolein|air|non-urban air or from high stacks,6
+North America,Marginally acceptable conformity,Acrolein|air|unspecified,7
+North America,Nonconformity,"Actinides, radioactive, unspecified|water|ocean",8
+North America,Acceptable conformity,"Ammonia|air|low population density, long-term",9
+North America,Nonconformity,Antimony ion|soil|agricultural,13
+North America,Acceptable conformity,"Antimony ion|water|ground-, long-term",14
+North America,Marginally acceptable conformity,Antimony ion|water|ocean,15
+North America,Acceptable conformity,Antimony-122|water|surface water,10
+North America,Acceptable conformity,Antimony-125|air|non-urban air or from high stacks,11
+North America,Acceptable conformity,Antimony-125|water|surface water,12
+North America,Acceptable conformity,Arsenic ion|water|ocean,16
+North America,Acceptable conformity,Arsenic ion|water|surface water,17
+North America,Nonconformity,Atrazine|soil|agricultural,18
+North America,Nonconformity,Barium|natural resource|in ground,23
+North America,Nonconformity,Barium II|soil|agricultural,19
+North America,Nonconformity,Barium II|water|ocean,20
+North America,Nonconformity,Barium II|water|surface water,21
+North America,Nonconformity,Barium II|water|unspecified,22
+North America,Marginally acceptable conformity,Benomyl|soil|agricultural,24
+North America,Nonconformity,Benzene|water|ocean,25
+North America,Acceptable conformity,Benzene|water|surface water,26
+North America,Nonconformity,"Beryllium II|air|low population density, long-term",27
+North America,Marginally acceptable conformity,Beryllium II|soil|industrial,28
+North America,Nonconformity,Beryllium II|soil|unspecified,29
+North America,Marginally acceptable conformity,"Cadmium II|air|low population density, long-term",30
+North America,Acceptable conformity,Cadmium II|water|surface water,31
+North America,Nonconformity,Chlorothalonil|soil|agricultural,32
+North America,Acceptable conformity,"Chromium III|air|low population density, long-term",33
+North America,Acceptable conformity,Chromium III|air|unspecified,34
+North America,Marginally acceptable conformity,"Chromium VI|air|low population density, long-term",35
+North America,Nonconformity,Chromium VI|water|ground-,36
+North America,Nonconformity,Cobalt II|air|urban air close to ground,41
+North America,Marginally acceptable conformity,"Cobalt II|water|ground-, long-term",42
+North America,Acceptable conformity,Cobalt II|water|ocean,43
+North America,Acceptable conformity,Cobalt-57|water|surface water,37
+North America,Acceptable conformity,Cobalt-58|air|non-urban air or from high stacks,38
+North America,Acceptable conformity,Cobalt-58|water|surface water,39
+North America,Acceptable conformity,Cobalt-60|water|surface water,40
+North America,Marginally acceptable conformity,Deltamethrin|soil|agricultural,44
+North America,Marginally acceptable conformity,Dichloromethane|air|non-urban air or from high stacks,45
+North America,Acceptable conformity,Diphenyltin|water|ocean,46
+North America,Nonconformity,Emamectin benzoate|water|unspecified,47
+North America,Nonconformity,Ethyl benzene|water|ocean,48
+North America,Marginally acceptable conformity,Ethylene dichloride|air|non-urban air or from high stacks,49
+North America,Nonconformity,Ethylene dichloride|air|urban air close to ground,50
+North America,Acceptable conformity,Ethylene oxide|air|unspecified,51
+North America,Marginally acceptable conformity,Formaldehyde|water|unspecified,52
+North America,Nonconformity,Glyphosate|soil|forestry,53
+North America,Acceptable conformity,Glyphosate|water|ground-,54
+North America,Marginally acceptable conformity,Lead|natural resource|in ground,59
+North America,Nonconformity,Lead II|water|surface water,58
+North America,Nonconformity,Lead-210|air|urban air close to ground,55
+North America,Nonconformity,Lead-210|water|ocean,56
+North America,Nonconformity,Lead-210|water|surface water,57
+North America,Nonconformity,Linuron|soil|agricultural,60
+North America,Marginally acceptable conformity,MCPA|water|ground-,62
+North America,Acceptable conformity,Mecoprop-P|soil|agricultural,63
+North America,Marginally acceptable conformity,Mercury|natural resource|in ground,68
+North America,Marginally acceptable conformity,Mercury II|air|urban air close to ground,64
+North America,Nonconformity,Mercury II|soil|unspecified,65
+North America,Nonconformity,Mercury II|water|ocean,66
+North America,Nonconformity,Mercury II|water|surface water,67
+North America,Nonconformity,Metamitron|soil|agricultural,69
+North America,Acceptable conformity,Molybdenum VI|air|non-urban air or from high stacks,70
+North America,Nonconformity,Molybdenum VI|water|ground-,71
+North America,Marginally acceptable conformity,Molybdenum VI|water|ocean,72
+North America,Acceptable conformity,Monobutyltin (III)|water|ocean,73
+North America,Nonconformity,"Nickel II|air|low population density, long-term",74
+North America,Nonconformity,Nickel II|air|urban air close to ground,75
+North America,Acceptable conformity,"Nickel II|water|ground-, long-term",76
+North America,Acceptable conformity,Nickel II|water|surface water,77
+North America,Nonconformity,Nitrobenzene|air|urban air close to ground,78
+North America,Nonconformity,Nitrobenzene|water|surface water,79
+North America,Nonconformity,Nitrobenzene|water|unspecified,80
+North America,Acceptable conformity,Octaethylene glycol monododecyl ether|air|unspecified,84
+North America,Marginally acceptable conformity,Pentachlorophenol|air|unspecified,85
+North America,Acceptable conformity,Phenol|air|urban air close to ground,86
+North America,Acceptable conformity,Phenol|water|ocean,87
+North America,Acceptable conformity,Phenyltin|water|ocean,88
+North America,Acceptable conformity,Platinum|air|urban air close to ground,89
+North America,Marginally acceptable conformity,Platinum|natural resource|in ground,90
+North America,Nonconformity,Propiconazole|soil|agricultural,91
+North America,Marginally acceptable conformity,Selenium IV|air|non-urban air or from high stacks,92
+North America,Nonconformity,Selenium IV|air|urban air close to ground,93
+North America,Acceptable conformity,"Selenium IV|water|ground-, long-term",94
+North America,Marginally acceptable conformity,Selenium IV|water|unspecified,95
+North America,Marginally acceptable conformity,"Thallium I|air|low population density, long-term",96
+North America,Nonconformity,Thallium I|soil|industrial,97
+North America,Marginally acceptable conformity,Thallium I|soil|unspecified,98
+North America,Nonconformity,Thallium I|water|surface water,99
+North America,Nonconformity,Thiram|soil|agricultural,100
+North America,Marginally acceptable conformity,Tin ion|air|unspecified,101
+North America,Nonconformity,Tin ion|air|urban air close to ground,102
+North America,Acceptable conformity,Tin ion|soil|unspecified,103
+North America,Acceptable conformity,Tin ion|water|ocean,104
+North America,Acceptable conformity,Toluene|air|urban air close to ground,105
+North America,Acceptable conformity,Toluene|water|ocean,106
+North America,Acceptable conformity,Toluene|water|surface water,107
+North America,Marginally acceptable conformity,Tributyltin compounds|water|unspecified,108
+North America,Nonconformity,Triethylene glycol|water|unspecified,109
+North America,Acceptable conformity,Trioctyltin|water|ocean,110
+North America,Acceptable conformity,Triphenyltin|water|ocean,111
+North America,Acceptable conformity,Vanadium V|air|urban air close to ground,112
+North America,Marginally acceptable conformity,Vanadium V|soil|industrial,113
+North America,Marginally acceptable conformity,Vanadium V|soil|unspecified,114
+North America,Nonconformity,Vanadium V|water|ground-,115
+North America,Acceptable conformity,Vanadium V|water|ocean,116
+North America,Nonconformity,Vanadium V|water|surface water,117
+North America,Nonconformity,Vinyl chloride|water|surface water,118
+North America,Nonconformity,Zeta-cypermethrin|soil|agricultural,119
+North America,Nonconformity,Zinc II|soil|industrial,122
+North America,Nonconformity,Zinc II|water|ocean,123
+North America,Nonconformity,Zinc II|water|surface water,124
+North America,Nonconformity,Zinc-65|air|non-urban air or from high stacks,120
+North America,Marginally acceptable conformity,Zinc-65|water|surface water,121
+North America,Acceptable conformity,m-Xylene|water|surface water,61
+North America,Nonconformity,o-Chlorotoluene|air|urban air close to ground,81
+North America,Nonconformity,o-Chlorotoluene|water|surface water,82
+North America,Marginally acceptable conformity,o-Nitrotoluene|air|urban air close to ground,83
+South America,Close conformity,"1,1,1-Trichloroethane|water|surface water",1
+South America,Marginally acceptable conformity,"2,4-DB|soil|agricultural",2
+South America,Nonconformity,"2,4-DB|water|surface water",3
+South America,Marginally acceptable conformity,"2,4-Dichlorophenol|air|urban air close to ground",4
+South America,Nonconformity,Abamectin|water|unspecified,5
+South America,Acceptable conformity,Acrolein|air|non-urban air or from high stacks,6
+South America,Marginally acceptable conformity,Acrolein|air|unspecified,7
+South America,Marginally acceptable conformity,"Actinides, radioactive, unspecified|water|ocean",8
+South America,Marginally acceptable conformity,"Ammonia|air|low population density, long-term",9
+South America,Nonconformity,Antimony ion|soil|agricultural,13
+South America,Nonconformity,"Antimony ion|water|ground-, long-term",14
+South America,Acceptable conformity,Antimony ion|water|ocean,15
+South America,Acceptable conformity,Antimony-122|water|surface water,10
+South America,Acceptable conformity,Antimony-125|air|non-urban air or from high stacks,11
+South America,Marginally acceptable conformity,Antimony-125|water|surface water,12
+South America,Acceptable conformity,Arsenic ion|water|ocean,16
+South America,Acceptable conformity,Arsenic ion|water|surface water,17
+South America,Acceptable conformity,Atrazine|soil|agricultural,18
+South America,Acceptable conformity,Barium|natural resource|in ground,23
+South America,Nonconformity,Barium II|soil|agricultural,19
+South America,Acceptable conformity,Barium II|water|ocean,20
+South America,Marginally acceptable conformity,Barium II|water|surface water,21
+South America,Marginally acceptable conformity,Barium II|water|unspecified,22
+South America,Marginally acceptable conformity,Benomyl|soil|agricultural,24
+South America,Acceptable conformity,Benzene|water|ocean,25
+South America,Nonconformity,Benzene|water|surface water,26
+South America,Acceptable conformity,"Beryllium II|air|low population density, long-term",27
+South America,Acceptable conformity,Beryllium II|soil|industrial,28
+South America,Acceptable conformity,Beryllium II|soil|unspecified,29
+South America,Marginally acceptable conformity,"Cadmium II|air|low population density, long-term",30
+South America,Acceptable conformity,Cadmium II|water|surface water,31
+South America,Acceptable conformity,Chlorothalonil|soil|agricultural,32
+South America,Marginally acceptable conformity,"Chromium III|air|low population density, long-term",33
+South America,Acceptable conformity,Chromium III|air|unspecified,34
+South America,Acceptable conformity,"Chromium VI|air|low population density, long-term",35
+South America,Acceptable conformity,Chromium VI|water|ground-,36
+South America,Marginally acceptable conformity,Cobalt II|air|urban air close to ground,41
+South America,Close conformity,"Cobalt II|water|ground-, long-term",42
+South America,Marginally acceptable conformity,Cobalt II|water|ocean,43
+South America,Marginally acceptable conformity,Cobalt-57|water|surface water,37
+South America,Acceptable conformity,Cobalt-58|air|non-urban air or from high stacks,38
+South America,Marginally acceptable conformity,Cobalt-58|water|surface water,39
+South America,Marginally acceptable conformity,Cobalt-60|water|surface water,40
+South America,Nonconformity,Deltamethrin|soil|agricultural,44
+South America,Acceptable conformity,Dichloromethane|air|non-urban air or from high stacks,45
+South America,Marginally acceptable conformity,Diphenyltin|water|ocean,46
+South America,Marginally acceptable conformity,Emamectin benzoate|water|unspecified,47
+South America,Acceptable conformity,Ethyl benzene|water|ocean,48
+South America,Marginally acceptable conformity,Ethylene dichloride|air|non-urban air or from high stacks,49
+South America,Nonconformity,Ethylene dichloride|air|urban air close to ground,50
+South America,Marginally acceptable conformity,Ethylene oxide|air|unspecified,51
+South America,Acceptable conformity,Formaldehyde|water|unspecified,52
+South America,Nonconformity,Glyphosate|soil|forestry,53
+South America,Marginally acceptable conformity,Glyphosate|water|ground-,54
+South America,Marginally acceptable conformity,Lead|natural resource|in ground,59
+South America,Nonconformity,Lead II|water|surface water,58
+South America,Marginally acceptable conformity,Lead-210|air|urban air close to ground,55
+South America,Marginally acceptable conformity,Lead-210|water|ocean,56
+South America,Acceptable conformity,Lead-210|water|surface water,57
+South America,Marginally acceptable conformity,Linuron|soil|agricultural,60
+South America,Nonconformity,MCPA|water|ground-,62
+South America,Nonconformity,Mecoprop-P|soil|agricultural,63
+South America,Acceptable conformity,Mercury|natural resource|in ground,68
+South America,Marginally acceptable conformity,Mercury II|air|urban air close to ground,64
+South America,Acceptable conformity,Mercury II|soil|unspecified,65
+South America,Marginally acceptable conformity,Mercury II|water|ocean,66
+South America,Acceptable conformity,Mercury II|water|surface water,67
+South America,Marginally acceptable conformity,Metamitron|soil|agricultural,69
+South America,Marginally acceptable conformity,Molybdenum VI|air|non-urban air or from high stacks,70
+South America,Marginally acceptable conformity,Molybdenum VI|water|ground-,71
+South America,Acceptable conformity,Molybdenum VI|water|ocean,72
+South America,Acceptable conformity,Monobutyltin (III)|water|ocean,73
+South America,Marginally acceptable conformity,"Nickel II|air|low population density, long-term",74
+South America,Nonconformity,Nickel II|air|urban air close to ground,75
+South America,Marginally acceptable conformity,"Nickel II|water|ground-, long-term",76
+South America,Nonconformity,Nickel II|water|surface water,77
+South America,Marginally acceptable conformity,Nitrobenzene|air|urban air close to ground,78
+South America,Nonconformity,Nitrobenzene|water|surface water,79
+South America,Acceptable conformity,Nitrobenzene|water|unspecified,80
+South America,Acceptable conformity,Octaethylene glycol monododecyl ether|air|unspecified,84
+South America,Acceptable conformity,Pentachlorophenol|air|unspecified,85
+South America,Nonconformity,Phenol|air|urban air close to ground,86
+South America,Acceptable conformity,Phenol|water|ocean,87
+South America,Acceptable conformity,Phenyltin|water|ocean,88
+South America,Marginally acceptable conformity,Platinum|air|urban air close to ground,89
+South America,Acceptable conformity,Platinum|natural resource|in ground,90
+South America,Marginally acceptable conformity,Propiconazole|soil|agricultural,91
+South America,Marginally acceptable conformity,Selenium IV|air|non-urban air or from high stacks,92
+South America,Marginally acceptable conformity,Selenium IV|air|urban air close to ground,93
+South America,Nonconformity,"Selenium IV|water|ground-, long-term",94
+South America,Acceptable conformity,Selenium IV|water|unspecified,95
+South America,Acceptable conformity,"Thallium I|air|low population density, long-term",96
+South America,Acceptable conformity,Thallium I|soil|industrial,97
+South America,Marginally acceptable conformity,Thallium I|soil|unspecified,98
+South America,Nonconformity,Thallium I|water|surface water,99
+South America,Acceptable conformity,Thiram|soil|agricultural,100
+South America,Acceptable conformity,Tin ion|air|unspecified,101
+South America,Nonconformity,Tin ion|air|urban air close to ground,102
+South America,Acceptable conformity,Tin ion|soil|unspecified,103
+South America,Marginally acceptable conformity,Tin ion|water|ocean,104
+South America,Marginally acceptable conformity,Toluene|air|urban air close to ground,105
+South America,Marginally acceptable conformity,Toluene|water|ocean,106
+South America,Acceptable conformity,Toluene|water|surface water,107
+South America,Marginally acceptable conformity,Tributyltin compounds|water|unspecified,108
+South America,Nonconformity,Triethylene glycol|water|unspecified,109
+South America,Marginally acceptable conformity,Trioctyltin|water|ocean,110
+South America,Acceptable conformity,Triphenyltin|water|ocean,111
+South America,Acceptable conformity,Vanadium V|air|urban air close to ground,112
+South America,Marginally acceptable conformity,Vanadium V|soil|industrial,113
+South America,Acceptable conformity,Vanadium V|soil|unspecified,114
+South America,Acceptable conformity,Vanadium V|water|ground-,115
+South America,Marginally acceptable conformity,Vanadium V|water|ocean,116
+South America,Acceptable conformity,Vanadium V|water|surface water,117
+South America,Nonconformity,Vinyl chloride|water|surface water,118
+South America,Nonconformity,Zeta-cypermethrin|soil|agricultural,119
+South America,Acceptable conformity,Zinc II|soil|industrial,122
+South America,Nonconformity,Zinc II|water|ocean,123
+South America,Marginally acceptable conformity,Zinc II|water|surface water,124
+South America,Marginally acceptable conformity,Zinc-65|air|non-urban air or from high stacks,120
+South America,Acceptable conformity,Zinc-65|water|surface water,121
+South America,Acceptable conformity,m-Xylene|water|surface water,61
+South America,Acceptable conformity,o-Chlorotoluene|air|urban air close to ground,81
+South America,Acceptable conformity,o-Chlorotoluene|water|surface water,82
+South America,Marginally acceptable conformity,o-Nitrotoluene|air|urban air close to ground,83
+Africa,Nonconformity,"1,1,1-Trichloroethane|water|surface water",1
+Africa,Nonconformity,"2,4-DB|soil|agricultural",2
+Africa,Nonconformity,"2,4-DB|water|surface water",3
+Africa,Nonconformity,"2,4-Dichlorophenol|air|urban air close to ground",4
+Africa,Nonconformity,Abamectin|water|unspecified,5
+Africa,Nonconformity,Acrolein|air|non-urban air or from high stacks,6
+Africa,Nonconformity,Acrolein|air|unspecified,7
+Africa,Nonconformity,"Actinides, radioactive, unspecified|water|ocean",8
+Africa,Nonconformity,"Ammonia|air|low population density, long-term",9
+Africa,Nonconformity,Antimony ion|soil|agricultural,13
+Africa,Nonconformity,"Antimony ion|water|ground-, long-term",14
+Africa,Nonconformity,Antimony ion|water|ocean,15
+Africa,Nonconformity,Antimony-122|water|surface water,10
+Africa,Nonconformity,Antimony-125|air|non-urban air or from high stacks,11
+Africa,Nonconformity,Antimony-125|water|surface water,12
+Africa,Nonconformity,Arsenic ion|water|ocean,16
+Africa,Marginally acceptable conformity,Arsenic ion|water|surface water,17
+Africa,Nonconformity,Atrazine|soil|agricultural,18
+Africa,Nonconformity,Barium|natural resource|in ground,23
+Africa,Marginally acceptable conformity,Barium II|soil|agricultural,19
+Africa,Nonconformity,Barium II|water|ocean,20
+Africa,Nonconformity,Barium II|water|surface water,21
+Africa,Nonconformity,Barium II|water|unspecified,22
+Africa,Marginally acceptable conformity,Benomyl|soil|agricultural,24
+Africa,Nonconformity,Benzene|water|ocean,25
+Africa,Nonconformity,Benzene|water|surface water,26
+Africa,Nonconformity,"Beryllium II|air|low population density, long-term",27
+Africa,Nonconformity,Beryllium II|soil|industrial,28
+Africa,Nonconformity,Beryllium II|soil|unspecified,29
+Africa,Nonconformity,"Cadmium II|air|low population density, long-term",30
+Africa,Nonconformity,Cadmium II|water|surface water,31
+Africa,Nonconformity,Chlorothalonil|soil|agricultural,32
+Africa,Nonconformity,"Chromium III|air|low population density, long-term",33
+Africa,Nonconformity,Chromium III|air|unspecified,34
+Africa,Nonconformity,"Chromium VI|air|low population density, long-term",35
+Africa,Acceptable conformity,Chromium VI|water|ground-,36
+Africa,Nonconformity,Cobalt II|air|urban air close to ground,41
+Africa,Nonconformity,"Cobalt II|water|ground-, long-term",42
+Africa,Nonconformity,Cobalt II|water|ocean,43
+Africa,Nonconformity,Cobalt-57|water|surface water,37
+Africa,Nonconformity,Cobalt-58|air|non-urban air or from high stacks,38
+Africa,Nonconformity,Cobalt-58|water|surface water,39
+Africa,Nonconformity,Cobalt-60|water|surface water,40
+Africa,Nonconformity,Deltamethrin|soil|agricultural,44
+Africa,Nonconformity,Dichloromethane|air|non-urban air or from high stacks,45
+Africa,Nonconformity,Diphenyltin|water|ocean,46
+Africa,Nonconformity,Emamectin benzoate|water|unspecified,47
+Africa,Nonconformity,Ethyl benzene|water|ocean,48
+Africa,Nonconformity,Ethylene dichloride|air|non-urban air or from high stacks,49
+Africa,Nonconformity,Ethylene dichloride|air|urban air close to ground,50
+Africa,Nonconformity,Ethylene oxide|air|unspecified,51
+Africa,Nonconformity,Formaldehyde|water|unspecified,52
+Africa,Nonconformity,Glyphosate|soil|forestry,53
+Africa,Marginally acceptable conformity,Glyphosate|water|ground-,54
+Africa,Nonconformity,Lead|natural resource|in ground,59
+Africa,Nonconformity,Lead II|water|surface water,58
+Africa,Nonconformity,Lead-210|air|urban air close to ground,55
+Africa,Nonconformity,Lead-210|water|ocean,56
+Africa,Nonconformity,Lead-210|water|surface water,57
+Africa,Nonconformity,Linuron|soil|agricultural,60
+Africa,Nonconformity,MCPA|water|ground-,62
+Africa,Nonconformity,Mecoprop-P|soil|agricultural,63
+Africa,Nonconformity,Mercury|natural resource|in ground,68
+Africa,Nonconformity,Mercury II|air|urban air close to ground,64
+Africa,Nonconformity,Mercury II|soil|unspecified,65
+Africa,Nonconformity,Mercury II|water|ocean,66
+Africa,Nonconformity,Mercury II|water|surface water,67
+Africa,Nonconformity,Metamitron|soil|agricultural,69
+Africa,Nonconformity,Molybdenum VI|air|non-urban air or from high stacks,70
+Africa,Acceptable conformity,Molybdenum VI|water|ground-,71
+Africa,Nonconformity,Molybdenum VI|water|ocean,72
+Africa,Nonconformity,Monobutyltin (III)|water|ocean,73
+Africa,Acceptable conformity,"Nickel II|air|low population density, long-term",74
+Africa,Nonconformity,Nickel II|air|urban air close to ground,75
+Africa,Acceptable conformity,"Nickel II|water|ground-, long-term",76
+Africa,Nonconformity,Nickel II|water|surface water,77
+Africa,Nonconformity,Nitrobenzene|air|urban air close to ground,78
+Africa,Nonconformity,Nitrobenzene|water|surface water,79
+Africa,Nonconformity,Nitrobenzene|water|unspecified,80
+Africa,Nonconformity,Octaethylene glycol monododecyl ether|air|unspecified,84
+Africa,Nonconformity,Pentachlorophenol|air|unspecified,85
+Africa,Nonconformity,Phenol|air|urban air close to ground,86
+Africa,Nonconformity,Phenol|water|ocean,87
+Africa,Nonconformity,Phenyltin|water|ocean,88
+Africa,Nonconformity,Platinum|air|urban air close to ground,89
+Africa,Nonconformity,Platinum|natural resource|in ground,90
+Africa,Nonconformity,Propiconazole|soil|agricultural,91
+Africa,Nonconformity,Selenium IV|air|non-urban air or from high stacks,92
+Africa,Nonconformity,Selenium IV|air|urban air close to ground,93
+Africa,Nonconformity,"Selenium IV|water|ground-, long-term",94
+Africa,Nonconformity,Selenium IV|water|unspecified,95
+Africa,Nonconformity,"Thallium I|air|low population density, long-term",96
+Africa,Nonconformity,Thallium I|soil|industrial,97
+Africa,Nonconformity,Thallium I|soil|unspecified,98
+Africa,Nonconformity,Thallium I|water|surface water,99
+Africa,Nonconformity,Thiram|soil|agricultural,100
+Africa,Nonconformity,Tin ion|air|unspecified,101
+Africa,Nonconformity,Tin ion|air|urban air close to ground,102
+Africa,Nonconformity,Tin ion|soil|unspecified,103
+Africa,Nonconformity,Tin ion|water|ocean,104
+Africa,Nonconformity,Toluene|air|urban air close to ground,105
+Africa,Nonconformity,Toluene|water|ocean,106
+Africa,Nonconformity,Toluene|water|surface water,107
+Africa,Acceptable conformity,Tributyltin compounds|water|unspecified,108
+Africa,Nonconformity,Triethylene glycol|water|unspecified,109
+Africa,Nonconformity,Trioctyltin|water|ocean,110
+Africa,Nonconformity,Triphenyltin|water|ocean,111
+Africa,Nonconformity,Vanadium V|air|urban air close to ground,112
+Africa,Nonconformity,Vanadium V|soil|industrial,113
+Africa,Nonconformity,Vanadium V|soil|unspecified,114
+Africa,Marginally acceptable conformity,Vanadium V|water|ground-,115
+Africa,Nonconformity,Vanadium V|water|ocean,116
+Africa,Nonconformity,Vanadium V|water|surface water,117
+Africa,Nonconformity,Vinyl chloride|water|surface water,118
+Africa,Nonconformity,Zeta-cypermethrin|soil|agricultural,119
+Africa,Nonconformity,Zinc II|soil|industrial,122
+Africa,Nonconformity,Zinc II|water|ocean,123
+Africa,Marginally acceptable conformity,Zinc II|water|surface water,124
+Africa,Nonconformity,Zinc-65|air|non-urban air or from high stacks,120
+Africa,Nonconformity,Zinc-65|water|surface water,121
+Africa,Nonconformity,m-Xylene|water|surface water,61
+Africa,Nonconformity,o-Chlorotoluene|air|urban air close to ground,81
+Africa,Nonconformity,o-Chlorotoluene|water|surface water,82
+Africa,Marginally acceptable conformity,o-Nitrotoluene|air|urban air close to ground,83

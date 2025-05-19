@@ -977,8 +977,13 @@ ggsave("../results/plotGreenHouseGases.pdf", plotGreenHouseGases,
 # Identify relevant columns for toxic substances
 toxicSubstances <- colnames[grep("(Country|Mercury|Lead|Arsenic|Cadmium|Polychlorinated Biphenyls|Dioxins|Chromium|Volatile Organic Compounds)", colnames, ignore.case = TRUE)]
 
+# Toxic substances selected from paper
+
+close_conforming_cols[grep("(Country|Antimony|Arsenic|Barium|Beryllium|Cadmium|Chromium (III)|Chromium (VI)|Cobalt|Copper|Lead|Mercury|Methylmercury|Molybdenum|Nickel|Selenium|Thallium|Tin|Vanadium|Zinc|Ammonia|Hydrogen sulphide|Hydrogen chloride|Nitrogen dioxide|Sulphur dioxide|PM10|Acrylonitrile|Acrolein|1,3-Butadiene|Carbon disulfide|Ethylene|Formaldehyde|Propylene oxide|Benzene|Toluene|Styrene|Phenol|Ethylbenzene|m-Xylene|o-Xylene|p-Xylene|Butylbenzyl phthalate|Di(2-ethylhexyl) phthalate|Dibutyl phthalate|Diethyl phthalate|Dihexyl phthalate|Diisooctyl phthalate|Diisodecyl phthalate|Dimethyl phthalate|Dioctyl phthalate|Phthalic anhydride|Naphthalene|Anthracene|Phenanthrene|Fluoranthene|Benzo[a]anthracene|Chrysene|Benzo[k]fluoranthene|Benzo[a]pyrene|Benzo[ghi]perylene|Indeno[1,2,3-cd]pyrene|Carcinogenic PAHs|Dichloromethane|Chloroform|Carbon tetrachloride|1,2-Dichloroethane|1,1,1-Trichloroethane|Trichloroethylene|Tetrachloroethylene|Vinyl chloride|Hexachlorobutadiene|Chlorobenzene|1,2-Dichlorobenzene|1,3-Dichlorobenzene|1,4-Dichlorobenzene|1,2,3-Trichlorobenzene|1,2,4-Trichlorobenzene|1,3,5-Trichlorobenzene|1,2,3,4-Tetrachlorobenzene|1,2,3,5-Tetrachlorobenzene|1,2,4,5-Tetrachlorobenzene|Pentachlorobenzene|Hexachlorobenzene|2-Chlorophenol|2,4-Dichlorophenol|2,4,5-Trichlorophenol|2,4,6-Trichlorophenol|2,3,4,6-Tetrachlorophenol|Pentachlorophenol|Benzyl chloride|3-Chloroaniline|4-Chloroaniline|3,4-Dichloroaniline|1-Chloro-4-nitrobenzene|Pentachloronitrobenzene|2,3,7,8-TCDD|Acephate|Aldicarb|Aldrin|Anilazine|Atrazine|Azinphos-ethyl|Azinphos-methyl|Benomyl|Bentazone|Bifenthrin|Captafol|Captan|Carbaryl|Carbendazim|Carbofuran|Chlordane|Chlorfenvinphos|Chloridazon|Chlorothalonil|Chlorpropham|Chlorpyriphos|Coumaphos|Cyanazine|Cypermethrin|Cyromazine|2,4-D|DDT|Deltamethrin|Demeton|Desmetryn|Diazinon|Dichlorprop|Dichlorvos|Dieldrin|Dimethoate|Dinoseb|Dinoterb|Disulfoton|Diuron|DNOC|Endosulfan|Endrin|Ethoprophos|Fenitrothion|Fentin acetate|Fentin chloride|Fentin hydroxide|Fenthion|Folpet|Glyphosate|Heptachlor|Heptenophos|Iprodione|Isoproturon|Lindane|Linuron|Malathion|MCPA|Mecoprop|Metamitron|Metazachlor|Methabenzthiazuron|Methomyl|Methyl bromide|Metolachlor|Mevinphos|Monocrotophos|Oxamyl|Oxydemeton-methyl|Parathion-ethyl|Parathion-methyl|Permethrin|Phoxim|Pirimicarb|Propachlor|Propoxur|Pyrazophos|Simazine|2,4,5-T|Thiram|Tolclofos-methyl|Tri-allate|Triazophos|Tributyltin-oxide|Trichlorfon|Trifluarin|Zineb)", close_conforming_cols, ignore.case = TRUE)] -> toxicSubstancesPaper
+
+
 # Extract toxic substances data from the grouped dataset
-bigDataCountriesGrouped[, toxicSubstances] -> toxicSubstancesData
+bigDataCountriesGrouped[, toxicSubstancesPaper] -> toxicSubstancesData
 
 # Extract columns related to toxic substances in air
 air.data |> colnames() -> airColnames
@@ -1351,6 +1356,20 @@ all_df <- rbind(asia_df, europe_df, north_america_df, south_america_df, africa_d
 
 # Add a numerical label for each column name for use in visualizations
 all_df |> mutate(Label = as.integer(factor(Colname))) -> all_df
+
+# Create summary table of confomrity levels by continent
+all_df |> 
+  group_by(Continent, Conformity) |> 
+  summarise(n = n()) |> 
+  pivot_wider(names_from = Conformity, values_from = n) |> 
+  arrange((Continent)) |> 
+  mutate_if(is.integer, ~replace(., is.na(.), 0)) |> 
+  select(Continent, "Close conformity", "Acceptable conformity", "Marginally acceptable conformity", Nonconformity) -> all_df_summary
+
+# Save csv files
+write_csv(all_df_summary, "../data/all_df_summary.csv")
+
+write_csv(all_df, "../data/conformity_all_elementary_flows_per_continent_ecoinvent.csv")
 ```
 
 # Carbon Plot by Continent
@@ -1428,6 +1447,40 @@ toxicSubstances_df |>
   coord_equal() +
   theme(legend.position = "top")
 
+
+# Divide the data into two parts for better visualization
+toxicSubstances_df |> dplyr::filter(Label2 %in% 1:round(length(unique(toxicSubstances_df$Label2)) / 2)) -> firstHalfToxicSubstances
+toxicSubstances_df |> dplyr::filter(Label2 %in% (round(length(unique(toxicSubstances_df$Label2)) / 2) + 1):length(unique(toxicSubstances_df$Label2))) -> secondHalfToxicSubstances
+
+# Create separate plots for each half
+firstHalfToxicSubstances |> 
+  ggplot(aes(y = factor(Continent, levels = toxicSubstances_df_levels), 
+             x = as.factor(Label2), 
+             fill = factor(Conformity, levels = names(conformityColors)))) +
+  geom_tile(color = "black", linewidth = 0.25) +
+  ylab("Continent") +
+  xlab("") +
+  labs(fill = "") +
+  scale_fill_manual(values = conformityColors) +
+  coord_equal() +
+  theme(legend.position = "top") -> pp1
+
+secondHalfToxicSubstances |>
+  ggplot(aes(y = factor(Continent, levels = toxicSubstances_df_levels), 
+             x = as.factor(Label2), 
+             fill = factor(Conformity, levels = names(conformityColors)))) +
+  geom_tile(color = "black", linewidth = 0.25) +
+  ylab("Continent") +
+  xlab("Columns") +
+  labs(fill = "") +
+  scale_fill_manual(values = conformityColors) +
+  coord_equal() +
+  theme(legend.position = "none") -> pp2
+
+# Combine the two plots into one
+
+gridExtra::grid.arrange(pp1, pp2, ncol = 1) -> toxicSubstancesPlot
+
 # Save the plot as a PNG file
 ggsave("../results/toxic_substances_by_continent.pdf", last_plot(), width = 20, height = 10, units = "cm", limitsize = FALSE)
 
@@ -1436,6 +1489,15 @@ toxicSubstances_df |>
   select(-Label) |> 
   rename(Label = Label2) |> 
   write_csv("../data/toxic_substances_by_continent.csv")
+
+toxicSubstances_df |> group_by(Continent, Conformity) |> 
+  summarise(n = n()) |> 
+  pivot_wider(names_from = Conformity, values_from = n) |> 
+  arrange((Continent)) |> 
+  mutate_if(is.integer, ~replace(., is.na(.), 0)) |> 
+  select(Continent, "Close conformity", "Acceptable conformity", "Marginally acceptable conformity", Nonconformity) -> toxicSubstances_df_summary
+
+write.csv(toxicSubstances_df_summary, "../data/toxic_substances_df_summary.csv", row.names = FALSE)
 
 ```
 
