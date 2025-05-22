@@ -910,14 +910,14 @@ ggsave("../results/all_categories_heavy_metals.pdf", all_categories_heavy_metals
 ```{r}
 # Identify relevant columns for greenhouse gases
 bigDataCountriesGrouped |> colnames() -> colnames
-greenhouse_gases <- colnames[grep("(Country|Carbon Dioxide|Methane|Nitrous Oxide|Water Vapor|Ozone|Chlorofluorocarbons|Hydrofluorocarbons|Perfluorocarbons|Sulfur Hexafluoride)", colnames, ignore.case = TRUE)]
+greenhouse_gases <- colnames[grep("(Country|Carbon Dioxide|Methane|Nitrous Oxide|Perfluorocarbon|Sulfur Hexafluoride|Hydrofluorocarbon)", colnames, ignore.case = TRUE)]
 
 # Extract greenhouse gases data from the dataset
 bigDataCountriesGrouped[, greenhouse_gases] -> greenHouseGasesData
 
 # Extract relevant greenhouse gas columns for air
 air.data |> colnames() -> airColnames
-GHGAir <- airColnames[grep("(Country|Carbon Dioxide|Methane|Nitrous Oxide|Water Vapor|Ozone|Chlorofluorocarbons|Hydrofluorocarbons|Perfluorocarbons|Sulfur Hexafluoride)", airColnames, ignore.case = TRUE)]
+GHGAir <- airColnames[grep("(Country|Carbon Dioxide|Methane|Nitrous Oxide|Perfluorocarbon|Sulfur Hexafluoride|Hydrofluorocarbon)", colnames, ignore.case = TRUE)]
 air.data[, GHGAir] -> GHGAirAirData
 
 # Test Benford's Law conformity for a specific country (e.g., China)
